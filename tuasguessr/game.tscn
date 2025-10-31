@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv8lkpnfrk0n5"]
 
-[ext_resource type="PackedScene" uid="uid://4tr7smla7hlt" path="res://texttest_thing_idk.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" path="res://texttest_thing_idk.tscn" id="1_80nbo"]
 
 [node name="Game" type="Node2D"]
 
 [node name="TexttestThingIdk" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(-21, -56)
+position = Vector2(137, 151)
