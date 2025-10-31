@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv8lkpnfrk0n5"]
+[gd_scene load_steps=3 format=3 uid="uid://cv8lkpnfrk0n5"]
 
-[ext_resource type="PackedScene" path="res://texttest_thing_idk.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b2vdhnc6223t5" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cvilngt54vwp5" path="res://menu_intro.tscn" id="2_e2o6t"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_80nbo")
 
-[node name="TexttestThingIdk" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(137, 151)
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Menu_Intro" parent="." instance=ExtResource("2_e2o6t")]

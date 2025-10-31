@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bapdd5llwtu26"]
+
+[ext_resource type="Script" uid="uid://csedbh5mqsufd" path="res://menu_difficulty.gd" id="1_2xem7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ej3av"]
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="menu_difficulty" type="Node2D"]
+script = ExtResource("1_2xem7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = -108.0
+offset_right = 359.0
+offset_bottom = 77.0
+text = "select the difficulty hardness danger level"
+label_settings = SubResource("LabelSettings_ej3av")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ez" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -6.375
+anchor_right = -6.375
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+text = "ez"
+metadata/_edit_use_anchors_ = true
+
+[node name="Medium" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.2
+anchor_right = -2.2
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+text = "mid"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hard" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.225
+anchor_right = 2.225
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+text = "hard"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hard2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.575
+anchor_right = 6.575
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+text = "hard 2:
+ electric boogaloo"
+metadata/_edit_use_anchors_ = true
+
+[node name="Accept" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 2.15
+anchor_right = 0.05
+anchor_bottom = 2.15
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+disabled = true
+text = "start"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Control/Ez" to="." method="_on_ez_button_down"]
+[connection signal="button_down" from="Control/Medium" to="." method="_on_medium_button_down"]
+[connection signal="button_down" from="Control/Hard" to="." method="_on_hard_button_down"]
+[connection signal="button_down" from="Control/Hard2" to="." method="_on_hard_2_button_down"]
+[connection signal="button_down" from="Control/Accept" to="." method="_on_accept_button_down"]

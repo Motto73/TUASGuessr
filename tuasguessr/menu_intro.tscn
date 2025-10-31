@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvilngt54vwp5"]
+
+[ext_resource type="Script" uid="uid://ewhx8jmjg8g2" path="res://menu_intro.gd" id="1_eu4wb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_arfdj"]
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu_Intro" type="Node2D"]
+script = ExtResource("1_eu4wb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = -108.0
+offset_right = 359.0
+offset_bottom = 77.0
+text = "tuasguessr the video game the app the game"
+label_settings = SubResource("LabelSettings_arfdj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="Control/Play"]
+layout_mode = 0
+offset_right = 104.0
+offset_bottom = 49.0
+text = "Play the game or some shi"
+autowrap_mode = 1
+
+[connection signal="button_down" from="Control/Play" to="." method="_on_play_button_down"]

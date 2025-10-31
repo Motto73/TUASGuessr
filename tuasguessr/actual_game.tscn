@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2khgu2qtfe6e"]
+
+[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://me_fr.jpg" id="1_hbmky"]
+
+[node name="ActualGame" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="MeFr" type="Sprite2D" parent="."]
+position = Vector2(-4, -1)
+scale = Vector2(2.4397705, 1.0755556)
+texture = ExtResource("1_hbmky")
