@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="MapDataPoints" load_steps=6 format=3 uid="uid://brqchuj25do8n"]
+
+[ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://MapDataPoint.gd" id="1_gfkhl"]
+[ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://MapDataPoints.gd" id="1_t6g5b"]
+
+[sub_resource type="Resource" id="Resource_gfkhl"]
+script = ExtResource("1_gfkhl")
+name = "Debug_Owl"
+imgresource = "res://me_fr.jpg"
+difficulty = "easy"
+position = Vector3(2.069797, 0, 2.3831813)
+
+[sub_resource type="Resource" id="Resource_t4pk4"]
+script = ExtResource("1_gfkhl")
+name = "Debug_Owl"
+imgresource = "res://me_fr.jpg"
+difficulty = "easy"
+position = Vector3(0.088926554, 0, 1.2622309)
+
+[sub_resource type="Resource" id="Resource_8swuk"]
+script = ExtResource("1_gfkhl")
+name = "Debug_Edu3"
+imgresource = "res://Assets/Map Images/FloorplanTestCorrected.png"
+difficulty = "hard"
+position = Vector3(-1.6448843, 0, 2.6372554)
+
+[resource]
+script = ExtResource("1_t6g5b")
+DataPoints = [SubResource("Resource_gfkhl"), SubResource("Resource_t4pk4"), SubResource("Resource_8swuk")]
+metadata/_custom_type_script = "uid://7nulugirt1qg"
