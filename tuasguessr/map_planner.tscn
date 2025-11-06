@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj73vj630gu0g"]
+[gd_scene load_steps=7 format=3 uid="uid://dj73vj630gu0g"]
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://map_planner.gd" id="1_hshuq"]
 [ext_resource type="Texture2D" uid="uid://c2jlticj876xu" path="res://Assets/Map Images/FloorplanTestCorrected.png" id="1_yeu20"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_2xphe"]
 [ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://map_marker.tscn" id="2_eh8yn"]
+[ext_resource type="Texture2D" uid="uid://dnhlwfrfikcr0" path="res://Assets/Textures/Logo_512.png" id="5_0iuw7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eh8yn"]
-size = Vector3(6.241211, 7.3408203, 0.52526855)
+size = Vector3(6.241211, 7.3408203, 0.15216064)
 
 [node name="Map Planner" type="Node3D"]
 script = ExtResource("1_hshuq")
@@ -14,13 +15,13 @@ DataAsset = ExtResource("2_2xphe")
 
 [node name="TestMap" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-texture_filter = 0
+texture_filter = 2
 texture = ExtResource("1_yeu20")
 
 [node name="Area3D" type="Area3D" parent="TestMap"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestMap/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.23736572)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.220446e-16, -0.050811768)
 shape = SubResource("BoxShape3D_eh8yn")
 
 [node name="Map Marker" parent="." instance=ExtResource("2_eh8yn")]
@@ -28,8 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.069797, 0, 2.3831813)
 ImageName = "Debug_Owl"
 
 [node name="Map Marker3" parent="." instance=ExtResource("2_eh8yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088926554, 0, 1.2622309)
-ImageName = "Debug_Owl"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13702881, 2.3841858e-07, 1.120959)
+ImageName = "Debug_3"
+Picture = ExtResource("5_0iuw7")
+Difficulty = "impossible"
 
 [node name="Map Marker2" parent="." instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6448843, 0, 2.6372554)

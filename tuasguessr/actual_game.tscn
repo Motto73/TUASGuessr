@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2khgu2qtfe6e"]
+[gd_scene load_steps=4 format=3 uid="uid://d2khgu2qtfe6e"]
 
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://me_fr.jpg" id="1_hbmky"]
+[ext_resource type="Shader" uid="uid://bqf6iyedm5x31" path="res://Assets/Materials/owl.gdshader" id="1_ofr5b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qldh4"]
+shader = ExtResource("1_ofr5b")
 
 [node name="ActualGame" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="MeFr" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qldh4")
 position = Vector2(-4, -1)
 scale = Vector2(2.4397705, 1.0755556)
 texture = ExtResource("1_hbmky")
