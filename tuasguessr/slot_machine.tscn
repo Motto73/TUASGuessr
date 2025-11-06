@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci4clqh804507"]
+
+[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://me_fr.jpg" id="1_agdmm"]
+[ext_resource type="Script" uid="uid://cc5b3iv6gjlvw" path="res://slot_machine.gd" id="1_nmlme"]
+[ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_i6cki"]
+
+[sub_resource type="Gradient" id="Gradient_nmlme"]
+offsets = PackedFloat32Array(0, 0.33865815, 0.6645367, 1)
+colors = PackedColorArray(0.29586652, 0.2958665, 0.2958665, 1, 0.69135684, 0.6913568, 0.69135684, 1, 0.69965345, 0.69965345, 0.69965345, 1, 0.3180198, 0.31801978, 0.31801975, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i6cki"]
+gradient = SubResource("Gradient_nmlme")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_knkoj"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_color = Color(0.08627451, 0.08627451, 0.08627451, 0.19215687)
+shadow_offset = Vector2(1, 3.15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6cki"]
+font_size = 14
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_color = Color(0.08627451, 0.08627451, 0.08627451, 0.19215687)
+shadow_offset = Vector2(1, 3.15)
+
+[node name="SlotMachine" type="Node2D"]
+script = ExtResource("1_nmlme")
+Data = ExtResource("2_i6cki")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bg" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+pivot_offset = Vector2(200, 300)
+texture = SubResource("GradientTexture2D_i6cki")
+
+[node name="Display" type="TextureRect" parent="Control"]
+clip_contents = true
+layout_mode = 0
+offset_left = -157.0
+offset_top = -200.0
+offset_right = 160.0
+offset_bottom = 182.0
+texture = ExtResource("1_agdmm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -184.0
+offset_top = -296.0
+offset_right = 180.0
+offset_bottom = -225.0
+text = "epic slot machine thingamabob"
+label_settings = SubResource("LabelSettings_knkoj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -185.0
+offset_top = -259.0
+offset_right = 179.0
+offset_bottom = -188.0
+text = "( I am not in charge of UI )"
+label_settings = SubResource("LabelSettings_i6cki")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RollButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 204.0
+offset_right = 176.0
+offset_bottom = 288.0
+text = "ROLL!!! I LOVE GAMBLINGGGG!!!!!"
+
+[connection signal="button_down" from="Control/RollButton" to="." method="_on_roll_button_button_down"]

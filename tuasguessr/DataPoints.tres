@@ -12,10 +12,10 @@ position = Vector3(2.069797, 0, 2.3831813)
 
 [sub_resource type="Resource" id="Resource_t4pk4"]
 script = ExtResource("1_gfkhl")
-name = "Debug_Owl"
-imgresource = "res://me_fr.jpg"
-difficulty = "easy"
-position = Vector3(0.088926554, 0, 1.2622309)
+name = "Debug_3"
+imgresource = "res://Assets/Textures/Logo_512.png"
+difficulty = "impossible"
+position = Vector3(-0.13702881, 2.3841858e-07, 1.120959)
 
 [sub_resource type="Resource" id="Resource_8swuk"]
 script = ExtResource("1_gfkhl")
