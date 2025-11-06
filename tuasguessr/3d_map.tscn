@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd0q8xxbij8at"]
+
+[ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://3d_map.gd" id="1_6le5j"]
+[ext_resource type="Texture2D" uid="uid://c2jlticj876xu" path="res://Assets/Map Images/FloorplanTestCorrected.png" id="1_t435c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6le5j"]
+size = Vector3(6.241211, 7.3408203, 0.15216064)
+
+[sub_resource type="Environment" id="Environment_6le5j"]
+background_mode = 1
+background_color = Color(0.19215687, 0.19215687, 0.5372549, 1)
+background_energy_multiplier = 2.66
+
+[node name="3dMap" type="Node3D"]
+script = ExtResource("1_6le5j")
+CanMove = true
+
+[node name="TestMap" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+texture_filter = 2
+texture = ExtResource("1_t435c")
+
+[node name="Area3D" type="Area3D" parent="TestMap"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestMap/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.220446e-16, -0.050811768)
+shape = SubResource("BoxShape3D_6le5j")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, 0)
+environment = SubResource("Environment_6le5j")
