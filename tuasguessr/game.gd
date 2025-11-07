@@ -8,7 +8,7 @@ var gameState = "loading"
 var gameDifficulty : String
 
 var mainScene : Node
-
+var popup : Node
 
 func _ready():
 	mainScene = $Menu_Intro
@@ -26,9 +26,14 @@ func setDifficulty(diff):
 	
 	loadMainScene("res://actual_game.tscn")
 	gameState = "game"
+	(mainScene as ActualGame).game = self
 
 func loadMainScene(res):
 	if mainScene:
 		mainScene.queue_free()
 	mainScene = load(res).instantiate()
 	add_child(mainScene)
+	
+func gameover(points):
+	#TODO - spawn leaderboard popup, which handles starting new game
+	startGame()

@@ -88,3 +88,6 @@ func reveal():
 func reset():
 	markerstart.visible = false
 	markerend.visible = false
+
+func lock():
+	CanMove = false

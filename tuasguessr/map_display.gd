@@ -36,3 +36,8 @@ func update_guess(pos):
 	currentGuess = pos
 	state = "ready"
 	button.disabled = false
+
+func lock():
+	state = "locked"
+	button.disabled = true
+	map3d.lock()

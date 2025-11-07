@@ -62,3 +62,8 @@ func select_point():
 	display.texture = images[rand]
 	selectedPoint = Data.DataPoints[rand]
 	actualgame.set_datapoint(selectedPoint)
+
+func lock():
+	state = "locked"
+	button.disabled = true
+	timer = 0

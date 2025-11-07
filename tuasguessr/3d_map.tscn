@@ -12,6 +12,7 @@ background_energy_multiplier = 2.66
 [node name="3dMap" type="Node3D"]
 script = ExtResource("1_6le5j")
 CanMove = true
+ClickVSDrag = 0.2
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5307627, -0.8475205, 0, 0.8475205, 0.5307627, 0, 0, 0)

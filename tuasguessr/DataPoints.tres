@@ -8,7 +8,7 @@ script = ExtResource("1_gfkhl")
 name = "Debug_Owl"
 imgresource = "res://me_fr.jpg"
 difficulty = "easy"
-position = Vector3(1.7538776, 0, 1.7224014)
+position = Vector3(1.255937, 0, 1.2987239)
 
 [sub_resource type="Resource" id="Resource_t4pk4"]
 script = ExtResource("1_gfkhl")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjmmam14ycxr7"]
+
+[ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://leaderboard.tscn" id="1_wy7k2"]
+
+[sub_resource type="Gradient" id="Gradient_vm5wq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wy7k2"]
+gradient = SubResource("Gradient_vm5wq")
+fill_from = Vector2(0, 1)
+
+[node name="Menu_Leaderboard" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bg" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -371.0
+offset_top = -314.0
+offset_right = 378.0
+offset_bottom = 547.0
+texture = SubResource("GradientTexture2D_wy7k2")
+
+[node name="Leaderboard" parent="Control" instance=ExtResource("1_wy7k2")]
+position = Vector2(11, -58)
+
+[node name="Skip" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 378.0
+offset_right = 292.0
+offset_bottom = 484.0
+text = "new game"
+
+[node name="Submit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 376.0
+offset_right = 88.0
+offset_bottom = 482.0
+text = "submit"
+
+[node name="Namefield" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = -268.0
+offset_top = 390.0
+offset_right = -123.0
+offset_bottom = 468.0
+text = "
+"
+placeholder_text = "Name
+"

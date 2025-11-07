@@ -32,6 +32,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
 world_3d = SubResource("World3D_e87u4")
+transparent_bg = true
 handle_input_locally = false
 size = Vector2i(364, 178)
 render_target_update_mode = 4
