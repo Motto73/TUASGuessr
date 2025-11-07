@@ -1,10 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd0q8xxbij8at"]
 
 [ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://3d_map.gd" id="1_6le5j"]
-[ext_resource type="Texture2D" uid="uid://c2jlticj876xu" path="res://Assets/Map Images/FloorplanTestCorrected.png" id="1_t435c"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6le5j"]
-size = Vector3(6.241211, 7.3408203, 0.15216064)
+[ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://marker.tscn" id="3_noguo"]
+[ext_resource type="PackedScene" uid="uid://cm1ly5vsjdal4" path="res://map_test.tscn" id="3_qhuya"]
 
 [sub_resource type="Environment" id="Environment_6le5j"]
 background_mode = 1
@@ -15,19 +13,24 @@ background_energy_multiplier = 2.66
 script = ExtResource("1_6le5j")
 CanMove = true
 
-[node name="TestMap" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-texture_filter = 2
-texture = ExtResource("1_t435c")
-
-[node name="Area3D" type="Area3D" parent="TestMap"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestMap/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.220446e-16, -0.050811768)
-shape = SubResource("BoxShape3D_6le5j")
-
 [node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5307627, -0.8475205, 0, 0.8475205, 0.5307627, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.375154, 0)
 environment = SubResource("Environment_6le5j")
+
+[node name="MarkerStart" parent="." instance=ExtResource("3_noguo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7287887, 0, -2.0349045)
+visible = false
+
+[node name="MarkerEnd" parent="." instance=ExtResource("3_noguo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55254304, 0, -2.1817756)
+visible = false
+
+[node name="MapTest2" parent="." instance=ExtResource("3_qhuya")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.94542193, 0.17465128, 0.27508962, -0.3258487, 0.5067356, 0.7981489, 0, -0.84422505, 0.53598887, 0, 0.87839746, 0)
+light_energy = 2.438
+shadow_enabled = true

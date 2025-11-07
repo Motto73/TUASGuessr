@@ -1,23 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfe5rucudei0c"]
 
 [ext_resource type="Script" uid="uid://bbjh2h3m6255" path="res://map_marker.gd" id="1_5dlg4"]
-[ext_resource type="Texture2D" uid="uid://dl35k6on7iym" path="res://Assets/Textures/Pointer.png" id="1_33yh0"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://me_fr.jpg" id="2_e7dnx"]
+[ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://marker.tscn" id="3_e7dnx"]
 
 [node name="Map Marker" type="Node3D"]
 script = ExtResource("1_5dlg4")
-ImageName = null
 Picture = ExtResource("2_e7dnx")
-
-[node name="Marker" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57555723, 0)
-pixel_size = 0.004
-billboard = 2
-texture = ExtResource("1_33yh0")
 
 [node name="Preview" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5305526, 0)
+visible = false
 pixel_size = 0.001
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_e7dnx")
+
+[node name="Marker" parent="." instance=ExtResource("3_e7dnx")]

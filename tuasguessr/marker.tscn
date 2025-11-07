@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqweao7ragffi"]
+
+[ext_resource type="Texture2D" uid="uid://dl35k6on7iym" path="res://Assets/Textures/Pointer.png" id="1_f37rb"]
+
+[node name="Marker" type="Node3D"]
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57555723, 0)
+pixel_size = 0.004
+billboard = 2
+texture = ExtResource("1_f37rb")

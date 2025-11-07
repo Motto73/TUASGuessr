@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name  SlotMachine
+
 @export_category("Peniz")
 @export var RollTime : float = 1.0
 @export var RandomImageTime : float = 0.1
@@ -15,6 +17,10 @@ var rng := RandomNumberGenerator.new()
 @onready var display := $Control/Display
 @onready var button := $Control/RollButton
 
+@onready var actualgame : ActualGame = $"../.."
+
+var selectedPoint : MapDataPoint
+
 func _ready():
 	state = "ready"
 	set_random_images()
@@ -26,15 +32,18 @@ func _process(delta):
 		if timer >= RollTime:
 			state = "gaming"
 			timer = 0
+			select_point()
 
 func reset():
 	button.disabled = false
+	state = "ready"
 
 func _on_roll_button_button_down():
 	if state == "ready":
 		state = "rolling"
 		timer = 0
 	button.disabled = true
+	actualgame.hide_map()
 
 func show_random_image():
 	var rand = rng.randi_range(0, len(images) - 1)
@@ -46,3 +55,10 @@ func set_random_images():
 		var img = load(d.imgresource) as CompressedTexture2D
 		images.append(img)
 	print("Random images set: ", len(images))
+
+func select_point():
+	#TODO - difficulty selection
+	var rand = rng.randi_range(0, len(Data.DataPoints) - 1)
+	display.texture = images[rand]
+	selectedPoint = Data.DataPoints[rand]
+	actualgame.set_datapoint(selectedPoint)

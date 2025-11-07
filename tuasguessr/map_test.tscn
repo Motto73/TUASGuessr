@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm1ly5vsjdal4"]
+
+[ext_resource type="PackedScene" uid="uid://rbqb8vuqe61w" path="res://Assets/3D/MapTest.glb" id="1_q1m20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1m20"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_104vu"]
+albedo_color = Color(0, 0.3254902, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7aqf"]
+albedo_color = Color(0.777745, 0.411134, 0.026441302, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eab4r"]
+albedo_color = Color(0.27752772, 0.27752772, 0.27752772, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2k0k"]
+albedo_color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1m20"]
+size = Vector3(4.2419434, 0.03894043, 4.9836426)
+
+[node name="MapTest" instance=ExtResource("1_q1m20")]
+
+[node name="Blackout" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q1m20")
+
+[node name="Greens" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_104vu")
+
+[node name="Yellows" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c7aqf")
+
+[node name="Gray" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eab4r")
+
+[node name="Walls_Curve" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a2k0k")
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.023498535, -0.007446289)
+shape = SubResource("BoxShape3D_q1m20")
