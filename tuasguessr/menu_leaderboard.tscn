@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjmmam14ycxr7"]
+[gd_scene load_steps=5 format=3 uid="uid://bjmmam14ycxr7"]
 
+[ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://menu_leaderboard.gd" id="1_sh85h"]
 [ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://leaderboard.tscn" id="1_wy7k2"]
 
 [sub_resource type="Gradient" id="Gradient_vm5wq"]
@@ -9,47 +10,74 @@ gradient = SubResource("Gradient_vm5wq")
 fill_from = Vector2(0, 1)
 
 [node name="Menu_Leaderboard" type="Node2D"]
+z_index = 5
+script = ExtResource("1_sh85h")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 583.0
+offset_top = 210.0
+offset_right = 623.0
+offset_bottom = 250.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Bg" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = -371.0
-offset_top = -314.0
-offset_right = 378.0
-offset_bottom = 547.0
+offset_left = -150.0
+offset_top = -123.0
+offset_right = 157.0
+offset_bottom = 356.0
 texture = SubResource("GradientTexture2D_wy7k2")
+metadata/_edit_use_anchors_ = true
 
 [node name="Leaderboard" parent="Control" instance=ExtResource("1_wy7k2")]
-position = Vector2(11, -58)
+position = Vector2(-1, -58)
 
-[node name="Skip" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 378.0
-offset_right = 292.0
-offset_bottom = 484.0
+[node name="NewGame" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45
+anchor_top = -0.1
+anchor_right = -0.45
+anchor_bottom = -0.125
+offset_left = 39.0
+offset_top = 288.0
+offset_right = 139.0
+offset_bottom = 339.0
 text = "new game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = -86.0
-offset_top = 376.0
-offset_right = 88.0
-offset_bottom = 482.0
+offset_left = -129.0
+offset_top = 281.0
+offset_right = 16.0
+offset_bottom = 331.0
 text = "submit"
+metadata/_edit_use_anchors_ = true
 
 [node name="Namefield" type="TextEdit" parent="Control"]
 layout_mode = 0
-offset_left = -268.0
-offset_top = 390.0
-offset_right = -123.0
-offset_bottom = 468.0
-text = "
-"
+offset_left = -120.0
+offset_top = 187.0
+offset_right = 7.0
+offset_bottom = 269.0
 placeholder_text = "Name
 "
+metadata/_edit_use_anchors_ = true
+
+[node name="Pointsfield" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 183.0
+offset_right = 141.0
+offset_bottom = 260.0
+text = "Your points:
+31231233243"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Control/Submit" to="." method="_on_submit_pressed"]
+[connection signal="text_changed" from="Control/Namefield" to="." method="_on_namefield_text_changed"]

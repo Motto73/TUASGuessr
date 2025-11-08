@@ -34,6 +34,5 @@ func loadMainScene(res):
 	mainScene = load(res).instantiate()
 	add_child(mainScene)
 	
-func gameover(points):
-	#TODO - spawn leaderboard popup, which handles starting new game
+func new_game():
 	startGame()

@@ -14,8 +14,11 @@ class_name  ActualGame
 
 @onready var slotmachine : SlotMachine = $Canvas/SlotMachine
 @onready var mapdisplay: MapDisplay = $"Canvas/Map Display"
+@onready var canvas : CanvasLayer = $Canvas
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
+
+var popup : Node
 
 var game : Game
 
@@ -68,5 +71,14 @@ func end_game():
 	statsui.set_time(-1)
 	slotmachine.lock()
 	mapdisplay.lock()
-	#TODO - load game end
-	game.gameover(points)
+	
+	if popup:
+		popup.queue_free()
+	popup = load("res://menu_leaderboard.tscn").instantiate()
+	canvas.add_child(popup)
+	if popup is MenuLeaderboard:
+		(popup as MenuLeaderboard).set_points(points)
+		(popup as MenuLeaderboard).actualgame = self
+
+func new_game():
+	game.new_game()

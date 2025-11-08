@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5e2wamfmg7k8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0fjt0"]
-font_size = 86
+font_size = 26
 
 [node name="Leaderboard" type="Node2D"]
 
@@ -13,18 +13,59 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_left = -289.0
-offset_top = -192.0
-offset_right = 302.0
-offset_bottom = 375.0
+offset_left = -124.0
+offset_top = -40.0
+offset_right = 137.0
+offset_bottom = 223.0
 color = Color(0.53, 0.53, 0.53, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect"]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 261.0
+offset_bottom = 263.0
+
+[node name="Label2" type="Label" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "1: Yomama - 100"
+label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "2: deeznutz - 4"
+label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "yeah"
+label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "this should be a list"
+label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "or something"
+label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -513.0
-offset_top = -88.0
-offset_right = 516.0
-offset_bottom = 202.0
+offset_left = -88.0
+offset_top = -51.0
+offset_right = 91.0
+offset_bottom = 9.0
 text = "Leaderboard"
 label_settings = SubResource("LabelSettings_0fjt0")
 horizontal_alignment = 1

@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dj73vj630gu0g"]
+[gd_scene load_steps=11 format=3 uid="uid://dj73vj630gu0g"]
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://map_planner.gd" id="1_hshuq"]
-[ext_resource type="Texture2D" uid="uid://c2jlticj876xu" path="res://Assets/Map Images/FloorplanTestCorrected.png" id="1_yeu20"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_2xphe"]
 [ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://map_marker.tscn" id="2_eh8yn"]
 [ext_resource type="Texture2D" uid="uid://dnhlwfrfikcr0" path="res://Assets/Textures/Logo_512.png" id="5_0iuw7"]
@@ -25,12 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13702881, 2.3841858e-07, 1
 ImageName = "Debug_3"
 Picture = ExtResource("5_0iuw7")
 Difficulty = "impossible"
-
-[node name="Map Marker2" parent="." instance=ExtResource("2_eh8yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6448843, 0, 2.6372554)
-ImageName = "Debug_Edu3"
-Picture = ExtResource("1_yeu20")
-Difficulty = "hard"
 
 [node name="Map Marker4" parent="." instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6532826, 0, -0.22469205)
@@ -59,3 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86559796, 0, 0.44509327)
 ImageName = "vsdvsd"
 Picture = ExtResource("7_smwfi")
 Difficulty = "hard"
+
+[node name="Map Marker10" parent="." instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.901433, 2.3841858e-07, 1.9677646)

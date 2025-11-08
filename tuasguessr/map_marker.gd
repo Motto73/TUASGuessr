@@ -8,7 +8,7 @@ class_name MapMarker
 ##The actual image texture of this data point. Simply drag it here is press "quick load"
 @export var Picture : CompressedTexture2D 
 ##The difficulty of this point. Idk man 
-@export_enum("easy", "medium", "hard", "impossible") var Difficulty : String = "easy"
+@export_enum("easy", "medium", "hard", "hard2") var Difficulty : String = "easy"
 
 @onready var preview : Sprite3D = $Preview
 
