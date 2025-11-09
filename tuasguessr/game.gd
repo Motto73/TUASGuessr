@@ -1,7 +1,8 @@
 extends Node2D
 class_name Game
 
-@onready var Camera = $Camera2D
+@onready var Camera := $Camera2D
+@onready var versiontext := $DrawOnTop/VersionText
 
 var gameState = "loading" 
 
@@ -10,7 +11,20 @@ var gameDifficulty : String
 var mainScene : Node
 var popup : Node
 
+var gameVersion : String = "0.0.0"
+var osname : String
+var osmode : String
+var osmobile : bool
+
 func _ready():
+	osname = OS.get_name()
+	osmobile = OS.has_feature("web_android") or OS.has_feature("web_ios") 
+	if osmobile:
+		osmode = "Mobile"
+	else:
+		osmode = "Desktop"
+	versiontext.text = "Version " + gameVersion + " Engine " + osname + " Platform " + osmode
+	
 	mainScene = $Menu_Intro
 	gameState = "intro"
 

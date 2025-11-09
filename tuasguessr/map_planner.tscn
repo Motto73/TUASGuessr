@@ -52,6 +52,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86559796, 0, 0.44509327)
 ImageName = "vsdvsd"
 Picture = ExtResource("7_smwfi")
 Difficulty = "hard"
-
-[node name="Map Marker10" parent="." instance=ExtResource("2_eh8yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.901433, 2.3841858e-07, 1.9677646)

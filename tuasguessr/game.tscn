@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv8lkpnfrk0n5"]
+[gd_scene load_steps=4 format=3 uid="uid://cv8lkpnfrk0n5"]
 
 [ext_resource type="Script" uid="uid://b2vdhnc6223t5" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cvilngt54vwp5" path="res://menu_intro.tscn" id="2_e2o6t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
+font_size = 14
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_80nbo")
@@ -9,3 +14,22 @@ script = ExtResource("1_80nbo")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Menu_Intro" parent="." instance=ExtResource("2_e2o6t")]
+
+[node name="DrawOnTop" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="VersionText" type="Label" parent="DrawOnTop"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -370.0
+offset_top = -23.0
+offset_right = 0.00048828125
+grow_horizontal = 0
+grow_vertical = 0
+text = "Version 0.0.0.  Platform: mobile"
+label_settings = SubResource("LabelSettings_e2o6t")
+horizontal_alignment = 2
+vertical_alignment = 2
