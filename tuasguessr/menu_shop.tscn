@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccuhrqtpqto7e"]
+
+[ext_resource type="Script" uid="uid://doxoxyknwgvxu" path="res://Assets/Scripts/menu_shop.gd" id="1_0hmtc"]
+[ext_resource type="Texture2D" uid="uid://cua3edfo083i0" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/7a7nctuirx1c1-1.png" id="2_br30t"]
+
+[sub_resource type="Curve" id="Curve_0hmtc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_y6csy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1j0xf"]
+gradient = SubResource("Gradient_y6csy")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hmtc"]
+font_size = 46
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 0.42352942)
+
+[node name="MenuShop" type="Node2D"]
+script = ExtResource("1_0hmtc")
+curve = SubResource("Curve_0hmtc")
+open = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Open" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -58.0
+offset_right = 159.0
+offset_bottom = -27.0
+rotation = 1.5707964
+text = "What's in here?"
+
+[node name="Bg" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -216.0
+offset_right = -448.6854
+offset_bottom = 216.99997
+scale = Vector2(7.12, 1)
+texture = SubResource("GradientTexture2D_1j0xf")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -473.0
+offset_top = -190.0
+offset_right = -38.0
+offset_bottom = -126.0
+text = "Wow! It's the SHOP!"
+label_settings = SubResource("LabelSettings_0hmtc")
+
+[node name="Idk man" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -460.0
+offset_top = -101.0
+offset_right = -38.0
+offset_bottom = 185.0
+texture = ExtResource("2_br30t")
+expand_mode = 1
+
+[connection signal="button_down" from="Control/Open" to="." method="_on_open_button_down"]

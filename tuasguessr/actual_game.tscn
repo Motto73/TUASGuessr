@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2khgu2qtfe6e"]
+[gd_scene load_steps=9 format=3 uid="uid://d2khgu2qtfe6e"]
 
 [ext_resource type="Script" uid="uid://crhlqilw6piu3" path="res://Assets/Scripts/actual_game.gd" id="1_dh1sc"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="1_hbmky"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4clqh804507" path="res://slot_machine.tscn" id="3_qldh4"]
 [ext_resource type="PackedScene" uid="uid://d3nd7kiqrswxx" path="res://map_display.tscn" id="4_8piaf"]
 [ext_resource type="PackedScene" uid="uid://6ddl2uvhr0fm" path="res://shit_ui.tscn" id="6_fgga8"]
+[ext_resource type="PackedScene" uid="uid://ccuhrqtpqto7e" path="res://menu_shop.tscn" id="7_4ce8n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofr5b"]
 shader = ExtResource("1_ofr5b")
@@ -41,3 +42,6 @@ scale = Vector2(1.46, 1.46)
 [node name="ShitUI" parent="Canvas" instance=ExtResource("6_fgga8")]
 position = Vector2(815, 552)
 scale = Vector2(1.455, 1.455)
+
+[node name="MenuShop" parent="Canvas" instance=ExtResource("7_4ce8n")]
+position = Vector2(-1, 330)
