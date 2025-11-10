@@ -4,6 +4,8 @@ class_name Game
 @onready var Camera := $Camera2D
 @onready var versiontext := $DrawOnTop/VersionText
 
+static var Active : Game
+
 var gameState = "loading" 
 
 var gameDifficulty : String
@@ -11,19 +13,21 @@ var gameDifficulty : String
 var mainScene : Node
 var popup : Node
 
-var gameVersion : String = "0.0.0"
+var gameVersion : String = "0.0.1"
 var osname : String
 var osmode : String
 var osmobile : bool
 
 func _ready():
+	Active = self
+	
 	osname = OS.get_name()
 	osmobile = OS.has_feature("web_android") or OS.has_feature("web_ios") 
 	if osmobile:
 		osmode = "Mobile"
 	else:
 		osmode = "Desktop"
-	versiontext.text = "Version " + gameVersion + " Engine " + osname + " Platform " + osmode
+	versiontext.text = "Version " + gameVersion + " | Platform " + osname + " | Mode " + osmode
 	
 	mainScene = $Menu_Intro
 	gameState = "intro"

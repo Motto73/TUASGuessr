@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3nd7kiqrswxx"]
 
 [ext_resource type="PackedScene" uid="uid://dd0q8xxbij8at" path="res://3d_map.tscn" id="1_e87u4"]
-[ext_resource type="Script" uid="uid://cx7e27w5n85ap" path="res://map_display.gd" id="1_j2rn6"]
+[ext_resource type="Script" uid="uid://cx7e27w5n85ap" path="res://Assets/Scripts/map_display.gd" id="1_j2rn6"]
 
 [sub_resource type="World3D" id="World3D_e87u4"]
 

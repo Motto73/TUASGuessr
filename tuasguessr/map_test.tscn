@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cm1ly5vsjdal4"]
 
-[ext_resource type="PackedScene" uid="uid://rbqb8vuqe61w" path="res://Assets/3D/MapTest.glb" id="1_q1m20"]
+[ext_resource type="PackedScene" uid="uid://rbqb8vuqe61w" path="res://Assets/Scripts/MapTest.glb" id="1_q1m20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1m20"]
 albedo_color = Color(0, 0, 0, 1)

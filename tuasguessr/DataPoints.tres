@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MapDataPoints" load_steps=11 format=3 uid="uid://brqchuj25do8n"]
 
-[ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://MapDataPoint.gd" id="1_gfkhl"]
-[ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://MapDataPoints.gd" id="1_t6g5b"]
+[ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://Assets/Scripts/MapDataPoint.gd" id="1_gfkhl"]
+[ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://Assets/Scripts/MapDataPoints.gd" id="1_t6g5b"]
 
 [sub_resource type="Resource" id="Resource_gfkhl"]
 script = ExtResource("1_gfkhl")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjmmam14ycxr7"]
 
-[ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://menu_leaderboard.gd" id="1_sh85h"]
+[ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://Assets/Scripts/menu_leaderboard.gd" id="1_sh85h"]
 [ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://leaderboard.tscn" id="1_wy7k2"]
 
 [sub_resource type="Gradient" id="Gradient_vm5wq"]
@@ -38,7 +38,7 @@ position = Vector2(-1, -58)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.45
-anchor_top = -0.1
+anchor_top = -0.125
 anchor_right = -0.45
 anchor_bottom = -0.125
 offset_left = 39.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd0q8xxbij8at"]
 
-[ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://3d_map.gd" id="1_6le5j"]
+[ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://Assets/Scripts/3d_map.gd" id="1_6le5j"]
 [ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://marker.tscn" id="3_noguo"]
 [ext_resource type="PackedScene" uid="uid://cm1ly5vsjdal4" path="res://map_test.tscn" id="3_qhuya"]
 
