@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2khgu2qtfe6e"]
 
 [ext_resource type="Script" uid="uid://crhlqilw6piu3" path="res://Assets/Scripts/actual_game.gd" id="1_dh1sc"]
-[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://me_fr.jpg" id="1_hbmky"]
+[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="1_hbmky"]
 [ext_resource type="Shader" uid="uid://bqf6iyedm5x31" path="res://Assets/Materials/owl.gdshader" id="1_ofr5b"]
 [ext_resource type="PackedScene" uid="uid://ci4clqh804507" path="res://slot_machine.tscn" id="3_qldh4"]
 [ext_resource type="PackedScene" uid="uid://d3nd7kiqrswxx" path="res://map_display.tscn" id="4_8piaf"]
