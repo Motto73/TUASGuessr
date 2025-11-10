@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccuhrqtpqto7e"]
+[gd_scene load_steps=8 format=3 uid="uid://ccuhrqtpqto7e"]
 
 [ext_resource type="Script" uid="uid://doxoxyknwgvxu" path="res://Assets/Scripts/menu_shop.gd" id="1_0hmtc"]
-[ext_resource type="Texture2D" uid="uid://cua3edfo083i0" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/7a7nctuirx1c1-1.png" id="2_br30t"]
+[ext_resource type="PackedScene" uid="uid://dru5mte5fci2u" path="res://shop_front.tscn" id="2_0hmtc"]
 
 [sub_resource type="Curve" id="Curve_0hmtc"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -19,6 +19,8 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 0.42352942)
+
+[sub_resource type="World3D" id="World3D_0hmtc"]
 
 [node name="MenuShop" type="Node2D"]
 script = ExtResource("1_0hmtc")
@@ -58,13 +60,19 @@ offset_bottom = -126.0
 text = "Wow! It's the SHOP!"
 label_settings = SubResource("LabelSettings_0hmtc")
 
-[node name="Idk man" type="TextureRect" parent="Control"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
 layout_mode = 0
-offset_left = -460.0
-offset_top = -101.0
-offset_right = -38.0
-offset_bottom = 185.0
-texture = ExtResource("2_br30t")
-expand_mode = 1
+offset_left = -473.0
+offset_top = -107.0
+offset_right = -217.0
+offset_bottom = 149.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+world_3d = SubResource("World3D_0hmtc")
+handle_input_locally = false
+size = Vector2i(446, 301)
+render_target_update_mode = 4
+
+[node name="ShopFront" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_0hmtc")]
 
 [connection signal="button_down" from="Control/Open" to="." method="_on_open_button_down"]

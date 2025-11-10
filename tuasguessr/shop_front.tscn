@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dru5mte5fci2u"]
+
+[ext_resource type="PackedScene" uid="uid://cqv2rwtjy8ubn" path="res://Assets/3D/ShopFront.glb" id="1_xtwnd"]
+[ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://shop_front.gd" id="2_7owm6"]
+[ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://shop_front.tres" id="3_cquyn"]
+[ext_resource type="Texture2D" uid="uid://dbguxai4t0wbc" path="res://Assets/Textures/face_joy.png" id="4_w0sjr"]
+[ext_resource type="PackedScene" uid="uid://6i3345bdn6ng" path="res://shop_item.tscn" id="5_w0sjr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8ng8"]
+transparency = 1
+albedo_texture = ExtResource("4_w0sjr")
+texture_filter = 0
+
+[node name="ShopFront" instance=ExtResource("1_xtwnd")]
+script = ExtResource("2_7owm6")
+
+[node name="Desk" parent="." index="0"]
+material_override = ExtResource("3_cquyn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Desk" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17975998, 0.6064142, 3.700966)
+light_energy = 1.629
+omni_range = 17.857
+
+[node name="Cylinder" parent="." index="1"]
+material_override = ExtResource("3_cquyn")
+
+[node name="Seller man guy" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_cquyn")
+surface_material_override/1 = SubResource("StandardMaterial3D_y8ng8")
+
+[node name="Cylinder_001" parent="." index="3"]
+material_override = ExtResource("3_cquyn")
+
+[node name="Camera3D" type="Camera3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04383278, 0.31258392, 6.915756)
+keep_aspect = 0
+fov = 82.6
+
+[node name="ShopItem" parent="." index="6" instance=ExtResource("5_w0sjr")]
+transform = Transform3D(0.92292154, 0, 0.38498807, 0, 1, 0, -0.38498807, 0, 0.92292154, -0.09629613, -1.0463657, 0.040940285)

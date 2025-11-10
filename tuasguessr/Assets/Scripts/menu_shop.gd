@@ -11,6 +11,8 @@ var width : float
 @export var open := false
 var timer = 0
 
+@onready var shopfront : Shopfront = $Control/SubViewportContainer/SubViewport/ShopFront
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ogplace = position
@@ -27,7 +29,12 @@ func _process(delta):
 	var progress = timer / opentime
 	progress = curve.sample(progress)
 	position = ogplace + Vector2(width * progress, 0)
+	
+	if timer == opentime:
+		shopfront.isvisible = true
 
 
 func _on_open_button_down():
 	open = !open
+	var anim = "Slide_L" if open else "Slide_R"
+	shopfront.play_anim(anim)

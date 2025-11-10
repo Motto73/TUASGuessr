@@ -12,6 +12,7 @@
 shader = ExtResource("1_ofr5b")
 
 [node name="ActualGame" type="Node2D"]
+scale = Vector2(0.9644399, 0.99564976)
 script = ExtResource("1_dh1sc")
 ShortStartPoints = 0.0
 
@@ -44,4 +45,4 @@ position = Vector2(815, 552)
 scale = Vector2(1.455, 1.455)
 
 [node name="MenuShop" parent="Canvas" instance=ExtResource("7_4ce8n")]
-position = Vector2(-1, 330)
+position = Vector2(-1, 282)
