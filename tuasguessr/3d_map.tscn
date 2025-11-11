@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://Assets/Scripts/3d_map.gd" id="1_6le5j"]
 [ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://marker.tscn" id="3_noguo"]
-[ext_resource type="PackedScene" uid="uid://cm1ly5vsjdal4" path="res://map_test.tscn" id="3_qhuya"]
+[ext_resource type="PackedScene" uid="uid://d3wp6si3dh208" path="res://map_assets.tscn" id="3_qhuya"]
 
 [sub_resource type="Environment" id="Environment_6le5j"]
 background_mode = 1
@@ -29,9 +29,17 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55254304, 0, -2.1817756)
 visible = false
 
-[node name="MapTest2" parent="." instance=ExtResource("3_qhuya")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.94542193, 0.17465128, 0.27508962, -0.3258487, 0.5067356, 0.7981489, 0, -0.84422505, 0.53598887, 0, 0.87839746, 0)
 light_energy = 2.438
 shadow_enabled = true
+
+[node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
+
+[node name="ICT2_EXPORT" parent="MapAssets" index="0"]
+visible = false
+
+[node name="ICT1_EXPORT" parent="MapAssets" index="2"]
+visible = false
+
+[editable path="MapAssets"]
