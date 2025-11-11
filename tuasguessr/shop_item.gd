@@ -11,5 +11,5 @@ func _ready():
 
 func _process(delta):
 	timer += delta
-	position = ogpos + sin(timer * bobspeed) * Vector3(0,1,0) * 0.5
+	position = ogpos + sin(timer * bobspeed * 2.0) * Vector3(0,1,0) * 0.25
 	rotate(Vector3.UP, delta * floatspeed)
