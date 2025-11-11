@@ -20,7 +20,9 @@ surface_material_override/0 = ExtResource("3_cquyn")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Desk" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17975998, 0.6064142, 3.700966)
-light_energy = 1.629
+light_color = Color(0.9, 0.96999997, 1, 1)
+light_energy = 2.162
+light_indirect_energy = 1.853
 omni_range = 17.857
 
 [node name="Cylinder" parent="." index="1"]
@@ -49,6 +51,3 @@ fov = 82.6
 
 [node name="ShopItem" parent="." index="6" instance=ExtResource("5_w0sjr")]
 transform = Transform3D(0.92292154, 0, 0.38498807, 0, 1, 0, -0.38498807, 0, 0.92292154, -0.09629613, -1.0463657, 0.040940285)
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_started"]
