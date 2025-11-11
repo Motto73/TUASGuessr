@@ -38,7 +38,7 @@ func play_anim(name):
 	animator.play(name)
 
 func queue_anim(name):
-	animator.clear_queue()
+	#animator.clear_queue()
 	animator.queue(name)
 
 func _on_animation_finished(name):
