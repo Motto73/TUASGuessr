@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbjh2h3m6255" path="res://Assets/Scripts/map_marker.gd" id="1_5dlg4"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="2_e7dnx"]
-[ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://marker.tscn" id="3_e7dnx"]
+[ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://Resource Scenes/marker.tscn" id="3_e7dnx"]
 
 [node name="Map Marker" type="Node3D"]
 script = ExtResource("1_5dlg4")

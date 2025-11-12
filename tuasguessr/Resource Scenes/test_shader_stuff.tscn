@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://c76mr83j8l7v0" path="res://Assets/Materials/shader_box_test.gdshader" id="1_a62xw"]
 [ext_resource type="Shader" uid="uid://ny7yy1xiyv5f" path="res://Assets/Materials/shader_box_grid.gdshader" id="2_dfl3f"]
-[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://shader_box_noise.gdshader" id="3_nfsdt"]
+[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="3_nfsdt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dfl3f"]
 

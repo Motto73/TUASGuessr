@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://Assets/Scripts/map_planner.gd" id="1_hshuq"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_2xphe"]
-[ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://map_marker.tscn" id="2_eh8yn"]
-[ext_resource type="PackedScene" uid="uid://d3wp6si3dh208" path="res://map_assets.tscn" id="4_72roh"]
+[ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://Resource Scenes/map_marker.tscn" id="2_eh8yn"]
+[ext_resource type="PackedScene" uid="uid://d3wp6si3dh208" path="res://Resource Scenes/map_assets.tscn" id="4_72roh"]
 
 [node name="Map Planner" type="Node3D"]
 script = ExtResource("1_hshuq")

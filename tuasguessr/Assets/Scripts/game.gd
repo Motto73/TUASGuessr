@@ -37,13 +37,13 @@ func _process(delta):
 	pass
 
 func startGame():
-	loadMainScene("res://menu_difficulty.tscn")
+	loadMainScene("res://Menus/menu_difficulty.tscn")
 	gameState = "difficultySelect"
 
 func setDifficulty(diff):
 	gameDifficulty = diff;
 	
-	loadMainScene("res://actual_game.tscn")
+	loadMainScene("res://Main Scenes/scene_actual_game.tscn")
 	gameState = "game"
 	(mainScene as ActualGame).game = self
 

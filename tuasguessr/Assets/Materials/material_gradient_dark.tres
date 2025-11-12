@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b7rsd5mtcgmnc"]
 
-[ext_resource type="Shader" uid="uid://b256th2y6pk4" path="res://smooth_sampler_gradient.gdshader" id="1_3v3ep"]
+[ext_resource type="Shader" uid="uid://b256th2y6pk4" path="res://Assets/Materials/smooth_sampler_gradient.gdshader" id="1_3v3ep"]
 [ext_resource type="Texture2D" uid="uid://b4iu1y1gawotf" path="res://Assets/Textures/palette_32_dark.png" id="2_q6f32"]
 
 [resource]

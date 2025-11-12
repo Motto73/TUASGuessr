@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dru5mte5fci2u"]
 
 [ext_resource type="PackedScene" uid="uid://cqv2rwtjy8ubn" path="res://Assets/3D/ShopFront.glb" id="1_xtwnd"]
-[ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://shop_front.gd" id="2_7owm6"]
-[ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://shop_front.tres" id="3_cquyn"]
+[ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://Assets/Scripts/shop_front.gd" id="2_7owm6"]
+[ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="3_cquyn"]
 [ext_resource type="Texture2D" uid="uid://dbguxai4t0wbc" path="res://Assets/Textures/face_joy.png" id="4_w0sjr"]
-[ext_resource type="PackedScene" uid="uid://6i3345bdn6ng" path="res://shop_item.tscn" id="5_w0sjr"]
+[ext_resource type="PackedScene" uid="uid://6i3345bdn6ng" path="res://Resource Scenes/shop_item.tscn" id="5_w0sjr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8ng8"]
 transparency = 1

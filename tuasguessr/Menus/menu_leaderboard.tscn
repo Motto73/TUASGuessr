@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjmmam14ycxr7"]
 
 [ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://Assets/Scripts/menu_leaderboard.gd" id="1_sh85h"]
-[ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://leaderboard.tscn" id="1_wy7k2"]
+[ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://Widgets/widget_leaderboard.tscn" id="1_wy7k2"]
 
 [sub_resource type="Gradient" id="Gradient_vm5wq"]
 

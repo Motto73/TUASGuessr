@@ -1,8 +1,0 @@
-[gd_scene load_steps=0 format=3 uid="uid://4tr7smla7hlt"]
-
-[node name="TexttestThingIdk" type="Node2D"]
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "wassup"
