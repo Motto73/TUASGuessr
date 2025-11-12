@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6oprnq4n2s10"
-path.s3tc="res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"
+uid="uid://dhdo4gse6shyw"
+path.s3tc="res://.godot/imported/ShopFront_face_normal.png-c005cede94c5ff5f7964cf774cb80896.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c2547ca76be80065fb036dc0d71871cc"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/face_normal.png"
-dest_files=["res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"]
+source_file="res://Assets/3D/ShopFront_face_normal.png"
+dest_files=["res://.godot/imported/ShopFront_face_normal.png-c005cede94c5ff5f7964cf774cb80896.s3tc.ctex"]
 
 [params]
 

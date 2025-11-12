@@ -4,3 +4,5 @@
 
 [resource]
 albedo_texture = ExtResource("1_xxd1x")
+texture_filter = 1
+texture_repeat = false

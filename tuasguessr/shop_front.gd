@@ -29,6 +29,8 @@ var exp_normals = ["Idle_0", "Idle_1", "Idle_2", "Idle_Bored_0", "Idle_Bored_1",
 func _ready():
 	face_mat = sellerguy.get_surface_override_material(1) as Material
 	face_mat.albedo_texture = face_normal
+	animator.animation_finished.connect(_on_animation_finished)
+	animator.animation_started.connect(_on_animation_started)
 
 func _process(delta):
 	if !animator.is_playing():
@@ -38,7 +40,7 @@ func play_anim(name):
 	animator.play(name)
 
 func queue_anim(name):
-	animator.clear_queue()
+	#animator.clear_queue()
 	animator.queue(name)
 
 func _on_animation_finished(name):

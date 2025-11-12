@@ -16,14 +16,26 @@ script = ExtResource("2_7owm6")
 
 [node name="Desk" parent="." index="0"]
 material_override = ExtResource("3_cquyn")
+surface_material_override/0 = ExtResource("3_cquyn")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Desk" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17975998, 0.6064142, 3.700966)
-light_energy = 1.629
+light_color = Color(0.9, 0.96999997, 1, 1)
+light_energy = 2.162
+light_indirect_energy = 1.853
 omni_range = 17.857
 
 [node name="Cylinder" parent="." index="1"]
 material_override = ExtResource("3_cquyn")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(0.21587975, 1.1639839e-07, 2.5734886e-08, 0.97642)
+bones/2/position = Vector3(2.1612989e-07, 1.1610879, 0.057971667)
+bones/2/rotation = Quaternion(0.051522054, -4.7905812e-14, 1.2283813e-08, 0.9986719)
+bones/3/rotation = Quaternion(0.5109716, -0.23721266, -0.52930343, 0.6344101)
+bones/4/rotation = Quaternion(0.55996954, 0.14414158, 0.5261419, 0.6235641)
+bones/5/rotation = Quaternion(0.54145473, 0.30578598, 0.42425832, 0.6582756)
+bones/6/rotation = Quaternion(0.5603497, 0.38720018, -0.12317113, 0.7217431)
 
 [node name="Seller man guy" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_cquyn")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccuhrqtpqto7e"]
+[gd_scene load_steps=9 format=3 uid="uid://ccuhrqtpqto7e"]
 
 [ext_resource type="Script" uid="uid://doxoxyknwgvxu" path="res://Assets/Scripts/menu_shop.gd" id="1_0hmtc"]
 [ext_resource type="PackedScene" uid="uid://dru5mte5fci2u" path="res://shop_front.tscn" id="2_0hmtc"]
+[ext_resource type="Texture2D" uid="uid://dhdo4gse6shyw" path="res://Assets/3D/ShopFront_face_normal.png" id="3_br30t"]
 
 [sub_resource type="Curve" id="Curve_0hmtc"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -74,5 +75,24 @@ size = Vector2i(446, 301)
 render_target_update_mode = 4
 
 [node name="ShopFront" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_0hmtc")]
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -258.0
+offset_top = 144.00002
+offset_right = -180.0
+offset_bottom = 175.00002
+scale = Vector2(2.543378, 1.1538413)
+text = "Reroll "
+icon = ExtResource("3_br30t")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -388.0
+offset_top = -107.0
+offset_right = -94.0
+offset_bottom = -58.0
+text = "Gotta fit a window that explains items
+that you hover on somewhere idk"
 
 [connection signal="button_down" from="Control/Open" to="." method="_on_open_button_down"]

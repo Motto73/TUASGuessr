@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6oprnq4n2s10"
-path.s3tc="res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"
+uid="uid://dxuy4gl4t1k2m"
+path.s3tc="res://.godot/imported/ICT_palette_map_0.png-6012815c3eb50ed9da47dbb971086a10.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7919f6de1ad2bfc93e1c430d3e89fd4b"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/face_normal.png"
-dest_files=["res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"]
+source_file="res://Assets/3D/ICT_palette_map_0.png"
+dest_files=["res://.godot/imported/ICT_palette_map_0.png-6012815c3eb50ed9da47dbb971086a10.s3tc.ctex"]
 
 [params]
 

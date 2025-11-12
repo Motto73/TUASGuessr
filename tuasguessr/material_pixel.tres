@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d3odglnngjjrw"]
+
+[ext_resource type="Shader" uid="uid://b256th2y6pk4" path="res://smooth_sampler_gradient.gdshader" id="1_atsln"]
+[ext_resource type="Texture2D" uid="uid://cexmq85wc1ex7" path="res://Assets/Textures/palette_32.png" id="2_h0amd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_atsln")
+shader_parameter/Palette = ExtResource("2_h0amd")
