@@ -47,7 +47,7 @@ func buttonpressed(num):
 	Game.Active.actualGame.currentFloor = num
 
 
-
+#Yes, this is probably very dumb.
 func _on_floor_0_button_down():
 	buttonpressed(0)
 func _on_floor_1_button_down():
