@@ -2,8 +2,8 @@ extends Node2D
 
 class_name  ShitUI
 
-@onready var timer := $ColorRect2/Timer
-@onready var points := $ColorRect3/Points
+@onready var timer := find_child("Timer", true, false)
+@onready var points := find_child("Points", true, false)
 
 func set_points(amount):
 	points.text = str(amount)

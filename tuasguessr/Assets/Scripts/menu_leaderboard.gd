@@ -4,9 +4,9 @@ class_name MenuLeaderboard
 
 var points = 0
 
-@onready var namefield := $Control/Namefield
-@onready var pointsield := $Control/Pointsfield
-@onready var submit := $Control/Submit
+@onready var namefield := find_child("Namefield", true, false)
+@onready var pointsield := find_child("Pointsfield", true, false)
+@onready var submit := find_child("Submit", true, false)
 
 var actualgame : ActualGame
 

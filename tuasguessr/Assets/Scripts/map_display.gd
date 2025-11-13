@@ -3,8 +3,8 @@ extends Node2D
 class_name MapDisplay
 
 @onready var actualgame : ActualGame = $"../.."
-@onready var map3d : Map3D = $"Control/SubViewportContainer/SubViewport/3dMap"
-@onready var button : Button = $Control/Button
+@onready var map3d : Map3D = find_child("3dMap", true, false)
+@onready var button : Button = find_child("Button", true, false)
 
 var currentGuess : Vector3
 var actualPoint : MapDataPoint
