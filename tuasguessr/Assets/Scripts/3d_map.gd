@@ -46,7 +46,7 @@ func _process(delta):
 			place()
 		dragtimer = 0
 
-#TODO - Use abstract input and handle mobile vs mouse elsewhere
+#TODO - Use abstract input and handle mobile vs mouse elsewhere / UNLESS...?
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -83,8 +83,10 @@ func place():
 func reveal():
 	markerstart.visible = true
 	markerend.visible = true
-	markerend.position = mapdisplay.actualPoint.position
-
+	var pos = mapdisplay.actualPoint.position
+	pos.y = 0
+	markerend.position = pos
+	
 func reset():
 	markerstart.visible = false
 	markerend.visible = false

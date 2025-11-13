@@ -1,60 +1,16 @@
-[gd_resource type="Resource" script_class="MapDataPoints" load_steps=11 format=3 uid="uid://brqchuj25do8n"]
+[gd_resource type="Resource" script_class="MapDataPoints" load_steps=4 format=3 uid="uid://brqchuj25do8n"]
 
 [ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://Assets/Scripts/MapDataPoint.gd" id="1_gfkhl"]
 [ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://Assets/Scripts/MapDataPoints.gd" id="2_t4pk4"]
 
-[sub_resource type="Resource" id="Resource_8swuk"]
+[sub_resource type="Resource" id="Resource_gfkhl"]
 script = ExtResource("1_gfkhl")
 name = "Debug_Owl"
 imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg"
 difficulty = "easy"
 position = Vector3(1.7538776, 0, 1.7224014)
 
-[sub_resource type="Resource" id="Resource_pt55m"]
-script = ExtResource("1_gfkhl")
-name = "Debug_3"
-imgresource = "res://Assets/Textures/Logo_512.png"
-difficulty = "impossible"
-position = Vector3(-0.13702881, 2.3841858e-07, 1.120959)
-
-[sub_resource type="Resource" id="Resource_ydlyk"]
-script = ExtResource("1_gfkhl")
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/image0.jpg"
-difficulty = "easy"
-position = Vector3(1.6532826, 0, -0.22469205)
-
-[sub_resource type="Resource" id="Resource_ab25k"]
-script = ExtResource("1_gfkhl")
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/real-smurf1.webp"
-difficulty = "easy"
-position = Vector3(0.5972011, 0, -2.0392914)
-
-[sub_resource type="Resource" id="Resource_i6amb"]
-script = ExtResource("1_gfkhl")
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/7a7nctuirx1c1-1.png"
-difficulty = "easy"
-position = Vector3(-1.4218051, 0, -0.5976521)
-
-[sub_resource type="Resource" id="Resource_a8f4l"]
-script = ExtResource("1_gfkhl")
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/shut_fuck_your_up_shut_the_fuck_up.png"
-difficulty = "easy"
-position = Vector3(-0.6554158, 0, -1.4659452)
-
-[sub_resource type="Resource" id="Resource_1bha5"]
-script = ExtResource("1_gfkhl")
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/lt4nxmbyea141.png"
-difficulty = "easy"
-position = Vector3(1.5601454, 0, -1.6625384)
-
-[sub_resource type="Resource" id="Resource_8b6he"]
-script = ExtResource("1_gfkhl")
-name = "vsdvsd"
-imgresource = "res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/real-smurf1.webp"
-difficulty = "hard"
-position = Vector3(0.86559796, 0, 0.44509327)
-
 [resource]
 script = ExtResource("2_t4pk4")
-DataPoints = [SubResource("Resource_8swuk"), SubResource("Resource_pt55m"), SubResource("Resource_ydlyk"), SubResource("Resource_ab25k"), SubResource("Resource_i6amb"), SubResource("Resource_a8f4l"), SubResource("Resource_1bha5"), SubResource("Resource_8b6he")]
+DataPoints = [SubResource("Resource_gfkhl")]
 metadata/_custom_type_script = "uid://7nulugirt1qg"

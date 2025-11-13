@@ -41,6 +41,15 @@ bones/6/rotation = Quaternion(0.5603497, 0.38720018, -0.12317113, 0.7217431)
 surface_material_override/0 = ExtResource("3_cquyn")
 surface_material_override/1 = SubResource("StandardMaterial3D_y8ng8")
 
+[node name="ShopItem" parent="Armature/Skeleton3D" index="1" instance=ExtResource("5_w0sjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1807928, 0, 1.1526783)
+
+[node name="ShopItem2" parent="Armature/Skeleton3D" index="2" instance=ExtResource("5_w0sjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9863925, 0, -1.6492777)
+
+[node name="ShopItem3" parent="Armature/Skeleton3D" index="3" instance=ExtResource("5_w0sjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66030025, 0, -1.4296465)
+
 [node name="Cylinder_001" parent="." index="3"]
 material_override = ExtResource("3_cquyn")
 
