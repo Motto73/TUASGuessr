@@ -47,4 +47,40 @@ offset_right = 184.0
 offset_bottom = 51.0
 text = "Submit"
 
+[node name="Floor0" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = -60.0
+offset_right = 191.0
+offset_bottom = -29.0
+text = "0"
+
+[node name="Floor1" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = -96.0
+offset_right = 191.0
+offset_bottom = -65.0
+text = "1"
+
+[node name="Floor2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -133.0
+offset_right = 192.0
+offset_bottom = -102.0
+text = "2"
+
+[node name="Floor3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -170.0
+offset_right = 192.0
+offset_bottom = -139.0
+text = "3"
+
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_down"]
+[connection signal="button_down" from="Control/Floor0" to="." method="_on_floor_0_button_down"]
+[connection signal="button_down" from="Control/Floor1" to="." method="_on_floor_1_button_down"]
+[connection signal="button_down" from="Control/Floor2" to="." method="_on_floor_2_button_down"]
+[connection signal="button_down" from="Control/Floor3" to="." method="_on_floor_3_button_down"]

@@ -24,6 +24,12 @@ var dragrotate := false
 var dragmove := false
 var dragtimer := 0.0
 
+var currentfloor
+var floors : Array
+
+func _ready():
+	floors = [$MapAssets/ICT0_EXPORT, $MapAssets/ICT1_EXPORT, $MapAssets/ICT2_EXPORT, $MapAssets/ICT3_EXPORT]
+	show_floor(1)
 
 func _process(delta):
 	if CanMove:
@@ -93,3 +99,8 @@ func reset():
 
 func lock():
 	CanMove = false
+
+func show_floor(num):
+	currentfloor = num
+	for i in len(floors):
+		floors[i].visible = i == num;
