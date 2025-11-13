@@ -1,9 +1,9 @@
 extends Node2D
 
 var diff = ""
-@onready var accept : Button = $Control/Accept
+@onready var accept : Button = find_child("Accept", true, false)
 
-@onready var game : Game = $".."
+@onready var game : Game = Game.Active
 
 func _on_ez_button_down():
 	SetDiff("easy")

@@ -9,11 +9,12 @@ script = ExtResource("1_5dlg4")
 Picture = ExtResource("2_e7dnx")
 
 [node name="Preview" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5305526, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81059194, 0)
 visible = false
-pixel_size = 0.001
+pixel_size = 0.0003
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_e7dnx")
 
 [node name="Marker" parent="." instance=ExtResource("3_e7dnx")]
+transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, -0.03552586, 0)

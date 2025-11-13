@@ -4,7 +4,10 @@ class_name Game
 @onready var Camera := $Camera2D
 @onready var versiontext := $DrawOnTop/VersionText
 
+##Static reference to the current active game
 static var Active : Game
+
+var actualGame : ActualGame
 
 var gameState = "loading" 
 
@@ -46,6 +49,7 @@ func setDifficulty(diff):
 	loadMainScene("res://Main Scenes/scene_actual_game.tscn")
 	gameState = "game"
 	(mainScene as ActualGame).game = self
+	actualGame = mainScene as ActualGame
 
 func loadMainScene(res):
 	if mainScene:
