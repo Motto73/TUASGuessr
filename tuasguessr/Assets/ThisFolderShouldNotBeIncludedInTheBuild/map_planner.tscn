@@ -1,17 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj73vj630gu0g"]
+[gd_scene load_steps=25 format=3 uid="uid://dj73vj630gu0g"]
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://Assets/Scripts/map_planner.gd" id="1_hshuq"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_2xphe"]
 [ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://Resource Scenes/map_marker.tscn" id="2_eh8yn"]
 [ext_resource type="PackedScene" uid="uid://d3wp6si3dh208" path="res://Resource Scenes/map_assets.tscn" id="4_72roh"]
+[ext_resource type="Texture2D" uid="uid://uhuq0a244h60" path="res://Assets/Game Images/IMG_20251111_144036_compressed.webp" id="5_1do2g"]
+[ext_resource type="Texture2D" uid="uid://psl5qyjq60yl" path="res://Assets/Game Images/IMG_20251111_145956_compressed.webp" id="5_y2tyf"]
+[ext_resource type="Texture2D" uid="uid://bw8cxbjevcp2f" path="res://Assets/Game Images/IMG_20251111_145740_compressed.webp" id="6_1do2g"]
+[ext_resource type="Texture2D" uid="uid://ch845ddecqle2" path="res://Assets/Game Images/IMG_20251111_145636_compressed.webp" id="7_x00tv"]
+[ext_resource type="Texture2D" uid="uid://chvdbrum6nyla" path="res://Assets/Game Images/IMG_20251111_145602_compressed.webp" id="8_jrm6j"]
+[ext_resource type="Texture2D" uid="uid://dc28uamhwbqg" path="res://Assets/Game Images/IMG_20251111_145509_compressed.webp" id="9_w045q"]
+[ext_resource type="Texture2D" uid="uid://440g3x1jqs13" path="res://Assets/Game Images/IMG_20251111_145350_compressed.webp" id="10_jrm6j"]
+[ext_resource type="Texture2D" uid="uid://clwaixpww21a" path="res://Assets/Game Images/IMG_20251111_145213_compressed.webp" id="11_w045q"]
+[ext_resource type="Texture2D" uid="uid://y5lferkyoc4b" path="res://Assets/Game Images/IMG_20251111_145107_compressed.webp" id="12_rts7o"]
+[ext_resource type="Texture2D" uid="uid://4ximgkvyisx8" path="res://Assets/Game Images/IMG_20251111_145011_compressed.webp" id="13_1sr4s"]
+[ext_resource type="Texture2D" uid="uid://lfhxgy57kkal" path="res://Assets/Game Images/IMG_20251111_144724_compressed.webp" id="13_u86vc"]
+[ext_resource type="Texture2D" uid="uid://cjna5rm4cxni8" path="res://Assets/Game Images/IMG_20251111_144638_compressed.webp" id="14_3lufa"]
+[ext_resource type="Texture2D" uid="uid://b58hoefca82aj" path="res://Assets/Game Images/IMG_20251111_144918_compressed.webp" id="14_oxamu"]
+[ext_resource type="Texture2D" uid="uid://c6snatp4cfjo2" path="res://Assets/Game Images/IMG_20251111_144538_compressed.webp" id="15_ht3oo"]
+[ext_resource type="Texture2D" uid="uid://dwoau8m3682nq" path="res://Assets/Game Images/IMG_20251111_144801_compressed.webp" id="15_u86vc"]
+[ext_resource type="Texture2D" uid="uid://cfvn4dee6d1i4" path="res://Assets/Game Images/IMG_20251111_144349_compressed.webp" id="16_hfdkr"]
+[ext_resource type="Texture2D" uid="uid://dv656j337qhrw" path="res://Assets/Game Images/IMG_20251111_144134_compressed.webp" id="17_ao4qn"]
+[ext_resource type="Texture2D" uid="uid://h1f081isyfdt" path="res://Assets/Game Images/IMG_20251111_143946_compressed.webp" id="18_hfdkr"]
+[ext_resource type="Texture2D" uid="uid://dnk8jotjhypd0" path="res://Assets/Game Images/IMG_20251111_143730_compressed.webp" id="20_i01q8"]
+[ext_resource type="Texture2D" uid="uid://ccyw6hexkkms7" path="res://Assets/Game Images/IMG_20251111_143806_compressed.webp" id="21_e3agl"]
 
-[node name="Map Planner" type="Node3D"]
+[node name="Planner Manual Refresh" type="Node3D"]
 script = ExtResource("1_hshuq")
 DataAsset = ExtResource("2_2xphe")
-
-[node name="Map Marker" parent="." instance=ExtResource("2_eh8yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7538776, 0, 1.7224014)
-ImageName = "Debug_Owl"
 
 [node name="Press eyes to hide->" parent="." instance=ExtResource("4_72roh")]
 
@@ -20,5 +36,102 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="ICT3_EXPORT" parent="Press eyes to hide->" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Map Marker" parent="Press eyes to hide->/ICT3_EXPORT" index="0" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.978, 0, 0.272)
+Picture = ExtResource("5_y2tyf")
+Difficulty = "medium"
+
+[node name="Map Marker2" parent="Press eyes to hide->/ICT3_EXPORT" index="1" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3589323, 0, -0.33667833)
+Picture = ExtResource("6_1do2g")
+
+[node name="Map Marker3" parent="Press eyes to hide->/ICT3_EXPORT" index="2" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.406422, 0, -0.31158668)
+Picture = ExtResource("7_x00tv")
+Difficulty = "medium"
+
+[node name="Map Marker4" parent="Press eyes to hide->/ICT3_EXPORT" index="3" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.097023, 0, -0.31158668)
+Picture = ExtResource("8_jrm6j")
+Difficulty = "medium"
+
+[node name="Map Marker5" parent="Press eyes to hide->/ICT3_EXPORT" index="4" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.027673, 0, -1.0130893)
+Picture = ExtResource("9_w045q")
+Difficulty = "hard2"
+
+[node name="Map Marker6" parent="Press eyes to hide->/ICT3_EXPORT" index="5" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.126912, 0, -0.31775963)
+Picture = ExtResource("10_jrm6j")
+Difficulty = "medium"
+
+[node name="Map Marker7" parent="Press eyes to hide->/ICT3_EXPORT" index="6" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13338959, 0, -0.5511656)
+Picture = ExtResource("11_w045q")
+
+[node name="Map Marker8" parent="Press eyes to hide->/ICT3_EXPORT" index="7" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047785416, 0, -0.35735524)
+Picture = ExtResource("12_rts7o")
+
+[node name="Map Marker12" parent="Press eyes to hide->/ICT3_EXPORT" index="8" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21627639, 0, -0.3486877)
+Picture = ExtResource("13_u86vc")
+
+[node name="Map Marker13" parent="Press eyes to hide->/ICT3_EXPORT" index="9" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2351421, 0, -0.5799167)
+Picture = ExtResource("14_3lufa")
+Difficulty = "medium"
+
+[node name="Map Marker14" parent="Press eyes to hide->/ICT3_EXPORT" index="10" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5202758, 0, -0.7811751)
+Picture = ExtResource("15_ht3oo")
+Difficulty = "medium"
+
+[node name="Map Marker15" parent="Press eyes to hide->/ICT3_EXPORT" index="11" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.252729, 0, -0.05199009)
+Picture = ExtResource("16_hfdkr")
+Difficulty = "medium"
+
+[node name="Map Marker16" parent="Press eyes to hide->/ICT3_EXPORT" index="12" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.217875, 0, 0.26684234)
+Picture = ExtResource("17_ao4qn")
+
+[node name="Map Marker18" parent="Press eyes to hide->/ICT3_EXPORT" index="13" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1665735, 0, 2.0758939)
+Picture = ExtResource("18_hfdkr")
+Difficulty = "medium"
+
+[node name="Map Marker17" parent="Press eyes to hide->/ICT3_EXPORT" index="14" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01117, 0, 0.46211883)
+Picture = ExtResource("5_1do2g")
+Difficulty = "medium"
+
+[node name="Map Marker20" parent="Press eyes to hide->/ICT3_EXPORT" index="15" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.970956, 0, 0.9363514)
+Picture = ExtResource("20_i01q8")
+Difficulty = "medium"
+
+[node name="Map Marker19" parent="Press eyes to hide->/ICT3_EXPORT" index="16" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7938566, 0, 0.7150189)
+Picture = ExtResource("21_e3agl")
+Difficulty = "medium"
+
+[node name="Map Marker9" parent="Press eyes to hide->/ICT3_EXPORT" index="17" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93501294, 0, -0.31809053)
+Picture = ExtResource("13_1sr4s")
+Difficulty = "medium"
+
+[node name="Map Marker10" parent="Press eyes to hide->/ICT3_EXPORT" index="18" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58217776, 0, 0.33856294)
+Picture = ExtResource("14_oxamu")
+Difficulty = "medium"
+
+[node name="Map Marker11" parent="Press eyes to hide->/ICT3_EXPORT" index="19" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17230695, 0, 0.3342496)
+Picture = ExtResource("15_u86vc")
+
+[node name="ICT0_EXPORT" parent="Press eyes to hide->" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [editable path="Press eyes to hide->"]

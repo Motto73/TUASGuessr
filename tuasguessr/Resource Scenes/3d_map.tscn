@@ -15,7 +15,7 @@ CanMove = true
 ClickVSDrag = 0.2
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5307627, -0.8475205, 0, 0.8475205, 0.5307627, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.5307627, -0.8475205, 0, 0.8475205, 0.5307627, 2.4901056, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.375154, 0)
@@ -37,6 +37,9 @@ shadow_enabled = true
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
 
 [node name="ICT2_EXPORT" parent="MapAssets" index="0"]
+visible = false
+
+[node name="ICT3_EXPORT" parent="MapAssets" index="1"]
 visible = false
 
 [node name="ICT1_EXPORT" parent="MapAssets" index="2"]

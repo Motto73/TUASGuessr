@@ -6,3 +6,4 @@ class_name MapDataPoint
 @export var imgresource: String
 @export var difficulty: String
 @export var position: Vector3
+@export var floor: int

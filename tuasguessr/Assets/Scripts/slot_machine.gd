@@ -14,10 +14,8 @@ var images : Array = []
 
 var rng := RandomNumberGenerator.new()
 
-@onready var display := $Control/Display
-@onready var button := $Control/RollButton
-
-@onready var actualgame : ActualGame = $"../.."
+@onready var display := find_child("Display", true, false)
+@onready var button := find_child("RollButton", true, false)
 
 var selectedPoint : MapDataPoint
 
@@ -43,7 +41,7 @@ func _on_roll_button_button_down():
 		state = "rolling"
 		timer = 0
 	button.disabled = true
-	actualgame.hide_map()
+	Game.Active.actualGame.hide_map()
 
 func show_random_image():
 	var rand = rng.randi_range(0, len(images) - 1)
@@ -61,7 +59,7 @@ func select_point():
 	var rand = rng.randi_range(0, len(Data.DataPoints) - 1)
 	display.texture = images[rand]
 	selectedPoint = Data.DataPoints[rand]
-	actualgame.set_datapoint(selectedPoint)
+	Game.Active.actualGame.set_datapoint(selectedPoint)
 
 func lock():
 	state = "locked"

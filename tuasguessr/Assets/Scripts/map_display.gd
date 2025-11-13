@@ -2,9 +2,8 @@ extends Node2D
 
 class_name MapDisplay
 
-@onready var actualgame : ActualGame = $"../.."
-@onready var map3d : Map3D = $"Control/SubViewportContainer/SubViewport/3dMap"
-@onready var button : Button = $Control/Button
+@onready var map3d : Map3D = find_child("3dMap", true, false)
+@onready var button : Button = find_child("Button", true, false)
 
 var currentGuess : Vector3
 var actualPoint : MapDataPoint
@@ -21,7 +20,7 @@ func _on_button_down():
 	state = "accepted"
 	map3d.reveal()
 	close()
-	actualgame.eval_points()
+	Game.Active.actualGame.eval_points()
 
 func open(data):
 	actualPoint = data
@@ -41,3 +40,19 @@ func lock():
 	state = "locked"
 	button.disabled = true
 	map3d.lock()
+
+
+func buttonpressed(num):
+	map3d.show_floor(num)
+	Game.Active.actualGame.currentFloor = num
+
+
+
+func _on_floor_0_button_down():
+	buttonpressed(0)
+func _on_floor_1_button_down():
+	buttonpressed(1)
+func _on_floor_2_button_down():
+	buttonpressed(2)
+func _on_floor_3_button_down():
+	buttonpressed(3)

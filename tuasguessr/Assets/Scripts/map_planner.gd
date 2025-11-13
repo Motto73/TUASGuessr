@@ -14,7 +14,7 @@ func _process(delta):
 func refresh():
 	print("Attempting to save map data...")
 	var children : Array = []
-	for c : Node in get_children():
+	for c : Node in find_children("", "MapMarker", true, false):
 		if c is MapMarker:
 			children.append(c)
 	DataAsset.refresh(children)

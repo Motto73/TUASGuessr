@@ -25,7 +25,7 @@ var game : Game
 var currentData : MapDataPoint
 
 var points = 0
-
+var currentFloor : int
 var roundtimer = 0
 
 var state = "loading"
@@ -74,7 +74,7 @@ func end_game():
 	
 	if popup:
 		popup.queue_free()
-	popup = load("res://menu_leaderboard.tscn").instantiate()
+	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
 	canvas.add_child(popup)
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)

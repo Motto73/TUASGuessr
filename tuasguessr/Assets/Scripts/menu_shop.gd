@@ -11,7 +11,7 @@ var width : float
 @export var open := false
 var timer = 0
 
-@onready var shopfront : Shopfront = $Control/SubViewportContainer/SubViewport/ShopFront
+@onready var shopfront : Shopfront = find_child("ShopFront", true, false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
