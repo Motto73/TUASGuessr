@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcm7rr4moqvry"
-path.s3tc="res://.godot/imported/shop_palette.png-2f3e548305dfdc35b7a9393461f21bda.s3tc.ctex"
+uid="uid://by6iev67qw5lb"
+path.s3tc="res://.godot/imported/hello.png-acabf330025f353f9f8b98e4f3644f06.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/shop_palette.png"
-dest_files=["res://.godot/imported/shop_palette.png-2f3e548305dfdc35b7a9393461f21bda.s3tc.ctex"]
+source_file="res://Assets/Textures/hello.png"
+dest_files=["res://.godot/imported/hello.png-acabf330025f353f9f8b98e4f3644f06.s3tc.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

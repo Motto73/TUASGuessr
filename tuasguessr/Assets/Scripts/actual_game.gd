@@ -82,3 +82,15 @@ func end_game():
 
 func new_game():
 	game.new_game()
+
+# Leaderboard
+func post_score(username):
+	print("Saving score for ", username)
+	#This method is called when the game is ready to post the score.
+	# You can access name with: username
+	# You can access points with : points
+	
+func load_scoreboard() -> Array:
+	return []
+	#This method is called when the leaderboard wants to load the scores. Returns an array
+	#Use await here

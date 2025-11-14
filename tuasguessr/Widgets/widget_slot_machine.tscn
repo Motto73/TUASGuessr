@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ci4clqh804507"]
 
-[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="1_agdmm"]
 [ext_resource type="Script" uid="uid://cc5b3iv6gjlvw" path="res://Assets/Scripts/slot_machine.gd" id="1_nmlme"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://DataPoints.tres" id="2_i6cki"]
+[ext_resource type="Texture2D" uid="uid://dwoau8m3682nq" path="res://Assets/Game Images/IMG_20251111_144801_compressed.webp" id="3_nf4e5"]
 
 [sub_resource type="Gradient" id="Gradient_nmlme"]
 offsets = PackedFloat32Array(0, 0.33865815, 0.6645367, 1)
@@ -55,7 +55,7 @@ offset_left = -157.0
 offset_top = -200.0
 offset_right = 160.0
 offset_bottom = 182.0
-texture = ExtResource("1_agdmm")
+texture = ExtResource("3_nf4e5")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Control"]
@@ -86,6 +86,7 @@ offset_left = -176.0
 offset_top = 204.0
 offset_right = 176.0
 offset_bottom = 288.0
+focus_mode = 0
 text = "ROLL!!! I LOVE GAMBLINGGGG!!!!!"
 
 [connection signal="button_down" from="Control/RollButton" to="." method="_on_roll_button_button_down"]

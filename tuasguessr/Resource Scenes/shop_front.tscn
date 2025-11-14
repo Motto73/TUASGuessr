@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dru5mte5fci2u"]
+[gd_scene load_steps=8 format=3 uid="uid://dru5mte5fci2u"]
 
 [ext_resource type="PackedScene" uid="uid://cqv2rwtjy8ubn" path="res://Assets/3D/ShopFront.glb" id="1_xtwnd"]
 [ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://Assets/Scripts/shop_front.gd" id="2_7owm6"]
@@ -11,6 +11,15 @@ transparency = 1
 albedo_texture = ExtResource("4_w0sjr")
 texture_filter = 0
 
+[sub_resource type="Environment" id="Environment_s3nf8"]
+background_mode = 1
+ambient_light_source = 3
+ambient_light_color = Color(0.19155225, 0.20632175, 0.36246842, 1)
+ambient_light_energy = 2.97
+glow_enabled = true
+glow_intensity = 1.05
+glow_bloom = 0.14
+
 [node name="ShopFront" instance=ExtResource("1_xtwnd")]
 script = ExtResource("2_7owm6")
 
@@ -19,9 +28,9 @@ material_override = ExtResource("3_cquyn")
 surface_material_override/0 = ExtResource("3_cquyn")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Desk" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17975998, 0.6064142, 3.700966)
-light_color = Color(0.9, 0.96999997, 1, 1)
-light_energy = 2.162
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17975998, 2.8256626, 4.824428)
+light_color = Color(0.8540457, 0.9535063, 0.9999998, 1)
+light_energy = 3.78
 light_indirect_energy = 1.853
 omni_range = 17.857
 
@@ -53,6 +62,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66030025, 0, -1.4296465)
 [node name="Cylinder_001" parent="." index="3"]
 material_override = ExtResource("3_cquyn")
 
+[node name="Cylinder_002" parent="." index="4"]
+material_override = ExtResource("3_cquyn")
+
 [node name="Camera3D" type="Camera3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04383278, 0.31258392, 6.915756)
 keep_aspect = 0
@@ -60,3 +72,6 @@ fov = 82.6
 
 [node name="ShopItem" parent="." index="6" instance=ExtResource("5_w0sjr")]
 transform = Transform3D(0.92292154, 0, 0.38498807, 0, 1, 0, -0.38498807, 0, 0.92292154, -0.09629613, -1.0463657, 0.040940285)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="8"]
+environment = SubResource("Environment_s3nf8")

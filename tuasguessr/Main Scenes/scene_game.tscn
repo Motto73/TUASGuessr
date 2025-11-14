@@ -33,3 +33,5 @@ text = "Versiontext. Hello, hiii hello hi, hi hello! Hello, hi! Hello hii... Hi!
 label_settings = SubResource("LabelSettings_e2o6t")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
