@@ -36,13 +36,4 @@ shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
 
-[node name="ICT2_EXPORT" parent="MapAssets" index="0"]
-visible = false
-
-[node name="ICT3_EXPORT" parent="MapAssets" index="1"]
-visible = false
-
-[node name="ICT1_EXPORT" parent="MapAssets" index="2"]
-visible = false
-
 [editable path="MapAssets"]
