@@ -2,7 +2,6 @@ extends Node2D
 
 class_name  SlotMachine
 
-@export_category("Peniz")
 @export var RollTime : float = 1.0
 @export var RandomImageTime : float = 0.1
 @export var Data : MapDataPoints

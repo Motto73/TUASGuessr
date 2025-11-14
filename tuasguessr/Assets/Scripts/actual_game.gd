@@ -82,3 +82,10 @@ func end_game():
 
 func new_game():
 	game.new_game()
+
+# Leaderboard
+func post_score(username):
+	print("Saving score for ", username)
+	
+func load_scoreboard() -> Array:
+	return [] 

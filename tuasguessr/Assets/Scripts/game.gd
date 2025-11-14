@@ -22,6 +22,10 @@ var osname : String
 var osmode : String
 var osmobile : bool
 
+const FIRESTORE_BASE := "REPLACE"
+const FIRESTORE_QUERY := "REPLACE"
+const API_KEY := "REPLACE"
+
 func _ready():
 	Active = self
 	
@@ -35,9 +39,6 @@ func _ready():
 	
 	mainScene = $Menu_Intro
 	gameState = "intro"
-
-func _process(delta):
-	pass
 
 func startGame():
 	loadMainScene("res://Menus/menu_difficulty.tscn")
