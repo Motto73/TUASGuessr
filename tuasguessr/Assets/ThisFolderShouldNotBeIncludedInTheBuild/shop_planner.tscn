@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8speb36j4x3y"]
+
+[ext_resource type="Script" uid="uid://blyk6q40em2j5" path="res://Resource Scenes/shop_planner.gd" id="1_21xs8"]
+[ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Resource Scenes/Items.tres" id="2_gupfh"]
+[ext_resource type="PackedScene" uid="uid://6i3345bdn6ng" path="res://Resource Scenes/shop_item.tscn" id="2_v4sp6"]
+
+[node name="ShopPlanner" type="Node3D"]
+script = ExtResource("1_21xs8")
+DataAsset = ExtResource("2_gupfh")
+
+[node name="Test" parent="." instance=ExtResource("2_v4sp6")]
+Tag = "Freeze"
+Price = 42342.0
+
+[node name="Test2" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(0.4532789, -0.3339886, 0.20734005, 0.39311355, 0.38510492, -0.23907308, 0, 0.31645826, 0.50975895, 1.3461901, 0, 0)
+Tag = "Shoe"
+
+[node name="Test3" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(0.4532789, -0.3339886, 0.20734005, 0.39311355, 0.38510492, -0.23907308, 0, 0.31645826, 0.50975895, 2.6007328, 0, 0)
+Tag = "Shoe"
+
+[node name="Test4" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(0.4532789, -0.3339886, 0.20734005, 0.39311355, 0.38510492, -0.23907308, 0, 0.31645826, 0.50975895, 3.6732614, 0, 0)
+Tag = "Shoe"

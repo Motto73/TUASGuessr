@@ -11,15 +11,13 @@ shader = ExtResource("1_glqc6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 
-[node name="ShopItem" type="Node3D"]
-script = ExtResource("1_wxfep")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D"]
 transform = Transform3D(0.4532789, -0.3339886, 0.20734005, 0.39311355, 0.38510492, -0.23907308, 0, 0.31645826, 0.50975895, 0, 0, 0)
 mesh = SubResource("BoxMesh_8xcmk")
 surface_material_override/0 = SubResource("ShaderMaterial_wxfep")
+script = ExtResource("1_wxfep")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_glqc6")

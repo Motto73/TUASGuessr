@@ -2,6 +2,8 @@ extends Node3D
 
 class_name  Shopfront
 
+@export var Slots : Array[Node3D]
+
 @onready var animator := $AnimationPlayer
 @onready var sellerguy := $"Armature/Skeleton3D/Seller man guy"
 @onready var subview := $".."
@@ -31,6 +33,8 @@ func _ready():
 	face_mat.albedo_texture = face_normal
 	animator.animation_finished.connect(_on_animation_finished)
 	animator.animation_started.connect(_on_animation_started)
+	
+	load_items()
 
 func _process(delta):
 	if !animator.is_playing():
@@ -86,3 +90,6 @@ func _input(event):
 			var result = spst.intersect_ray(params)
 			if result:
 				play_anim(randfrom(yippees))
+
+func load_items():
+	pass

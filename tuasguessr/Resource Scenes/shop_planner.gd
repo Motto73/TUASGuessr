@@ -12,11 +12,11 @@ func _process(delta):
 		refresh()
 
 func refresh():
-	print("Attempting to save map data...")
+	print("Attempting to save item data...")
 	var children : Array = []
-	for c : Node in find_children("", "MapMarker", true, false):
-		if c is MapMarker:
+	for c : Node in find_children("", "ShopItem", true, false):
+		if c is ShopItem:
 			children.append(c)
 	DataAsset.refresh(children)
 	ResourceSaver.save(DataAsset,DataAsset.resource_path)
-	print("Saved data for ", len(children), " markers!")
+	print("Saved data for ", len(children), " items!")

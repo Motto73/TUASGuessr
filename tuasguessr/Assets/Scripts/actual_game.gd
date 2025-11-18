@@ -30,6 +30,8 @@ var roundtimer = 0
 
 var state = "loading"
 
+var inventorytags : Array[String] = []
+
 func _ready():
 	start_game()
 
@@ -61,7 +63,7 @@ func eval_points():
 	print("Guess: " , mapdisplay.currentGuess, " , Target: ", currentData.position)
 	var dist = mapdisplay.currentGuess.distance_to(currentData.position)
 	print("Distance: ", dist)
-	points += floor(clamp(3 - dist, 0, 100) * 10)
+	set_points(points + floor(clamp(3 - dist, 0, 100) * 10))
 
 func hide_map():
 	mapdisplay.map3d.reset()
@@ -82,8 +84,27 @@ func end_game():
 
 func new_game():
 	game.new_game()
+	
+#Score
+func set_points(pts):
+	points = pts
+	statsui.set_points(points)
 
+#Inventory
+func add_item(item):
+	if item is String and not inventorytags.has(item):
+		inventorytags.append(item)
 
+func  buy_item(item):
+	if not item is ShopItem:
+		return false
+	item = item as ShopItem
+	if points >= item.Price:
+		set_points(points - item.Price)
+		add_item(item.Tag)
+		return true
+	return false
+	
 # Leaderboard
 # --- Configuration ---
 const FIREBASE_WEB_API_KEY = "AIzaSyAS4AXH_fCMi63cHv3lqDwlubaorerHZhM"
