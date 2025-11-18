@@ -17,7 +17,7 @@ var mainScene : Node
 var popup : Node
 
 ##This is the primary build version. Whenever releasing a new build, change this.
-var gameVersion : String = "0.0.1"
+var gameVersion : String = "0.0.2"
 var osname : String
 var osmode : String
 var osmobile : bool
