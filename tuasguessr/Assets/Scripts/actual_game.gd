@@ -83,7 +83,19 @@ func end_game():
 func new_game():
 	game.new_game()
 
+
 # Leaderboard
+# --- Configuration ---
+const FIREBASE_WEB_API_KEY = "AIzaSyAS4AXH_fCMi63cHv3lqDwlubaorerHZhM"
+const RTDB_BASE_URL = "https://wheretheamkami-default-rtdb.europe-west1.firebasedatabase.app/scoreboard" # Your RTDB instance URL
+# Firebase Authentication REST API endpoint for anonymous sign-up/in
+const ANONYMOUS_SIGN_IN_URL = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FIREBASE_WEB_API_KEY
+# --- Internal State ---
+var _id_token: String = "" # Stores the Firebase ID Token for authenticated writes
+var _user_uid: String = "" # Stores the Firebase User ID (UID)
+var _is_authenticating: bool = false
+var _is_requesting_rtdb: bool = false
+
 func post_score(username):
 	print("Saving score for ", username)
 	#This method is called when the game is ready to post the score.
