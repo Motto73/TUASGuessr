@@ -28,7 +28,7 @@ var currentfloor
 var floors : Array
 
 func _ready():
-	floors = [$MapAssets/ICT0_EXPORT, $MapAssets/ICT1_EXPORT, $MapAssets/ICT2_EXPORT, $MapAssets/ICT3_EXPORT]
+	floors = [$MapAssets/ICT3,$MapAssets/ICT2,$MapAssets/ICT1,$MapAssets/ICT0,$MapAssets/EDU3,$MapAssets/EDU2,$MapAssets/EDU1]
 	show_floor(1)
 
 func _process(delta):
@@ -103,4 +103,4 @@ func lock():
 func show_floor(num):
 	currentfloor = num
 	for i in len(floors):
-		floors[i].visible = i == num;
+		floors[i].visible = floors[i].name.ends_with(str(num))
