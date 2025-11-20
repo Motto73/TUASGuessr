@@ -18,6 +18,9 @@ class_name  ActualGame
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
+@onready var firebase_rtdb = $Assets/Scripts/Firebase
+
+
 var popup : Node
 
 var game : Game
@@ -25,6 +28,8 @@ var game : Game
 var currentData : MapDataPoint
 
 var points = 0
+
+
 var currentFloor : int
 var roundtimer = 0
 
@@ -34,6 +39,7 @@ var inventorytags : Array[String] = []
 
 func _ready():
 	start_game()
+	Firebase.points = points
 
 func _process(delta):
 	if state == "playing":
@@ -106,24 +112,16 @@ func  buy_item(item):
 	return false
 	
 # Leaderboard
-# --- Configuration ---
-const FIREBASE_WEB_API_KEY = "AIzaSyAS4AXH_fCMi63cHv3lqDwlubaorerHZhM"
-const RTDB_BASE_URL = "https://wheretheamkami-default-rtdb.europe-west1.firebasedatabase.app/scoreboard" # Your RTDB instance URL
-# Firebase Authentication REST API endpoint for anonymous sign-up/in
-const ANONYMOUS_SIGN_IN_URL = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FIREBASE_WEB_API_KEY
-# --- Internal State ---
-var _id_token: String = "" # Stores the Firebase ID Token for authenticated writes
-var _user_uid: String = "" # Stores the Firebase User ID (UID)
-var _is_authenticating: bool = false
-var _is_requesting_rtdb: bool = false
-
 func post_score(username):
 	print("Saving score for ", username)
 	#This method is called when the game is ready to post the score.
 	# You can access name with: username
 	# You can access points with : points
+	Firebase.write_score(username, points)
 	
 func load_scoreboard() -> Array:
-	return []
 	#This method is called when the leaderboard wants to load the scores. Returns an array
 	#Use await here
+	var scoreboard = Firebase.get_scoreboard_data()
+	await scoreboard
+	return scoreboard.values()
