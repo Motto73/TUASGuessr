@@ -90,8 +90,12 @@ func _input(event):
 			params.collide_with_areas = true
 			params.collide_with_bodies = true
 			var result = spst.intersect_ray(params)
-			if result:
-				play_anim(randfrom(yippees))
+			if result and result.collider:
+				var si = result.collider.get_parent()
+				if si is ShopItem:
+					if Game.Active.actualGame.buy_item(si):
+						si.queue_free()
+						play_anim(randfrom(yippees))
 
 func load_items():
 	empty = false
