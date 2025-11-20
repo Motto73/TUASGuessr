@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=4 uid="uid://d3wp6si3dh208"]
 
-[ext_resource type="Material" uid="uid://iovdoo384uy6" path="res://Resource Scenes/material_walls.tres" id="2_tmpu0"]
-[ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Resource Scenes/material_green.tres" id="3_nuo8r"]
-[ext_resource type="Material" uid="uid://dgjg4bqk74ca5" path="res://Resource Scenes/material_gray.tres" id="4_1s3qm"]
-[ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Resource Scenes/material_yellow.tres" id="5_1s3qm"]
+[ext_resource type="Material" uid="uid://iovdoo384uy6" path="res://Assets/Materials/material_walls.tres" id="2_tmpu0"]
+[ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="3_nuo8r"]
+[ext_resource type="Material" uid="uid://dgjg4bqk74ca5" path="res://Assets/Materials/material_gray.tres" id="4_1s3qm"]
+[ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="5_1s3qm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcafm"]
 size = Vector3(14.814087, 0.07055664, 6.147522)
