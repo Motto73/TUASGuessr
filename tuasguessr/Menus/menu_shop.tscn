@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccuhrqtpqto7e"]
+[gd_scene load_steps=10 format=3 uid="uid://ccuhrqtpqto7e"]
 
 [ext_resource type="Script" uid="uid://doxoxyknwgvxu" path="res://Assets/Scripts/menu_shop.gd" id="1_0hmtc"]
 [ext_resource type="PackedScene" uid="uid://dru5mte5fci2u" path="res://Resource Scenes/shop_front.tscn" id="2_0hmtc"]
@@ -21,7 +21,17 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 0.42352942)
 
+[sub_resource type="Environment" id="Environment_s3nf8"]
+background_mode = 1
+ambient_light_source = 3
+ambient_light_color = Color(0.19155225, 0.20632175, 0.36246842, 1)
+ambient_light_energy = 2.97
+glow_enabled = true
+glow_intensity = 1.05
+glow_bloom = 0.14
+
 [sub_resource type="World3D" id="World3D_0hmtc"]
+environment = SubResource("Environment_s3nf8")
 
 [node name="MenuShop" type="Node2D"]
 script = ExtResource("1_0hmtc")
@@ -76,7 +86,7 @@ render_target_update_mode = 4
 
 [node name="ShopFront" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_0hmtc")]
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Reroll" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = -258.0
 offset_top = 144.00002
@@ -96,3 +106,4 @@ text = "Gotta fit a window that explains items
 that you hover on somewhere idk"
 
 [connection signal="button_down" from="Control/Open" to="." method="_on_open_button_down"]
+[connection signal="button_down" from="Control/Reroll" to="." method="_on_reroll_button_down"]

@@ -4,6 +4,7 @@ class_name  SlotMachine
 
 @export var RollTime : float = 1.0
 @export var RandomImageTime : float = 0.1
+@export var RandomImagePoolSize := 10
 @export var Data : MapDataPoints
 
 var state : String = "loading"
@@ -48,15 +49,19 @@ func show_random_image():
 
 func set_random_images():
 	images = []
+	var num = 0
 	for d : MapDataPoint in Data.DataPoints:
 		var img = load(d.imgresource) as CompressedTexture2D
 		images.append(img)
+		num += 1
+		if num >= RandomImagePoolSize:
+			break
 	print("Random images set: ", len(images))
 
 func select_point():
 	#TODO - difficulty selection
 	var rand = rng.randi_range(0, len(Data.DataPoints) - 1)
-	display.texture = images[rand]
+	display.texture = load(Data.DataPoints[rand].imgresource)
 	selectedPoint = Data.DataPoints[rand]
 	Game.Active.actualGame.set_datapoint(selectedPoint)
 

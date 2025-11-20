@@ -3,6 +3,7 @@ extends Node3D
 class_name  Shopfront
 
 @export var Slots : Array[Node3D]
+@export var Data : ItemDataPoints
 
 @onready var animator := $AnimationPlayer
 @onready var sellerguy := $"Armature/Skeleton3D/Seller man guy"
@@ -15,6 +16,7 @@ var face_angry = preload("res://Assets/Textures/face_angry.png")
 var face_suprise = preload("res://Assets/Textures/face_surprise.png")
 var face_mat : Material
 
+var empty := true
 var isvisible := false
 var saidhello := false
 
@@ -33,12 +35,12 @@ func _ready():
 	face_mat.albedo_texture = face_normal
 	animator.animation_finished.connect(_on_animation_finished)
 	animator.animation_started.connect(_on_animation_started)
-	
-	load_items()
 
 func _process(delta):
 	if !animator.is_playing():
 		queue_anim(randomidle())
+	if Game.Active.actualGame != null && empty:
+		load_items()
 	
 func play_anim(name):
 	animator.play(name)
@@ -92,4 +94,24 @@ func _input(event):
 				play_anim(randfrom(yippees))
 
 func load_items():
-	pass
+	empty = false
+	var items := []
+	#Create a list of items that are allowed in the store
+	for item in Data.Items:
+		if not Game.Active.actualGame.inventorytags.has(item.tag):
+			items.append(item)
+	#Randomize
+	Slots.shuffle()
+	items.shuffle()
+	#Clear slots
+	for x in Slots:
+		for y in x.get_children():
+			y.queue_free()
+	#Spawn items
+	for i in len(Slots):
+		if i >= len(items):
+			break
+		var slot = Slots[i]
+		var item = items[i].scene.instantiate()
+		slot.add_child(item)
+		item.position = Vector3.ZERO

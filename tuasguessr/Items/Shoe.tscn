@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://stb6xfbwhc3k"]
+
+[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="1_obmsc"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="2_i2kol"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v5bns"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khbhl"]
+render_priority = 0
+shader = ExtResource("1_obmsc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+
+[node name="Shoe" type="MeshInstance3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.3461901, 0, 0)
+mesh = SubResource("SphereMesh_v5bns")
+surface_material_override/0 = SubResource("ShaderMaterial_khbhl")
+script = ExtResource("2_i2kol")
+Tag = "Shoe"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_glqc6")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dru5mte5fci2u"]
+[gd_scene load_steps=8 format=3 uid="uid://dru5mte5fci2u"]
 
 [ext_resource type="PackedScene" uid="uid://cqv2rwtjy8ubn" path="res://Assets/3D/ShopFront.glb" id="1_xtwnd"]
 [ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://Assets/Scripts/shop_front.gd" id="2_7owm6"]
 [ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="3_cquyn"]
+[ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="3_s3nf8"]
 [ext_resource type="Texture2D" uid="uid://dbguxai4t0wbc" path="res://Assets/Textures/face_joy.png" id="4_w0sjr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8ng8"]
@@ -22,6 +23,7 @@ glow_bloom = 0.14
 [node name="ShopFront" node_paths=PackedStringArray("Slots") instance=ExtResource("1_xtwnd")]
 script = ExtResource("2_7owm6")
 Slots = [NodePath("ItemSlot8"), NodePath("ItemSlot7"), NodePath("ItemSlot6"), NodePath("ItemSlot5"), NodePath("ItemSlot3"), NodePath("ItemSlot2"), NodePath("ItemSlot4"), NodePath("ItemSlot1"), NodePath("ItemSlot0")]
+Data = ExtResource("3_s3nf8")
 
 [node name="Desk" parent="." index="0"]
 material_override = ExtResource("3_cquyn")
