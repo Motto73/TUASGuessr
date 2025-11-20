@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn2klfgn5i70b"
-path="res://.godot/imported/MapTest_Anton.blend-b3b37aac1bd76ee4019892f5443a0483.scn"
+uid="uid://l6himr2j4osp"
+path="res://.godot/imported/MapTest.blend-9558d4e7501bb241a2146a6605235c66.scn"
 
 [deps]
 
-source_file="res://Assets/3D/MapTest_Anton.blend"
-dest_files=["res://.godot/imported/MapTest_Anton.blend-b3b37aac1bd76ee4019892f5443a0483.scn"]
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/MapTest.blend"
+dest_files=["res://.godot/imported/MapTest.blend-9558d4e7501bb241a2146a6605235c66.scn"]
 
 [params]
 

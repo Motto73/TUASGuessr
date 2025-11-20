@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u5jqhebuivag"
-path="res://.godot/imported/MapTest Tuomas.blend-aa136c8dd3f03efc8eb5489fb76433c4.scn"
+uid="uid://cn2klfgn5i70b"
+path="res://.godot/imported/MapTest_Anton.blend-69abcdf5be5f183ba7a2a834a56b9683.scn"
 
 [deps]
 
-source_file="res://Assets/3D/MapTest Tuomas.blend"
-dest_files=["res://.godot/imported/MapTest Tuomas.blend-aa136c8dd3f03efc8eb5489fb76433c4.scn"]
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/MapTest_Anton.blend"
+dest_files=["res://.godot/imported/MapTest_Anton.blend-69abcdf5be5f183ba7a2a834a56b9683.scn"]
 
 [params]
 
