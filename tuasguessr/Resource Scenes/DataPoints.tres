@@ -1,0 +1,149 @@
+[gd_resource type="Resource" script_class="MapDataPoints" load_steps=23 format=3 uid="uid://brqchuj25do8n"]
+
+[ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://Assets/Scripts/MapDataPoint.gd" id="1_gfkhl"]
+[ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://Assets/Scripts/MapDataPoints.gd" id="2_t4pk4"]
+
+[sub_resource type="Resource" id="Resource_gfkhl"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145956_compressed.webp"
+difficulty = "medium"
+position = Vector3(2.347862, 0, 0.27166504)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_t4pk4"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145740_compressed.webp"
+difficulty = "easy"
+position = Vector3(3.3589323, 0, -0.33667833)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_8swuk"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145636_compressed.webp"
+difficulty = "medium"
+position = Vector3(6.406422, 0, -0.31158668)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_pt55m"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145602_compressed.webp"
+difficulty = "medium"
+position = Vector3(6.097023, 0, -0.31158668)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_ydlyk"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145509_compressed.webp"
+difficulty = "hard2"
+position = Vector3(5.027673, 0, -1.0130893)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_ab25k"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145350_compressed.webp"
+difficulty = "medium"
+position = Vector3(4.126912, 0, -0.31775963)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_i6amb"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145213_compressed.webp"
+difficulty = "easy"
+position = Vector3(0.13338959, 0, -0.5511656)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_a8f4l"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145107_compressed.webp"
+difficulty = "easy"
+position = Vector3(-0.047785416, 0, -0.35735524)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_1bha5"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144724_compressed.webp"
+difficulty = "easy"
+position = Vector3(0.21627639, 0, -0.3486877)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_8b6he"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144638_compressed.webp"
+difficulty = "medium"
+position = Vector3(1.2351421, 0, -0.5799167)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_u5wcd"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144538_compressed.webp"
+difficulty = "medium"
+position = Vector3(1.5202758, 0, -0.7811751)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_pxtjn"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144349_compressed.webp"
+difficulty = "medium"
+position = Vector3(3.252729, 0, -0.05199009)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_70fpe"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144134_compressed.webp"
+difficulty = "easy"
+position = Vector3(6.217875, 0, 0.26684234)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_2adt5"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_143946_compressed.webp"
+difficulty = "medium"
+position = Vector3(6.1665735, 0, 2.0758939)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_ha5dp"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144036_compressed.webp"
+difficulty = "medium"
+position = Vector3(6.01117, 0, 0.46211883)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_lpmqa"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_143730_compressed.webp"
+difficulty = "medium"
+position = Vector3(5.970956, 0, 0.9363514)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_iv5yb"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_143806_compressed.webp"
+difficulty = "medium"
+position = Vector3(5.7938566, 0, 0.7150189)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_pw4tf"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_145011_compressed.webp"
+difficulty = "medium"
+position = Vector3(-0.93501294, 0, -0.31809053)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_tnwrb"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144918_compressed.webp"
+difficulty = "medium"
+position = Vector3(0.58217776, 0, 0.33856294)
+floor = 3
+
+[sub_resource type="Resource" id="Resource_ngxly"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_20251111_144801_compressed.webp"
+difficulty = "easy"
+position = Vector3(0.17230695, 0, 0.3342496)
+floor = 3
+
+[resource]
+script = ExtResource("2_t4pk4")
+DataPoints = [SubResource("Resource_gfkhl"), SubResource("Resource_t4pk4"), SubResource("Resource_8swuk"), SubResource("Resource_pt55m"), SubResource("Resource_ydlyk"), SubResource("Resource_ab25k"), SubResource("Resource_i6amb"), SubResource("Resource_a8f4l"), SubResource("Resource_1bha5"), SubResource("Resource_8b6he"), SubResource("Resource_u5wcd"), SubResource("Resource_pxtjn"), SubResource("Resource_70fpe"), SubResource("Resource_2adt5"), SubResource("Resource_ha5dp"), SubResource("Resource_lpmqa"), SubResource("Resource_iv5yb"), SubResource("Resource_pw4tf"), SubResource("Resource_tnwrb"), SubResource("Resource_ngxly")]
+metadata/_custom_type_script = "uid://7nulugirt1qg"

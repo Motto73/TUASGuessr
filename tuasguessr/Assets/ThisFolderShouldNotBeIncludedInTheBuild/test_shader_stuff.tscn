@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="3_nfsdt"]
 [ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="4_841im"]
 [ext_resource type="Texture2D" uid="uid://c5ipm8upfc2ng" path="res://IGNORE/badapple/frame_000_delay-0.05s.png" id="5_jrvge"]
-[ext_resource type="Script" uid="uid://dne83enawc1w3" path="res://Resource Scenes/funny.gd" id="6_jrvge"]
+[ext_resource type="Script" uid="uid://dne83enawc1w3" path="res://Assets/Scripts/funny.gd" id="6_jrvge"]
 [ext_resource type="Texture2D" uid="uid://cp4ta247kax8b" path="res://IGNORE/badapple/frame_001_delay-0.05s.png" id="7_gmavn"]
 [ext_resource type="Texture2D" uid="uid://cxtyi50kwctle" path="res://IGNORE/badapple/frame_002_delay-0.05s.png" id="8_rrvos"]
 [ext_resource type="Texture2D" uid="uid://ciyblj2cltfy5" path="res://IGNORE/badapple/frame_003_delay-0.05s.png" id="9_kxxxg"]

@@ -3,18 +3,18 @@
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="1_glqc6"]
 [ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_wxfep"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_8xcmk"]
+[sub_resource type="SphereMesh" id="SphereMesh_v5bns"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxfep"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khbhl"]
 render_priority = 0
 shader = ExtResource("1_glqc6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 
-[node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D(0.4532789, -0.3339886, 0.20734005, 0.39311355, 0.38510492, -0.23907308, 0, 0.31645826, 0.50975895, 0, 0, 0)
-mesh = SubResource("BoxMesh_8xcmk")
-surface_material_override/0 = SubResource("ShaderMaterial_wxfep")
+[node name="Item" type="MeshInstance3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = SubResource("SphereMesh_v5bns")
+surface_material_override/0 = SubResource("ShaderMaterial_khbhl")
 script = ExtResource("1_wxfep")
 
 [node name="Area3D" type="Area3D" parent="."]

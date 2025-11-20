@@ -21,7 +21,7 @@ glow_bloom = 0.14
 
 [node name="ShopFront" node_paths=PackedStringArray("Slots") instance=ExtResource("1_xtwnd")]
 script = ExtResource("2_7owm6")
-Slots = [NodePath("ItemSlot2"), NodePath("ItemSlot1"), NodePath("ItemSlot0")]
+Slots = [NodePath("ItemSlot8"), NodePath("ItemSlot7"), NodePath("ItemSlot6"), NodePath("ItemSlot5"), NodePath("ItemSlot3"), NodePath("ItemSlot2"), NodePath("ItemSlot4"), NodePath("ItemSlot1"), NodePath("ItemSlot0")]
 
 [node name="Desk" parent="." index="0"]
 material_override = ExtResource("3_cquyn")
@@ -68,7 +68,25 @@ environment = SubResource("Environment_s3nf8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.96317077, -0.14207983)
 
 [node name="ItemSlot1" type="Node3D" parent="." index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.96317077, -3.5490992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1600871, -0.96317077, -3.5490992)
 
-[node name="ItemSlot2" type="Node3D" parent="." index="10"]
+[node name="ItemSlot4" type="Node3D" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.515027, -0.96317077, -3.5490992)
+
+[node name="ItemSlot2" type="Node3D" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2858562, -0.96317077, -0.14207983)
+
+[node name="ItemSlot3" type="Node3D" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2858562, -0.96317077, -4.1329823)
+
+[node name="ItemSlot5" type="Node3D" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1600871, 1.2887745, -3.5490992)
+
+[node name="ItemSlot6" type="Node3D" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.515027, 1.2887745, -3.5490992)
+
+[node name="ItemSlot7" type="Node3D" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2858562, 1.2887745, -0.14207983)
+
+[node name="ItemSlot8" type="Node3D" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2858562, 1.2887745, -4.1329823)
