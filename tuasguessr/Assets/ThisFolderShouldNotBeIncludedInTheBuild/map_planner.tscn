@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://dj73vj630gu0g"]
+[gd_scene load_steps=26 format=3 uid="uid://dj73vj630gu0g"]
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://Assets/Scripts/map_planner.gd" id="1_hshuq"]
+[ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_e3agl"]
 [ext_resource type="PackedScene" uid="uid://bfe5rucudei0c" path="res://Resource Scenes/map_marker.tscn" id="2_eh8yn"]
 [ext_resource type="PackedScene" uid="uid://d3wp6si3dh208" path="res://Resource Scenes/map_assets.tscn" id="4_72roh"]
 [ext_resource type="Texture2D" uid="uid://uhuq0a244h60" path="res://Assets/Game Images/IMG_20251111_144036_compressed.webp" id="5_1do2g"]
@@ -23,9 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://h1f081isyfdt" path="res://Assets/Game Images/IMG_20251111_143946_compressed.webp" id="18_hfdkr"]
 [ext_resource type="Texture2D" uid="uid://dnk8jotjhypd0" path="res://Assets/Game Images/IMG_20251111_143730_compressed.webp" id="20_i01q8"]
 [ext_resource type="Texture2D" uid="uid://ccyw6hexkkms7" path="res://Assets/Game Images/IMG_20251111_143806_compressed.webp" id="21_e3agl"]
+[ext_resource type="Texture2D" uid="uid://bq6i0t0h6k7q3" path="res://Assets/Game Images/IMG20251111144407_compressed.webp" id="24_i01q8"]
 
 [node name="Planner Manual Refresh" type="Node3D"]
 script = ExtResource("1_hshuq")
+DataAsset = ExtResource("2_e3agl")
 
 [node name="Press eyes to hide->" parent="." instance=ExtResource("4_72roh")]
 
@@ -134,6 +137,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)
 
 [node name="EDU3" parent="Press eyes to hide->" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.858, 4, 0)
+
+[node name="Map Marker21" parent="Press eyes to hide->/EDU3" index="0" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4152231, 0, 2.2708185)
+Picture = ExtResource("24_i01q8")
+Difficulty = "medium"
 
 [node name="EDU2" parent="Press eyes to hide->" index="6"]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 7.878, 2, 2.091)
