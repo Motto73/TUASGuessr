@@ -29,7 +29,6 @@ var currentData : MapDataPoint
 
 var points = 0
 
-
 var currentFloor : int
 var roundtimer = 0
 

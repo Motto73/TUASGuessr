@@ -1,6 +1,7 @@
 extends Node
 
-var points = 0
+var points
+
 
 # --- Configuration ---
 const FIREBASE_WEB_API_KEY = "AIzaSyAS4AXH_fCMi63cHv3lqDwlubaorerHZhM"
