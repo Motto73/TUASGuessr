@@ -14,7 +14,10 @@ shader = ExtResource("2_rv022")
 [node name="ActualGame" type="Node2D"]
 scale = Vector2(0.9644399, 0.99564976)
 script = ExtResource("1_rvmdn")
+GameDuration = null
+ShortDuration = null
 ShortStartPoints = 0.0
+UseShortGame = null
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 follow_viewport_scale = -4.195

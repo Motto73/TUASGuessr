@@ -18,8 +18,6 @@ class_name  ActualGame
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
-@onready var firebase_rtdb = $Assets/Scripts/Firebase
-
 
 var popup : Node
 
@@ -28,6 +26,7 @@ var game : Game
 var currentData : MapDataPoint
 
 var points = 0
+var FireBaseNode : FireBaseScript
 
 var currentFloor : int
 var roundtimer = 0
@@ -38,7 +37,10 @@ var inventorytags : Array[String] = []
 
 func _ready():
 	start_game()
-	Firebase.points = points
+	var firebase = load("res://Resource Scenes/firebase.tscn").instantiate()
+	add_child(firebase)
+	assert(firebase is FireBaseScript, "FUCK!")
+	FireBaseNode = firebase as FireBaseScript
 
 func _process(delta):
 	if state == "playing":
@@ -116,11 +118,11 @@ func post_score(username):
 	#This method is called when the game is ready to post the score.
 	# You can access name with: username
 	# You can access points with : points
-	Firebase.write_score(username, points)
+	FireBaseNode.write_score(username, points)
 	
 func load_scoreboard() -> Array:
 	#This method is called when the leaderboard wants to load the scores. Returns an array
 	#Use await here
-	var scoreboard = Firebase.get_scoreboard_data()
+	var scoreboard = FireBaseNode.get_scoreboard_data()
 	await scoreboard
 	return scoreboard.values()

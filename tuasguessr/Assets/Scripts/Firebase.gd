@@ -1,5 +1,7 @@
 extends Node
 
+class_name FireBaseScript
+
 var points
 
 
@@ -26,7 +28,7 @@ signal score_write_completed(success: bool, key_or_error: String)
 signal scoreboard_data_loaded(data_dict: Dictionary) # Keep this signal for notification
 
 func _ready():
-	get_tree().get_root().get_node("scene_actual_game/ActualGame")
+	#get_tree().get_root().get_node("scene_actual_game/ActualGame")
 	
 	_auth_request = HTTPRequest.new()
 	add_child(_auth_request)
@@ -96,7 +98,7 @@ func get_scoreboard_data() -> Dictionary:
 	
 
 # REALTIME DATABASE WRITE FUNCTIONS
-func write_score(username: String, score: int):
+func write_score(username: String, points: int):
 	if _id_token.is_empty():
 		return
 	if _write_request.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:

@@ -17,7 +17,7 @@ config/icon="uid://dnhlwfrfikcr0"
 
 [autoload]
 
-Firebase="*res://Assets/Scripts/Firebase.gd"
+Firebase="res://Assets/Scripts/Firebase.gd"
 
 [dotnet]
 
