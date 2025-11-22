@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvilngt54vwp5"]
+[gd_scene load_steps=5 format=3 uid="uid://cvilngt54vwp5"]
 
 [ext_resource type="Script" uid="uid://ewhx8jmjg8g2" path="res://Assets/Scripts/menu_intro.gd" id="1_eu4wb"]
+[ext_resource type="Texture2D" uid="uid://cpau6mqkp2gyn" path="res://Assets/Textures/menulogo.png" id="2_mk0bt"]
+[ext_resource type="Texture2D" uid="uid://d1v2i3lj67tty" path="res://Assets/Textures/button_play.png" id="3_a6ky5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arfdj"]
 font_size = 32
@@ -16,12 +18,17 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Menulogo" type="Sprite2D" parent="Control"]
+position = Vector2(0, -40)
+texture = ExtResource("2_mk0bt")
+
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
-offset_left = -349.0
-offset_top = -108.0
-offset_right = 359.0
-offset_bottom = 77.0
+offset_left = -352.0
+offset_top = -184.0
+offset_right = 356.0
+offset_bottom = 1.0
 text = "tuasguessr the video game the app the game"
 label_settings = SubResource("LabelSettings_arfdj")
 horizontal_alignment = 1
@@ -29,15 +36,35 @@ vertical_alignment = 1
 
 [node name="Play" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = -52.0
-offset_top = 22.0
-offset_right = 52.0
-offset_bottom = 71.0
+offset_left = -184.0
+offset_top = 120.0
+offset_right = 192.0
+offset_bottom = 288.0
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.467
+anchor_top = 0.21400002
+anchor_right = 0.467
+anchor_bottom = 0.21400002
+offset_left = -183.59201
+offset_top = -142.81601
+offset_right = 200.40799
+offset_bottom = 241.18399
+texture = ExtResource("3_a6ky5")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Control/Play"]
+visible = false
 layout_mode = 0
-offset_right = 104.0
-offset_bottom = 49.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 108.0
+offset_bottom = 51.0
 text = "Play the game or some shi"
 autowrap_mode = 1
 
