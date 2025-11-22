@@ -4,10 +4,12 @@ class_name Leaderboard
 
 @onready var loading = find_child("Loading", true, false)
 
+#Expected format: dictionary{ "name" : points }
 func set_data(dat: Array):
-	#Reparent to instanly move it away, then queue deletion
+	#Reparent to instanly move the loading thingamabob away, then queue deletion
 	loading.reparent(self)
 	loading.queue_free()
-	print("Leaderboard data length: ", len(dat))
 	for data in dat:
-		print(str(data))
+		var name = data[0]
+		var pts = data[1]
+		#TODO - add a label with name and points to vbox, clip vbox children
