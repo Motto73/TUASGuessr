@@ -26,7 +26,9 @@ func set_points(pts):
 	
 func load_leaderboard():
 	#TODO - load a list into the leaderboard shi
+	print("Starting await on leaderboard")
 	var yep = await Game.Active.actualGame.load_scoreboard()
+	print("Await complete, setting leaderboard data")
 	widget.set_data(yep)
 
 
