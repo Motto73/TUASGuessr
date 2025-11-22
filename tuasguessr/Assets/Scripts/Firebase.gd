@@ -2,7 +2,7 @@ extends Node
 
 class_name FireBaseScript
 
-var points
+#var points
 
 
 # --- Configuration ---
@@ -80,6 +80,7 @@ func read_scoreboard():
 func _on_read_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if result != HTTPRequest.RESULT_SUCCESS:
 		_scoreboard_data = {} #Clear data on failure
+		print("Failed to read data")
 		return
 	var response_body_string = body.get_string_from_utf8()
 	var json_result = JSON.parse_string(response_body_string)
@@ -89,11 +90,13 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 			emit_signal("scoreboard_data_loaded", _scoreboard_data) # Emit signal when data is ready
 		else:
 			_scoreboard_data = {}
+			print("Clearing data")
 	else:
 		_scoreboard_data = {}
-		
+		print("Clearing data")
 #Getter function
 func get_scoreboard_data() -> Dictionary:
+	read_scoreboard()
 	return _scoreboard_data
 	
 
