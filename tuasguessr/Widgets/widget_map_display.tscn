@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3nd7kiqrswxx"]
+[gd_scene load_steps=7 format=3 uid="uid://d3nd7kiqrswxx"]
 
 [ext_resource type="PackedScene" uid="uid://dd0q8xxbij8at" path="res://Resource Scenes/3d_map.tscn" id="1_e87u4"]
 [ext_resource type="Script" uid="uid://cx7e27w5n85ap" path="res://Assets/Scripts/map_display.gd" id="1_j2rn6"]
+[ext_resource type="Texture2D" uid="uid://d10bw3jqi37ae" path="res://Assets/Textures/map_screen_wires.png" id="2_mw64g"]
+[ext_resource type="Texture2D" uid="uid://br40wyoefjphi" path="res://Assets/Textures/map_screen.png" id="4_krqyp"]
+[ext_resource type="Texture2D" uid="uid://csjpq0d1lcgat" path="res://Assets/Textures/button_submit.png" id="5_krqyp"]
 
 [sub_resource type="World3D" id="World3D_e87u4"]
 
@@ -14,73 +17,104 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.273
+anchor_right = 0.49
+anchor_bottom = 0.273
+offset_left = -179.6
+offset_top = -50.92
+offset_right = 156.4
+offset_bottom = 109.08
+texture = ExtResource("5_krqyp")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -166.0
+offset_top = -338.0
+offset_right = 195.0
+offset_bottom = -153.0
+texture = ExtResource("2_mw64g")
+expand_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_left = -201.0
-offset_top = -201.0
-offset_right = 200.0
-offset_bottom = 65.0
-color = Color(0.585062, 0.585062, 0.5850621, 1)
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 201.0
+offset_bottom = 1.0
+color = Color(0.3180199, 0.31801975, 0.31801972, 1)
+
+[node name="Floor0" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = -64.0
+offset_right = 240.0
+offset_bottom = -33.0
+text = "0"
+
+[node name="Floor1" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = -96.0
+offset_right = 240.0
+offset_bottom = -65.0
+text = "1"
+
+[node name="Floor2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = -128.0
+offset_right = 240.0
+offset_bottom = -97.0
+text = "2"
+
+[node name="Floor3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = -160.0
+offset_right = 240.0
+offset_bottom = -129.0
+text = "3"
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -256.0
+offset_top = -232.0
+offset_right = 256.0
+offset_bottom = 62.0
+texture = ExtResource("4_krqyp")
+expand_mode = 1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
 layout_mode = 0
-offset_left = -183.0
-offset_top = -187.0
-offset_right = 181.0
-offset_bottom = -9.0
+offset_left = -194.0
+offset_top = -195.0
+offset_right = 196.0
+offset_bottom = -4.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
 world_3d = SubResource("World3D_e87u4")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(364, 178)
+size = Vector2i(390, 191)
 render_target_update_mode = 4
 
 [node name="3dMap" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("1_e87u4")]
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = -183.0
-offset_top = -1.0
-offset_right = 184.0
-offset_bottom = 51.0
-text = "Submit"
+offset_left = -192.0
+offset_right = 200.0
+offset_bottom = 88.0
+flat = true
 
-[node name="Floor0" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = -60.0
-offset_right = 191.0
-offset_bottom = -29.0
-text = "0"
-
-[node name="Floor1" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = -96.0
-offset_right = 191.0
-offset_bottom = -65.0
-text = "1"
-
-[node name="Floor2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 160.0
-offset_top = -133.0
-offset_right = 192.0
-offset_bottom = -102.0
-text = "2"
-
-[node name="Floor3" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 160.0
-offset_top = -170.0
-offset_right = 192.0
-offset_bottom = -139.0
-text = "3"
-
-[connection signal="button_down" from="Control/Button" to="." method="_on_button_down"]
 [connection signal="button_down" from="Control/Floor0" to="." method="_on_floor_0_button_down"]
 [connection signal="button_down" from="Control/Floor1" to="." method="_on_floor_1_button_down"]
 [connection signal="button_down" from="Control/Floor2" to="." method="_on_floor_2_button_down"]
 [connection signal="button_down" from="Control/Floor3" to="." method="_on_floor_3_button_down"]
+[connection signal="button_down" from="Control/Button" to="." method="_on_button_down"]

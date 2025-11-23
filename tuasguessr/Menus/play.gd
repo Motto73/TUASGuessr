@@ -11,7 +11,8 @@ func _ready() -> void:
 	call_deferred("_init_pivot") 
 
 func _init_pivot() -> void:
-	pivot_offset = size/4.0
+	pivot_offset = size/2.5
+	
 
 func _button_enter() -> void:
 	create_tween().tween_property(self, "scale", hover_scale, 0.1).set_trans(Tween.TRANS_SINE)
