@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="ItemDataPoints" load_steps=16 format=3 uid="uid://31nqxtg1a3s2"]
+
+[ext_resource type="Script" uid="uid://cesnxrsuw8ihx" path="res://Assets/Scripts/ItemDataPoint.gd" id="1_s7dvk"]
+[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="2_6nsgy"]
+[ext_resource type="Script" uid="uid://c78xibfvvewya" path="res://Assets/Scripts/ItemDataPoints.gd" id="2_602bc"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="3_k4ag1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v4sp6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khbhl"]
+render_priority = 0
+shader = ExtResource("2_6nsgy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+
+[sub_resource type="PackedScene" id="PackedScene_jq7f7"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Freeze Clock", "transform", "mesh", "surface_material_override/0", "script", "Tag", "Price", "MeshInstance3D", "Area3D", "CollisionShape3D", "shape"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0, 0, 0, 8, 8, -1, 0, 0, 1, 0, 9, 9, -1, 1, 10, 6, 0),
+"variants": [Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxMesh_v4sp6"), SubResource("ShaderMaterial_khbhl"), ExtResource("3_k4ag1"), "Freeze", 42342.0, SubResource("BoxShape3D_glqc6")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_bcm43"]
+script = ExtResource("1_s7dvk")
+name = "Freeze Clock"
+tag = "Freeze"
+price = 42342.0
+rarity = 1.0
+scene = SubResource("PackedScene_jq7f7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_v5bns"]
+
+[sub_resource type="PackedScene" id="PackedScene_q4jpe"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Shoe", "transform", "mesh", "surface_material_override/0", "script", "Tag", "MeshInstance3D", "Area3D", "CollisionShape3D", "shape"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 6, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 0, 0, 0, 7, 7, -1, 0, 0, 1, 0, 8, 8, -1, 1, 9, 5, 0),
+"variants": [Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.3461901, 0, 0), SubResource("SphereMesh_v5bns"), SubResource("ShaderMaterial_khbhl"), ExtResource("3_k4ag1"), "Shoe", SubResource("BoxShape3D_glqc6")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_yuqoo"]
+script = ExtResource("1_s7dvk")
+name = "Shoe"
+tag = "Shoe"
+price = 20.0
+rarity = 1.0
+scene = SubResource("PackedScene_q4jpe")
+
+[sub_resource type="PrismMesh" id="PrismMesh_gupfh"]
+
+[sub_resource type="PackedScene" id="PackedScene_cwh8w"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Golden Frame", "transform", "mesh", "surface_material_override/0", "script", "Tag", "Price", "MeshInstance3D", "Area3D", "CollisionShape3D", "shape"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0, 0, 0, 8, 8, -1, 0, 0, 1, 0, 9, 9, -1, 1, 10, 6, 0),
+"variants": [Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.6007328, 0, 0), SubResource("PrismMesh_gupfh"), SubResource("ShaderMaterial_khbhl"), ExtResource("3_k4ag1"), "Gold", 100.0, SubResource("BoxShape3D_glqc6")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_m75y8"]
+script = ExtResource("1_s7dvk")
+name = "Golden Frame"
+tag = "Gold"
+price = 100.0
+rarity = 1.0
+scene = SubResource("PackedScene_cwh8w")
+
+[resource]
+script = ExtResource("2_602bc")
+Items = Array[ExtResource("1_s7dvk")]([SubResource("Resource_bcm43"), SubResource("Resource_yuqoo"), SubResource("Resource_m75y8")])
+metadata/_custom_type_script = "uid://c78xibfvvewya"

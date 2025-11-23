@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2khgu2qtfe6e"]
+
+[ext_resource type="Script" uid="uid://crhlqilw6piu3" path="res://Assets/Scripts/actual_game.gd" id="1_rvmdn"]
+[ext_resource type="Shader" uid="uid://bqf6iyedm5x31" path="res://Assets/Materials/owl.gdshader" id="2_rv022"]
+[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="3_vsp01"]
+[ext_resource type="PackedScene" uid="uid://ci4clqh804507" path="res://Widgets/widget_slot_machine.tscn" id="4_32tj6"]
+[ext_resource type="PackedScene" uid="uid://d3nd7kiqrswxx" path="res://Widgets/widget_map_display.tscn" id="5_yndm8"]
+[ext_resource type="PackedScene" uid="uid://6ddl2uvhr0fm" path="res://Widgets/widget_stats.tscn" id="6_p6cvv"]
+[ext_resource type="PackedScene" uid="uid://ccuhrqtpqto7e" path="res://Menus/menu_shop.tscn" id="7_oda0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ofr5b"]
+shader = ExtResource("2_rv022")
+
+[node name="ActualGame" type="Node2D"]
+scale = Vector2(0.9644399, 0.99564976)
+script = ExtResource("1_rvmdn")
+ShortStartPoints = 0.0
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+follow_viewport_scale = -4.195
+
+[node name="Control" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Canvas/Control"]
+material = SubResource("ShaderMaterial_ofr5b")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_vsp01")
+expand_mode = 1
+
+[node name="SlotMachine" parent="Canvas" instance=ExtResource("4_32tj6")]
+position = Vector2(248, 337)
+
+[node name="Map Display" parent="Canvas" instance=ExtResource("5_yndm8")]
+position = Vector2(820.00006, 333)
+scale = Vector2(1.46, 1.46)
+
+[node name="ShitUI" parent="Canvas" instance=ExtResource("6_p6cvv")]
+position = Vector2(815, 552)
+scale = Vector2(1.455, 1.455)
+
+[node name="MenuShop" parent="Canvas" instance=ExtResource("7_oda0l")]
+position = Vector2(-1, 282)

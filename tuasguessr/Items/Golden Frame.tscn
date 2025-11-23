@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2p43a7h215a8"]
+
+[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="1_fl3yw"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="2_ucosa"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_gupfh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khbhl"]
+render_priority = 0
+shader = ExtResource("1_fl3yw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+
+[node name="Golden Frame" type="MeshInstance3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.6007328, 0, 0)
+mesh = SubResource("PrismMesh_gupfh")
+surface_material_override/0 = SubResource("ShaderMaterial_khbhl")
+script = ExtResource("2_ucosa")
+Tag = "Gold"
+Price = 100.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_glqc6")

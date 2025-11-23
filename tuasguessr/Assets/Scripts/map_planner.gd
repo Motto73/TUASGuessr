@@ -2,7 +2,7 @@
 extends Node3D
 
 ##[color=red][b]DO NOT CHANGE THIS[/b][/color] - the actual database file.
-@export var DataAsset : ItemDataPoints
+@export var DataAsset : MapDataPoints
 ##Press this if you want to write the current points to the local database.
 @export var DoRefresh : bool = false
 

@@ -38,3 +38,7 @@ func _on_open_button_down():
 	open = !open
 	var anim = "Slide_L" if open else "Slide_R"
 	shopfront.play_anim(anim)
+
+
+func _on_reroll_button_down():
+	shopfront.load_items()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv8lkpnfrk0n5"]
+[gd_scene load_steps=5 format=3 uid="uid://cv8lkpnfrk0n5"]
 
 [ext_resource type="Script" uid="uid://b2vdhnc6223t5" path="res://Assets/Scripts/game.gd" id="1_o2lv5"]
 [ext_resource type="PackedScene" uid="uid://cvilngt54vwp5" path="res://Menus/menu_intro.tscn" id="2_0lnjc"]
+[ext_resource type="Texture2D" uid="uid://bbpbg0lh8qrq" path="res://Assets/Textures/Brick_Wall_BG.jpg" id="2_v8p24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
 font_size = 14
@@ -10,6 +11,10 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_o2lv5")
+
+[node name="BrickWallBg" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("2_v8p24")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

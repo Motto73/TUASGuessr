@@ -1,4 +1,4 @@
-extends Node3D
+extends MeshInstance3D
 
 class_name  ShopItem
 
@@ -6,7 +6,6 @@ class_name  ShopItem
 @export var Tag := "None"
 @export var Price := 20.0
 @export var Rarity := 1.0
-@export var Res : Mesh
 
 @export_category("======Visibility settings======")
 @export var bobspeed := 1.0

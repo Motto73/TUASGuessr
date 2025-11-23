@@ -1,0 +1,13 @@
+[gd_scene load_steps=0 format=3 uid="uid://ba8jk0xrwv7k4"]
+
+[node name="Scoretag" type="Label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.5
+offset_right = 65.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "NAMENAME : pts"
+horizontal_alignment = 1
+vertical_alignment = 1
