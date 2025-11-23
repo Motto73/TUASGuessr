@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bapdd5llwtu26"]
+[gd_scene load_steps=11 format=3 uid="uid://bapdd5llwtu26"]
 
 [ext_resource type="Script" uid="uid://csedbh5mqsufd" path="res://Assets/Scripts/menu_difficulty.gd" id="1_2xem7"]
 [ext_resource type="Texture2D" uid="uid://hguc7cvdo2gt" path="res://Assets/Textures/button_easy.png" id="2_3mbk7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drml4bhhroboo" path="res://Assets/Textures/button_imposible.png" id="5_4qyar"]
 [ext_resource type="Texture2D" uid="uid://d1v2i3lj67tty" path="res://Assets/Textures/button_play.png" id="7_4qyar"]
 [ext_resource type="Texture2D" uid="uid://bbeoa5lr07008" path="res://Assets/Textures/difficulty_screen.png" id="7_tcc28"]
+[ext_resource type="Texture2D" uid="uid://by3v5o6m3bijb" path="res://Assets/Textures/button_play_2.png" id="8_4ht30"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej3av"]
 font_size = 32
@@ -17,14 +18,29 @@ outline_color = Color(0, 0, 0, 1)
 [node name="menu_difficulty" type="Node2D"]
 script = ExtResource("1_2xem7")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -448.0
+offset_right = 448.0
+offset_bottom = 416.0
+grow_horizontal = 2
+texture = ExtResource("7_tcc28")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -40,151 +56,162 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Ez" type="Button" parent="Control"]
+[node name="Ez" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -10.7
-anchor_top = 0.05
-anchor_right = -10.5
-anchor_bottom = 0.275
-offset_left = -52.0
-offset_top = 22.0
-offset_right = 52.0
-offset_bottom = 71.0
+anchor_left = 0.104222216
+anchor_top = 0.69100004
+anchor_right = 0.104222216
+anchor_bottom = 0.69100004
+offset_left = -88.063995
+offset_top = -63.768036
+offset_right = 87.936005
+offset_bottom = 64.231964
 flat = true
 icon_alignment = 1
 script = ExtResource("2_7jgyk")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Ez"]
-layout_mode = 0
-offset_left = -96.0
-offset_top = -88.0
-offset_right = 160.0
-offset_bottom = 168.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Ez"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5001818
+anchor_top = 0.5
+anchor_right = 0.5001818
+anchor_bottom = 0.5
+offset_left = -128.032
+offset_top = -119.99999
+offset_right = 127.967896
+offset_bottom = 124.46338
 texture = ExtResource("2_3mbk7")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Medium" type="Button" parent="Control"]
+[node name="Medium" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -3.9
-anchor_top = 0.05
-anchor_right = -3.8
-anchor_bottom = 0.275
-offset_left = -52.0
-offset_top = 22.0
-offset_right = 52.0
-offset_bottom = 71.0
+anchor_left = 0.3678889
+anchor_top = 0.69100004
+anchor_right = 0.3678889
+anchor_bottom = 0.69100004
+offset_left = -87.808014
+offset_top = -63.768036
+offset_right = 88.191986
+offset_bottom = 64.231964
 flat = true
 script = ExtResource("2_7jgyk")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Medium"]
-layout_mode = 0
-offset_left = -88.0
-offset_top = -88.0
-offset_right = 168.0
-offset_bottom = 168.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Medium"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49977273
+anchor_top = 0.5001563
+anchor_right = 0.49977267
+anchor_bottom = 0.50015616
+offset_left = -127.96
+offset_top = -128.02
+offset_right = 128.04001
+offset_bottom = 127.979996
 texture = ExtResource("3_7jgyk")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Hard" type="Button" parent="Control"]
+[node name="Hard" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 3.9
-anchor_top = 0.05
-anchor_right = 3.9
-anchor_bottom = 0.05
-offset_left = -52.0
-offset_top = 22.0
-offset_right = 52.0
-offset_bottom = 71.0
+anchor_left = 0.6315556
+anchor_top = 0.69100004
+anchor_right = 0.6315556
+anchor_bottom = 0.69100004
+offset_left = -87.55206
+offset_top = -63.768036
+offset_right = 88.44794
+offset_bottom = 64.231964
 flat = true
 script = ExtResource("2_7jgyk")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Hard"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Hard"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.41346154
-anchor_top = -0.6938776
-anchor_right = 0.20192307
-anchor_bottom = 0.6122449
-offset_left = -37.0
-offset_top = -62.0
-offset_right = 155.0
-offset_bottom = 130.0
+anchor_left = 0.50027287
+anchor_top = 0.49997658
+anchor_right = 0.5002729
+anchor_bottom = 0.49997663
+offset_left = -128.048
+offset_top = -127.997
+offset_right = 127.951996
+offset_bottom = 128.00299
 texture = ExtResource("4_tcc28")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Hard2" type="Button" parent="Control"]
+[node name="Hard2" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 12.1
-anchor_top = 0.05
-anchor_right = 12.1
-anchor_bottom = 0.05
-offset_left = -52.0
-offset_top = 22.0
-offset_right = 52.0
-offset_bottom = 71.0
+anchor_left = 0.89572227
+anchor_top = 0.6916544
+anchor_right = 0.89572227
+anchor_bottom = 0.6916544
+offset_left = -87.87207
+offset_top = -64.19205
+offset_right = 88.12793
+offset_bottom = 63.807953
 flat = true
 script = ExtResource("2_7jgyk")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Hard2"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Hard2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.3846154
-anchor_top = -0.81632656
-anchor_right = 0.23076923
-anchor_bottom = 0.48979592
-offset_left = -40.0
-offset_top = -64.0
-offset_right = 152.0
-offset_bottom = 128.0
+anchor_left = 0.45481834
+anchor_top = 0.50007796
+anchor_right = 0.45481837
+anchor_bottom = 0.5000779
+offset_left = -128.048
+offset_top = -128.01
+offset_right = 127.951996
+offset_bottom = 127.99
 texture = ExtResource("5_4qyar")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Accept" type="Button" parent="Control"]
+[node name="Accept" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 6.4
-anchor_bottom = 6.4
-offset_left = -128.0
-offset_top = -64.0
-offset_right = 128.0
-offset_bottom = 64.0
-disabled = true
-flat = true
-script = ExtResource("2_7jgyk")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Control/Accept"]
-layout_mode = 0
-offset_left = -80.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
 offset_top = -120.0
-offset_right = 336.0
-offset_bottom = 256.0
+offset_right = 120.0
+disabled = true
+icon = ExtResource("8_4ht30")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_7jgyk")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Accept"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -179.2002
+offset_right = 192.0
+offset_bottom = 196.7998
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_4qyar")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = -448.0
-offset_top = -392.0
-offset_right = 448.0
-offset_bottom = 24.0
-texture = ExtResource("7_tcc28")
-expand_mode = 1
-
-[connection signal="button_down" from="Control/Ez" to="." method="_on_ez_button_down"]
-[connection signal="button_down" from="Control/Medium" to="." method="_on_medium_button_down"]
-[connection signal="button_down" from="Control/Hard" to="." method="_on_hard_button_down"]
-[connection signal="button_down" from="Control/Hard2" to="." method="_on_hard_2_button_down"]
-[connection signal="button_down" from="Control/Accept" to="." method="_on_accept_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Ez" to="." method="_on_ez_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Medium" to="." method="_on_medium_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Hard" to="." method="_on_hard_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Hard2" to="." method="_on_hard_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Accept" to="." method="_on_accept_button_down"]

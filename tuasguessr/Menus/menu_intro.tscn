@@ -1,73 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvilngt54vwp5"]
+[gd_scene load_steps=5 format=3 uid="uid://cvilngt54vwp5"]
 
 [ext_resource type="Script" uid="uid://ewhx8jmjg8g2" path="res://Assets/Scripts/menu_intro.gd" id="1_eu4wb"]
 [ext_resource type="Texture2D" uid="uid://cpau6mqkp2gyn" path="res://Assets/Textures/menulogo.png" id="2_mk0bt"]
 [ext_resource type="Texture2D" uid="uid://d1v2i3lj67tty" path="res://Assets/Textures/button_play.png" id="3_a6ky5"]
 [ext_resource type="Script" uid="uid://cdkhuepoqfisa" path="res://Menus/play.gd" id="3_ly8ic"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_arfdj"]
-font_size = 32
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-
 [node name="Menu_Intro" type="Node2D"]
 script = ExtResource("1_eu4wb")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Menulogo" type="Sprite2D" parent="Control"]
-position = Vector2(0, -40)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_mk0bt")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control"]
-visible = false
-layout_mode = 0
-offset_left = -352.0
-offset_top = -184.0
-offset_right = 356.0
-offset_bottom = 1.0
-text = "tuasguessr the video game the app the game"
-label_settings = SubResource("LabelSettings_arfdj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Play" type="Button" parent="Control"]
-layout_mode = 0
+[node name="Play" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -112.0
-offset_top = 136.0
+offset_top = -152.0
 offset_right = 112.0
-offset_bottom = 248.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
 flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_ly8ic")
 
-[node name="TextureRect" type="TextureRect" parent="Control/Play"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Play"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.467
-anchor_top = 0.21400002
-anchor_right = 0.467
-anchor_bottom = 0.21400002
-offset_left = -248.608
-offset_top = -183.968
-offset_right = 263.392
-offset_bottom = 288.03198
+anchor_left = 0.4642857
+anchor_top = 0.5
+anchor_right = 0.4642857
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -184.0
+offset_right = 192.0
+offset_bottom = 184.0
 texture = ExtResource("3_a6ky5")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Play"]
-visible = false
-layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
-offset_right = 108.0
-offset_bottom = 51.0
-text = "Play the game or some shi"
-autowrap_mode = 1
-
-[connection signal="button_down" from="Control/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Play" to="." method="_on_play_button_down"]

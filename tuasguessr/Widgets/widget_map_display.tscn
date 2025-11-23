@@ -11,110 +11,171 @@
 [node name="Map Display" type="Node2D"]
 script = ExtResource("1_j2rn6")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect3" type="TextureRect" parent="Control"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.49
-anchor_top = 0.273
-anchor_right = 0.49
-anchor_bottom = 0.273
-offset_left = -179.6
-offset_top = -50.92
-offset_right = 156.4
-offset_bottom = 109.08
-texture = ExtResource("5_krqyp")
-expand_mode = 1
+anchor_left = 0.91700006
+anchor_top = 0.148
+anchor_right = 0.91700006
+anchor_bottom = 0.148
+offset_left = -503.7201
+offset_top = 0.09600067
+offset_right = 0.27990723
+offset_bottom = 264.096
+color = Color(0.3180199, 0.31801975, 0.31801972, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = -166.0
-offset_top = -338.0
-offset_right = 195.0
-offset_bottom = -153.0
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91700006
+anchor_top = 0.148
+anchor_right = 0.91700006
+anchor_bottom = 0.148
+offset_left = -431.7201
+offset_top = -151.90399
+offset_right = -86.72015
+offset_bottom = 0.09600067
 texture = ExtResource("2_mw64g")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = -200.0
-offset_top = -200.0
-offset_right = 201.0
-offset_bottom = 1.0
-color = Color(0.3180199, 0.31801975, 0.31801972, 1)
-
-[node name="Floor0" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = -64.0
-offset_right = 240.0
-offset_bottom = -33.0
-text = "0"
-
-[node name="Floor1" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = -96.0
-offset_right = 240.0
-offset_bottom = -65.0
-text = "1"
-
-[node name="Floor2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = -128.0
-offset_right = 240.0
-offset_bottom = -97.0
-text = "2"
-
-[node name="Floor3" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = -160.0
-offset_right = 240.0
-offset_bottom = -129.0
-text = "3"
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = -256.0
-offset_top = -232.0
-offset_right = 256.0
-offset_bottom = 62.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91700006
+anchor_top = 0.148
+anchor_right = 0.91700006
+anchor_bottom = 0.148
+offset_left = -582.7201
+offset_top = -47.904
+offset_right = 79.27991
+offset_bottom = 354.096
 texture = ExtResource("4_krqyp")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
-layout_mode = 0
-offset_left = -194.0
-offset_top = -195.0
-offset_right = 196.0
-offset_bottom = -4.0
+[node name="Floor0" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97200006
+anchor_top = 0.34600002
+anchor_right = 0.97200006
+anchor_bottom = 0.34600002
+offset_left = -47.52002
+offset_top = -24.208008
+offset_right = 0.47998047
+offset_bottom = 23.791992
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Floor1" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97200006
+anchor_top = 0.259
+anchor_right = 0.97200006
+anchor_bottom = 0.259
+offset_left = -47.52002
+offset_top = -23.831985
+offset_right = 0.47998047
+offset_bottom = 24.168
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Floor2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97200006
+anchor_top = 0.17300001
+anchor_right = 0.97200006
+anchor_bottom = 0.17300001
+offset_left = -47.52002
+offset_top = -24.104004
+offset_right = 0.47998047
+offset_bottom = 23.895996
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Floor3" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97200006
+anchor_top = 0.086
+anchor_right = 0.97200006
+anchor_bottom = 0.086
+offset_left = -47.52002
+offset_top = -23.728
+offset_right = 0.47998047
+offset_bottom = 24.272
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.916138
+anchor_top = 0.148
+anchor_right = 0.91872424
+anchor_bottom = 0.1495432
+offset_left = -503.7201
+offset_top = 0.09600067
+offset_right = 0.27990723
+offset_bottom = 264.096
 stretch = true
+metadata/_edit_use_anchors_ = true
 
-[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Control/SubViewportContainer"]
 world_3d = SubResource("World3D_e87u4")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(390, 191)
+size = Vector2i(507, 265)
 render_target_update_mode = 4
 
-[node name="3dMap" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("1_e87u4")]
+[node name="3dMap" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" instance=ExtResource("1_e87u4")]
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = -192.0
-offset_right = 200.0
-offset_bottom = 88.0
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7099035
+anchor_top = 0.74081486
+anchor_right = 0.7099035
+anchor_bottom = 0.74082714
+offset_left = -191.48804
+offset_top = -88.048035
+offset_right = 192.51196
+offset_bottom = -0.055999756
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="Control/Floor0" to="." method="_on_floor_0_button_down"]
-[connection signal="button_down" from="Control/Floor1" to="." method="_on_floor_1_button_down"]
-[connection signal="button_down" from="Control/Floor2" to="." method="_on_floor_2_button_down"]
-[connection signal="button_down" from="Control/Floor3" to="." method="_on_floor_3_button_down"]
-[connection signal="button_down" from="Control/Button" to="." method="_on_button_down"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5212291
+anchor_top = 0.47727272
+anchor_right = 0.5212291
+anchor_bottom = 0.47727272
+offset_left = -168.15201
+offset_top = -84.0
+offset_right = 167.84802
+offset_bottom = 76.0
+texture = ExtResource("5_krqyp")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="CanvasLayer/Control/Floor0" to="." method="_on_floor_0_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor1" to="." method="_on_floor_1_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor2" to="." method="_on_floor_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor3" to="." method="_on_floor_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Button" to="." method="_on_button_down"]

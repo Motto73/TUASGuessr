@@ -16,7 +16,7 @@ class_name  Map3D
 
 @onready var subview : SubViewport = $".."
 
-@onready var mapdisplay : MapDisplay = $"../../../.."
+@onready var mapdisplay : MapDisplay = $"../../../../.."
 
 var mousedelta : Vector2
 var scrolldelta : float
