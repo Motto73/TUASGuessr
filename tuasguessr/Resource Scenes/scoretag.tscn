@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ba8jk0xrwv7k4"]
+[gd_scene load_steps=0 format=3 uid="uid://ba8jk0xrwv7k4"]
 
 [node name="Scoretag" type="Label"]
 anchors_preset = 5

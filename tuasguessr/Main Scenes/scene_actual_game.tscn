@@ -35,16 +35,16 @@ grow_vertical = 2
 texture = ExtResource("2_w1dm6")
 expand_mode = 1
 
-[node name="Map Display" parent="Canvas" instance=ExtResource("5_yndm8")]
-position = Vector2(792.00006, 320)
-scale = Vector2(1.46, 1.46)
-
 [node name="ShitUI" parent="Canvas" instance=ExtResource("6_p6cvv")]
 position = Vector2(808, 552)
 scale = Vector2(1.455, 1.455)
 
 [node name="SlotMachine" parent="Canvas" instance=ExtResource("4_32tj6")]
 position = Vector2(248, 337)
+
+[node name="Map Display" parent="Canvas" instance=ExtResource("5_yndm8")]
+position = Vector2(792.00006, 320)
+scale = Vector2(1.46, 1.46)
 
 [node name="MenuShop" parent="Canvas" instance=ExtResource("7_oda0l")]
 position = Vector2(-1, 282)

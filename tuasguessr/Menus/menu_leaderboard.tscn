@@ -13,71 +13,75 @@ fill_from = Vector2(0, 1)
 z_index = 5
 script = ExtResource("1_sh85h")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 583.0
-offset_top = 210.0
-offset_right = 623.0
-offset_bottom = 250.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Bg" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = -150.0
-offset_top = -123.0
-offset_right = 157.0
-offset_bottom = 356.0
+[node name="Bg" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.123
+anchor_right = 0.5
+anchor_bottom = 0.123
+offset_left = -152.0
+offset_top = 0.29599762
+offset_right = 155.0
+offset_bottom = 479.296
 texture = SubResource("GradientTexture2D_wy7k2")
 metadata/_edit_use_anchors_ = true
 
-[node name="Leaderboard" parent="Control" instance=ExtResource("1_wy7k2")]
-position = Vector2(-1, -58)
+[node name="Leaderboard" parent="CanvasLayer/Control/Bg" instance=ExtResource("1_wy7k2")]
+position = Vector2(149, 65)
 
-[node name="NewGame" type="Button" parent="Control"]
+[node name="NewGame" type="Button" parent="CanvasLayer/Control/Bg"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.45
 anchor_top = -0.125
 anchor_right = -0.45
 anchor_bottom = -0.125
-offset_left = 39.0
-offset_top = 288.0
-offset_right = 139.0
-offset_bottom = 339.0
+offset_left = 309.15
+offset_top = 465.875
+offset_right = 409.15
+offset_bottom = 516.875
 text = "new game"
-metadata/_edit_use_anchors_ = true
 
-[node name="Submit" type="Button" parent="Control"]
+[node name="Submit" type="Button" parent="CanvasLayer/Control/Bg"]
 layout_mode = 0
-offset_left = -129.0
-offset_top = 281.0
-offset_right = 16.0
-offset_bottom = 331.0
+offset_left = 21.0
+offset_top = 404.0
+offset_right = 166.0
+offset_bottom = 454.0
 text = "submit"
-metadata/_edit_use_anchors_ = true
 
-[node name="Namefield" type="TextEdit" parent="Control"]
+[node name="Namefield" type="TextEdit" parent="CanvasLayer/Control/Bg"]
 layout_mode = 0
-offset_left = -120.0
-offset_top = 187.0
-offset_right = 7.0
-offset_bottom = 269.0
+offset_left = 30.0
+offset_top = 310.0
+offset_right = 157.0
+offset_bottom = 392.0
 placeholder_text = "Name
 "
-metadata/_edit_use_anchors_ = true
 
-[node name="Pointsfield" type="Label" parent="Control"]
+[node name="Pointsfield" type="Label" parent="CanvasLayer/Control/Bg"]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 183.0
-offset_right = 141.0
-offset_bottom = 260.0
+offset_left = 172.0
+offset_top = 306.0
+offset_right = 291.0
+offset_bottom = 383.0
 text = "Your points:
 31231233243"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Control/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Control/Submit" to="." method="_on_submit_pressed"]
-[connection signal="text_changed" from="Control/Namefield" to="." method="_on_namefield_text_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/Bg/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Bg/Submit" to="." method="_on_submit_pressed"]
+[connection signal="text_changed" from="CanvasLayer/Control/Bg/Namefield" to="." method="_on_namefield_text_changed"]
