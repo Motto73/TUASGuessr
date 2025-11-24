@@ -6,13 +6,13 @@ class_name Leaderboard
 @onready var box = find_child("VBoxContainer", true, false)
 
 #Expected format: dictionary{ "name" : points }
-func set_data(dat: Dictionary):
+func set_data(dat: Array):
 	#Reparent to instanly move the loading thingamabob away, then queue deletion
 	loading.reparent(self)
 	loading.queue_free()
-	for data in dat:
-		var name = data[0]
-		var pts = data[1]
+	for entry in dat:
+		var name = entry.get("username", "Unknown")
+		var pts = entry.get("points", 0)
 		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate() as Label
 		tag.text = str(name) + " : " + str(pts)
 		box.add_child(tag)

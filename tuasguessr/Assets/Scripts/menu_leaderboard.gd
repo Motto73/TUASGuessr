@@ -25,11 +25,19 @@ func set_points(pts):
 	pointsield.text = "Your points:\n" + str(points)
 	
 func load_leaderboard():
-	#TODO - load a list into the leaderboard shi
-	print("Starting await on leaderboard")
-	var yep = await Game.Active.actualGame.load_scoreboard()
-	print("Await complete, setting leaderboard data")
-	widget.set_data(yep)
+	var fb = Game.Active.actualGame.get_node("/root/Firebase")
+	print("Requesting scoreboard...")
+	fb.scoreboard_read_completed.connect(_on_leaderboard_ready)
+	fb.read_scoreboard()
+
+func _on_leaderboard_ready(success: bool, data: Array, error: String):
+	if not success:
+		print("Leaderboard error:", error)
+		return
+
+	var dict = {"scores": data}
+	widget.set_data(data)
+
 
 
 func _on_namefield_text_changed():

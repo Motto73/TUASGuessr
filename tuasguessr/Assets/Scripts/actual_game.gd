@@ -41,6 +41,7 @@ var inventorytags : Array[String] = []
 func _ready():
 	start_game()
 	var firebase = load("res://Resource Scenes/firebase.tscn").instantiate()
+	firebase.scoreboard_read_completed.connect(_on_scores)
 	add_child(firebase)
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
@@ -125,6 +126,8 @@ func  buy_item(item):
 	return false
 	
 # Leaderboard
+
+
 func post_score(username):
 	print("Saving score for ", username)
 	#This method is called when the game is ready to post the score.
@@ -132,10 +135,16 @@ func post_score(username):
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
 	
-func load_scoreboard() -> Dictionary:
+func load_scoreboard():
 	#This method is called when the leaderboard wants to load the scores. Returns an array
 	#Use await here
-	var scoreboard = await FireBaseNode.get_scoreboard_data()
-	print("Scoreboard found: ", len(scoreboard))
-	print(str(scoreboard))
-	return scoreboard
+	var fb = get_node("/root/Firebase")
+	print("Requesting scoreboard...")
+	fb.read_scoreboard()
+
+func _on_scores(success: bool, data: Array, error: String):
+	if success:
+		print("Scoreboard received:", data)
+		print("Scoreboard length:", data.size())
+	else:
+		print("Error loading scoreboard:", error)

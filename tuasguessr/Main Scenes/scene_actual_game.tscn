@@ -10,7 +10,7 @@
 [node name="ActualGame" type="Node2D"]
 scale = Vector2(0.9644399, 0.99564976)
 script = ExtResource("1_rvmdn")
-ShortDuration = 180.0
+ShortDuration = 10.0
 ShortStartPoints = 0.0
 
 [node name="Canvas" type="CanvasLayer" parent="."]
