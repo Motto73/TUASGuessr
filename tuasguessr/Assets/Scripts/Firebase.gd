@@ -42,14 +42,18 @@ func _ready():
 
 	# Start by authenticating anonymously when the manager is ready
 	authenticate_anonymously()
+	
 
 #ANONYMOUS AUTHENTICATION FUNCTIONS
 func authenticate_anonymously():
 	if _auth_request.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
 		return # Request already in progress
+	elif _auth_request.get_http_client_status() == HTTPClient.STATUS_DISCONNECTED:
+		print("Authentication failed")
 	var headers = ["Content-Type: application/json"]
 	var body_data = {"returnSecureToken": true}
 	var body_json = JSON.stringify(body_data)
+	
 	
 	_auth_request.request(ANONYMOUS_SIGN_IN_URL, headers, HTTPClient.METHOD_POST, body_json)
 	
@@ -106,6 +110,7 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 #Getter function
 func get_scoreboard_data() -> Dictionary:
 	read_scoreboard()
+	print (_scoreboard_data)
 	return _scoreboard_data
 	
 
