@@ -13,6 +13,7 @@ class_name  Map3D
 @onready var cam := $Pivot/Camera3D
 @onready var markerstart := $MarkerStart
 @onready var markerend := $MarkerEnd
+@onready var drawline := $DrawLine
 
 @onready var subview : SubViewport = $".."
 
@@ -36,14 +37,15 @@ func _process(delta):
 		cam.position.y += scrolldelta
 		scrolldelta = 0
 		if dragrotate:
-			pivot.rotate(cam.global_transform.basis.y, -mousedelta.x)
-			pivot.rotate(cam.global_transform.basis.x, -mousedelta.y)
+			pivot.rotate(Vector3.UP, -mousedelta.x)
+			#pivot.rotate(cam.global_transform.basis.x, -mousedelta.y)
 			mousedelta = Vector2.ZERO
 		elif dragmove:
-			var right = cam.global_transform.basis.x
-			var up = cam.global_transform.basis.y
-			cam.global_translate(-right * mousedelta.x * MoveSpeed)
-			cam.global_translate(up * mousedelta.y * MoveSpeed)
+			var right = pivot.global_transform.basis.x
+			var up = cam.global_transform.basis.z * -1
+			up = Vector3(up.x, 0, up.z).normalized()
+			pivot.global_translate(-right * mousedelta.x * MoveSpeed)
+			pivot.global_translate(up * mousedelta.y * MoveSpeed)
 			mousedelta = Vector2.ZERO
 	if dragrotate:
 		dragtimer += delta
@@ -93,9 +95,15 @@ func reveal():
 	pos.y = 0
 	markerend.position = pos
 	
+	drawline.visible = true
+	drawline.position = markerstart.position + (markerend.position - markerstart.position) * 0.5
+	drawline.look_at(markerend.position)
+	drawline.scale = Vector3(0.1, 0.1, (markerend.position - markerstart.position).length())
+	
 func reset():
 	markerstart.visible = false
 	markerend.visible = false
+	drawline.visible = false
 
 func lock():
 	CanMove = false

@@ -15,10 +15,6 @@ run/main_scene="uid://cv8lkpnfrk0n5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://dnhlwfrfikcr0"
 
-[autoload]
-
-Firebase="res://Assets/Scripts/Firebase.gd"
-
 [display]
 
 window/stretch/mode="viewport"

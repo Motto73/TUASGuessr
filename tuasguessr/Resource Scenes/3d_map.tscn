@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd0q8xxbij8at"]
+[gd_scene load_steps=7 format=3 uid="uid://dd0q8xxbij8at"]
 
 [ext_resource type="Script" uid="uid://cfwu2vlocarfu" path="res://Assets/Scripts/3d_map.gd" id="1_6le5j"]
 [ext_resource type="PackedScene" uid="uid://dqweao7ragffi" path="res://Resource Scenes/marker.tscn" id="3_noguo"]
@@ -9,13 +9,20 @@ background_mode = 1
 background_color = Color(0.19215687, 0.19215687, 0.5372549, 1)
 background_energy_multiplier = 2.66
 
+[sub_resource type="BoxMesh" id="BoxMesh_fwsxk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwsxk"]
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.81, 0.12149998, 0.12149998, 1)
+
 [node name="3dMap" type="Node3D"]
 script = ExtResource("1_6le5j")
 CanMove = true
 ClickVSDrag = 0.2
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5307627, -0.8475205, 0, 0.8475205, 0.5307627, 2.4901056, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9146849, -0.4041681, 0, 0.4041681, 0.9146849, 2.4901056, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.375154, 0)
@@ -35,5 +42,13 @@ light_energy = 2.438
 shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
+
+[node name="DrawLine" type="MeshInstance3D" parent="."]
+visible = false
+cast_shadow = 0
+mesh = SubResource("BoxMesh_fwsxk")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwsxk")
+
+[node name="Label3D" type="Label3D" parent="DrawLine"]
 
 [editable path="MapAssets"]
