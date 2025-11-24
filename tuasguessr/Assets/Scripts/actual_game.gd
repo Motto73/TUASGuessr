@@ -44,7 +44,6 @@ func _ready():
 	add_child(firebase)
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
-	FireBaseNode.write_score("TEST_USER", 999)
 
 func _process(delta):
 	if state == "playing":
@@ -132,7 +131,7 @@ func post_score(username):
 	# You can access name with: username
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
-	FireBaseNode.write_score("Test", 99)
+	#FireBaseNode.write_score("Test", 99)
 	
 func load_scoreboard():
 	print("Requesting scoreboard...")
