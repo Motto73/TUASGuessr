@@ -53,7 +53,7 @@ func authenticate_anonymously():
 	
 	_auth_request.request(ANONYMOUS_SIGN_IN_URL, headers, HTTPClient.METHOD_POST, body_json)
 	
-func _on_auth_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+func _on_auth_request_completed(result: int, response_code: int, headers, body):
 	if result != HTTPRequest.RESULT_SUCCESS:
 		_id_token = "" #Clear token
 		_user_uid = ""
@@ -86,19 +86,17 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 	var response_body_string = body.get_string_from_utf8()
 	var parsed = JSON.parse_string(response_body_string)
 
-	if parsed.error != OK:
+	if parsed.error == null:
 		print("JSON parse error: ", parsed.error_string)
 		_scoreboard_data = {}
 		return
 
 	# Data löytyy parsed.result kentästä
-	var data = parsed.result
 
 	if response_code == 204:
 		# Ei sisältöä – hyväksyttävä tapa tyhjentää scoreboard
 		_scoreboard_data = {}
-	elif typeof(data) == TYPE_DICTIONARY:
-		_scoreboard_data = data
+	
 	else:
 		print("Invalid data type")
 		_scoreboard_data = {}
