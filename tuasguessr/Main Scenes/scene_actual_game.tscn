@@ -11,7 +11,11 @@
 scale = Vector2(0.9644399, 0.99564976)
 script = ExtResource("1_rvmdn")
 GameDuration = 0.0
+<<<<<<< HEAD
 ShortDuration = 5.0
+=======
+ShortDuration = 120.0
+>>>>>>> 5b8c720620d4f946ba17b72b53adeea76789448e
 ShortStartPoints = 0.0
 
 [node name="Canvas" type="CanvasLayer" parent="."]
