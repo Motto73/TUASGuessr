@@ -47,4 +47,5 @@ position = Vector2(792.00006, 320)
 scale = Vector2(1.46, 1.46)
 
 [node name="MenuShop" parent="Canvas" instance=ExtResource("7_oda0l")]
+visible = false
 position = Vector2(-1, 282)
