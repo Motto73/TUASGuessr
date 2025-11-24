@@ -77,23 +77,34 @@ func read_scoreboard():
 	
 	_read_request.request(url, [], HTTPClient.METHOD_GET)
 	
-func _on_read_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+func _on_read_request_completed(result: int, response_code: int, headers: PackedStringArray, body:PackedByteArray):
 	if result != HTTPRequest.RESULT_SUCCESS:
-		_scoreboard_data = {} #Clear data on failure
+		_scoreboard_data = {}
 		print("Failed to read data")
 		return
+
 	var response_body_string = body.get_string_from_utf8()
-	var json_result = JSON.parse_string(response_body_string)
-	if response_code >= 200 and response_code < 300:
-		if json_result is Dictionary or (json_result == null and response_code == 204):
-			_scoreboard_data = json_result if json_result != null else {}
-			emit_signal("scoreboard_data_loaded", _scoreboard_data) # Emit signal when data is ready
-		else:
-			_scoreboard_data = {}
-			print("Clearing data")
-	else:
+	var parsed = JSON.parse_string(response_body_string)
+
+	if parsed.error != OK:
+		print("JSON parse error: ", parsed.error_string)
 		_scoreboard_data = {}
-		print("Clearing data")
+		return
+
+	# Data löytyy parsed.result kentästä
+	var data = parsed.result
+
+	if response_code == 204:
+		# Ei sisältöä – hyväksyttävä tapa tyhjentää scoreboard
+		_scoreboard_data = {}
+	elif typeof(data) == TYPE_DICTIONARY:
+		_scoreboard_data = data
+	else:
+		print("Invalid data type")
+		_scoreboard_data = {}
+		
+	emit_signal("scoreboard_data_loaded", _scoreboard_data)
+
 #Getter function
 func get_scoreboard_data() -> Dictionary:
 	read_scoreboard()

@@ -41,8 +41,9 @@ func _ready():
 	gameState = "intro"
 
 func startGame():
-	loadMainScene("res://Menus/menu_difficulty.tscn")
-	gameState = "difficultySelect"
+	#loadMainScene("res://Menus/menu_difficulty.tscn")
+	#gameState = "difficultySelect"
+	setDifficulty("medium")
 
 func setDifficulty(diff):
 	gameDifficulty = diff;
