@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci4clqh804507"]
+[gd_scene load_steps=7 format=3 uid="uid://ci4clqh804507"]
 
 [ext_resource type="Script" uid="uid://cc5b3iv6gjlvw" path="res://Assets/Scripts/slot_machine.gd" id="1_nmlme"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_i6cki"]
-[ext_resource type="Texture2D" uid="uid://dwoau8m3682nq" path="res://Assets/Game Images/IMG_20251111_144801_compressed.webp" id="3_nf4e5"]
+[ext_resource type="Texture2D" uid="uid://clka4ti3smooh" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/textures/Placeholder_start_picture.png" id="3_nf4e5"]
 
 [sub_resource type="Gradient" id="Gradient_nmlme"]
 offsets = PackedFloat32Array(0, 0.33865815, 0.6645367, 1)
@@ -15,14 +15,6 @@ fill_to = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_knkoj"]
 font_size = 24
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 18
-shadow_color = Color(0.08627451, 0.08627451, 0.08627451, 0.19215687)
-shadow_offset = Vector2(1, 3.15)
-
-[sub_resource type="LabelSettings" id="LabelSettings_i6cki"]
-font_size = 14
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 18
@@ -77,17 +69,6 @@ offset_right = 380.0
 offset_bottom = 75.0
 text = "epic slot machine thingamabob"
 label_settings = SubResource("LabelSettings_knkoj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/Control/Bg"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 41.0
-offset_right = 379.0
-offset_bottom = 112.0
-text = "( I am not in charge of UI )"
-label_settings = SubResource("LabelSettings_i6cki")
 horizontal_alignment = 1
 vertical_alignment = 1
 
