@@ -42,6 +42,7 @@ func _ready():
 
 	# Start by authenticating anonymously when the manager is ready
 	authenticate_anonymously()
+	print("Scoreboard data", _scoreboard_data)
 
 #ANONYMOUS AUTHENTICATION FUNCTIONS
 func authenticate_anonymously():
@@ -83,29 +84,30 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 		print("Failed to read data")
 		return
 
+	print("Scoreboard data:", _scoreboard_data)
+
 	var response_body_string = body.get_string_from_utf8()
 	var parsed = JSON.parse_string(response_body_string)
 
-	if parsed.error == null:
+	if parsed == null:
 		print("JSON parse error: ", parsed.error_string)
 		_scoreboard_data = {}
 		return
 
-	# Data löytyy parsed.result kentästä
-
-	if response_code == 204:
+	#if response_code == 204:
 		# Ei sisältöä – hyväksyttävä tapa tyhjentää scoreboard
-		_scoreboard_data = {}
+		#_scoreboard_data = {}
 	
-	else:
-		print("Invalid data type")
-		_scoreboard_data = {}
+	#else:
+		#print("Invalid data type")
+		#_scoreboard_data = {}
 		
-	emit_signal("scoreboard_data_loaded", _scoreboard_data)
+	print("FirebaseManager: Scoreboard read completed. Data received: ", _scoreboard_data)
+	emit_signal("scoreboard_read_completed", true, _scoreboard_data)
 
 #Getter function
 func get_scoreboard_data() -> Dictionary:
-	read_scoreboard()
+	await scoreboard_data_loaded
 	return _scoreboard_data
 	
 

@@ -11,8 +11,6 @@ class_name  ActualGame
 @export var ShortStartPoints := 50.
 ##Use short game mode instead
 @export var UseShortGame := true
-##Measured map to real world ratio 
-@export var GodotToMeters := 2.40 / 0.140
 
 @onready var slotmachine : SlotMachine = $Canvas/SlotMachine
 @onready var mapdisplay: MapDisplay = $"Canvas/Map Display"
@@ -71,14 +69,8 @@ func eval_points():
 	print("Evaluating points:")
 	print("Guess: " , mapdisplay.currentGuess, " , Target: ", currentData.position)
 	var dist = mapdisplay.currentGuess.distance_to(currentData.position)
-	var dist_m = dist * GodotToMeters
-	var pts = round(100 - dist_m)
-	if pts < 0:
-		pts = 0
-	
-	print("Distance: ", dist, " Real distance: ", dist_m)
-	print("Pts: ", pts)
-	set_points(points + pts)
+	print("Distance: ", dist)
+	set_points(points + floor(clamp(3 - dist, 0, 100) * 10))
 
 func hide_map():
 	mapdisplay.map3d.reset()
@@ -132,7 +124,6 @@ func load_scoreboard() -> Dictionary:
 	#This method is called when the leaderboard wants to load the scores. Returns an array
 	#Use await here
 	var scoreboard = FireBaseNode.get_scoreboard_data()
-	await scoreboard
 	print("Scoreboard found: ", len(scoreboard))
 	print(str(scoreboard))
 	return scoreboard
