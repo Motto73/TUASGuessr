@@ -123,7 +123,7 @@ func post_score(username):
 func load_scoreboard() -> Dictionary:
 	#This method is called when the leaderboard wants to load the scores. Returns an array
 	#Use await here
-	var scoreboard = FireBaseNode.get_scoreboard_data()
+	var scoreboard = await FireBaseNode.get_scoreboard_data()
 	print("Scoreboard found: ", len(scoreboard))
 	print(str(scoreboard))
 	return scoreboard

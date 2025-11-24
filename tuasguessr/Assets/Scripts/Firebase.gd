@@ -107,7 +107,7 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 
 #Getter function
 func get_scoreboard_data() -> Dictionary:
-	await scoreboard_data_loaded
+	await scoreboard_read_completed == true
 	return _scoreboard_data
 	
 
