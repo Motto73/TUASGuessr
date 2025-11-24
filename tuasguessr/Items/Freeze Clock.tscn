@@ -17,7 +17,7 @@ mesh = SubResource("BoxMesh_v4sp6")
 surface_material_override/0 = SubResource("ShaderMaterial_khbhl")
 script = ExtResource("2_2wvcx")
 Tag = "Freeze"
-Price = 42342.0
+Price = 100.0
 
 [node name="Area3D" type="Area3D" parent="."]
 

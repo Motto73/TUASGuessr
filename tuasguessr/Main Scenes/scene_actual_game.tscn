@@ -44,8 +44,8 @@ position = Vector2(248, 337)
 
 [node name="Map Display" parent="Canvas" instance=ExtResource("5_yndm8")]
 position = Vector2(792.00006, 320)
-scale = Vector2(1.46, 1.46)
+scale = Vector2(1.5065734, 1.3983849)
 
 [node name="MenuShop" parent="Canvas" instance=ExtResource("7_oda0l")]
-visible = false
+z_index = 10
 position = Vector2(-1, 282)
