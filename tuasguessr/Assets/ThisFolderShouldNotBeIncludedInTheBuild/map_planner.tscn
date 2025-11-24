@@ -41,6 +41,7 @@ DataAsset = ExtResource("2_e3agl")
 
 [node name="ICT3" parent="Press eyes to hide->" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
+visible = false
 
 [node name="Map Marker" parent="Press eyes to hide->/ICT3" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021999955, 0, 0.272)
@@ -138,6 +139,7 @@ Picture = ExtResource("15_u86vc")
 
 [node name="ICT2" parent="Press eyes to hide->" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+visible = false
 
 [node name="Map Marker11" parent="Press eyes to hide->/ICT2" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5431204, 0.00044035912, -0.32259706)
@@ -149,6 +151,7 @@ Picture = ExtResource("26_s227l")
 
 [node name="ICT0" parent="Press eyes to hide->" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)
+visible = false
 
 [node name="Map Marker11" parent="Press eyes to hide->/ICT0" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.010937, 0.0006952286, -1.1818767)
@@ -156,6 +159,7 @@ Picture = ExtResource("27_f7e7l")
 
 [node name="EDU3" parent="Press eyes to hide->" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.858, 4, 0)
+visible = false
 
 [node name="Map Marker21" parent="Press eyes to hide->/EDU3" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4152231, 0, 2.2708185)
@@ -179,10 +183,14 @@ Difficulty = "medium"
 
 [node name="EDU2" parent="Press eyes to hide->" index="6"]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 7.878, 2, 2.091)
+visible = false
 
 [node name="Map Marker24" parent="Press eyes to hide->/EDU2" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20279932, -0.5045068, 1.4389424)
 Picture = ExtResource("29_3mlim")
 Difficulty = "medium"
+
+[node name="EDU1" parent="Press eyes to hide->" index="7"]
+visible = false
 
 [editable path="Press eyes to hide->"]

@@ -43,7 +43,26 @@ shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
 
+[node name="ICT2" parent="MapAssets" index="2"]
+visible = false
+
+[node name="ICT1" parent="MapAssets" index="3"]
+visible = false
+
+[node name="ICT0" parent="MapAssets" index="4"]
+visible = false
+
+[node name="EDU3" parent="MapAssets" index="5"]
+visible = false
+
+[node name="EDU2" parent="MapAssets" index="6"]
+visible = false
+
+[node name="EDU1" parent="MapAssets" index="7"]
+visible = false
+
 [node name="LineDist" type="Label3D" parent="."]
+visible = false
 billboard = 1
 no_depth_test = true
 text = "Distance 20 trillion meters"
