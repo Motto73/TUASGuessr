@@ -28,14 +28,14 @@ func load_leaderboard():
 	var fb = Game.Active.actualGame.get_node("/root/Firebase")
 	print("Requesting scoreboard...")
 	fb.scoreboard_read_completed.connect(_on_leaderboard_ready)
-	fb.read_scoreboard()
+	Firebase.read_scoreboard()
 
 func _on_leaderboard_ready(success: bool, data: Array, error: String):
 	if not success:
 		print("Leaderboard error:", error)
 		return
 
-	var dict = {"scores": data}
+	var arr = {"scores": data}
 	widget.set_data(data)
 
 

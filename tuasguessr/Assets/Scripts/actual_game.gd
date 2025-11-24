@@ -41,10 +41,10 @@ var inventorytags : Array[String] = []
 func _ready():
 	start_game()
 	var firebase = load("res://Resource Scenes/firebase.tscn").instantiate()
-	firebase.scoreboard_read_completed.connect(_on_scores)
 	add_child(firebase)
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
+	FireBaseNode.write_score("TEST_USER", 999)
 
 func _process(delta):
 	if state == "playing":
@@ -126,23 +126,32 @@ func  buy_item(item):
 	return false
 	
 # Leaderboard
-
-
 func post_score(username):
 	print("Saving score for ", username)
 	#This method is called when the game is ready to post the score.
 	# You can access name with: username
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
+	FireBaseNode.write_score("Test", 99)
 	
 func load_scoreboard():
-	#This method is called when the leaderboard wants to load the scores. Returns an array
-	#Use await here
-	var fb = get_node("/root/Firebase")
 	print("Requesting scoreboard...")
-	fb.read_scoreboard()
+	
+	# Yhdistä signaali vain kerran
+	if not FireBaseNode.scoreboard_read_completed.is_connected(_on_scores):
+		print("DEBUG: connecting signal now")
+		FireBaseNode.scoreboard_read_completed.connect(_on_scores)
 
+	# Käynnistä HTTPRequest
+	print("DEBUG: load_scoreboard() calling Firebase.read_scoreboard()")
+	FireBaseNode.read_scoreboard()
+	
+
+#Triggered after load_scoreboard()
 func _on_scores(success: bool, data: Array, error: String):
+	print("DEBUG: _on_scores called!")
+	print("DEBUG: success =", success)
+	print("DEBUG: data =", data)
 	if success:
 		print("Scoreboard received:", data)
 		print("Scoreboard length:", data.size())

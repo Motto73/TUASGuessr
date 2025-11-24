@@ -5,6 +5,9 @@ class_name Leaderboard
 @onready var loading = find_child("Loading", true, false)
 @onready var box = find_child("VBoxContainer", true, false)
 
+func _ready() -> void:
+	Game.Active.actualGame.load_scoreboard()
+
 #Expected format: dictionary{ "name" : points }
 func set_data(dat: Array):
 	#Reparent to instanly move the loading thingamabob away, then queue deletion

@@ -23,6 +23,7 @@ signal scoreboard_read_completed(success: bool, data: Array, error_message: Stri
 signal score_write_completed(success: bool, key_or_error_message: String)
 
 func _ready():
+	print("DEBUG: FireBaseScript in scene tree?", is_inside_tree())
 	_auth_request = HTTPRequest.new()
 	add_child(_auth_request)
 	_auth_request.request_completed.connect(_on_auth_request_completed)
@@ -46,8 +47,7 @@ func authenticate_anonymously():
 	
 	print("FirebaseManager: Sending anonymous authentication request...")
 	var headers = ["Content-Type: application/json"]
-	var body_json = JSON.stringify({"returnSecureToken": true})
-	
+	var body_json = JSON.stringify({"returnSecureToken": true})	
 	var err = _auth_request.request(ANONYMOUS_SIGN_IN_URL, headers, HTTPClient.METHOD_POST, body_json)
 	if err != OK:
 		emit_signal("auth_completed", false, "Request init failed", "")
@@ -79,25 +79,32 @@ func _on_auth_request_completed(result, response_code, headers, body):
 
 # ---------------- READ ----------------
 func read_scoreboard():
+	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=\"points\"&limitToLast=10"
+	print("READ URL =", url)
+	print("DEBUG: read_scoreboard() called")
+
 	if _read_request.is_processing():
 		print("FirebaseManager: Read already in progress.")
 		return
 	
-	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=\"points\"&limitToLast=10"
+
 	var err = _read_request.request(url, [], HTTPClient.METHOD_GET)
+	print("DEBUG: HTTP request started =", err)
 	if err != OK:
 		emit_signal("scoreboard_read_completed", false, [], "Request init failed")
 
 func _on_read_request_completed(result, response_code, headers, body):
+	print("DEBUG: _on_read_request_completed triggered")
+	var response_body_string = body.get_string_from_utf8()
+	print("DEBUG RAW READ =", response_body_string)
 	if result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal("scoreboard_read_completed", false, [], "HTTP Error: " + str(result))
 		return
 
-	var text = body.get_string_from_utf8()
-	var json = JSON.parse_string(text)
+	var json = JSON.parse_string(response_body_string)
 
 	if not (json is Dictionary):
-		if text.strip_edges() == "null" or text.strip_edges().is_empty():
+		if response_body_string.strip_edges() == "null" or response_body_string.strip_edges().is_empty():
 			emit_signal("scoreboard_read_completed", true, [], "")
 			return
 
@@ -107,8 +114,9 @@ func _on_read_request_completed(result, response_code, headers, body):
 	_scoreboard_data = json
 	var arr = convert_and_sort_scoreboard(_scoreboard_data)
 
-	print("FirebaseManager: Scoreboard OK, sorted:", arr)
+	print("DEBUG: emitting signal scoreboard_read_completed")
 	emit_signal("scoreboard_read_completed", true, arr, "")
+	print("FirebaseManager: Scoreboard OK, sorted:", arr)
 
 # Converts Firebase dictionary → sorted array
 func convert_and_sort_scoreboard(data: Dictionary) -> Array:
@@ -140,11 +148,13 @@ func write_score(username: String, points: int):
 	write_score_internal(username, points)
 
 func write_score_internal(username: String, points: int):
+	var url = RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
+	print("WRITE URL =", url)
+	print("DEBUG: write_score_internal:", username, points)
 	if _write_request.is_processing():
 		emit_signal("score_write_completed", false, "Write already in progress.")
 		return
 	
-	var url = RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
 	var headers = ["Content-Type: application/json"]
 	var score_data = {
 		"username": username,
@@ -154,12 +164,15 @@ func write_score_internal(username: String, points: int):
 	}
 	
 	var body_json = JSON.stringify(score_data)
+	print("DEBUG WRITE BODY =", body_json)
+	print("DEBUG WRITE BODY PARSED =", score_data)
 	var err = _write_request.request(url, headers, HTTPClient.METHOD_POST, body_json)
 
 	if err != OK:
 		emit_signal("score_write_completed", false, "Request init failed")
 
 func _on_write_request_completed(result, response_code, headers, body):
+	print("WRITE COMPLETED:", response_code, body)
 	if result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal("score_write_completed", false, "HTTP Error: " + str(result))
 		return
