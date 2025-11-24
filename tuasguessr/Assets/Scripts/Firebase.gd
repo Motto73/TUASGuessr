@@ -46,13 +46,16 @@ func _ready():
 
 #ANONYMOUS AUTHENTICATION FUNCTIONS
 func authenticate_anonymously():
-	if _auth_request.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
+	if _auth_request.is_processing(): # More robust check than get_http_client_status()
+		print("Firebase: Auth request already in progress.")
 		return # Request already in progress
+	print("Firebase: Sending anonymous authentication request...")
 	var headers = ["Content-Type: application/json"]
 	var body_data = {"returnSecureToken": true}
 	var body_json = JSON.stringify(body_data)
 	
 	_auth_request.request(ANONYMOUS_SIGN_IN_URL, headers, HTTPClient.METHOD_POST, body_json)
+	emit_signal("auth_completed", true, _scoreboard_data)
 	
 func _on_auth_request_completed(result: int, response_code: int, headers, body):
 	if result != HTTPRequest.RESULT_SUCCESS:
@@ -65,9 +68,13 @@ func _on_auth_request_completed(result: int, response_code: int, headers, body):
 		if response_code >= 200 and response_code < 300:
 			_id_token = json_result.get("idToken", "")
 			_user_uid = json_result.get("localId", "")
+			emit_signal("auth_completed", true, _id_token, _user_uid)
 		else:
 			_id_token = ""
 			_user_uid = ""
+	_scoreboard_data = json_result
+	print("Firebase: Scoreboard read completed. Data received: ", _scoreboard_data)
+	emit_signal("scoreboard_read_completed", true, _scoreboard_data)
 
 #  REALTIME DATABASE READ FUNCTIONS
 func read_scoreboard():
@@ -108,6 +115,10 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 #Getter function
 func get_scoreboard_data() -> Dictionary:
 	await scoreboard_read_completed == true
+	await auth_completed == true
+	await score_write_completed == true
+	read_scoreboard()
+	print(_scoreboard_data)
 	return _scoreboard_data
 	
 
@@ -116,6 +127,7 @@ func write_score(username: String, points: int):
 	if _id_token.is_empty():
 		return
 	if _write_request.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
+		emit_signal("score_write_completed", true, "Reading data")
 		return
 	
 	var url = RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
@@ -127,7 +139,10 @@ func write_score(username: String, points: int):
 	
 func _on_write_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if result != HTTPRequest.RESULT_SUCCESS:
+		print("FirebaseManager: Write score HTTP request failed: ", result)
+		emit_signal("score_write_completed", false, "HTTP Error: " + str(result))
 		return
 	if response_code == 401: # Unauthorized, often due to expired token
 		authenticate_anonymously()
 		return
+	emit_signal("score_write_completed", true, "Write completed")
