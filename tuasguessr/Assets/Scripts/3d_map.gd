@@ -14,6 +14,8 @@ class_name  Map3D
 @onready var markerstart := $MarkerStart
 @onready var markerend := $MarkerEnd
 @onready var drawline := $DrawLine
+@onready var linedist := $LineDist
+var lastdist
 
 @onready var subview : SubViewport = $".."
 
@@ -99,6 +101,8 @@ func reveal():
 	drawline.position = markerstart.position + (markerend.position - markerstart.position) * 0.5
 	drawline.look_at(markerend.position)
 	drawline.scale = Vector3(0.1, 0.1, (markerend.position - markerstart.position).length())
+	linedist.position = drawline.position
+	linedist.text = "distance"
 	
 func reset():
 	markerstart.visible = false

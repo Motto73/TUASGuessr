@@ -43,12 +43,15 @@ shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
 
+[node name="LineDist" type="Label3D" parent="."]
+billboard = 1
+no_depth_test = true
+text = "Distance 20 trillion meters"
+
 [node name="DrawLine" type="MeshInstance3D" parent="."]
 visible = false
 cast_shadow = 0
 mesh = SubResource("BoxMesh_fwsxk")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwsxk")
-
-[node name="Label3D" type="Label3D" parent="DrawLine"]
 
 [editable path="MapAssets"]
