@@ -11,6 +11,8 @@ class_name  ActualGame
 @export var ShortStartPoints := 50.
 ##Use short game mode instead
 @export var UseShortGame := true
+##Measured godot to meters distance
+@export var GodotToMeters = 2.40 / 0.14
 
 @onready var slotmachine : SlotMachine = $Canvas/SlotMachine
 @onready var mapdisplay: MapDisplay = $"Canvas/Map Display"
@@ -69,8 +71,12 @@ func eval_points():
 	print("Evaluating points:")
 	print("Guess: " , mapdisplay.currentGuess, " , Target: ", currentData.position)
 	var dist = mapdisplay.currentGuess.distance_to(currentData.position)
-	print("Distance: ", dist)
-	set_points(points + floor(clamp(3 - dist, 0, 100) * 10))
+	var dist_m = dist * GodotToMeters
+	print("Distance: ", dist, " Real distance: ", dist_m)
+	var pts = round(100 - dist_m)
+	if pts < 0:
+		pts = 0
+	set_points(points + pts)
 
 func hide_map():
 	mapdisplay.map3d.reset()
