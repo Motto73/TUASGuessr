@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://gllks8n4glmk"]
+
+[ext_resource type="Script" uid="uid://c0ci4243628hk" path="res://Resource Scenes/pointspopup.gd" id="1_m7aqa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q55x8"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_m7aqa"]
+_data = [Vector2(0, 0), 0.0, 3.3546917, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_m7utw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24783862, 1), 0.0, 0.0, 0, 0, Vector2(0.7492795, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Label" type="Label"]
+z_index = 15
+z_as_relative = false
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+ 1000 points"
+label_settings = SubResource("LabelSettings_q55x8")
+script = ExtResource("1_m7aqa")
+curve = SubResource("Curve_m7aqa")
+alphacurve = SubResource("Curve_m7utw")

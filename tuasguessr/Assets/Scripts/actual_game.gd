@@ -17,6 +17,7 @@ class_name  ActualGame
 @onready var slotmachine : SlotMachine = $Canvas/SlotMachine
 @onready var mapdisplay: MapDisplay = $"Canvas/Map Display"
 @onready var canvas : CanvasLayer = $Canvas
+@onready var topcanvas : CanvasLayer = $TopCanvas
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
@@ -77,6 +78,11 @@ func eval_points():
 	if pts < 0:
 		pts = 0
 	set_points(points + pts)
+	#Spawn a little popup thing
+	var pop = load("res://Resource Scenes/pointspopup.tscn").instantiate()
+	pop.position = statsui.position
+	topcanvas.add_child(pop)
+	pop.text = "+" + str(pts) + " Points!"
 
 func hide_map():
 	mapdisplay.map3d.reset()
