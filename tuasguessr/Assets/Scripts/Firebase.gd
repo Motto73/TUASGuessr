@@ -92,13 +92,11 @@ func _on_read_request_completed(result: int, response_code: int, headers: Packed
 		return
 
 	# Data löytyy parsed.result kentästä
-	var data = parsed.result
 
 	if response_code == 204:
 		# Ei sisältöä – hyväksyttävä tapa tyhjentää scoreboard
 		_scoreboard_data = {}
-	elif typeof(data) == TYPE_DICTIONARY:
-		_scoreboard_data = data
+	
 	else:
 		print("Invalid data type")
 		_scoreboard_data = {}
