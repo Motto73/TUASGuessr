@@ -54,3 +54,5 @@ func _on_submit_pressed():
 	submit.disabled = true
 	namefield.editable = false
 	Game.Active.actualGame.post_score(username)
+	Firebase.scoreboard_changed.connect(widget.set_data)
+	Game.Active.actualGame.update_lb_ui()

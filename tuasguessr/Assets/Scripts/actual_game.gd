@@ -38,6 +38,7 @@ var state = "loading"
 
 var inventorytags : Array[String] = []
 
+signal leaderboard_updated(data: Array)
 
 func _ready():
 	start_game()
@@ -46,6 +47,7 @@ func _ready():
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
 	
+	Firebase.check_scoreboard_for_updates()
 
 func _process(delta):
 	if state == "playing":
@@ -115,6 +117,17 @@ func end_game():
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
+		
+func update_lb_ui():
+	print("DEBUG: Leaderboard UI Update called")
+	if popup:
+		popup.queue_free()
+	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
+	canvas.add_child(popup)
+	if popup is MenuLeaderboard:
+		(popup as MenuLeaderboard).set_points(points)
+		(popup as MenuLeaderboard).actualgame = self
+	
 
 func new_game():
 	game.new_game()
@@ -146,7 +159,7 @@ func post_score(username):
 	# You can access name with: username
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
-	update_scoreboard()
+	
 	#FireBaseNode.write_score("Test", 99)
 	
 func load_scoreboard():
@@ -188,6 +201,7 @@ func update_scoreboard():
 		load_scoreboard()
 		print("DEBUG: Updating scoreboard")
 		emit_signal("leaderboard_updated", Firebase._get_cached_scoreboard_data())
+		leaderboard_updated.connect(_on_score_written)
 		)
 	print("DEBUG: Resetting score update -timer")
 	t.start()
@@ -195,6 +209,6 @@ func update_scoreboard():
 func _on_score_written(success: bool, key_or_error: String):
 	if success:
 		print("Score saved, now refreshing leaderboard!")
-		load_scoreboard()
+		Firebase.check_scoreboard_for_updates()  # ← tarkista uusin data
 	else:
 		print("Error saving score:", key_or_error)

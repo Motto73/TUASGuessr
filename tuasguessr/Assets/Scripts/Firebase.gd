@@ -11,6 +11,8 @@ var _id_token: String = ""
 var _user_uid: String = ""
 var _scoreboard_data: Dictionary = {}
 var _pending_write_data: Dictionary = {}
+var _last_etag: String = ""
+var _etag_request: HTTPRequest
 
 # --- HTTPRequest Nodes ---
 var _auth_request: HTTPRequest
@@ -21,6 +23,7 @@ var _write_request: HTTPRequest
 signal auth_completed(success: bool, id_token: String, user_uid: String)
 signal scoreboard_read_completed(success: bool, data: Array, error_message: String)
 signal score_write_completed(success: bool, key_or_error_message: String)
+signal scoreboard_changed(new_data: Array)
 
 func _ready():
 	print("DEBUG: FireBaseScript in scene tree?", is_inside_tree())
@@ -35,6 +38,10 @@ func _ready():
 	_write_request = HTTPRequest.new()
 	add_child(_write_request)
 	_write_request.request_completed.connect(_on_write_request_completed)
+	
+	_etag_request = HTTPRequest.new()
+	add_child(_etag_request)
+	_etag_request.request_completed.connect(_on_etag_request_completed)
 
 	print("FirebaseManager: Initializing...")
 	authenticate_anonymously()
@@ -117,6 +124,7 @@ func _on_read_request_completed(result, response_code, headers, body):
 	print("DEBUG: emitting signal scoreboard_read_completed")
 	emit_signal("scoreboard_read_completed", true, arr, "")
 	print("FirebaseManager: Scoreboard OK, sorted:", arr)
+	emit_signal("scoreboard_changed", arr)
 
 # Converts Firebase dictionary → sorted array
 func convert_and_sort_scoreboard(data: Dictionary) -> Array:
@@ -172,12 +180,11 @@ func write_score_internal(username: String, points: int):
 		emit_signal("score_write_completed", false, "Request init failed")
 
 func _on_write_request_completed(result, response_code, headers, body):
-	print("WRITE COMPLETED:", response_code, body)
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print("WRITE COMPLETED:", response_code, json)
 	if result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal("score_write_completed", false, "HTTP Error: " + str(result))
 		return
-
-	var json = JSON.parse_string(body.get_string_from_utf8())
 
 	if response_code >= 200 and response_code < 300:
 		var new_key = ""
@@ -199,3 +206,55 @@ func _on_write_request_completed(result, response_code, headers, body):
 func get_scoreboard_data(callback: Callable):
 	scoreboard_read_completed.connect(callback)
 	read_scoreboard()
+
+func check_scoreboard_for_updates():
+	if _etag_request.is_processing():
+		print("Firebase: ETag request skipped (busy)")
+		return
+	
+	var url = RTDB_BASE_URL + "/scoreboard.json"
+	
+	# Pyydetään pelkkä ETag ilman dataa
+	var headers = [
+		"X-Firebase-ETag: true",
+    	"Content-Type: application/json"
+]
+
+	var err = _etag_request.request(url, headers, HTTPClient.METHOD_GET, "")
+	if err != OK:
+		print("Firebase: ETag request failed:", err)
+		print("ERR:", err, " → ", error_string(err))
+
+func _on_etag_request_completed(result, response_code, headers, body):
+	if result != HTTPRequest.RESULT_SUCCESS:
+		print("Firebase: ETag request error:", result)
+		return
+
+	var new_etag := ""
+	for h in headers:
+		if h.begins_with("ETag:"):
+			new_etag = h.replace("ETag: ", "").strip_edges()
+			break
+
+	if new_etag == "":
+		print("Firebase: No ETag returned")
+		return
+
+	# Ensimmäinen kerta: pelkkä tallennus, ei signaalia
+	if _last_etag == "":
+		_last_etag = new_etag
+		return
+
+	# Muuttuiko ETag?
+	if new_etag != _last_etag:
+		print("Firebase: Scoreboard changed!")
+		_last_etag = new_etag
+
+		# Nyt haetaan päivitetty data ja emit_signal
+		read_scoreboard()
+
+		# read_scoreboard() lopulta kutsuu _on_read_request_completed,
+		# jonka lopussa lisäämme signaalin:
+		# emit_signal("scoreboard_changed", array_data)
+	else:
+		print("Firebase: No changes detected.")
