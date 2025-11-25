@@ -69,6 +69,10 @@ func set_datapoint(data):
 
 func eval_points():
 	slotmachine.reset()
+	var currentfloor = mapdisplay.map3d.currentfloor
+	var actualfloor = currentData.floor
+	print("Guess was at ", currentfloor, ", And the actual floor was ", actualfloor)
+	
 	print("Evaluating points:")
 	print("Guess: " , mapdisplay.currentGuess, " , Target: ", currentData.position)
 	var dist = mapdisplay.currentGuess.distance_to(currentData.position)
@@ -77,12 +81,21 @@ func eval_points():
 	var pts = round(100 - dist_m)
 	if pts < 0:
 		pts = 0
-	set_points(points + pts)
 	#Spawn a little popup thing
 	var pop = load("res://Resource Scenes/pointspopup.tscn").instantiate()
 	pop.position = statsui.position
 	topcanvas.add_child(pop)
-	pop.text = "+" + str(pts) + " Points!"
+	var text = "+" + str(pts) + " Points!"
+	var floor = true
+	#Check floor
+	if actualfloor != currentfloor:
+		pts = 0
+		text = "Wrong floor!\n Actual floor: " + str(actualfloor)
+		floor = false
+	##Actually apply points
+	pop.text = text
+	set_points(points + pts)
+	return floor
 
 func hide_map():
 	mapdisplay.map3d.reset()

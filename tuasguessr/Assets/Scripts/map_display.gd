@@ -18,9 +18,9 @@ func _ready():
 
 func _on_button_down():
 	state = "accepted"
-	map3d.reveal()
 	close()
-	Game.Active.actualGame.eval_points()
+	if Game.Active.actualGame.eval_points():
+		map3d.reveal()
 
 func open(data):
 	actualPoint = data
