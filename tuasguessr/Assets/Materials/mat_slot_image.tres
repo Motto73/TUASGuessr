@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cgdrsb4y8xp3o"]
+
+[ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="1_f3dc5"]
+[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="2_5tur0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f3dc5")
+shader_parameter/image = ExtResource("2_5tur0")
