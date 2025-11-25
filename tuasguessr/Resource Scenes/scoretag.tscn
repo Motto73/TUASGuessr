@@ -8,6 +8,6 @@ offset_left = -65.5
 offset_right = 65.5
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "NAMENAME : pts"
+text = "1. NAMENAME : pts"
 horizontal_alignment = 1
 vertical_alignment = 1
