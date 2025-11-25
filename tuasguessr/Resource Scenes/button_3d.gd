@@ -10,6 +10,8 @@ class_name  Button3D
 @export var AnimationDuration := 0.2
 @export var AnimationCurve : Curve
 
+var enabled := true
+
 var toggled := false
 var anim := 0.0
 
@@ -40,13 +42,18 @@ func set_highlight(on):
 	highlighted = on
 	
 	var mat = get_active_material(HilightMat)
-	mat.emission_enabled = on
+	mat.emission_enabled = on and enabled
 	mat.emission = HilightEmission
 	mat.emission_energy = HilightStrength
 
 func press():
+	if not enabled:
+		return
 	print("Button pressed!: ", name)
 	anim = 0
 	if AnimationType == "Switch":
 		toggled = !toggled
 		
+
+func enable(yes):
+	enabled = yes

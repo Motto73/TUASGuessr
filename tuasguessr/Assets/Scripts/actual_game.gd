@@ -14,7 +14,8 @@ class_name  ActualGame
 ##Measured godot to meters distance
 @export var GodotToMeters = 2.40 / 0.14
 
-@onready var slotmachine : SlotMachine = $Canvas/SlotMachine
+@onready var slopmachine : SlopMachine = $Canvas/Slopmachine
+var slotmachine : Slots3D
 @onready var mapdisplay: MapDisplay = $"Canvas/Map Display"
 @onready var canvas : CanvasLayer = $Canvas
 @onready var topcanvas : CanvasLayer = $TopCanvas
@@ -41,6 +42,7 @@ var inventorytags : Array[String] = []
 signal leaderboard_updated(data: Array)
 
 func _ready():
+	slotmachine = slopmachine.Slots
 	start_game()
 	var firebase = load("res://Resource Scenes/firebase.tscn").instantiate()
 	add_child(firebase)
@@ -67,9 +69,11 @@ func start_game():
 func set_datapoint(data):
 	print("Datapoint set")
 	currentData = data
-	mapdisplay.open(data)
 	if not data:
 		print("FUCK")
+
+func allow_bets():
+	mapdisplay.open(currentData)
 
 func eval_points():
 	slotmachine.reset()

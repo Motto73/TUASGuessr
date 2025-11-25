@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv8fl1pvxeeq3"]
+[gd_scene load_steps=5 format=3 uid="uid://dv8fl1pvxeeq3"]
 
+[ext_resource type="Script" uid="uid://slp44nfslmy8" path="res://Widgets/widget_slopmachine.gd" id="1_5k0vs"]
 [ext_resource type="PackedScene" uid="uid://17e5jj7rlk06" path="res://Resource Scenes/slots_3d.tscn" id="1_6sjyk"]
 
-[sub_resource type="Environment" id="Environment_6sjyk"]
+[sub_resource type="Environment" id="Environment_gbr3u"]
 
 [sub_resource type="World3D" id="World3D_5k0vs"]
-environment = SubResource("Environment_6sjyk")
+environment = SubResource("Environment_gbr3u")
 
 [node name="WidgetSlopmachine" type="Control"]
 layout_mode = 3
 anchor_right = 0.5
 anchor_bottom = 1.0
 grow_vertical = 2
+script = ExtResource("1_5k0vs")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1

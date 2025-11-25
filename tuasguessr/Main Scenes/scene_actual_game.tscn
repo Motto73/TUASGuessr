@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2khgu2qtfe6e"]
+[gd_scene load_steps=7 format=3 uid="uid://d2khgu2qtfe6e"]
 
 [ext_resource type="Script" uid="uid://crhlqilw6piu3" path="res://Assets/Scripts/actual_game.gd" id="1_rvmdn"]
 [ext_resource type="Texture2D" uid="uid://bbpbg0lh8qrq" path="res://Assets/Textures/Brick_Wall_BG.jpg" id="2_w1dm6"]
-[ext_resource type="PackedScene" uid="uid://ci4clqh804507" path="res://Widgets/widget_slot_machine.tscn" id="4_32tj6"]
 [ext_resource type="PackedScene" uid="uid://d3nd7kiqrswxx" path="res://Widgets/widget_map_display.tscn" id="5_yndm8"]
 [ext_resource type="PackedScene" uid="uid://6ddl2uvhr0fm" path="res://Widgets/widget_stats.tscn" id="6_p6cvv"]
 [ext_resource type="PackedScene" uid="uid://dv8fl1pvxeeq3" path="res://Widgets/widget_slopmachine.tscn" id="7_ad6qi"]
@@ -11,7 +10,6 @@
 [node name="ActualGame" type="Node2D"]
 scale = Vector2(0.9644399, 0.99564976)
 script = ExtResource("1_rvmdn")
-ShortDuration = 15.0
 ShortStartPoints = 0.0
 
 [node name="Canvas" type="CanvasLayer" parent="."]
@@ -47,13 +45,8 @@ scale = Vector2(1.5065734, 1.3983849)
 z_index = 10
 position = Vector2(-1, 282)
 
-[node name="WidgetSlopmachine" parent="Canvas" instance=ExtResource("7_ad6qi")]
+[node name="Slopmachine" parent="Canvas" instance=ExtResource("7_ad6qi")]
 z_index = 6
-
-[node name="SlotMachine" parent="Canvas" instance=ExtResource("4_32tj6")]
-visible = false
-position = Vector2(267.00003, 744)
-scale = Vector2(1.0000001, 1)
 
 [node name="TopCanvas" type="CanvasLayer" parent="."]
 layer = 10
