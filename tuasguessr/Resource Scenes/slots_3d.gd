@@ -29,7 +29,7 @@ var movezoom : Vector3
 func _ready():
 	#Animation setup
 	movestart = pivot.position
-	moveend = Vector3(0, -2.6, 0)
+	moveend = Vector3(0, -2.5, 0)
 	moverot = pivot.rotation.y
 	moverotend = moverot + PI / 2
 	movecam = cam.position
@@ -87,8 +87,10 @@ func _input(event):
 			var cast = raycast()
 			if cast && cast.collider.get_parent() is Button3D:
 				(cast.collider.get_parent() as Button3D).press()
-				if cast.collider.get_parent() == buttonleft:
+				if cast.collider.get_parent() == buttonleft or cast.collider.get_parent() == lever:
 					_on_roll_button_button_down()
+				if cast.collider.get_parent() == shopswitch or cast.collider.get_parent() == buttonring:
+					lit(!show_shop)
 
 func raycast() -> Dictionary:
 	var mouse = subview.get_mouse_position()
@@ -141,10 +143,12 @@ func set_random_images():
 func lock():
 	state = "locked"
 	rollbutton.enable(false)
+	lever.enable(false)
 	timer = 0
 	
 func reset():
 	rollbutton.enable(true)
+	lever.enable(true)
 	state = "ready"
 
 func select_point():
@@ -179,6 +183,7 @@ func _on_roll_button_button_down():
 		#TODO experiment
 		select_point()
 	rollbutton.enable(false)
+	lever.enable(false)
 	Game.Active.actualGame.hide_map()
 
 func process_slots(delta):

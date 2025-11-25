@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://17e5jj7rlk06"]
+[gd_scene load_steps=20 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Resource Scenes/slots_3d.gd" id="1_j830s"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_eyuyc"]
 [ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]
 [ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Resource Scenes/button_3d.gd" id="3_g0dd5"]
+[ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="7_axgpy"]
 
 [sub_resource type="Curve" id="Curve_j830s"]
@@ -91,6 +92,10 @@ shader = SubResource("Shader_eyuyc")
 shader_parameter/image = ExtResource("7_axgpy")
 
 [sub_resource type="Environment" id="Environment_gbr3u"]
+glow_enabled = true
+glow_intensity = 0.83
+glow_bloom = 0.19
+glow_hdr_threshold = 0.79
 
 [node name="Slots3D" type="Node3D"]
 script = ExtResource("1_j830s")
@@ -140,6 +145,9 @@ AnimationDuration = 0.05
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SlopMachine/Switch/StaticBody3D"]
 shape = SubResource("BoxShape3D_g0dd5")
 
+[node name="Display" parent="SlopMachine" index="5"]
+surface_material_override/0 = ExtResource("5_g1gli")
+
 [node name="Wheel_000" parent="SlopMachine/WheelHub" index="0"]
 surface_material_override/0 = ExtResource("2_gbr3u")
 surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
@@ -186,7 +194,7 @@ light_energy = 4.136
 environment = SubResource("Environment_gbr3u")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22267461, 1.6302085, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56639683, 2.2359445, 0)
 light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
 
 [editable path="SlopMachine"]
