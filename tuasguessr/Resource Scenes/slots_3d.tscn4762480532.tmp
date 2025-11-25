@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://17e5jj7rlk06"]
+
+[ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
+[ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Resource Scenes/slots_3d.gd" id="1_j830s"]
+[ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]
+[ext_resource type="Material" uid="uid://cgdrsb4y8xp3o" path="res://Assets/Materials/mat_slot_image.tres" id="2_umejl"]
+
+[sub_resource type="Curve" id="Curve_j830s"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Environment" id="Environment_gbr3u"]
+
+[node name="Slots3D" type="Node3D"]
+script = ExtResource("1_j830s")
+MoveCurve = SubResource("Curve_j830s")
+
+[node name="SlopMachine" parent="." instance=ExtResource("1_64lqi")]
+
+[node name="Wheel_000" parent="SlopMachine/WheelHub" index="0"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_001" parent="SlopMachine/WheelHub" index="1"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_002" parent="SlopMachine/WheelHub" index="2"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_003" parent="SlopMachine/WheelHub" index="3"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_004" parent="SlopMachine/WheelHub" index="4"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_005" parent="SlopMachine/WheelHub" index="5"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_006" parent="SlopMachine/WheelHub" index="6"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Wheel_007" parent="SlopMachine/WheelHub" index="7"]
+surface_material_override/0 = ExtResource("2_gbr3u")
+surface_material_override/1 = ExtResource("2_umejl")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.423649, 1.5397801, 0)
+fov = 23.7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.95047534, -0.24434334, 0.19207568, -0.30053633, -0.5650548, 0.7683691, -0.0792126, -0.7880416, -0.61050445, 3.3991454, 0, -1.3205404)
+light_energy = 4.136
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gbr3u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22267461, 1.6302085, 0)
+light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
+
+[editable path="SlopMachine"]
