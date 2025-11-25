@@ -22,6 +22,7 @@ func set_data(dat: Array):
 
 	var num = 1
 	for entry in dat:
+		await get_tree().create_timer(0.15).timeout
 		var name = entry.get("username", "Unknown")
 		var pts = entry.get("points", 0)
 		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate() as Label
@@ -30,4 +31,4 @@ func set_data(dat: Array):
 		num += 1
 
 		box.add_child(tag)
-	Firebase.check_scoreboard_for_updates()
+		Firebase.check_scoreboard_for_updates()

@@ -16,7 +16,7 @@ var data : Array
 
 func _ready():
 	print("Spawned the leaderboard popup")
-	submit.disabled = true
+	submit.disabled = false
 	
 	load_leaderboard()
 
@@ -49,6 +49,12 @@ func _on_namefield_text_changed():
 
 func _on_new_game_pressed():
 	actualgame.new_game()
+	submit.disabled = false
+	namefield.editable = true
+
+func updated_lb():
+	submit.disabled = true
+	namefield.editable = false
 
 func _on_submit_pressed():
 	submit.disabled = true

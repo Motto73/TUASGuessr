@@ -119,6 +119,8 @@ func end_game():
 		(popup as MenuLeaderboard).actualgame = self
 		
 func update_lb_ui():
+	await get_tree().create_timer(0.25).timeout
+	
 	print("DEBUG: Leaderboard UI Update called")
 	if popup:
 		popup.queue_free()
@@ -127,7 +129,7 @@ func update_lb_ui():
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
-	
+	popup.updated_lb()
 
 func new_game():
 	game.new_game()
