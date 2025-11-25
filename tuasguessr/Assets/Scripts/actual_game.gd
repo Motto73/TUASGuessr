@@ -38,12 +38,14 @@ var state = "loading"
 
 var inventorytags : Array[String] = []
 
+
 func _ready():
 	start_game()
 	var firebase = load("res://Resource Scenes/firebase.tscn").instantiate()
 	add_child(firebase)
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
+	
 
 func _process(delta):
 	if state == "playing":
@@ -144,6 +146,7 @@ func post_score(username):
 	# You can access name with: username
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
+	update_scoreboard()
 	#FireBaseNode.write_score("Test", 99)
 	
 func load_scoreboard():
@@ -167,5 +170,31 @@ func _on_scores(success: bool, data: Array, error: String):
 	if success:
 		print("Scoreboard received:", data)
 		print("Scoreboard length:", data.size())
+		emit_signal("leaderboard_updated",data)
 	else:
 		print("Error loading scoreboard:", error)
+
+func update_scoreboard():
+	#Update Firebase when score is written
+	load_scoreboard()
+	
+	var t := Timer.new()
+	t.wait_time = 1
+	t.one_shot = true
+	add_child(t)
+	
+	t.timeout.connect(func():
+		print("Re-updating leaderboard after delay...")
+		load_scoreboard()
+		print("DEBUG: Updating scoreboard")
+		emit_signal("leaderboard_updated", Firebase._get_cached_scoreboard_data())
+		)
+	print("DEBUG: Resetting score update -timer")
+	t.start()
+		
+func _on_score_written(success: bool, key_or_error: String):
+	if success:
+		print("Score saved, now refreshing leaderboard!")
+		load_scoreboard()
+	else:
+		print("Error saving score:", key_or_error)

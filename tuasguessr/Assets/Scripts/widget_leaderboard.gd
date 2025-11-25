@@ -21,3 +21,5 @@ func set_data(dat: Array):
 		tag.text = str(num) + ". " + str(name) + " : " + str(pts)
 		num += 1
 		box.add_child(tag)
+	
+	Game.Active.actualGame.update_scoreboard()

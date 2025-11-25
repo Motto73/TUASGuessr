@@ -30,6 +30,7 @@ func load_leaderboard():
 	fb.scoreboard_read_completed.connect(_on_leaderboard_ready)
 	Firebase.read_scoreboard()
 
+
 func _on_leaderboard_ready(success: bool, data: Array, error: String):
 	if not success:
 		print("Leaderboard error:", error)
@@ -37,7 +38,6 @@ func _on_leaderboard_ready(success: bool, data: Array, error: String):
 
 	var arr = {"scores": data}
 	widget.set_data(data)
-
 
 
 func _on_namefield_text_changed():
