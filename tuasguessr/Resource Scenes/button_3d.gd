@@ -28,7 +28,7 @@ func _process(delta):
 	var progress = anim / AnimationDuration
 	var halfprogress = 1.0 - abs(progress * 2.0 - 1.0)
 	if AnimationType == "Button":
-		position = lerp(ogpos, ogpos + Vector3(0,-0.1,0), halfprogress)
+		position = lerp(ogpos, ogpos + Vector3(0,-0.05,0), halfprogress)
 	elif AnimationType == "Lever":
 		rotation = lerp(ogrot, ogrot + Vector3(0, 0, -PI / 2), halfprogress)
 	elif AnimationType == "Switch":
