@@ -258,3 +258,7 @@ func _on_etag_request_completed(result, response_code, headers, body):
 		# emit_signal("scoreboard_changed", array_data)
 	else:
 		print("Firebase: No changes detected.")
+
+
+func console(text):
+	Game.Active.console(text)

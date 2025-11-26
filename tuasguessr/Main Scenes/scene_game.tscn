@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv8lkpnfrk0n5"]
+[gd_scene load_steps=6 format=3 uid="uid://cv8lkpnfrk0n5"]
 
 [ext_resource type="Script" uid="uid://b2vdhnc6223t5" path="res://Assets/Scripts/game.gd" id="1_o2lv5"]
 [ext_resource type="PackedScene" uid="uid://cvilngt54vwp5" path="res://Menus/menu_intro.tscn" id="2_0lnjc"]
 [ext_resource type="Texture2D" uid="uid://bbpbg0lh8qrq" path="res://Assets/Textures/Brick_Wall_BG.jpg" id="2_v8p24"]
+[ext_resource type="Script" uid="uid://d4iexmbxveebq" path="res://Main Scenes/debug_print.gd" id="4_t62ol"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2o6t"]
 font_size = 14
@@ -38,5 +39,22 @@ text = "Versiontext. Hello, hiii hello hi, hi hello! Hello, hi! Hello hii... Hi!
 label_settings = SubResource("LabelSettings_e2o6t")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="DebugPrint" type="Label" parent="DrawOnTop"]
+offset_right = 460.0
+offset_bottom = 23.0
+text = "Press P to toggle console"
+label_settings = SubResource("LabelSettings_e2o6t")
+script = ExtResource("4_t62ol")
+
+[node name="ColorRect" type="ColorRect" parent="DrawOnTop/DebugPrint"]
+modulate = Color(0.48, 0.48, 0.48, 0.5137255)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]

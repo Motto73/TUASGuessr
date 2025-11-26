@@ -127,7 +127,8 @@ func update_lb_ui():
 	
 	print("DEBUG: Leaderboard UI Update called")
 	if popup:
-		popup.queue_free()
+		for i in popup.get_children():
+			i.queue_free()
 	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
 	canvas.add_child(popup)
 	if popup is MenuLeaderboard:

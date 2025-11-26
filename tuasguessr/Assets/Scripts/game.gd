@@ -3,6 +3,7 @@ class_name Game
 
 @onready var Camera := $Camera2D
 @onready var versiontext := $DrawOnTop/VersionText
+@onready var debugconsole := $DrawOnTop/DebugPrint
 
 ##Static reference to the current active game
 static var Active : Game
@@ -61,3 +62,11 @@ func loadMainScene(res):
 	
 func new_game():
 	startGame()
+	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_P:
+		debugconsole.visible = !debugconsole.visible
+
+func console(text):
+	debugconsole.addline(text)
+	
