@@ -7,11 +7,11 @@ class_name Leaderboard
 @onready var loading = find_child("Loading", true, false)
 @onready var box = find_child("VBoxContainer", true, false)
 
-@onready var lb_menu : MenuLeaderboard
 
 func _ready():
 	Firebase.read_scoreboard()
 	Firebase.score_write_completed.connect(update_list)
+	Firebase.score_write_completed.connect(set_data)
 
 #Expected format: dictionary{ "name" : points }
 func set_data(dat: Array):
@@ -41,6 +41,3 @@ func update_list():
 	var arr = Firebase._get_scoreboard_array()
 	print("DEBUG: Leaderboard UI Update called")
 	Game.Active.actualGame.update_lb_ui(arr)
-	print("Disabling submit after update")
-	if menu_leaderboard and menu_leaderboard.has_method("disable_submit"):
-		menu_leaderboard.disable_submit()

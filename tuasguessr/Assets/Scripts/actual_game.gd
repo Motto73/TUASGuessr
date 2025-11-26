@@ -141,6 +141,8 @@ func update_lb_ui(data: Array):
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
+		(popup as MenuLeaderboard).disable_submit()
+	
 
 func new_game():
 	game.new_game()
