@@ -22,6 +22,7 @@ var slotmachine : Slots3D
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
+@onready var lb_widget : Leaderboard = $Widgets/widget_leaderboard
 
 var popup : Node
 
@@ -48,8 +49,6 @@ func _ready():
 	add_child(firebase)
 	assert(firebase is FireBaseScript, "FUCK!")
 	FireBaseNode = firebase as FireBaseScript
-	
-	Firebase.check_scoreboard_for_updates()
 
 func _process(delta):
 	if state == "playing":
@@ -118,23 +117,30 @@ func end_game():
 		popup.queue_free()
 	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
 	canvas.add_child(popup)
+	canvas.add_child(lb_widget)
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
-		
-func update_lb_ui():
-	await get_tree().create_timer(0.25).timeout
-	
+	Firebase.read_scoreboard()
+
+func update_lb_ui(data: Array):
 	print("DEBUG: Leaderboard UI Update called")
+
+	# Etsi jo olemassa oleva leaderboard widget
+	#if lb_widget == null:
+		# UI on luotu popup-kohdassa ensimmäisellä kerralla
+		#print("DEBUG: No existing leaderboard widget found, cannot update UI")
+		#return
+
+	# Päivitä leaderboard data
 	if popup:
-		for i in popup.get_children():
-			i.queue_free()
+		popup.queue_free()
 	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
 	canvas.add_child(popup)
+	canvas.add_child(lb_widget)
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
-	popup.updated_lb()
 
 func new_game():
 	game.new_game()
@@ -166,7 +172,7 @@ func post_score(username):
 	# You can access name with: username
 	# You can access points with : points
 	FireBaseNode.write_score(username, points)
-	
+	load_scoreboard()
 	#FireBaseNode.write_score("Test", 99)
 	
 func load_scoreboard():

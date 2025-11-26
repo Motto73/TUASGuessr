@@ -13,6 +13,7 @@ var _scoreboard_data: Dictionary = {}
 var _pending_write_data: Dictionary = {}
 var _last_etag: String = ""
 var _etag_request: HTTPRequest
+var etag_busy := false
 
 # --- HTTPRequest Nodes ---
 var _auth_request: HTTPRequest
@@ -123,7 +124,7 @@ func _on_read_request_completed(result, response_code, headers, body):
 
 	print("DEBUG: emitting signal scoreboard_read_completed")
 	emit_signal("scoreboard_read_completed", true, arr, "")
-	print("FirebaseManager: Scoreboard OK, sorted:", arr)
+	#print("FirebaseManager: Scoreboard OK, sorted:", arr)
 	emit_signal("scoreboard_changed", arr)
 
 # Converts Firebase dictionary → sorted array
@@ -144,7 +145,10 @@ func _sort_score_descending(a, b):
 
 func _get_cached_scoreboard_data() -> Dictionary:
 	return _scoreboard_data
-
+func _get_scoreboard_array() -> Array:
+	var arr = convert_and_sort_scoreboard(_scoreboard_data)
+	return arr
+	
 # ---------------- WRITE ----------------
 func write_score(username: String, points: int):
 	if _id_token.is_empty():
@@ -157,7 +161,7 @@ func write_score(username: String, points: int):
 
 func write_score_internal(username: String, points: int):
 	var url = RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
-	print("WRITE URL =", url)
+	#print("WRITE URL =", url)
 	print("DEBUG: write_score_internal:", username, points)
 	if _write_request.is_processing():
 		emit_signal("score_write_completed", false, "Write already in progress.")
@@ -208,6 +212,11 @@ func get_scoreboard_data(callback: Callable):
 	read_scoreboard()
 
 func check_scoreboard_for_updates():
+	await get_tree().process_frame
+	OS.delay_msec(1)
+	if etag_busy:
+		return    # estää loopin
+	etag_busy = true
 	if _etag_request.is_processing():
 		print("Firebase: ETag request skipped (busy)")
 		return
@@ -224,8 +233,17 @@ func check_scoreboard_for_updates():
 	if err != OK:
 		print("Firebase: ETag request failed:", err)
 		print("ERR:", err, " → ", error_string(err))
+		etag_busy = false
 
 func _on_etag_request_completed(result, response_code, headers, body):
+	while _read_request.is_processing():
+		print("ETAG: Waiting for previous request to finish")
+		await get_tree().process_frame
+	
+	# Pieni viive web-version vuoksi
+	await get_tree().create_timer(0.05).timeout
+	
+	print("ETag request completed, safe to continue")
 	if result != HTTPRequest.RESULT_SUCCESS:
 		print("Firebase: ETag request error:", result)
 		return
@@ -258,7 +276,7 @@ func _on_etag_request_completed(result, response_code, headers, body):
 		# emit_signal("scoreboard_changed", array_data)
 	else:
 		print("Firebase: No changes detected.")
-
+	etag_busy = false
 
 func console(text):
 	Game.Active.console(text)
