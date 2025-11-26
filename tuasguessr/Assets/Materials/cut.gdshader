@@ -1,5 +1,4 @@
 shader_type spatial;
-render_mode unshaded;
 
 uniform sampler2D image;
 
@@ -11,5 +10,5 @@ void vertex() {
 
 void fragment() {
 	ALBEDO = texture(image, UV).rgb;
-	ALPHA = step(-0.15, worldpos.x);
+	ALPHA = step(-0.2, worldpos.x);
 }

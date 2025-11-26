@@ -14,6 +14,8 @@ class_name Slots3D
 @onready var lever := $SlopMachine/Lever
 @onready var subview := $".."
 
+@onready var led_display : LedDisplay = $SlopMachine/Display
+
 var show_shop := false
 var selection : Button3D
 
@@ -182,6 +184,7 @@ func _on_roll_button_button_down():
 		timer = 0
 		#TODO experiment
 		select_point()
+		led_display.set_roll()
 	rollbutton.enable(false)
 	lever.enable(false)
 	Game.Active.actualGame.hide_map()
@@ -197,3 +200,4 @@ func process_slots(delta):
 			state = "gaming"
 			timer = 0
 			Game.Active.actualGame.allow_bets()
+			led_display.set_diff(selectedPoint.difficulty)

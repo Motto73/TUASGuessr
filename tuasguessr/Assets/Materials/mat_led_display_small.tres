@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bss7gcidj8bbi"]
+
+[ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="1_e22k7"]
+[ext_resource type="Texture2D" uid="uid://t73b70wgkokr" path="res://Assets/Textures/led_random.png" id="2_e22k7"]
+
+[sub_resource type="Gradient" id="Gradient_qmfrv"]
+colors = PackedColorArray(0, 0, 0, 1, 0.9594626, 0.1696988, 0.99999994, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_euere"]
+gradient = SubResource("Gradient_qmfrv")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_e22k7")
+shader_parameter/Text = ExtResource("2_e22k7")
+shader_parameter/gradient = SubResource("GradientTexture1D_euere")
+shader_parameter/offset = Vector2(0, 0)
