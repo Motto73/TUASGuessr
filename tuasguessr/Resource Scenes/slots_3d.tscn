@@ -1,15 +1,17 @@
-[gd_scene load_steps=21 format=4 uid="uid://17e5jj7rlk06"]
+[gd_scene load_steps=23 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Resource Scenes/slots_3d.gd" id="1_j830s"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_eyuyc"]
 [ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]
+[ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="3_3av4g"]
 [ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Resource Scenes/button_3d.gd" id="3_g0dd5"]
 [ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Material" uid="uid://bss7gcidj8bbi" path="res://Assets/Materials/mat_led_display_small.tres" id="6_axgpy"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="7_axgpy"]
 [ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Resource Scenes/led_display.gd" id="7_cpjvi"]
 [ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="9_uyxu4"]
+[ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="11_tgcpo"]
 
 [sub_resource type="Curve" id="Curve_j830s"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -77,11 +79,13 @@ render_priority = 0
 shader = ExtResource("9_uyxu4")
 shader_parameter/image = ExtResource("7_axgpy")
 
-[node name="Slots3D" type="Node3D"]
+[node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
 script = ExtResource("1_j830s")
 MoveCurve = SubResource("Curve_j830s")
 SpinCurve = SubResource("Curve_eyuyc")
 Data = ExtResource("2_eyuyc")
+Slots = [NodePath("SlopMachine/Shop/ItemSlot0"), NodePath("SlopMachine/Shop/ItemSlot7"), NodePath("SlopMachine/Shop/ItemSlot1"), NodePath("SlopMachine/Shop/ItemSlot2"), NodePath("SlopMachine/Shop/ItemSlot3"), NodePath("SlopMachine/Shop/ItemSlot4"), NodePath("SlopMachine/Shop/ItemSlot5"), NodePath("SlopMachine/Shop/ItemSlot6")]
+ItemData = ExtResource("3_3av4g")
 
 [node name="SlopMachine" parent="." instance=ExtResource("1_64lqi")]
 
@@ -162,6 +166,49 @@ surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
 surface_material_override/0 = ExtResource("2_gbr3u")
 surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
 
+[node name="Shop" parent="SlopMachine" index="7"]
+transform = Transform3D(-0.13905072, 0, -2.0996076e-08, 0, 0.13905072, 0, 2.0996076e-08, 0, -0.13905072, -0.04752143, -1.2424226, -0.8970573)
+material_override = ExtResource("11_tgcpo")
+surface_material_override/0 = ExtResource("11_tgcpo")
+
+[node name="ItemSlot0" type="Node3D" parent="SlopMachine/Shop" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579028, 0.02342701, -4.7683716e-07)
+
+[node name="ItemSlot7" type="Node3D" parent="SlopMachine/Shop" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3781898, 0.02342701, 0.20784569)
+
+[node name="ItemSlot1" type="Node3D" parent="SlopMachine/Shop" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579023, 0.02342701, -3.8623614)
+
+[node name="ItemSlot2" type="Node3D" parent="SlopMachine/Shop" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1342368, 0.02342701, -3.8623605)
+
+[node name="ItemSlot3" type="Node3D" parent="SlopMachine/Shop" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579028, 2.5795603, -4.7683716e-07)
+
+[node name="ItemSlot4" type="Node3D" parent="SlopMachine/Shop" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579023, 2.5795603, -3.8623607)
+
+[node name="ItemSlot5" type="Node3D" parent="SlopMachine/Shop" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1342368, 2.5795603, -3.8623598)
+
+[node name="ItemSlot6" type="Node3D" parent="SlopMachine/Shop" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7236383, 2.5795608, -3.8623588)
+
+[node name="Skeleton3D" parent="SlopMachine/Armature" index="0"]
+bones/0/position = Vector3(2.4167562, -2.3731918, -1.4973483)
+bones/1/rotation = Quaternion(0.21587975, 1.1639839e-07, 2.5734886e-08, 0.97642)
+bones/2/position = Vector3(2.1612988e-07, 1.1610879, 0.057971667)
+bones/2/rotation = Quaternion(0.051522054, -4.785874e-14, 1.2283813e-08, 0.9986719)
+bones/3/rotation = Quaternion(0.5109716, -0.23721267, -0.52930343, 0.6344101)
+bones/4/rotation = Quaternion(0.55996954, 0.14414158, 0.5261419, 0.6235641)
+bones/5/rotation = Quaternion(0.5414546, 0.3057859, 0.42425835, 0.65827554)
+bones/6/rotation = Quaternion(0.5603497, 0.38720018, -0.12317113, 0.7217431)
+
+[node name="Seller man guy" parent="SlopMachine/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067519546, -0.009197235, -0.18137646)
+surface_material_override/0 = ExtResource("11_tgcpo")
+
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
@@ -170,10 +217,14 @@ fov = 23.7
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.95047534, -0.24434334, 0.19207568, -0.30053633, -0.5650548, 0.7683691, -0.0792126, -0.7880416, -0.61050445, 3.3991454, 0, -1.3205404)
-light_energy = 4.136
+light_energy = 2.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78212667, 1.6283851, 0)
+light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098903775, -1.1083778, -1.6495787)
 light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
 
 [editable path="SlopMachine"]
