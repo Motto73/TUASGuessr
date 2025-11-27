@@ -25,28 +25,28 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91579556
-anchor_top = 0.14799999
-anchor_right = 0.9186365
-anchor_bottom = 0.14799999
-offset_left = -503.7201
+anchor_left = 0.9086933
+anchor_top = 0.16034567
+anchor_right = 0.9086933
+anchor_bottom = 0.16034567
+offset_left = -575.7201
 offset_top = 0.09600067
 offset_right = 0.27990723
-offset_bottom = 264.096
+offset_bottom = 304.096
 color = Color(0.3180199, 0.31801975, 0.31801972, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91700006
+anchor_left = 0.92
 anchor_top = 0.148
-anchor_right = 0.91700006
+anchor_right = 0.92
 anchor_bottom = 0.148
-offset_left = -431.7201
+offset_left = -511.68
 offset_top = -151.90399
-offset_right = -86.72015
-offset_bottom = 0.09600067
+offset_right = -71.67999
+offset_bottom = 0.09601593
 texture = ExtResource("2_mw64g")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -54,10 +54,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91700006
+anchor_left = 0.7936365
 anchor_top = 0.148
 anchor_right = 0.91700006
-anchor_bottom = 0.148
+anchor_bottom = 0.243679
 offset_left = -582.7201
 offset_top = -47.904
 offset_right = 79.27991
@@ -125,14 +125,14 @@ metadata/_edit_use_anchors_ = true
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.916138
-anchor_top = 0.148
-anchor_right = 0.91872424
-anchor_bottom = 0.1495432
-offset_left = -503.7201
-offset_top = 0.09600067
-offset_right = 0.27990723
-offset_bottom = 264.096
+anchor_left = 0.90500003
+anchor_top = 0.162
+anchor_right = 0.90500003
+anchor_bottom = 0.162
+offset_left = -573.12
+offset_top = 0.024002075
+offset_right = -0.11999512
+offset_bottom = 303.024
 stretch = true
 metadata/_edit_use_anchors_ = true
 
@@ -141,7 +141,7 @@ world_3d = SubResource("World3D_e87u4")
 transparent_bg = true
 handle_input_locally = false
 msaa_3d = 2
-size = Vector2i(505, 265)
+size = Vector2i(573, 303)
 render_target_update_mode = 4
 
 [node name="3dMap" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" instance=ExtResource("1_e87u4")]
@@ -149,30 +149,18 @@ render_target_update_mode = 4
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7099035
-anchor_top = 0.74081486
-anchor_right = 0.7099035
-anchor_bottom = 0.74082714
-offset_left = -191.48804
-offset_top = -88.048035
-offset_right = 192.51196
-offset_bottom = -0.055999756
+anchor_left = 0.91
+anchor_top = 0.75900006
+anchor_right = 0.91
+anchor_bottom = 0.75900006
+offset_left = -263.64
+offset_top = -65.83203
+offset_right = 0.07598877
+offset_bottom = 66.16797
+icon = ExtResource("5_krqyp")
 flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/Button"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5212291
-anchor_top = 0.47727272
-anchor_right = 0.5212291
-anchor_bottom = 0.47727272
-offset_left = -168.15201
-offset_top = -84.0
-offset_right = 167.84802
-offset_bottom = 76.0
-texture = ExtResource("5_krqyp")
-expand_mode = 1
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="CanvasLayer/Control/Floor0" to="." method="_on_floor_0_button_down"]
