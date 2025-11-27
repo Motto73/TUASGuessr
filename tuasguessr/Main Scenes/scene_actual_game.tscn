@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2khgu2qtfe6e"]
+[gd_scene load_steps=6 format=3 uid="uid://d2khgu2qtfe6e"]
 
 [ext_resource type="Script" uid="uid://crhlqilw6piu3" path="res://Assets/Scripts/actual_game.gd" id="1_rvmdn"]
 [ext_resource type="Texture2D" uid="uid://bbpbg0lh8qrq" path="res://Assets/Textures/Brick_Wall_BG.jpg" id="2_w1dm6"]
 [ext_resource type="PackedScene" uid="uid://d3nd7kiqrswxx" path="res://Widgets/widget_map_display.tscn" id="5_yndm8"]
 [ext_resource type="PackedScene" uid="uid://6ddl2uvhr0fm" path="res://Widgets/widget_stats.tscn" id="6_p6cvv"]
 [ext_resource type="PackedScene" uid="uid://dv8fl1pvxeeq3" path="res://Widgets/widget_slopmachine.tscn" id="7_ad6qi"]
-[ext_resource type="PackedScene" uid="uid://ccuhrqtpqto7e" path="res://Menus/menu_shop.tscn" id="7_oda0l"]
 
 [node name="ActualGame" type="Node2D"]
 scale = Vector2(0.9644399, 0.99564976)
@@ -40,11 +39,6 @@ scale = Vector2(1.455, 1.455)
 [node name="Map Display" parent="Canvas" instance=ExtResource("5_yndm8")]
 position = Vector2(792.00006, 320)
 scale = Vector2(1.5065734, 1.3983849)
-
-[node name="MenuShop" parent="Canvas" instance=ExtResource("7_oda0l")]
-visible = false
-z_index = 10
-position = Vector2(-1, 282)
 
 [node name="Slopmachine" parent="Canvas" instance=ExtResource("7_ad6qi")]
 z_index = 6

@@ -174,9 +174,10 @@ func select_point():
 
 func prepare_slices():
 	for slice in hub.get_children():
-		var mat = slice.get_surface_override_material(1) as ShaderMaterial
-		mat = mat.duplicate() as ShaderMaterial
-		slice.set_surface_override_material(1, mat)
+		var newmat := ShaderMaterial.new()
+		var newshader := load("res://Assets/Materials/cut.gdshader").duplicate()
+		newmat.shader = newshader
+		slice.set_surface_override_material(1, newmat)
 
 func show_all_random():
 	for i in range(hub.get_child_count()):

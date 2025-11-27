@@ -223,8 +223,4 @@ light_energy = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78212667, 1.6283851, 0)
 light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098903775, -1.1083778, -1.6495787)
-light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
-
 [editable path="SlopMachine"]
