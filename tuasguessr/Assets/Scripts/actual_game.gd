@@ -23,6 +23,7 @@ var slotmachine : Slots3D
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
 @onready var lb_widget : Leaderboard = $Widgets/widget_leaderboard
+@onready var lb_menu : MenuLeaderboard = $Menus/menu_leaderboard
 
 var popup : Node
 
@@ -31,6 +32,7 @@ var game : Game
 var currentData : MapDataPoint
 
 var points = 0
+var score = points
 
 var currentFloor : int
 var roundtimer = 0
@@ -38,8 +40,6 @@ var roundtimer = 0
 var state = "loading"
 
 var inventorytags : Array[String] = []
-
-signal leaderboard_updated(data: Array)
 
 func _ready():
 	slotmachine = slopmachine.Slots
@@ -116,16 +116,9 @@ func end_game():
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
-	Firebase.read_scoreboard()
-
-func update_lb_ui(data: Array):
+	
+func update_lb_ui():
 	print("DEBUG: Leaderboard UI Update called")
-
-	# Etsi jo olemassa oleva leaderboard widget
-	#if lb_widget == null:
-		# UI on luotu popup-kohdassa ensimmäisellä kerralla
-		#print("DEBUG: No existing leaderboard widget found, cannot update UI")
-		#return
 
 	# Päivitä leaderboard data
 	if popup:
@@ -134,7 +127,6 @@ func update_lb_ui(data: Array):
 	canvas.add_child(popup)
 	canvas.add_child(lb_widget)
 	if popup is MenuLeaderboard:
-		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self
 		(popup as MenuLeaderboard).disable_submit()
 	
@@ -162,22 +154,3 @@ func  buy_item(item):
 		return true
 	return false
 	
-# Leaderboard
-func post_score(username):
-	print("Saving score for ", username)
-	#This method is called when the game is ready to post the score.
-	# You can access name with: username
-	# You can access points with : points
-	#FireBaseNode.write_score("Test", 99)
-
-#Triggered after load_scoreboard()
-func _on_scores(success: bool, data: Array, error: String):
-	print("DEBUG: _on_scores called!")
-	print("DEBUG: success =", success)
-	print("DEBUG: data =", data)
-	if success:
-		print("Scoreboard received:", data)
-		print("Scoreboard length:", data.size())
-		emit_signal("leaderboard_updated",data)
-	else:
-		print("Error loading scoreboard:", error)
