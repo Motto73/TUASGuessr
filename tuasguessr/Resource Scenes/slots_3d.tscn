@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
-[ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Resource Scenes/slots_3d.gd" id="1_j830s"]
+[ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Assets/Scripts/slots_3d.gd" id="1_j830s"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_eyuyc"]
 [ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="3_3av4g"]
-[ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Resource Scenes/button_3d.gd" id="3_g0dd5"]
+[ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Assets/Scripts/button_3d.gd" id="3_g0dd5"]
 [ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Material" uid="uid://bss7gcidj8bbi" path="res://Assets/Materials/mat_led_display_small.tres" id="6_axgpy"]
 [ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="7_axgpy"]
-[ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Resource Scenes/led_display.gd" id="7_cpjvi"]
+[ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Assets/Scripts/led_display.gd" id="7_cpjvi"]
 [ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="9_uyxu4"]
 [ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="11_tgcpo"]
 
