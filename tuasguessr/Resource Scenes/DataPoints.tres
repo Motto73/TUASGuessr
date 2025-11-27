@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapDataPoints" load_steps=31 format=3 uid="uid://brqchuj25do8n"]
+[gd_resource type="Resource" script_class="MapDataPoints" load_steps=46 format=3 uid="uid://brqchuj25do8n"]
 
 [ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://Assets/Scripts/MapDataPoint.gd" id="1_gfkhl"]
 [ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://Assets/Scripts/MapDataPoints.gd" id="2_t4pk4"]
@@ -198,7 +198,112 @@ difficulty = "medium"
 position = Vector3(8.080799, 0, 0.65205765)
 floor = 2
 
+[sub_resource type="Resource" id="Resource_ycjrx"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.29_compressed.webp"
+difficulty = "medium"
+position = Vector3(11.096082, 0, -0.004261732)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_2yw68"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.35_compressed.webp"
+difficulty = "medium"
+position = Vector3(11.367747, 0, -0.23743725)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_qf1ul"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.41_compressed.webp"
+difficulty = "medium"
+position = Vector3(11.161128, 0, -1.8011298)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_58rci"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.49_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.621679, 0, -1.738693)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_tv5di"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.55_compressed.webp"
+difficulty = "medium"
+position = Vector3(8.517568, 0, -1.7730093)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_8ooog"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.04_compressed.webp"
+difficulty = "medium"
+position = Vector3(8.383368, 0, -0.65650153)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_u840j"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.12_compressed.webp"
+difficulty = "medium"
+position = Vector3(8.288631, 0, 1.7057854)
+floor = 2
+
+[sub_resource type="Resource" id="Resource_c1c8h"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.23_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.266506, 0, 0.013884783)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_ppqju"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.51_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.503425, 0, 0.01714778)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_814tx"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.57_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.069144, 0, 0.0012669563)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_flpgj"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.02_compressed.webp"
+difficulty = "medium"
+position = Vector3(9.808117, 0, -0.17311668)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_1qhrw"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.12_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.694889, 0, -1.5136626)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_8g46i"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.22_compressed.webp"
+difficulty = "medium"
+position = Vector3(10.344965, 0, 0.8725486)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_awwi5"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.20_compressed.webp"
+difficulty = "medium"
+position = Vector3(9.455867, 0, 1.4668565)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_0b8sj"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.28_compressed.webp"
+difficulty = "medium"
+position = Vector3(11.279555, 0, 2.3492985)
+floor = 1
+
 [resource]
 script = ExtResource("2_t4pk4")
-DataPoints = [SubResource("Resource_c1qla"), SubResource("Resource_thhs6"), SubResource("Resource_ui5yi"), SubResource("Resource_a64in"), SubResource("Resource_0n1xs"), SubResource("Resource_7oqfl"), SubResource("Resource_6utl2"), SubResource("Resource_sberp"), SubResource("Resource_cqf0x"), SubResource("Resource_avece"), SubResource("Resource_ukc1j"), SubResource("Resource_jqxlw"), SubResource("Resource_ekevu"), SubResource("Resource_ahqpo"), SubResource("Resource_oqlkp"), SubResource("Resource_kxtrj"), SubResource("Resource_gj0yd"), SubResource("Resource_g71v8"), SubResource("Resource_id0nr"), SubResource("Resource_kftlu"), SubResource("Resource_4e3rm"), SubResource("Resource_vrw6i"), SubResource("Resource_tynl3"), SubResource("Resource_mg8m5"), SubResource("Resource_wdnkp"), SubResource("Resource_qfdac"), SubResource("Resource_hsc0n"), SubResource("Resource_lij7j")]
+DataPoints = [SubResource("Resource_c1qla"), SubResource("Resource_thhs6"), SubResource("Resource_ui5yi"), SubResource("Resource_a64in"), SubResource("Resource_0n1xs"), SubResource("Resource_7oqfl"), SubResource("Resource_6utl2"), SubResource("Resource_sberp"), SubResource("Resource_cqf0x"), SubResource("Resource_avece"), SubResource("Resource_ukc1j"), SubResource("Resource_jqxlw"), SubResource("Resource_ekevu"), SubResource("Resource_ahqpo"), SubResource("Resource_oqlkp"), SubResource("Resource_kxtrj"), SubResource("Resource_gj0yd"), SubResource("Resource_g71v8"), SubResource("Resource_id0nr"), SubResource("Resource_kftlu"), SubResource("Resource_4e3rm"), SubResource("Resource_vrw6i"), SubResource("Resource_tynl3"), SubResource("Resource_mg8m5"), SubResource("Resource_wdnkp"), SubResource("Resource_qfdac"), SubResource("Resource_hsc0n"), SubResource("Resource_lij7j"), SubResource("Resource_ycjrx"), SubResource("Resource_2yw68"), SubResource("Resource_qf1ul"), SubResource("Resource_58rci"), SubResource("Resource_tv5di"), SubResource("Resource_8ooog"), SubResource("Resource_u840j"), SubResource("Resource_c1c8h"), SubResource("Resource_ppqju"), SubResource("Resource_814tx"), SubResource("Resource_flpgj"), SubResource("Resource_1qhrw"), SubResource("Resource_8g46i"), SubResource("Resource_awwi5"), SubResource("Resource_0b8sj")]
 metadata/_custom_type_script = "uid://7nulugirt1qg"
