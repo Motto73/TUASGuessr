@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjmmam14ycxr7"]
+[gd_scene load_steps=6 format=3 uid="uid://bjmmam14ycxr7"]
 
 [ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://Assets/Scripts/menu_leaderboard.gd" id="1_sh85h"]
 [ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://Widgets/widget_leaderboard.tscn" id="1_wy7k2"]
 [ext_resource type="Texture2D" uid="uid://cc3udah2bkhkn" path="res://Assets/Textures/Leaderboard.png" id="2_n418k"]
 [ext_resource type="Texture2D" uid="uid://by3v5o6m3bijb" path="res://Assets/Textures/button_play_2.png" id="4_dhq4i"]
 [ext_resource type="Texture2D" uid="uid://csjpq0d1lcgat" path="res://Assets/Textures/button_submit.png" id="5_ipq2f"]
-[ext_resource type="Script" uid="uid://ddt53liwyddei" path="res://Menus/http_request.gd" id="6_ipq2f"]
 
 [node name="Menu_Leaderboard" type="Node2D"]
 z_index = 5
@@ -21,11 +20,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="LBControl" type="Node" parent="CanvasLayer/Control"]
-
-[node name="scoreboard_request" type="HTTPRequest" parent="CanvasLayer/Control/LBControl"]
-script = ExtResource("6_ipq2f")
 
 [node name="Bg" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1

@@ -17,7 +17,7 @@ config/icon="uid://dnhlwfrfikcr0"
 
 [autoload]
 
-HttpRequest="res://Menus/http_request.gd"
+Firebase="*res://Assets/Scripts/Firebase.gd"
 
 [display]
 
