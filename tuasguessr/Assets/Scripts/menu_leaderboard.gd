@@ -12,29 +12,83 @@ var username := ""
 
 var actualgame : ActualGame
 
-var data : Array
 
 func _ready():
-	print("Spawned the leaderboard popup")
-	print("MENU LEADERBOARD: Calling check scoreboard for updates")
+	print("Spawned leaderboard popup")
 	submit.disabled = false
 	load_leaderboard()
+
+
 func set_points(pts):
 	points = pts
 	pointsield.text = "Your points:\n" + str(points)
-	
+
+
+# ------------------------
+# INITIAL LOAD (NOT SUBMIT)
+# ------------------------
 func load_leaderboard():
 	print("Requesting scoreboard...")
-	Firebase.scoreboard_read_completed.connect(_on_leaderboard_ready)
+
+	# Yhdistä signaali vain kerran
+	if not Firebase.scoreboard_read_completed.is_connected(_on_leaderboard_ready):
+		Firebase.scoreboard_read_completed.connect(_on_leaderboard_ready)
+
+	Firebase.read_scoreboard()
 
 
 func _on_leaderboard_ready(success: bool, data: Array, error: String):
-	if not success:
-		print("MENU LEADERBOARD: Leaderboard error:", error)
-		return
-	var arr = {"scores": data}
-	widget.set_data(data)
+	# -------------------------
+	# DISCONNECT IMMEDIATELY !!!
+	# -------------------------
+	if Firebase.scoreboard_read_completed.is_connected(_on_leaderboard_ready):
+		Firebase.scoreboard_read_completed.disconnect(_on_leaderboard_ready)
 
+	if success:
+		widget.set_data(data)
+	else:
+		print("Error setting data")
+		
+
+# ------------------------
+# SUBMIT SCORE
+# ------------------------
+func _on_submit_pressed():
+	submit.disabled = true
+	namefield.editable = false
+
+	# 1) Pre-read (web requires)
+	Firebase.read_scoreboard()
+	var before = await Firebase.scoreboard_read_completed
+
+	# 2) Save
+	Game.Active.actualGame.post_score(username)
+
+	# 3) Wait write OK
+	await Firebase.score_write_completed
+
+	# 4) Read updated list
+	Firebase.read_scoreboard()
+	var result = await Firebase.scoreboard_read_completed
+	var success = result[0]
+	var newdata = result[1]
+	var errmsg  = result[2]
+
+
+	if success:
+		widget.set_data(newdata)
+	else:
+		print("Error:", errmsg)
+
+
+	print("Leaderboard updated after submit")
+
+	disable_submit()
+
+
+func disable_submit():
+	submit.disabled = true
+	namefield.editable = false
 
 
 func _on_namefield_text_changed():
@@ -43,21 +97,3 @@ func _on_namefield_text_changed():
 		username = namefield.text
 	else:
 		submit.disabled = true
-
-func _on_new_game_pressed():
-	actualgame.new_game()
-	submit.disabled = false
-	namefield.editable = true
-
-func disable_submit():
-	submit.disabled = true
-	namefield.editable = false
-
-func _on_submit_pressed():
-	submit.disabled = true
-	namefield.editable = false
-	Game.Active.actualGame.post_score(username)
-	Firebase.score_write_completed.connect(widget.set_data)
-	await get_tree().process_frame
-	widget.update_list()
-	

@@ -92,8 +92,9 @@ func read_scoreboard():
 	print("DEBUG: read_scoreboard() called")
 
 	if _read_request.is_processing():
-		print("FirebaseManager: Read already in progress.")
-		return
+		print("FIREBASE: Previous request processing, cancelling request")
+		_read_request.cancel_request()
+
 	
 
 	var err = _read_request.request(url, [], HTTPClient.METHOD_GET)

@@ -7,37 +7,29 @@ class_name Leaderboard
 @onready var loading = find_child("Loading", true, false)
 @onready var box = find_child("VBoxContainer", true, false)
 
-
-func _ready():
-	Firebase.read_scoreboard()
-	Firebase.score_write_completed.connect(update_list)
-	Firebase.score_write_completed.connect(set_data)
-
-#Expected format: dictionary{ "name" : points }
 func set_data(dat: Array):
-	# Poista loading vain ensimmäisellä kerralla
+	# Poista loading vain kerran
 	if loading and is_instance_valid(loading):
 		loading.queue_free()
-		loading = null  # <-- tärkeä, estää seuraavan kutsun virheen
-	Firebase.score_write_completed.connect(update_list)
-	await get_tree().create_timer(0.3).timeout
-	# Tyhjennä vanhat tagit
+		loading = null
+
+	# Tyhjennä vanha lista
 	for child in box.get_children():
+		box.remove_child(child)
 		child.queue_free()
 
 	var num = 1
 	for entry in dat:
-		await get_tree().create_timer(0.15).timeout
 		var name = entry.get("username", "Unknown")
 		var pts = entry.get("points", 0)
-		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate() as Label
 
+		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate() as Label
 		tag.text = str(num) + ". " + name + " : " + str(pts)
-		num += 1
 
 		box.add_child(tag)
 
+		num += 1
+
 func update_list():
-	var arr = Firebase._get_scoreboard_array()
 	print("DEBUG: Leaderboard UI Update called")
-	Game.Active.actualGame.update_lb_ui(arr)
+	Game.Active.actualGame.update_lb_ui()
