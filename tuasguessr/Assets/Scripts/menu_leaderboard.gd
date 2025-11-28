@@ -29,7 +29,7 @@ func set_points(pts):
 # ------------------------
 func load_leaderboard():
 	print("Requesting scoreboard...")
-
+	widget.show_loading()    # ← tärkeä
 	# Yhdistä signaali vain kerran
 	if not Firebase.scoreboard_read_completed.is_connected(_on_leaderboard_ready):
 		Firebase.scoreboard_read_completed.connect(_on_leaderboard_ready)
@@ -56,6 +56,13 @@ func _on_leaderboard_ready(success: bool, data: Array, error: String):
 func _on_submit_pressed():
 	submit.disabled = true
 	namefield.editable = false
+
+# --- NÄYTÄ LATAUS HETI ---
+	widget.show_loading()
+	await get_tree().process_frame  # ← tämä pakottaa UI:n piirtämään sen ruudulle
+
+	# --- WEB tarvitsee vielä toisen frameviiveen ---
+	await get_tree().process_frame
 
 	# 1) Pre-read (web requires)
 	Firebase.read_scoreboard()
@@ -89,6 +96,10 @@ func disable_submit():
 	submit.disabled = true
 	namefield.editable = false
 
+func _on_new_game_pressed():
+	actualgame.new_game()
+	submit.disabled = false
+	namefield.editable = true
 
 func _on_namefield_text_changed():
 	if len(namefield.text) > 0 and len(namefield.text) <= 10:

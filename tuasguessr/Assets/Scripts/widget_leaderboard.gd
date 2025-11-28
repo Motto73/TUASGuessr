@@ -8,28 +8,32 @@ class_name Leaderboard
 @onready var box = find_child("VBoxContainer", true, false)
 
 func set_data(dat: Array):
-	# Poista loading vain kerran
-	if loading and is_instance_valid(loading):
-		loading.queue_free()
-		loading = null
+	show_loading()  # varmistus
 
-	# Tyhjennä vanha lista
+	# Tyhjennä lista
 	for child in box.get_children():
-		box.remove_child(child)
 		child.queue_free()
 
 	var num = 1
 	for entry in dat:
 		var name = entry.get("username", "Unknown")
 		var pts = entry.get("points", 0)
-
 		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate() as Label
 		tag.text = str(num) + ". " + name + " : " + str(pts)
-
 		box.add_child(tag)
-
 		num += 1
+
+	hide_loading()
+
 
 func update_list():
 	print("DEBUG: Leaderboard UI Update called")
 	Game.Active.actualGame.update_lb_ui()
+
+func show_loading():
+	if loading:
+		loading.visible = true
+		
+func hide_loading():
+	if loading:
+		loading.visible = false
