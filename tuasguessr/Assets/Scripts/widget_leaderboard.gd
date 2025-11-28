@@ -9,7 +9,9 @@ class_name Leaderboard
 
 
 func _ready():
-	pass
+	Firebase.read_scoreboard()
+	Firebase.score_write_completed.connect(update_list)
+	Firebase.score_write_completed.connect(set_data)
 
 #Expected format: dictionary{ "name" : points }
 func set_data(dat: Array):
@@ -17,6 +19,7 @@ func set_data(dat: Array):
 	if loading and is_instance_valid(loading):
 		loading.queue_free()
 		loading = null  # <-- tärkeä, estää seuraavan kutsun virheen
+	Firebase.score_write_completed.connect(update_list)
 	await get_tree().create_timer(0.3).timeout
 	# Tyhjennä vanhat tagit
 	for child in box.get_children():
@@ -35,4 +38,6 @@ func set_data(dat: Array):
 		box.add_child(tag)
 
 func update_list():
-	pass
+	var arr = Firebase._get_scoreboard_array()
+	print("DEBUG: Leaderboard UI Update called")
+	Game.Active.actualGame.update_lb_ui(arr)

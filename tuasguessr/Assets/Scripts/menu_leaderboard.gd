@@ -16,11 +16,26 @@ var data : Array
 
 func _ready():
 	print("Spawned the leaderboard popup")
+	print("MENU LEADERBOARD: Calling check scoreboard for updates")
 	submit.disabled = false
+	load_leaderboard()
 func set_points(pts):
 	points = pts
 	pointsield.text = "Your points:\n" + str(points)
 	
+func load_leaderboard():
+	print("Requesting scoreboard...")
+	Firebase.scoreboard_read_completed.connect(_on_leaderboard_ready)
+
+
+func _on_leaderboard_ready(success: bool, data: Array, error: String):
+	if not success:
+		print("MENU LEADERBOARD: Leaderboard error:", error)
+		return
+	var arr = {"scores": data}
+	widget.set_data(data)
+
+
 
 func _on_namefield_text_changed():
 	if len(namefield.text) > 0 and len(namefield.text) <= 10:
@@ -42,5 +57,7 @@ func _on_submit_pressed():
 	submit.disabled = true
 	namefield.editable = false
 	Game.Active.actualGame.post_score(username)
+	Firebase.score_write_completed.connect(widget.set_data)
+	await get_tree().process_frame
 	widget.update_list()
 	
