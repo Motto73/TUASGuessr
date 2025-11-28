@@ -73,12 +73,11 @@ func _on_submit_pressed():
 	var success = result[0]
 	var newdata = result[1]
 	var errmsg  = result[2]
-
-
+	
 	if success:
 		widget.set_data(newdata)
 	else:
-		print("Error:", errmsg)
+		print("Error updating scoreboard:", errmsg)
 
 
 	print("Leaderboard updated after submit")
