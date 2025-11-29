@@ -108,6 +108,7 @@ func end_game():
 		popup.queue_free()
 	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
 	canvas.add_child(popup)
+	popup.load_scoreboard()
 	if popup is MenuLeaderboard:
 		(popup as MenuLeaderboard).set_points(points)
 		(popup as MenuLeaderboard).actualgame = self

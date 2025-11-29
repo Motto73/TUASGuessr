@@ -11,9 +11,6 @@ var _id_token: String = ""
 var _user_uid: String = ""
 var _scoreboard_data: Dictionary = {}
 var _pending_write_data: Dictionary = {}
-var _last_etag: String = ""
-var _etag_request: HTTPRequest
-var etag_busy := false
 
 # --- HTTPRequest Nodes ---
 var _auth_request: HTTPRequest
@@ -39,10 +36,6 @@ func _ready():
 	_write_request = HTTPRequest.new()
 	add_child(_write_request)
 	_write_request.request_completed.connect(_on_write_request_completed)
-	
-	_etag_request = HTTPRequest.new()
-	add_child(_etag_request)
-	_etag_request.request_completed.connect(_on_etag_request_completed)
 
 	print("FirebaseManager: Initializing...")
 	authenticate_anonymously()
@@ -215,73 +208,6 @@ func _on_write_request_completed(result, response_code, headers, body):
 func get_scoreboard_data(callback: Callable):
 	scoreboard_read_completed.connect(callback)
 	read_scoreboard()
-
-func check_scoreboard_for_updates():
-	await get_tree().process_frame
-	OS.delay_msec(1)
-	if etag_busy:
-		return    # estää loopin
-	etag_busy = true
-	if _etag_request.is_processing():
-		print("Firebase: ETag request skipped (busy)")
-		return
-	
-	var url = RTDB_BASE_URL + "/scoreboard.json"
-	
-	# Pyydetään pelkkä ETag ilman dataa
-	var headers = [
-		"X-Firebase-ETag: true",
-    	"Content-Type: application/json"
-]
-
-	var err = _etag_request.request(url, headers, HTTPClient.METHOD_GET, "")
-	if err != OK:
-		print("Firebase: ETag request failed:", err)
-		print("ERR:", err, " → ", error_string(err))
-		etag_busy = false
-
-func _on_etag_request_completed(result, response_code, headers, body):
-	while _read_request.is_processing():
-		print("ETAG: Waiting for previous request to finish")
-		await get_tree().process_frame
-	
-	# Pieni viive web-version vuoksi
-	await get_tree().create_timer(0.05).timeout
-	
-	print("ETag request completed, safe to continue")
-	if result != HTTPRequest.RESULT_SUCCESS:
-		print("Firebase: ETag request error:", result)
-		return
-
-	var new_etag := ""
-	for h in headers:
-		if h.begins_with("ETag:"):
-			new_etag = h.replace("ETag: ", "").strip_edges()
-			break
-
-	if new_etag == "":
-		print("Firebase: No ETag returned")
-		return
-
-	# Ensimmäinen kerta: pelkkä tallennus, ei signaalia
-	if _last_etag == "":
-		_last_etag = new_etag
-		return
-
-	# Muuttuiko ETag?
-	if new_etag != _last_etag:
-		print("Firebase: Scoreboard changed!")
-		_last_etag = new_etag
-
-		# Nyt haetaan päivitetty data ja emit_signal
-		read_scoreboard()
-
-		# read_scoreboard() lopulta kutsuu _on_read_request_completed,
-		# jonka lopussa lisäämme signaalin:
-		# emit_signal("scoreboard_changed", array_data)
-	else:
-		print("Firebase: No changes detected.")
-	etag_busy = false
 
 func console(text):
 	Game.Active.console(text)

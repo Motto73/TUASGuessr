@@ -16,21 +16,25 @@ var actualgame : ActualGame
 func _ready():
 	print("Spawned leaderboard popup")
 	submit.disabled = false
-	load_leaderboard()
 
+	# näytä loading UI heti
+	if widget:
+		widget.show_loading()
+		widget.hide_scoretags()
+
+	load_leaderboard()
 
 func set_points(pts):
 	points = pts
 	pointsield.text = "Your points:\n" + str(points)
 
-
 # ------------------------
-# INITIAL LOAD (NOT SUBMIT)
+# INITIAL LOAD
 # ------------------------
 func load_leaderboard():
 	print("Requesting scoreboard...")
-	#widget.show_loading()    # ← tärkeä
-	# Yhdistä signaali vain kerran
+
+	# yhdistä signaali vain kerran
 	if not Firebase.scoreboard_read_completed.is_connected(_on_leaderboard_ready):
 		Firebase.scoreboard_read_completed.connect(_on_leaderboard_ready)
 
@@ -38,17 +42,16 @@ func load_leaderboard():
 
 
 func _on_leaderboard_ready(success: bool, data: Array, error: String):
-	# -------------------------
-	# DISCONNECT IMMEDIATELY !!!
-	# -------------------------
+
+	# disconnect ONCE → estää tuplat UI-päivityksen
 	if Firebase.scoreboard_read_completed.is_connected(_on_leaderboard_ready):
 		Firebase.scoreboard_read_completed.disconnect(_on_leaderboard_ready)
 
 	if success:
 		widget.set_data(data)
 	else:
-		print("Error setting data")
-		
+		print("Error setting data:", error)
+
 
 # ------------------------
 # SUBMIT SCORE
@@ -57,41 +60,34 @@ func _on_submit_pressed():
 	submit.disabled = true
 	namefield.editable = false
 
-	# --- NÄYTÄ LATAUS HETI ---
-	if widget:
-		widget.show_loading()
-		widget.hide_scoretags()
-		await get_tree().process_frame
-		await get_tree().process_frame	# web tarvitsee tämän
+	# --- SHOW LOADING UI ---
+	widget.show_loading()
+	widget.hide_scoretags()
+	await get_tree().process_frame
+	await get_tree().process_frame	# web tarvitsee nämä
 
-	# --- 1) YKSI pre-read vain webin vuoksi ---
+	# 1) PRE-READ (web only)
 	Firebase.read_scoreboard()
-
 	var before = await Firebase.scoreboard_read_completed
-	# before = (success, data, error)
 
-	# --- 2) Kirjoita piste ---
+	# 2) WRITE SCORE
 	Game.Active.actualGame.post_score(username)
 
-	# --- 3) Odota että kirjoitus valmistuu ---
+	# 3) WAIT WRITE OK
 	var write_result = await Firebase.score_write_completed
-	# write_result = (success, new_key / error)
 
-	# --- 4) Lue scoreboard uudelleen ---
+	# 4) READ UPDATED LIST
 	Firebase.read_scoreboard()
-
 	var after = await Firebase.scoreboard_read_completed
 	var success = after[0]
 	var newdata = after[1]
-	var errmsg = after[2]
+	var errmsg  = after[2]
 
-	# --- 5) Päivitä UI ---
+	# 5) APPLY UI
 	if success:
 		widget.set_data(newdata)
 	else:
 		print("Error updating scoreboard:", errmsg)
-
-	print("Leaderboard updated after submit")
 
 	disable_submit()
 
