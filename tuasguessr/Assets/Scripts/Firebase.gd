@@ -2,8 +2,8 @@ extends Node
 class_name FireBaseScript
 
 # --- Configuration ---
-const FIREBASE_WEB_API_KEY = "AIzaSyAS4AXH_fCMi63cHv3lqDwlubaorerHZhM"
-const RTDB_BASE_URL = "https://wheretheamkami-default-rtdb.europe-west1.firebasedatabase.app"
+const FIREBASE_WEB_API_KEY = "AIzaSyBF7HoWY1ipOnEMAU133TvzTw_1Xly11l8"
+const RTDB_BASE_URL = "https://wheretheamkamilb-default-rtdb.europe-west1.firebasedatabase.app"
 const ANONYMOUS_SIGN_IN_URL = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FIREBASE_WEB_API_KEY
 
 # --- Internal State ---
