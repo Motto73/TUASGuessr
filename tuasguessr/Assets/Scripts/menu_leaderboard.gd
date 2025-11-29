@@ -8,20 +8,16 @@ var username := ""
 @onready var namefield := find_child("Namefield", true, false)
 @onready var pointsield := find_child("Pointsfield", true, false)
 @onready var submit := find_child("Submit", true, false)
+
 @onready var widget : Leaderboard = find_child("Leaderboard", true, false)
 
 var actualgame : ActualGame
 
 
 func _ready():
-	print("Spawned leaderboard popup")
+	
 	submit.disabled = false
-
-	# näytä loading UI heti
-	if widget:
-		widget.show_loading()
-		widget.hide_scoretags()
-
+	print("Leaderboard widget found:", widget)
 	load_leaderboard()
 
 func set_points(pts):
@@ -108,3 +104,15 @@ func _on_namefield_text_changed():
 		username = namefield.text
 	else:
 		submit.disabled = true
+		
+func hide_lb():
+	visible = false
+	widget.visible = false
+	for child in get_children():
+		child.visible = false
+		
+func show_lb():
+	visible = true
+	widget.visible = true
+	for child in get_children():
+		child.visible = true

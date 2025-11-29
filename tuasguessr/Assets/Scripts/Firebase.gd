@@ -39,6 +39,10 @@ func _ready():
 
 	print("FirebaseManager: Initializing...")
 	authenticate_anonymously()
+	
+	_auth_request.timeout = 30
+	_read_request.timeout = 30
+	_write_request.timeout = 30
 
 # ---------------- AUTH ----------------
 func authenticate_anonymously():
@@ -84,7 +88,7 @@ func read_scoreboard():
 	while _read_request.is_processing():
 		await get_tree().process_frame
 	
-	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=\"points\"&limitToLast=10"
+	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=%22points%22&limitToLast=10"
 	print("READ URL =", url)
 	print("DEBUG: read_scoreboard() called")
 

@@ -22,6 +22,9 @@ var slotmachine : Slots3D
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
+@onready var lb_widget : Leaderboard = $Canvas/Widgets/Leaderboard
+@onready var menu_lb : MenuLeaderboard = $Canvas/Menu_Leaderboard
+
 var popup : Node
 
 var game : Game
@@ -39,7 +42,9 @@ var inventorytags : Array[String] = []
 
 func _ready():
 	slotmachine = slopmachine.Slots
+	menu_lb.hide_lb()
 	start_game()
+	
 
 func _process(delta):
 	if state == "playing":
@@ -104,16 +109,13 @@ func end_game():
 	slotmachine.lock()
 	mapdisplay.lock()
 	
-	if popup:
-		popup.queue_free()
-	popup = load("res://Menus/menu_leaderboard.tscn").instantiate()
-	canvas.add_child(popup)
-	popup.load_scoreboard()
-	if popup is MenuLeaderboard:
-		(popup as MenuLeaderboard).set_points(points)
-		(popup as MenuLeaderboard).actualgame = self
+	# NÄYTÄ LEADERBOARD WIDGET
+	menu_lb.show_lb()
+	menu_lb.set_points(points)
+	menu_lb.actualgame = self
 
 func new_game():
+	menu_lb.hide_lb()
 	game.new_game()
 	
 #Score

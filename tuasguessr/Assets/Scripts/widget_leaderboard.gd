@@ -2,12 +2,11 @@ extends Node2D
 
 class_name Leaderboard
 
-@export var menu_leaderboard_path: NodePath
-@onready var menu_leaderboard = get_node(menu_leaderboard_path)
 @onready var loading = find_child("Loading", true, false)
 @onready var box = find_child("VBoxContainer", true, false)
 
 func _ready():
+	visible = false
 	# Show loading immediately
 	if loading:
 		loading.show()
@@ -21,6 +20,7 @@ func _ready():
 # SET DATA (UI UPDATE)
 # ----------------------------------------------------------------
 func set_data(dat: Array):
+	visible = true
 	# 1) Show loading while clearing
 	if loading:
 		loading.visible = true
@@ -30,7 +30,7 @@ func set_data(dat: Array):
 
 	# 2) Remove only scoretags (not loading)
 	for child in box.get_children():
-		if child != loading:
+		if child != loading :
 			child.queue_free()
 
 	# 3) OPTIONAL: hide loading BEFORE rendering new tags
@@ -49,7 +49,7 @@ func set_data(dat: Array):
 		var tag = load("res://Resource Scenes/scoretag.tscn").instantiate()
 		tag.text = str(num) + ". " + name + " : " + str(pts)
 		num += 1
-
+		await get_tree().process_frame
 		box.add_child(tag)
 
 
