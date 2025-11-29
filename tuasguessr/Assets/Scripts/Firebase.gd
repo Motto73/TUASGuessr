@@ -87,6 +87,10 @@ func _on_auth_request_completed(result, response_code, headers, body):
 
 # ---------------- READ ----------------
 func read_scoreboard():
+	# WEB FIX: ÄLÄ KÄYNNISTÄ UUTTA LUKUA JOS VANHA YHÄ KÄYNNISSÄ
+	while _read_request.is_processing():
+		await get_tree().process_frame
+	
 	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=\"points\"&limitToLast=10"
 	print("READ URL =", url)
 	print("DEBUG: read_scoreboard() called")

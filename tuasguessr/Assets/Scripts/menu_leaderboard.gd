@@ -57,39 +57,44 @@ func _on_submit_pressed():
 	submit.disabled = true
 	namefield.editable = false
 
-# --- NÄYTÄ LATAUS HETI ---
+	# --- NÄYTÄ LATAUS HETI ---
 	if widget:
 		widget.show_loading()
 		widget.hide_scoretags()
 		await get_tree().process_frame
-		await get_tree().process_frame # web-versio hyötyy tästä
+		await get_tree().process_frame	# web tarvitsee tämän
 
-	# 1) Pre-read (web requires)
+	# --- 1) YKSI pre-read vain webin vuoksi ---
 	Firebase.read_scoreboard()
-	var before = await Firebase.scoreboard_read_completed
 
-	# 2) Save
+	var before = await Firebase.scoreboard_read_completed
+	# before = (success, data, error)
+
+	# --- 2) Kirjoita piste ---
 	Game.Active.actualGame.post_score(username)
 
-	# 3) Wait write OK
-	await Firebase.score_write_completed
+	# --- 3) Odota että kirjoitus valmistuu ---
+	var write_result = await Firebase.score_write_completed
+	# write_result = (success, new_key / error)
 
-	# 4) Read updated list
+	# --- 4) Lue scoreboard uudelleen ---
 	Firebase.read_scoreboard()
-	var result = await Firebase.scoreboard_read_completed
-	var success = result[0]
-	var newdata = result[1]
-	var errmsg  = result[2]
-	
+
+	var after = await Firebase.scoreboard_read_completed
+	var success = after[0]
+	var newdata = after[1]
+	var errmsg = after[2]
+
+	# --- 5) Päivitä UI ---
 	if success:
 		widget.set_data(newdata)
 	else:
 		print("Error updating scoreboard:", errmsg)
 
-
 	print("Leaderboard updated after submit")
 
 	disable_submit()
+
 
 
 func disable_submit():
