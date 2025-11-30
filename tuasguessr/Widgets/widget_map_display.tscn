@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3nd7kiqrswxx"]
+[gd_scene load_steps=16 format=3 uid="uid://d3nd7kiqrswxx"]
 
 [ext_resource type="PackedScene" uid="uid://dd0q8xxbij8at" path="res://Resource Scenes/3d_map.tscn" id="1_e87u4"]
 [ext_resource type="Script" uid="uid://cx7e27w5n85ap" path="res://Assets/Scripts/map_display.gd" id="1_j2rn6"]
@@ -10,13 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://csjpq0d1lcgat" path="res://Assets/Textures/button_submit.png" id="5_krqyp"]
 [ext_resource type="Texture2D" uid="uid://ckybbh1iawb8w" path="res://Assets/Textures/FloorButton2_off.png" id="6_2gkd4"]
 [ext_resource type="Texture2D" uid="uid://bdq8kv6i6rq3k" path="res://Assets/Textures/FloorButton3_off.png" id="7_48a83"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ftoc"]
-texture = ExtResource("5_2gkd4")
-expand_margin_left = 2048.0
-expand_margin_top = 2048.0
-expand_margin_right = 2048.0
-expand_margin_bottom = 2048.0
+[ext_resource type="Texture2D" uid="uid://dse448qgdhcnx" path="res://Assets/Textures/FloorButton1_on.png" id="10_jn60q"]
+[ext_resource type="Script" uid="uid://cgw5oqusufq3h" path="res://Assets/Scripts/texture_button.gd" id="11_2gkd4"]
+[ext_resource type="Texture2D" uid="uid://bycwiipthnw5s" path="res://Assets/Textures/FloorButton2_on.png" id="12_kl0d0"]
+[ext_resource type="Texture2D" uid="uid://c7sd2skrafd4n" path="res://Assets/Textures/FloorButton3_on.png" id="14_nqfwt"]
 
 [sub_resource type="World3D" id="World3D_e87u4"]
 
@@ -78,71 +75,6 @@ texture = ExtResource("4_krqyp")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Floor0" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.586
-anchor_right = 1.0
-anchor_bottom = 0.586
-offset_left = -56.00006
-offset_top = -27.728027
-offset_right = -6.1035156e-05
-offset_bottom = 28.271942
-theme_override_styles/pressed = SubResource("StyleBoxTexture_2ftoc")
-icon = ExtResource("4_tw4bc")
-flat = true
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Floor1" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.46300003
-anchor_right = 1.0
-anchor_bottom = 0.46300003
-offset_left = -56.00006
-offset_top = -28.024017
-offset_right = -6.1035156e-05
-offset_bottom = 27.975983
-icon = ExtResource("5_2ftoc")
-flat = true
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Floor2" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.34
-anchor_right = 1.0
-anchor_bottom = 0.34
-offset_left = -56.00006
-offset_top = -28.320007
-offset_right = -6.1035156e-05
-offset_bottom = 27.679993
-icon = ExtResource("6_2gkd4")
-flat = true
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Floor3" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.216
-anchor_right = 1.0
-anchor_bottom = 0.216
-offset_left = -56.00006
-offset_top = -27.968002
-offset_right = -6.1035156e-05
-offset_bottom = 28.031998
-icon = ExtResource("7_48a83")
-flat = true
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -184,8 +116,72 @@ icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="CanvasLayer/Control/Floor0" to="." method="_on_floor_0_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Floor1" to="." method="_on_floor_1_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Floor2" to="." method="_on_floor_2_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Floor3" to="." method="_on_floor_3_button_down"]
+[node name="Floor0" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.537
+anchor_right = 1.0
+anchor_bottom = 0.537
+offset_left = -56.0
+offset_top = -27.976013
+offset_bottom = 28.023987
+texture_normal = ExtResource("4_tw4bc")
+texture_pressed = ExtResource("5_2gkd4")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("11_2gkd4")
+
+[node name="Floor1" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.43800002
+anchor_right = 1.0
+anchor_bottom = 0.43800002
+offset_left = -56.0
+offset_top = -27.824005
+offset_bottom = 28.175995
+texture_normal = ExtResource("5_2ftoc")
+texture_pressed = ExtResource("10_jn60q")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("11_2gkd4")
+
+[node name="Floor2" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.34
+anchor_right = 1.0
+anchor_bottom = 0.34
+offset_left = -56.0
+offset_top = -28.320007
+offset_bottom = 27.679993
+texture_normal = ExtResource("6_2gkd4")
+texture_pressed = ExtResource("12_kl0d0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("11_2gkd4")
+
+[node name="Floor3" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.24100001
+anchor_right = 1.0
+anchor_bottom = 0.24100001
+offset_left = -56.0
+offset_top = -28.168015
+offset_bottom = 27.831985
+texture_normal = ExtResource("7_48a83")
+texture_pressed = ExtResource("14_nqfwt")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("11_2gkd4")
+
 [connection signal="button_down" from="CanvasLayer/Control/Button" to="." method="_on_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor0" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor1" to="." method="_on_texture_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor2" to="." method="_on_texture_button_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Floor3" to="." method="_on_texture_button_4_button_down"]

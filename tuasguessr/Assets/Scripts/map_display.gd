@@ -48,11 +48,11 @@ func buttonpressed(num):
 
 
 #Yes, this is probably very dumb.
-func _on_floor_0_button_down():
+func _on_texture_button_button_down():
 	buttonpressed(0)
-func _on_floor_1_button_down():
+func _on_texture_button_2_button_down():
 	buttonpressed(1)
-func _on_floor_2_button_down():
+func _on_texture_button_3_button_down():
 	buttonpressed(2)
-func _on_floor_3_button_down():
+func _on_texture_button_4_button_down():
 	buttonpressed(3)
