@@ -43,14 +43,83 @@ shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]
 
+[node name="ICT3" parent="MapAssets" index="1"]
+visible = false
+
+[node name="A3" type="Label3D" parent="MapAssets/ICT3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8054295, 0.22087008, 0.05744058)
+billboard = 1
+text = "A"
+font_size = 70
+
+[node name="B3" type="Label3D" parent="MapAssets/ICT3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72284055, 0.22087008, 0.059072018)
+billboard = 1
+text = "B"
+font_size = 70
+
+[node name="C3" type="Label3D" parent="MapAssets/ICT3" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2044115, 0.22087008, 0.05744058)
+billboard = 1
+text = "C"
+font_size = 70
+
 [node name="ICT2" parent="MapAssets" index="2"]
 visible = false
+
+[node name="A2" type="Label3D" parent="MapAssets/ICT2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8054295, 0.22087008, 0.05744058)
+billboard = 1
+text = "A"
+font_size = 70
+
+[node name="B2" type="Label3D" parent="MapAssets/ICT2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72284055, 0.22087008, 0.059072018)
+billboard = 1
+text = "B"
+font_size = 70
+
+[node name="C2" type="Label3D" parent="MapAssets/ICT2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2044115, 0.22087008, 0.05744058)
+billboard = 1
+text = "C"
+font_size = 70
 
 [node name="ICT1" parent="MapAssets" index="3"]
 visible = false
 
+[node name="A1" type="Label3D" parent="MapAssets/ICT1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8054295, 0.22087008, 0.05744058)
+billboard = 1
+text = "A"
+font_size = 70
+
+[node name="B1" type="Label3D" parent="MapAssets/ICT1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72284055, 0.22087008, 0.059072018)
+billboard = 1
+text = "B"
+font_size = 70
+
+[node name="C1" type="Label3D" parent="MapAssets/ICT1" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2044115, 0.22087008, 0.05744058)
+billboard = 1
+text = "C"
+font_size = 70
+
 [node name="ICT0" parent="MapAssets" index="4"]
 visible = false
+
+[node name="B0" type="Label3D" parent="MapAssets/ICT0" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72284055, 0.22087008, 0.059072018)
+billboard = 1
+text = "B"
+font_size = 70
+
+[node name="C0" type="Label3D" parent="MapAssets/ICT0" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2044115, 0.22087008, 0.05744058)
+billboard = 1
+text = "C"
+font_size = 70
 
 [node name="EDU3" parent="MapAssets" index="5"]
 visible = false
