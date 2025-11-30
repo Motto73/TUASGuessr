@@ -64,13 +64,13 @@ func _on_submit_pressed():
 
 	# 1) PRE-READ (web only)
 	Firebase.read_scoreboard()
-	var before = await Firebase.scoreboard_read_completed
+	var _before = await Firebase.scoreboard_read_completed
 
 	# 2) WRITE SCORE
 	Game.Active.actualGame.post_score(username)
 
 	# 3) WAIT WRITE OK
-	var write_result = await Firebase.score_write_completed
+	var _write_result = await Firebase.score_write_completed
 
 	# 4) READ UPDATED LIST
 	Firebase.read_scoreboard()
