@@ -23,9 +23,9 @@ var osname : String
 var osmode : String
 var osmobile : bool
 
-const FIRESTORE_BASE := "https://wheretheamkamilb-default-rtdb.europe-west1.firebasedatabase.app"
-const FIRESTORE_QUERY := "REPLACE"
-const API_KEY := "AIzaSyBF7HoWY1ipOnEMAU133TvzTw_1Xly11l8"
+#const FIRESTORE_BASE := "https://wheretheamkamilb-default-rtdb.europe-west1.firebasedatabase.app"
+#const FIRESTORE_QUERY := "REPLACE"
+#const API_KEY := "AIzaSyBF7HoWY1ipOnEMAU133TvzTw_1Xly11l8"
 
 func _ready():
 	Active = self
