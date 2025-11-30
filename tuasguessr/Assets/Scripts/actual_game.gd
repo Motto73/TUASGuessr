@@ -22,7 +22,6 @@ var slotmachine : Slots3D
 
 @onready var statsui : ShitUI = $Canvas/ShitUI
 
-@onready var lb_widget : Leaderboard = $Canvas/Widgets/Leaderboard
 @onready var menu_lb : MenuLeaderboard = $Canvas/Menu_Leaderboard
 
 var popup : Node
