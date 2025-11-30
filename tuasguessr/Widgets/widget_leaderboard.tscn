@@ -24,9 +24,9 @@ color = Color(1, 1, 1, 0)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/ColorRect"]
 layout_mode = 0
-offset_top = 40.0
+offset_top = 5.0
 offset_right = 260.0
-offset_bottom = 263.0
+offset_bottom = 226.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/ScrollContainer"]

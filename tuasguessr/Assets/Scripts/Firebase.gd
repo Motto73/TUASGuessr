@@ -1,5 +1,4 @@
 extends Node
-class_name FireBaseScript
 
 # --- Configuration ---
 const FIREBASE_WEB_API_KEY = "AIzaSyBF7HoWY1ipOnEMAU133TvzTw_1Xly11l8"
@@ -25,6 +24,7 @@ signal scoreboard_changed(new_data: Array)
 
 func _ready():
 	print("DEBUG: FireBaseScript in scene tree?", is_inside_tree())
+
 	_auth_request = HTTPRequest.new()
 	add_child(_auth_request)
 	_auth_request.request_completed.connect(_on_auth_request_completed)
@@ -37,25 +37,35 @@ func _ready():
 	add_child(_write_request)
 	_write_request.request_completed.connect(_on_write_request_completed)
 
-	print("FirebaseManager: Initializing...")
-	authenticate_anonymously()
-	
+	# Timeoutit (sekunteina) – webissä nämä lähinnä ohitetaan, mutta ei haittaa
 	_auth_request.timeout = 30
 	_read_request.timeout = 30
 	_write_request.timeout = 30
+
+	print("FirebaseManager: Initializing...")
+	authenticate_anonymously()
+
 
 # ---------------- AUTH ----------------
 func authenticate_anonymously():
 	if _auth_request.is_processing():
 		print("FirebaseManager: Auth request already in progress.")
-		return
-	
+		_auth_request.cancel_request()
+
 	print("FirebaseManager: Sending anonymous authentication request...")
-	var headers = ["Content-Type: application/json"]
-	var body_json = JSON.stringify({"returnSecureToken": true})	
-	var err = _auth_request.request(ANONYMOUS_SIGN_IN_URL, headers, HTTPClient.METHOD_POST, body_json)
+	var headers := ["Content-Type: application/json"]
+	var body_json := JSON.stringify({ "returnSecureToken": true })
+
+	var err := _auth_request.request(
+		ANONYMOUS_SIGN_IN_URL,
+		headers,
+		HTTPClient.METHOD_POST,
+		body_json
+	)
+
 	if err != OK:
 		emit_signal("auth_completed", false, "Request init failed", "")
+
 
 func _on_auth_request_completed(result, response_code, headers, body):
 	if result != HTTPRequest.RESULT_SUCCESS:
@@ -75,38 +85,42 @@ func _on_auth_request_completed(result, response_code, headers, body):
 		print("FirebaseManager: Auth OK, UID:", _user_uid)
 		emit_signal("auth_completed", true, _id_token, _user_uid)
 
+		# Jos oli odottava kirjoitus, suorita nyt
 		if not _pending_write_data.is_empty():
-			write_score_internal(_pending_write_data.username, _pending_write_data.points)
+			write_score_internal(
+				_pending_write_data.username,
+				_pending_write_data.points
+			)
 			_pending_write_data = {}
 	else:
 		var msg = json.get("error", {}).get("message", "Unknown error")
 		emit_signal("auth_completed", false, msg, "")
 
+
 # ---------------- READ ----------------
 func read_scoreboard():
-	# WEB FIX: ÄLÄ KÄYNNISTÄ UUTTA LUKUA JOS VANHA YHÄ KÄYNNISSÄ
-	while _read_request.is_processing():
-		await get_tree().process_frame
-	
-	var url = RTDB_BASE_URL + "/scoreboard.json?orderBy=%22points%22&limitToLast=10"
+	# Estä päällekkäiset pyynnöt
+	if _read_request.is_processing():
+		print("FIREBASE: read_scoreboard already in progress, skipping")
+		_read_request.cancel_request()
+
+	var url := RTDB_BASE_URL + "/scoreboard.json?orderBy=%22points%22&limitToLast=10"
 	print("READ URL =", url)
 	print("DEBUG: read_scoreboard() called")
 
-	if _read_request.is_processing():
-		print("FIREBASE: Previous request processing, cancelling request")
-		_read_request.cancel_request()
-
-	
-
-	var err = _read_request.request(url, [], HTTPClient.METHOD_GET)
+	var err := _read_request.request(url, [], HTTPClient.METHOD_GET)
 	print("DEBUG: HTTP request started =", err)
+
 	if err != OK:
 		emit_signal("scoreboard_read_completed", false, [], "Request init failed")
 
+
 func _on_read_request_completed(result, response_code, headers, body):
 	print("DEBUG: _on_read_request_completed triggered")
+
 	var response_body_string = body.get_string_from_utf8()
 	print("DEBUG RAW READ =", response_body_string)
+
 	if result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal("scoreboard_read_completed", false, [], "HTTP Error: " + str(result))
 		return
@@ -114,6 +128,7 @@ func _on_read_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(response_body_string)
 
 	if not (json is Dictionary):
+		# Tyhjä / null scoreboard on ok
 		if response_body_string.strip_edges() == "null" or response_body_string.strip_edges().is_empty():
 			emit_signal("scoreboard_read_completed", true, [], "")
 			return
@@ -122,12 +137,12 @@ func _on_read_request_completed(result, response_code, headers, body):
 		return
 
 	_scoreboard_data = json
-	var arr = convert_and_sort_scoreboard(_scoreboard_data)
+	var arr := convert_and_sort_scoreboard(_scoreboard_data)
 
 	print("DEBUG: emitting signal scoreboard_read_completed")
 	emit_signal("scoreboard_read_completed", true, arr, "")
-	#print("FirebaseManager: Scoreboard OK, sorted:", arr)
 	emit_signal("scoreboard_changed", arr)
+
 
 # Converts Firebase dictionary → sorted array
 func convert_and_sort_scoreboard(data: Dictionary) -> Array:
@@ -142,76 +157,100 @@ func convert_and_sort_scoreboard(data: Dictionary) -> Array:
 	arr.sort_custom(Callable(self, "_sort_score_descending"))
 	return arr
 
+
 func _sort_score_descending(a, b):
 	return b["points"] < a["points"]
 
+
 func _get_cached_scoreboard_data() -> Dictionary:
 	return _scoreboard_data
+
+
 func _get_scoreboard_array() -> Array:
-	var arr = convert_and_sort_scoreboard(_scoreboard_data)
-	return arr
-	
+	return convert_and_sort_scoreboard(_scoreboard_data)
+
+
 # ---------------- WRITE ----------------
 func write_score(username: String, points: int):
 	if _id_token.is_empty():
-		_pending_write_data = {"username": username, "points": points}
+		_pending_write_data = { "username": username, "points": points }
 		authenticate_anonymously()
 		emit_signal("score_write_completed", false, "Auth required")
 		return
-	
+
 	write_score_internal(username, points)
 
+
 func write_score_internal(username: String, points: int):
-	var url = RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
-	#print("WRITE URL =", url)
+	var url := RTDB_BASE_URL + "/scoreboard.json?auth=" + _id_token
 	print("DEBUG: write_score_internal:", username, points)
+
 	if _write_request.is_processing():
 		emit_signal("score_write_completed", false, "Write already in progress.")
-		return
-	
-	var headers = ["Content-Type: application/json"]
-	var score_data = {
+		_write_request.cancel_request()
+
+	var headers := ["Content-Type: application/json"]
+	var score_data := {
 		"username": username,
 		"points": points,
 		"uid": _user_uid,
 		"timestamp": Time.get_datetime_string_from_unix_time(Time.get_unix_time_from_system())
 	}
-	
-	var body_json = JSON.stringify(score_data)
+
+	var body_json := JSON.stringify(score_data)
 	print("DEBUG WRITE BODY =", body_json)
 	print("DEBUG WRITE BODY PARSED =", score_data)
-	var err = _write_request.request(url, headers, HTTPClient.METHOD_POST, body_json)
 
+	var err := _write_request.request(url, headers, HTTPClient.METHOD_POST, body_json)
 	if err != OK:
 		emit_signal("score_write_completed", false, "Request init failed")
+
 
 func _on_write_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	print("WRITE COMPLETED:", response_code, json)
+
+	# 1) HTTP-virhe
 	if result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal("score_write_completed", false, "HTTP Error: " + str(result))
 		return
 
+	# 2) ONNISTUNUT KIRJOITUS (2xx)
 	if response_code >= 200 and response_code < 300:
-		var new_key = ""
+		var new_key := ""
 		if json is Dictionary:
 			new_key = json.get("name", "")
-			emit_signal("score_write_completed", true, new_key)
-	else:
-		var err = "Unknown error"
-		if json is Dictionary:
-			err = json.get("error", "Unknown error")
-			if err is Dictionary and err.has("message"):
-				err = err["message"]
-		
-		emit_signal("score_write_completed", false, err)
-		
-		if response_code == 401:
-			authenticate_anonymously()
-			
+		emit_signal("score_write_completed", true, new_key)
+		return
+
+	# 3) VIRHETAPAUS (ei 2xx)
+	var err_msg := "Unknown error"
+
+	if json is Dictionary:
+		var raw_error: Variant = json.get("error", null)
+
+		# Firebase voi palauttaa { "error": { "message": "..." } }
+		if raw_error is Dictionary and raw_error.has("message"):
+			var msg = raw_error["message"]
+			if msg is String:
+				err_msg = msg
+		# tai suoraan { "error": "Permission denied" }
+		elif raw_error is String:
+			err_msg = raw_error
+
+	emit_signal("score_write_completed", false, err_msg)
+
+	# 401 → token vanhentunut, yritä kirjautua uudestaan
+	if response_code == 401:
+		authenticate_anonymously()
+
+
+
 func get_scoreboard_data(callback: Callable):
 	scoreboard_read_completed.connect(callback)
 	read_scoreboard()
 
+
 func console(text):
 	Game.Active.console(text)
+	pass

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjmmam14ycxr7"]
+[gd_scene load_steps=7 format=3 uid="uid://bjmmam14ycxr7"]
 
 [ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://Assets/Scripts/menu_leaderboard.gd" id="1_sh85h"]
 [ext_resource type="Texture2D" uid="uid://cc3udah2bkhkn" path="res://Assets/Textures/Leaderboard.png" id="2_n418k"]
 [ext_resource type="PackedScene" uid="uid://b5e2wamfmg7k8" path="res://Widgets/widget_leaderboard.tscn" id="3_dhq4i"]
 [ext_resource type="Texture2D" uid="uid://by3v5o6m3bijb" path="res://Assets/Textures/button_play_2.png" id="4_dhq4i"]
 [ext_resource type="Texture2D" uid="uid://csjpq0d1lcgat" path="res://Assets/Textures/button_submit.png" id="5_ipq2f"]
+[ext_resource type="StyleBox" uid="uid://cvm3v3jby47tt" path="res://Menus/textfieldstyle.tres" id="6_ipq2f"]
 
 [node name="Menu_Leaderboard" type="Node2D"]
 z_index = 5
@@ -80,10 +81,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -129.5
-offset_top = 280.0
-offset_right = -2.5
-offset_bottom = 362.0
+offset_top = 323.0
+offset_right = 4.5
+offset_bottom = 371.0
 grow_horizontal = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0.65882355)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0.73333335)
+theme_override_styles/normal = ExtResource("6_ipq2f")
+theme_override_styles/focus = ExtResource("6_ipq2f")
 placeholder_text = "Name
 "
 

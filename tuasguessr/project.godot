@@ -17,7 +17,7 @@ config/icon="uid://dnhlwfrfikcr0"
 
 [autoload]
 
-Firebase="*res://Assets/Scripts/Firebase.gd"
+Firebase="*res://Resource Scenes/firebase.tscn"
 
 [display]
 
@@ -28,7 +28,12 @@ window/stretch/aspect="ignore"
 
 project/assembly_name="TUASGuessr"
 
+[editor]
+
+export/convert_text_resources_to_binary=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/webp_compression/lossless_compression_factor=50.0
