@@ -13,13 +13,15 @@ class_name MapMarker
 @onready var preview : Sprite3D = $Preview
 
 func _ready():
-	if Engine.is_editor_hint():
-		var editor_selection = EditorInterface.get_selection()
-		editor_selection.selection_changed.connect(_on_selection_changed)
-		_on_selection_changed()
+	#if Engine.is_editor_hint():
+	#	var editor_selection = EditorInterface.get_selection()
+	#	editor_selection.selection_changed.connect(_on_selection_changed)
+	#	_on_selection_changed()
+	pass
 
 func _on_selection_changed():
-	var editor_selection = EditorInterface.get_selection()
-	var is_selected = editor_selection.get_selected_nodes().has(self)
-	preview.texture = Picture
-	preview.visible = is_selected;
+	#var editor_selection = EditorInterface.get_selection()
+	#var is_selected = editor_selection.get_selected_nodes().has(self)
+	#preview.texture = Picture
+	#preview.visible = is_selected;
+	pass
