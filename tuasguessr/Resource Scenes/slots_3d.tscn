@@ -8,9 +8,9 @@
 [ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Assets/Scripts/button_3d.gd" id="3_g0dd5"]
 [ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Material" uid="uid://bss7gcidj8bbi" path="res://Assets/Materials/mat_led_display_small.tres" id="6_axgpy"]
-[ext_resource type="Texture2D" uid="uid://bl835vpb1sp3y" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/me_fr.jpg" id="7_axgpy"]
 [ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Assets/Scripts/led_display.gd" id="7_cpjvi"]
 [ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="9_uyxu4"]
+[ext_resource type="Texture2D" uid="uid://clka4ti3smooh" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/textures/Placeholder_start_picture.png" id="11_3av4g"]
 [ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="11_tgcpo"]
 
 [sub_resource type="Curve" id="Curve_j830s"]
@@ -77,7 +77,7 @@ size = Vector3(0.7128906, 0.3359375, 0.31640625)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1gli"]
 render_priority = 0
 shader = ExtResource("9_uyxu4")
-shader_parameter/image = ExtResource("7_axgpy")
+shader_parameter/image = ExtResource("11_3av4g")
 
 [node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
 script = ExtResource("1_j830s")
