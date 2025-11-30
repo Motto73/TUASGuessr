@@ -235,13 +235,13 @@ var isvisible := false
 var saidhello := false
 
 var idles = ["Idle_0", "Idle_1", "Idle_2"]
-var idleboreds = ["Idle_Bored_0", "Idle_Bored_1", "Idle_Bored_2"]
+var idleboreds = ["Idle_Bored_0", "Idle_Bored_1", "Idle_Bored_2", "Idle_Bored_3"]
 var idlerares = ["Idle_Rare_0"]
 var yippees = ["Yippee_0", "Yippee_1"]
 
 var exp_angries = ["Slide_R", "Slide_L"]
 var exp_happies = ["Yippee_0", "Yippee_1", "Hello_0"]
-var exp_normals = ["Idle_0", "Idle_1", "Idle_2", "Idle_Bored_0", "Idle_Bored_1", "Idle_Bored_2", "Idle_Rare_0"]
+var exp_normals = ["Idle_0", "Idle_1", "Idle_2", "Idle_Bored_0", "Idle_Bored_1", "Idle_Bored_2", "Idle_Bored_3", "Idle_Rare_0"]
 
 func process_shop(delta):
 	if !animator.is_playing():
