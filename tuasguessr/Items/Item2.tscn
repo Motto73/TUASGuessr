@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://stb6xfbwhc3k"]
+[gd_scene load_steps=6 format=3 uid="uid://ct2qy35phiyhx"]
 
-[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_obmsc"]
-[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="2_i2kol"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_gcw4r"]
+[ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="2_u45ok"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 
@@ -9,11 +9,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_khbhl"]
 render_priority = 0
-shader = ExtResource("2_i2kol")
+shader = ExtResource("2_u45ok")
 
-[node name="Shoe" type="Node3D"]
-script = ExtResource("1_obmsc")
-Tag = "shoe"
+[node name="Item2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("1_gcw4r")
+Tag = "clock"
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

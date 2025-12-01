@@ -68,8 +68,11 @@ func _physics_process(_delta):
 		var obj = ray.collider.get_parent()
 		if obj is Button3D:
 			select_this_shit_right_now_or_actually_unselect_it_if_you_want_to_im_not_telling_you_what_to_do(obj, true)
+		if obj is ShopItem:
+			set_description(obj)
 	else:
 		select_this_shit_right_now_or_actually_unselect_it_if_you_want_to_im_not_telling_you_what_to_do(null, false)
+		set_description(null)
 
 #Animations
 func process_animations(delta):
@@ -223,6 +226,7 @@ func process_slots(delta):
 
 @onready var animator := $SlopMachine/AnimationPlayer
 @onready var sellerguy := $"SlopMachine/Armature/Skeleton3D/Seller man guy"
+@onready var shoptext := $SlopMachine/Shop/ShopPreview
 
 var face_normal = preload("res://Assets/Textures/face_normal.png")
 var face_joy = preload("res://Assets/Textures/face_joy.png")
@@ -304,4 +308,10 @@ func load_items():
 		var slot = Slots[i]
 		var item = items[i].scene.instantiate()
 		slot.add_child(item)
-		item.position = Vector3.ZERO
+		item.global_position = slot.global_position
+
+func set_description(item):
+	if item and item is ShopItem:
+		shoptext.text = "Price: " + str(item.Price) + "\n" + item.Description
+	else:
+		shoptext.text = ""

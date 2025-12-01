@@ -17,6 +17,7 @@ func refresh(datas):
 		
 		var d = ItemDataPoint.new()
 		d.name = data.name
+		d.desc = data.Description
 		d.price = data.Price
 		d.rarity = data.Rarity
 		d.tag = data.Tag

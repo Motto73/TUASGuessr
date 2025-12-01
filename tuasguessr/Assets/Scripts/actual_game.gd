@@ -126,15 +126,22 @@ func set_points(pts):
 func add_item(item):
 	if item is String and not inventorytags.has(item):
 		inventorytags.append(item)
+		#Special interactions
+		if item == "lunch":
+			roundtimer += 60.0
 
 func  buy_item(item):
+	print("Buying item: ", item)
 	if not item is ShopItem:
+		print("Item is not ShopItem!")
 		return false
 	item = item as ShopItem
 	if points >= item.Price:
+		print("Item bought!", item.Tag)
 		set_points(points - item.Price)
 		add_item(item.Tag)
 		return true
+	print("Item not bought.")
 	return false
 	
 # Leaderboard
