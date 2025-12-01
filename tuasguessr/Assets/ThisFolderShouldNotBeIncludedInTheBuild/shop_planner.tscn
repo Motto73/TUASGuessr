@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8speb36j4x3y"]
+[gd_scene load_steps=10 format=3 uid="uid://c8speb36j4x3y"]
 
 [ext_resource type="Script" uid="uid://blyk6q40em2j5" path="res://Assets/Scripts/shop_planner.gd" id="1_21xs8"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="2_gupfh"]
 [ext_resource type="PackedScene" uid="uid://6i3345bdn6ng" path="res://Resource Scenes/shop_item.tscn" id="2_v4sp6"]
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="4_gupfh"]
 [ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="5_um34e"]
+[ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="6_um0vy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_um34e"]
 
@@ -20,13 +21,13 @@ DataAsset = ExtResource("2_gupfh")
 PreviewText = NodePath("Preview")
 
 [node name="Preview" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.25, 0)
 billboard = 1
 double_sided = false
 texture_filter = 1
-text = "Name: Kotiruokalounas 1
-Tag: lunch
-Price: 150.0
+text = "Name: Freeze Clock
+Tag: freeze
+Price: 200.0
 Rarity: 1.0
 "
 
@@ -61,7 +62,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_um0vy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 Tag = "shoe"
 Description = "Makes the interface faster, 
-Giving you more time to play!"
+giving you more time to play!"
 Price = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fast Shoe"]
@@ -69,5 +70,18 @@ transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("5_um34e")
 
+[node name="Freeze Clock" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+Tag = "freeze"
+Description = "Freezes the timer when
+you roll for a new image!"
+Price = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Freeze Clock"]
+transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("6_um0vy")
+
 [editable path="Kotiruokalounas 1"]
 [editable path="Fast Shoe"]
+[editable path="Freeze Clock"]

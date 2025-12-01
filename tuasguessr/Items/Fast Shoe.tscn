@@ -11,7 +11,7 @@
 script = ExtResource("1_um64h")
 Tag = "shoe"
 Description = "Makes the interface faster, 
-Giving you more time to play!"
+giving you more time to play!"
 Price = 50.0
 
 [node name="Collision" type="Area3D" parent="."]

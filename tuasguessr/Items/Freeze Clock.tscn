@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw0hp6bxdwl7m"]
+
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_td3bu"]
+[ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="2_2wvcx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
+
+[node name="Freeze Clock" type="Node3D"]
+script = ExtResource("1_td3bu")
+Tag = "freeze"
+Description = "Freezes the timer when
+you roll for a new image!"
+Price = 200.0
+
+[node name="Collision" type="Area3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision"]
+shape = SubResource("BoxShape3D_glqc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("2_2wvcx")

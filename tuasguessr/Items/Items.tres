@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ItemDataPoints" load_steps=14 format=3 uid="uid://31nqxtg1a3s2"]
+[gd_resource type="Resource" script_class="ItemDataPoints" load_steps=17 format=3 uid="uid://31nqxtg1a3s2"]
 
 [ext_resource type="Script" uid="uid://cesnxrsuw8ihx" path="res://Assets/Scripts/ItemDataPoint.gd" id="1_s7dvk"]
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="2_6nsgy"]
 [ext_resource type="Script" uid="uid://c78xibfvvewya" path="res://Assets/Scripts/ItemDataPoints.gd" id="2_602bc"]
 [ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="3_k4ag1"]
 [ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="4_bcm43"]
+[ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="5_q4jpe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 
@@ -14,7 +15,7 @@
 render_priority = 0
 shader = ExtResource("2_6nsgy")
 
-[sub_resource type="PackedScene" id="PackedScene_bcm43"]
+[sub_resource type="PackedScene" id="PackedScene_yuqoo"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -28,7 +29,7 @@ extra minute to your timer", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6,
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_q4jpe"]
+[sub_resource type="Resource" id="Resource_cwh8w"]
 script = ExtResource("1_s7dvk")
 name = "Kotiruokalounas 1"
 desc = "A tasty meal. Adds one 
@@ -36,11 +37,11 @@ extra minute to your timer"
 tag = "lunch"
 price = 150.0
 rarity = 1.0
-scene = SubResource("PackedScene_bcm43")
+scene = SubResource("PackedScene_yuqoo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
 
-[sub_resource type="PackedScene" id="PackedScene_yuqoo"]
+[sub_resource type="PackedScene" id="PackedScene_m75y8"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -50,21 +51,45 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 12, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "shoe", "Makes the interface faster, 
-Giving you more time to play!", 50.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0), SubResource("BoxMesh_um0vy"), ExtResource("4_bcm43")],
+giving you more time to play!", 50.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0), SubResource("BoxMesh_um0vy"), ExtResource("4_bcm43")],
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_cwh8w"]
+[sub_resource type="Resource" id="Resource_m8kjc"]
 script = ExtResource("1_s7dvk")
 name = "Fast Shoe"
 desc = "Makes the interface faster, 
-Giving you more time to play!"
+giving you more time to play!"
 tag = "shoe"
 price = 50.0
 rarity = 1.0
-scene = SubResource("PackedScene_yuqoo")
+scene = SubResource("PackedScene_m75y8")
+
+[sub_resource type="PackedScene" id="PackedScene_fr58v"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Freeze Clock", "script", "Tag", "Description", "Price", "Node3D", "Collision", "transform", "Area3D", "Shape", "shape", "CollisionShape3D", "MeshInstance3D", "mesh", "surface_material_override/0"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 12, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
+"variants": [ExtResource("3_k4ag1"), "freeze", "Freezes the timer when
+you roll for a new image!", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0), SubResource("BoxMesh_um0vy"), ExtResource("5_q4jpe")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_nussc"]
+script = ExtResource("1_s7dvk")
+name = "Freeze Clock"
+desc = "Freezes the timer when
+you roll for a new image!"
+tag = "freeze"
+price = 200.0
+rarity = 1.0
+scene = SubResource("PackedScene_fr58v")
 
 [resource]
 script = ExtResource("2_602bc")
-Items = Array[ExtResource("1_s7dvk")]([SubResource("Resource_q4jpe"), SubResource("Resource_cwh8w")])
+Items = Array[ExtResource("1_s7dvk")]([SubResource("Resource_cwh8w"), SubResource("Resource_m8kjc"), SubResource("Resource_nussc")])
 metadata/_custom_type_script = "uid://c78xibfvvewya"

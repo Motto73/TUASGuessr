@@ -48,6 +48,8 @@ func _ready():
 
 
 func _process(delta):
+	if Game.Active.actualGame.inventorytags.has("shoe"):
+		delta *= 10.0
 	#Process slots
 	process_slots(delta)
 	#Process shop
