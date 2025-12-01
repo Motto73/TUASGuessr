@@ -219,6 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067519546, -0.009197235, 
 surface_material_override/0 = ExtResource("11_tgcpo")
 
 [node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11477733, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.423649, 1.5397801, 0)
