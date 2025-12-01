@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8speb36j4x3y"]
+[gd_scene load_steps=18 format=3 uid="uid://c8speb36j4x3y"]
 
 [ext_resource type="Script" uid="uid://blyk6q40em2j5" path="res://Assets/Scripts/shop_planner.gd" id="1_21xs8"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="2_gupfh"]
@@ -7,6 +7,8 @@
 [ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="5_um34e"]
 [ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="6_um0vy"]
 [ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="7_arg2c"]
+[ext_resource type="Material" uid="uid://iovdoo384uy6" path="res://Assets/Materials/material_walls.tres" id="7_knsu4"]
+[ext_resource type="Material" uid="uid://b7rsd5mtcgmnc" path="res://Assets/Materials/material_gradient_dark.tres" id="8_5i1m8"]
 [ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="8_knsu4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_um34e"]
@@ -38,13 +40,13 @@ DataAsset = ExtResource("2_gupfh")
 PreviewText = NodePath("Preview")
 
 [node name="Preview" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 billboard = 1
 double_sided = false
 texture_filter = 1
-text = "Name: Evil Test Item
-Tag: freeze
-Price: 0.0
+text = "Name: Kotiruokalounas 1
+Tag: lunch
+Price: 150.0
 Rarity: 1.0
 "
 
@@ -102,9 +104,33 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("6_um0vy")
 
-[node name="Evil Test Item" parent="." instance=ExtResource("2_v4sp6")]
+[node name="Elevator" parent="." instance=ExtResource("2_v4sp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
-Tag = "freeze"
+Tag = "elevator"
+Description = "Gives you some pity points
+when guessing a wrong floor..."
+Price = 150.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Elevator"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("7_knsu4")
+
+[node name="Puudo App" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+Tag = "puudo"
+Description = "A handy app that gives you
+a permanent 50% discount!"
+Price = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puudo App"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("8_5i1m8")
+
+[node name="Evil Test Item" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+Tag = "puudo"
 Description = "If you see this, we really
 fucked something up"
 Price = 0.0
@@ -119,4 +145,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_5i1m8")
 [editable path="Kotiruokalounas 1"]
 [editable path="Fast Shoe"]
 [editable path="Freeze Clock"]
+[editable path="Elevator"]
+[editable path="Puudo App"]
 [editable path="Evil Test Item"]

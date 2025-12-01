@@ -24,7 +24,7 @@ shader_parameter/offset = Vector2(0, 0)
 
 [node name="Evil Test Item" type="Node3D"]
 script = ExtResource("1_6c0ct")
-Tag = "freeze"
+Tag = "puudo"
 Description = "If you see this, we really
 fucked something up"
 Price = 0.0

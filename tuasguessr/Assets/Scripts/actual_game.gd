@@ -99,10 +99,16 @@ func eval_points():
 	var floor = true
 	#Check floor
 	if actualfloor != currentfloor:
-		pts = 0
-		text = "Wrong floor!\n Actual floor: " + str(actualfloor)
-		floor = false
-	##Actually apply points
+		if not inventorytags.has("elevator"):
+			pts = 0
+			text = "Wrong floor!\n Actual floor: " + str(actualfloor)
+			floor = false
+		else:
+			pts *= 0.25
+			pts = round(pts)
+			floor = true
+			text = "Wrong floor!\nElevator saves:\n + " + str(pts) + " Points!"
+	#Actually apply points
 	pop.text = text
 	set_points(points + pts)
 	return floor
@@ -144,14 +150,21 @@ func  buy_item(item):
 		print("Item is not ShopItem!")
 		return false
 	item = item as ShopItem
-	if points >= item.Price:
+	var price = adjust_price(item.Price)
+	if points >= price:
 		print("Item bought!", item.Tag)
-		set_points(points - item.Price)
+		set_points(points - price)
 		add_item(item.Tag)
 		return true
 	print("Item not bought.")
 	return false
-	
+
+func adjust_price(num):
+	if inventorytags.has("puudo"):
+		num *= 0.5
+		num = round(num)
+	return num
+
 # Leaderboard
 func post_score(username):
 	print("Saving score for ", username)

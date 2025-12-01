@@ -314,6 +314,7 @@ func load_items():
 
 func set_description(item):
 	if item and item is ShopItem:
-		shoptext.text = item.name + "\nPrice: " + str(item.Price) + "\n" + item.Description
+		var price = Game.Active.actualGame.adjust_price(item.Price)
+		shoptext.text = item.name + "\nPrice: " + str(price) + "\n" + item.Description
 	else:
 		shoptext.text = ""
