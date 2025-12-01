@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="2_2wvcx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+size = Vector3(1.4033203, 1.4287109, 1.4716797)
 
 [sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
 
@@ -21,6 +22,6 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 shape = SubResource("BoxShape3D_glqc6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("2_2wvcx")

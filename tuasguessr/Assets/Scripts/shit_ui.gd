@@ -4,11 +4,18 @@ class_name  ShitUI
 
 @onready var timer := find_child("Timer", true, false)
 @onready var points := find_child("Points", true, false)
+@onready var ice := find_child("Ice", true, false)
+@onready var particles := find_child("Particles", true, false)
+@onready var sweat := find_child("Sweat", true, false)
 
 func set_points(amount):
 	points.text = str(amount)
 
-func set_time(s):
+func set_time(s, f = false):
+	if ice.visible and not f:
+		particles.emitting = true
+	ice.visible = f
+	sweat.emitting = f
 	#If time is positive, show time
 	if s > 0:
 		var min = int(s) / 60

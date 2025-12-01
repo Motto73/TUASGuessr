@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_wxfep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+size = Vector3(1.4033203, 1.4287109, 1.4716797)
 
 [node name="Item" type="Node3D"]
 script = ExtResource("1_wxfep")

@@ -33,7 +33,8 @@ var currentData : MapDataPoint
 var points = 0
 
 var currentFloor : int
-var roundtimer = 0
+var roundtimer := 0.0
+var freezetimer := 0.0
 
 var state = "loading"
 
@@ -47,8 +48,11 @@ func _ready():
 
 func _process(delta):
 	if state == "playing":
-		roundtimer -= delta
-		statsui.set_time(roundtimer)
+		if freezetimer <= 0:
+			roundtimer -= delta
+		else:
+			freezetimer -= delta
+		statsui.set_time(roundtimer, freezetimer > 0)
 		statsui.set_points(points)
 		if roundtimer <= 0:
 			end_game()
@@ -62,7 +66,11 @@ func start_game():
 
 func set_datapoint(data):
 	print("Datapoint set")
+	print(inventorytags)
 	currentData = data
+	if inventorytags.has("freeze"):
+		freezetimer = 3.0
+		print("yes")
 	if not data:
 		print("FUCK")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8speb36j4x3y"]
+[gd_scene load_steps=16 format=3 uid="uid://c8speb36j4x3y"]
 
 [ext_resource type="Script" uid="uid://blyk6q40em2j5" path="res://Assets/Scripts/shop_planner.gd" id="1_21xs8"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="2_gupfh"]
@@ -6,6 +6,8 @@
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="4_gupfh"]
 [ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="5_um34e"]
 [ext_resource type="Material" uid="uid://cuyf56oc7s474" path="res://Assets/Materials/material_yellow.tres" id="6_um0vy"]
+[ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="7_arg2c"]
+[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="8_knsu4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_um34e"]
 
@@ -15,19 +17,34 @@ shader = ExtResource("4_gupfh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
 
+[sub_resource type="TorusMesh" id="TorusMesh_arg2c"]
+
+[sub_resource type="Gradient" id="Gradient_qmfrv"]
+colors = PackedColorArray(0, 0, 0, 1, 0.9594626, 0.1696988, 0.99999994, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_euere"]
+gradient = SubResource("Gradient_qmfrv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5i1m8"]
+render_priority = 0
+shader = ExtResource("7_arg2c")
+shader_parameter/Text = ExtResource("8_knsu4")
+shader_parameter/gradient = SubResource("GradientTexture1D_euere")
+shader_parameter/offset = Vector2(0, 0)
+
 [node name="ShopPlanner" type="Node3D" node_paths=PackedStringArray("PreviewText")]
 script = ExtResource("1_21xs8")
 DataAsset = ExtResource("2_gupfh")
 PreviewText = NodePath("Preview")
 
 [node name="Preview" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, 0)
 billboard = 1
 double_sided = false
 texture_filter = 1
-text = "Name: Freeze Clock
+text = "Name: Evil Test Item
 Tag: freeze
-Price: 200.0
+Price: 0.0
 Rarity: 1.0
 "
 
@@ -53,8 +70,11 @@ Description = "A tasty meal. Adds one
 extra minute to your timer"
 Price = 150.0
 
+[node name="Shape" parent="Kotiruokalounas 1/Collision" index="0"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0)
+
 [node name="Mesh Example" type="MeshInstance3D" parent="Kotiruokalounas 1"]
-transform = Transform3D(0.695, 0, 0, 0, 0.695, 0, 0, 0, 0.695, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_um34e")
 surface_material_override/0 = SubResource("ShaderMaterial_um0vy")
 
@@ -66,7 +86,7 @@ giving you more time to play!"
 Price = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fast Shoe"]
-transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("5_um34e")
 
@@ -78,10 +98,25 @@ you roll for a new image!"
 Price = 200.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Freeze Clock"]
-transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("6_um0vy")
+
+[node name="Evil Test Item" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+Tag = "freeze"
+Description = "If you see this, we really
+fucked something up"
+Price = 0.0
+bobspeed = 5.0
+floatspeed = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Evil Test Item"]
+transform = Transform3D(0.475, 0, 0, 0, -2.076291e-08, 0.475, 0, -0.475, -2.076291e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_arg2c")
+surface_material_override/0 = SubResource("ShaderMaterial_5i1m8")
 
 [editable path="Kotiruokalounas 1"]
 [editable path="Fast Shoe"]
 [editable path="Freeze Clock"]
+[editable path="Evil Test Item"]

@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ddl2uvhr0fm"]
+[gd_scene load_steps=6 format=3 uid="uid://6ddl2uvhr0fm"]
 
 [ext_resource type="Script" uid="uid://dyioale8qgrut" path="res://Assets/Scripts/shit_ui.gd" id="1_6y375"]
 [ext_resource type="Texture2D" uid="uid://bx0d81q757f3g" path="res://Assets/Textures/Time_Points.png" id="2_7dbrc"]
+[ext_resource type="Texture2D" uid="uid://1qolqxmwywvm" path="res://Assets/Textures/ice.png" id="3_jhvpf"]
+[ext_resource type="Texture2D" uid="uid://dl7kjbogpjvh8" path="res://Assets/Textures/Whitepixel.png" id="4_url3b"]
+
+[sub_resource type="Curve" id="Curve_5gv8e"]
+_data = [Vector2(0, 1), 0.0, -0.4102198, 0, 1, Vector2(0.7576419, 0.6892003), -0.73627394, -0.73627394, 0, 0, Vector2(1, 0), -2.843727, 0.0, 1, 0]
+point_count = 3
 
 [node name="ShitUI" type="Node2D"]
 script = ExtResource("1_6y375")
@@ -47,6 +53,38 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
 text = "5:00:00"
 horizontal_alignment = 1
+
+[node name="Ice" type="Sprite2D" parent="CanvasLayer/Control/TextureRect/Timer"]
+position = Vector2(47.00001, 23.999992)
+scale = Vector2(0.78250015, 0.47250015)
+texture = ExtResource("3_jhvpf")
+
+[node name="Sweat" type="CPUParticles2D" parent="CanvasLayer/Control/TextureRect/Timer"]
+position = Vector2(44, 20)
+emitting = false
+amount = 16
+texture = ExtResource("4_url3b")
+emission_shape = 1
+emission_sphere_radius = 45.8
+scale_amount_min = 3.0
+scale_amount_max = 8.0
+
+[node name="Particles" type="CPUParticles2D" parent="CanvasLayer/Control/TextureRect/Timer"]
+position = Vector2(44, 19)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+randomness = 0.45
+emission_shape = 1
+emission_sphere_radius = 55.43
+direction = Vector2(10, 0)
+spread = 180.0
+initial_velocity_min = 108.33
+initial_velocity_max = 683.34
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_5gv8e")
 
 [node name="Points" type="Label" parent="CanvasLayer/Control/TextureRect"]
 layout_mode = 1
