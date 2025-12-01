@@ -84,7 +84,7 @@ func _on_submit_pressed():
 		widget.set_data(newdata)
 	else:
 		print("Error updating scoreboard:", errmsg)
-
+	
 	disable_submit()
 
 
@@ -104,6 +104,7 @@ func _on_namefield_text_changed():
 		username = namefield.text
 	else:
 		submit.disabled = true
+		
 		
 func hide_lb():
 	visible = false

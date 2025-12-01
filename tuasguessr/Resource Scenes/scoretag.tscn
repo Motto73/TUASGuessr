@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba8jk0xrwv7k4"]
 
 [node name="Scoretag" type="Label"]
+self_modulate = Color(0, 0, 0, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
