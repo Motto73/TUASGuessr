@@ -39,5 +39,5 @@ func _on_selection_changed():
 		PreviewText.text = "Name: " + (nod as ShopItem).name + "\n"
 		PreviewText.text += "Tag: " + (nod as ShopItem).Tag + "\n"
 		PreviewText.text += "Price: " + str((nod as ShopItem).Price) + "\n"
-		PreviewText.text += "Rarity: " + str((nod as ShopItem).Rarity) + "\n"
+		#PreviewText.text += "Rarity: " + str((nod as ShopItem).Rarity) + "\n"
 		PreviewText.position = nod.position + Vector3(0, 1.25, 0)

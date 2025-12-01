@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8speb36j4x3y"]
+[gd_scene load_steps=20 format=3 uid="uid://c8speb36j4x3y"]
 
 [ext_resource type="Script" uid="uid://blyk6q40em2j5" path="res://Assets/Scripts/shop_planner.gd" id="1_21xs8"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="2_gupfh"]
@@ -10,6 +10,8 @@
 [ext_resource type="Material" uid="uid://iovdoo384uy6" path="res://Assets/Materials/material_walls.tres" id="7_knsu4"]
 [ext_resource type="Material" uid="uid://b7rsd5mtcgmnc" path="res://Assets/Materials/material_gradient_dark.tres" id="8_5i1m8"]
 [ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="8_knsu4"]
+[ext_resource type="Material" uid="uid://dgjg4bqk74ca5" path="res://Assets/Materials/material_gray.tres" id="9_jwjsi"]
+[ext_resource type="Material" uid="uid://bhynm30vndgwf" path="res://Assets/Materials/mat_face.tres" id="10_t3pwo"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_um34e"]
 
@@ -40,14 +42,13 @@ DataAsset = ExtResource("2_gupfh")
 PreviewText = NodePath("Preview")
 
 [node name="Preview" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.25, 0)
 billboard = 1
 double_sided = false
 texture_filter = 1
-text = "Name: Kotiruokalounas 1
-Tag: lunch
-Price: 150.0
-Rarity: 1.0
+text = "Name: Evil Test Item
+Tag: level
+Price: 0.0
 "
 
 [node name="Guide" type="Label3D" parent="."]
@@ -128,9 +129,35 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_um0vy")
 surface_material_override/0 = ExtResource("8_5i1m8")
 
+[node name="Thermometer" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+Tag = "thermo"
+Description = "Tells you how close you are...
+But doesn't tell you the floor!"
+Price = 250.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Thermometer"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = ExtResource("9_jwjsi")
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("8_5i1m8")
+
+[node name="Bubble level" parent="." instance=ExtResource("2_v4sp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+Tag = "level"
+Description = "Shows if you are on
+the correct floor!"
+Price = 250.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bubble level"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = ExtResource("10_t3pwo")
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("8_5i1m8")
+
 [node name="Evil Test Item" parent="." instance=ExtResource("2_v4sp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
-Tag = "puudo"
+Tag = "level"
 Description = "If you see this, we really
 fucked something up"
 Price = 0.0
@@ -147,4 +174,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_5i1m8")
 [editable path="Freeze Clock"]
 [editable path="Elevator"]
 [editable path="Puudo App"]
+[editable path="Thermometer"]
+[editable path="Bubble level"]
 [editable path="Evil Test Item"]

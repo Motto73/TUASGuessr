@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl0qbkglcuj5o"]
+
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_85bkh"]
+[ext_resource type="Material" uid="uid://bhynm30vndgwf" path="res://Assets/Materials/mat_face.tres" id="2_esoa6"]
+[ext_resource type="Material" uid="uid://b7rsd5mtcgmnc" path="res://Assets/Materials/material_gradient_dark.tres" id="3_xmqn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+size = Vector3(1.4033203, 1.4287109, 1.4716797)
+
+[sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
+
+[node name="Bubble level" type="Node3D"]
+script = ExtResource("1_85bkh")
+Tag = "level"
+Description = "Shows if you are on
+the correct floor!"
+Price = 250.0
+
+[node name="Collision" type="Area3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision"]
+shape = SubResource("BoxShape3D_glqc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = ExtResource("2_esoa6")
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("3_xmqn8")

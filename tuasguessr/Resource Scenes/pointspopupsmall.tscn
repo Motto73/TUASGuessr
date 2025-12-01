@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gllks8n4glmk"]
+[gd_scene load_steps=5 format=3 uid="uid://dcu086tf2d5lm"]
 
-[ext_resource type="Script" uid="uid://c0ci4243628hk" path="res://Assets/Scripts/pointspopup.gd" id="1_m7aqa"]
+[ext_resource type="Script" uid="uid://c0ci4243628hk" path="res://Assets/Scripts/pointspopup.gd" id="1_33m1x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q55x8"]
-font_size = 32
+font_size = 18
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
@@ -21,8 +21,8 @@ z_as_relative = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "+ 1000 points"
+text = "Hot!"
 label_settings = SubResource("LabelSettings_q55x8")
-script = ExtResource("1_m7aqa")
+script = ExtResource("1_33m1x")
 curve = SubResource("Curve_m7aqa")
 alphacurve = SubResource("Curve_m7utw")

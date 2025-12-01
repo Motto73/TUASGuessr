@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ojqguu4tgru"]
+
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_am7ns"]
+[ext_resource type="Material" uid="uid://dgjg4bqk74ca5" path="res://Assets/Materials/material_gray.tres" id="2_2xjrf"]
+[ext_resource type="Material" uid="uid://b7rsd5mtcgmnc" path="res://Assets/Materials/material_gradient_dark.tres" id="3_l6qkh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+size = Vector3(1.4033203, 1.4287109, 1.4716797)
+
+[sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
+
+[node name="Thermometer" type="Node3D"]
+script = ExtResource("1_am7ns")
+Tag = "thermo"
+Description = "Tells you how close you are...
+But doesn't tell you the floor!"
+Price = 250.0
+
+[node name="Collision" type="Area3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision"]
+shape = SubResource("BoxShape3D_glqc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = ExtResource("2_2xjrf")
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("3_l6qkh")

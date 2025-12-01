@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemDataPoints" load_steps=31 format=3 uid="uid://31nqxtg1a3s2"]
+[gd_resource type="Resource" script_class="ItemDataPoints" load_steps=37 format=3 uid="uid://31nqxtg1a3s2"]
 
 [ext_resource type="Script" uid="uid://cesnxrsuw8ihx" path="res://Assets/Scripts/ItemDataPoint.gd" id="1_s7dvk"]
 [ext_resource type="Shader" uid="uid://dx0drfg5yrhbu" path="res://Assets/Materials/shader_box_noise.gdshader" id="2_6nsgy"]
@@ -10,6 +10,8 @@
 [ext_resource type="Material" uid="uid://iovdoo384uy6" path="res://Assets/Materials/material_walls.tres" id="6_m75y8"]
 [ext_resource type="Material" uid="uid://b7rsd5mtcgmnc" path="res://Assets/Materials/material_gradient_dark.tres" id="7_m8kjc"]
 [ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="7_m75y8"]
+[ext_resource type="Material" uid="uid://dgjg4bqk74ca5" path="res://Assets/Materials/material_gray.tres" id="8_nussc"]
+[ext_resource type="Material" uid="uid://bhynm30vndgwf" path="res://Assets/Materials/mat_face.tres" id="9_c1q7n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 size = Vector3(1.4033203, 1.4287109, 1.4716797)
@@ -20,7 +22,7 @@ size = Vector3(1.4033203, 1.4287109, 1.4716797)
 render_priority = 0
 shader = ExtResource("2_6nsgy")
 
-[sub_resource type="PackedScene" id="PackedScene_fr58v"]
+[sub_resource type="PackedScene" id="PackedScene_nussc"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -34,7 +36,7 @@ extra minute to your timer", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6,
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_nussc"]
+[sub_resource type="Resource" id="Resource_c1q7n"]
 script = ExtResource("1_s7dvk")
 name = "Kotiruokalounas 1"
 desc = "A tasty meal. Adds one 
@@ -42,11 +44,11 @@ extra minute to your timer"
 tag = "lunch"
 price = 150.0
 rarity = 1.0
-scene = SubResource("PackedScene_fr58v")
+scene = SubResource("PackedScene_nussc")
 
 [sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
 
-[sub_resource type="PackedScene" id="PackedScene_c1q7n"]
+[sub_resource type="PackedScene" id="PackedScene_pk418"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -60,7 +62,7 @@ giving you more time to play!", 50.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_pk418"]
+[sub_resource type="Resource" id="Resource_xridf"]
 script = ExtResource("1_s7dvk")
 name = "Fast Shoe"
 desc = "Makes the interface faster, 
@@ -68,9 +70,9 @@ giving you more time to play!"
 tag = "shoe"
 price = 50.0
 rarity = 1.0
-scene = SubResource("PackedScene_c1q7n")
+scene = SubResource("PackedScene_pk418")
 
-[sub_resource type="PackedScene" id="PackedScene_xridf"]
+[sub_resource type="PackedScene" id="PackedScene_cjest"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -84,7 +86,7 @@ you roll for a new image!", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_cjest"]
+[sub_resource type="Resource" id="Resource_ivd38"]
 script = ExtResource("1_s7dvk")
 name = "Freeze Clock"
 desc = "Freezes the timer when
@@ -92,9 +94,9 @@ you roll for a new image!"
 tag = "freeze"
 price = 200.0
 rarity = 1.0
-scene = SubResource("PackedScene_xridf")
+scene = SubResource("PackedScene_cjest")
 
-[sub_resource type="PackedScene" id="PackedScene_ivd38"]
+[sub_resource type="PackedScene" id="PackedScene_w036x"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -108,7 +110,7 @@ when guessing a wrong floor...", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_w036x"]
+[sub_resource type="Resource" id="Resource_dgpiw"]
 script = ExtResource("1_s7dvk")
 name = "Elevator"
 desc = "Gives you some pity points
@@ -116,9 +118,9 @@ when guessing a wrong floor..."
 tag = "elevator"
 price = 150.0
 rarity = 1.0
-scene = SubResource("PackedScene_ivd38")
+scene = SubResource("PackedScene_w036x")
 
-[sub_resource type="PackedScene" id="PackedScene_dgpiw"]
+[sub_resource type="PackedScene" id="PackedScene_xiu7d"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -132,7 +134,7 @@ a permanent 50% discount!", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_xiu7d"]
+[sub_resource type="Resource" id="Resource_n68wh"]
 script = ExtResource("1_s7dvk")
 name = "Puudo App"
 desc = "A handy app that gives you
@@ -140,7 +142,55 @@ a permanent 50% discount!"
 tag = "puudo"
 price = 200.0
 rarity = 1.0
-scene = SubResource("PackedScene_dgpiw")
+scene = SubResource("PackedScene_xiu7d")
+
+[sub_resource type="PackedScene" id="PackedScene_4bvwa"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Thermometer", "script", "Tag", "Description", "Price", "Node3D", "Collision", "transform", "Area3D", "Shape", "shape", "CollisionShape3D", "MeshInstance3D", "material_override", "mesh", "surface_material_override/0"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 12, 12, -1, 4, 7, 6, 13, 7, 14, 8, 15, 9, 0),
+"variants": [ExtResource("3_k4ag1"), "thermo", "Tells you how close you are...
+But doesn't tell you the floor!", 250.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0), ExtResource("8_nussc"), SubResource("BoxMesh_um0vy"), ExtResource("7_m8kjc")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_yx1ec"]
+script = ExtResource("1_s7dvk")
+name = "Thermometer"
+desc = "Tells you how close you are...
+But doesn't tell you the floor!"
+tag = "thermo"
+price = 250.0
+rarity = 1.0
+scene = SubResource("PackedScene_4bvwa")
+
+[sub_resource type="PackedScene" id="PackedScene_shf2h"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Bubble level", "script", "Tag", "Description", "Price", "Node3D", "Collision", "transform", "Area3D", "Shape", "shape", "CollisionShape3D", "MeshInstance3D", "material_override", "mesh", "surface_material_override/0"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 12, 12, -1, 4, 7, 6, 13, 7, 14, 8, 15, 9, 0),
+"variants": [ExtResource("3_k4ag1"), "level", "Shows if you are on
+the correct floor!", 250.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0), ExtResource("9_c1q7n"), SubResource("BoxMesh_um0vy"), ExtResource("7_m8kjc")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_16hlh"]
+script = ExtResource("1_s7dvk")
+name = "Bubble level"
+desc = "Shows if you are on
+the correct floor!"
+tag = "level"
+price = 250.0
+rarity = 1.0
+scene = SubResource("PackedScene_shf2h")
 
 [sub_resource type="TorusMesh" id="TorusMesh_arg2c"]
 
@@ -157,7 +207,7 @@ shader_parameter/Text = ExtResource("7_m75y8")
 shader_parameter/gradient = SubResource("GradientTexture1D_euere")
 shader_parameter/offset = Vector2(0, 0)
 
-[sub_resource type="PackedScene" id="PackedScene_n68wh"]
+[sub_resource type="PackedScene" id="PackedScene_7t332"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -166,21 +216,21 @@ _bundled = {
 "node_count": 4,
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 4, 0, 0, 0, 10, 8, -1, 1, 9, 5, 0, 1, 0, 13, 11, -1, 1, 12, 6, 0, 0, 0, 14, 14, -1, 3, 9, 7, 15, 8, 16, 9, 0),
-"variants": [ExtResource("3_k4ag1"), "puudo", "If you see this, we really
+"variants": [ExtResource("3_k4ag1"), "level", "If you see this, we really
 fucked something up", 0.0, 5.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(0.475, 0, 0, 0, -2.076291e-08, 0.475, 0, -0.475, -2.076291e-08, 0, 0, 0), SubResource("TorusMesh_arg2c"), SubResource("ShaderMaterial_5i1m8")],
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_4bvwa"]
+[sub_resource type="Resource" id="Resource_r1mex"]
 script = ExtResource("1_s7dvk")
 name = "Evil Test Item"
 desc = "If you see this, we really
 fucked something up"
-tag = "puudo"
+tag = "level"
 rarity = 1.0
-scene = SubResource("PackedScene_n68wh")
+scene = SubResource("PackedScene_7t332")
 
 [resource]
 script = ExtResource("2_602bc")
-Items = Array[ExtResource("1_s7dvk")]([SubResource("Resource_nussc"), SubResource("Resource_pk418"), SubResource("Resource_cjest"), SubResource("Resource_w036x"), SubResource("Resource_xiu7d"), SubResource("Resource_4bvwa")])
+Items = Array[ExtResource("1_s7dvk")]([SubResource("Resource_c1q7n"), SubResource("Resource_xridf"), SubResource("Resource_ivd38"), SubResource("Resource_dgpiw"), SubResource("Resource_n68wh"), SubResource("Resource_yx1ec"), SubResource("Resource_16hlh"), SubResource("Resource_r1mex")])
 metadata/_custom_type_script = "uid://c78xibfvvewya"
