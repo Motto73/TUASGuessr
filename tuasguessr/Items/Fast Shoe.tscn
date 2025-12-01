@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7veohg6ljcc5"]
+
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_um64h"]
+[ext_resource type="Material" uid="uid://3ye5ob0veygw" path="res://Assets/Materials/material_green.tres" id="2_02c26"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_um0vy"]
+
+[node name="Fast Shoe" type="Node3D"]
+script = ExtResource("1_um64h")
+Tag = "shoe"
+Description = "Makes the interface faster, 
+Giving you more time to play!"
+Price = 50.0
+
+[node name="Collision" type="Area3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision"]
+shape = SubResource("BoxShape3D_glqc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0, 0)
+mesh = SubResource("BoxMesh_um0vy")
+surface_material_override/0 = ExtResource("2_02c26")

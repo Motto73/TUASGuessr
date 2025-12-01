@@ -4,7 +4,7 @@ class_name  ShopItem
 
 @export_category("======Item settings======")
 @export var Tag := "None"
-@export var Description := "This item sucks ass"
+@export_multiline var Description := "This item sucks ass"
 @export var Price := 20.0
 @export var Rarity := 1.0
 

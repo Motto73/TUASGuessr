@@ -312,6 +312,6 @@ func load_items():
 
 func set_description(item):
 	if item and item is ShopItem:
-		shoptext.text = "Price: " + str(item.Price) + "\n" + item.Description
+		shoptext.text = item.name + "\nPrice: " + str(item.Price) + "\n" + item.Description
 	else:
 		shoptext.text = ""

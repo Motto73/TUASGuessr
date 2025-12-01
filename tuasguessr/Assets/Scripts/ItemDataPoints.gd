@@ -11,7 +11,12 @@ func refresh(datas):
 		#Experimental
 		var scene_path = "%s/%s.tscn" % ["res://Items/", data.name]
 		var packed = PackedScene.new()
-		var inst = data.duplicate()
+		var inst = data.duplicate(31)
+		inst.position = Vector3.ZERO
+		print("ITEM: ", data.name, " | OG: ", data.get_child_count(true), " | NEW: ", inst.get_child_count(true))
+		#As it happens, godot is kinda ass when you dig too deep.
+		for i in inst.get_children(true):
+			i.owner = inst
 		packed.pack(inst)
 		ResourceSaver.save(packed, scene_path)
 		
