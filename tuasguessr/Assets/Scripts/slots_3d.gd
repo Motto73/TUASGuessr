@@ -178,15 +178,20 @@ func select_point():
 	Game.Active.actualGame.set_datapoint(selectedPoint)
 
 func prepare_slices():
+	return
+	
 	for slice in hub.get_children():
 		var newmat := ShaderMaterial.new()
-		var newshader := load("res://Assets/Materials/cut.gdshader").duplicate()
+		var newshader := load("res://Assets/Materials/cut.gdshader")
 		newmat.shader = newshader
 		slice.set_surface_override_material(1, newmat)
 
 func show_all_random():
 	for i in range(hub.get_child_count()):
-		show_random_image(i)
+		if i != 0:
+			show_random_image(i)
+		else:
+			show_specific_image(0, load("res://Assets/Textures/Blackpixel.png"))
 
 func show_random_image(slot):
 	var rand = rng.randi_range(0, len(images) - 1)

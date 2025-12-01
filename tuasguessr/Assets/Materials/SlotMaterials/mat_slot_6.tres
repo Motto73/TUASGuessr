@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://u2uchpwmtyfe"]
+
+[ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="1_a8d41"]
+[ext_resource type="Texture2D" uid="uid://bbpbg0lh8qrq" path="res://Assets/Textures/Brick_Wall_BG.jpg" id="2_a8d41"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_a8d41")
+shader_parameter/image = ExtResource("2_a8d41")

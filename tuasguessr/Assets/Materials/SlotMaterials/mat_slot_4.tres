@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d4eygamgxqf6k"]
+
+[ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="1_cqx6c"]
+[ext_resource type="Texture2D" uid="uid://1qolqxmwywvm" path="res://Assets/Textures/ice.png" id="2_cqx6c"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cqx6c")
+shader_parameter/image = ExtResource("2_cqx6c")

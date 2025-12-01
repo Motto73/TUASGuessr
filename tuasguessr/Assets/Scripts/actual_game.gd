@@ -69,7 +69,7 @@ func set_datapoint(data):
 	print(inventorytags)
 	currentData = data
 	if inventorytags.has("freeze"):
-		freezetimer = 3.0
+		freezetimer = 1.5
 		print("yes")
 	if not data:
 		print("FUCK")

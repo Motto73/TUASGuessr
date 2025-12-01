@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://17e5jj7rlk06"]
+[gd_scene load_steps=28 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Assets/Scripts/slots_3d.gd" id="1_j830s"]
@@ -9,9 +9,15 @@
 [ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Material" uid="uid://bss7gcidj8bbi" path="res://Assets/Materials/mat_led_display_small.tres" id="6_axgpy"]
 [ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Assets/Scripts/led_display.gd" id="7_cpjvi"]
-[ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="9_uyxu4"]
-[ext_resource type="Texture2D" uid="uid://clka4ti3smooh" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/textures/Placeholder_start_picture.png" id="11_3av4g"]
+[ext_resource type="Material" uid="uid://xtexfbp8ko8m" path="res://Assets/Materials/SlotMaterials/mat_slot_0.tres" id="10_5d5rj"]
+[ext_resource type="Material" uid="uid://b5i7tu7bf5tni" path="res://Assets/Materials/SlotMaterials/mat_slot_1.tres" id="11_n7p2x"]
 [ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="11_tgcpo"]
+[ext_resource type="Material" uid="uid://jkibqrhmiugt" path="res://Assets/Materials/SlotMaterials/mat_slot_2.tres" id="12_v2iav"]
+[ext_resource type="Material" uid="uid://bn54qicfvatqw" path="res://Assets/Materials/SlotMaterials/mat_slot_3.tres" id="13_0r5xn"]
+[ext_resource type="Material" uid="uid://d4eygamgxqf6k" path="res://Assets/Materials/SlotMaterials/mat_slot_4.tres" id="14_rrn1d"]
+[ext_resource type="Material" uid="uid://nbmrwd5ypxvh" path="res://Assets/Materials/SlotMaterials/mat_slot_5.tres" id="15_qnfux"]
+[ext_resource type="Material" uid="uid://u2uchpwmtyfe" path="res://Assets/Materials/SlotMaterials/mat_slot_6.tres" id="16_b7fwq"]
+[ext_resource type="Material" uid="uid://chofvbkx130b1" path="res://Assets/Materials/SlotMaterials/mat_slot_7.tres" id="17_vg4lw"]
 
 [sub_resource type="Curve" id="Curve_j830s"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -74,11 +80,6 @@ radius = 0.26567987
 [sub_resource type="BoxShape3D" id="BoxShape3D_g0dd5"]
 size = Vector3(0.7128906, 0.3359375, 0.31640625)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1gli"]
-render_priority = 0
-shader = ExtResource("9_uyxu4")
-shader_parameter/image = ExtResource("11_3av4g")
-
 [node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
 script = ExtResource("1_j830s")
 MoveCurve = SubResource("Curve_j830s")
@@ -136,35 +137,35 @@ script = ExtResource("7_cpjvi")
 
 [node name="Wheel_000" parent="SlopMachine/WheelHub" index="0"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("10_5d5rj")
 
 [node name="Wheel_001" parent="SlopMachine/WheelHub" index="1"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("11_n7p2x")
 
 [node name="Wheel_002" parent="SlopMachine/WheelHub" index="2"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("12_v2iav")
 
 [node name="Wheel_003" parent="SlopMachine/WheelHub" index="3"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("13_0r5xn")
 
 [node name="Wheel_004" parent="SlopMachine/WheelHub" index="4"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("14_rrn1d")
 
 [node name="Wheel_005" parent="SlopMachine/WheelHub" index="5"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("15_qnfux")
 
 [node name="Wheel_006" parent="SlopMachine/WheelHub" index="6"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("16_b7fwq")
 
 [node name="Wheel_007" parent="SlopMachine/WheelHub" index="7"]
 surface_material_override/0 = ExtResource("2_gbr3u")
-surface_material_override/1 = SubResource("ShaderMaterial_g1gli")
+surface_material_override/1 = ExtResource("17_vg4lw")
 
 [node name="Shop" parent="SlopMachine" index="7"]
 transform = Transform3D(-0.13905072, 0, -2.0996076e-08, 0, 0.13905072, 0, 2.0996076e-08, 0, -0.13905072, -0.04752143, -1.2424226, -0.8970573)

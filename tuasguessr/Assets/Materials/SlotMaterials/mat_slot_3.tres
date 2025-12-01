@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bn54qicfvatqw"]
+
+[ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="1_1w0se"]
+[ext_resource type="Texture2D" uid="uid://cefq2vhku147o" path="res://Assets/Textures/puudo.png" id="2_1w0se"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1w0se")
+shader_parameter/image = ExtResource("2_1w0se")
