@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0g0btnm25q2u"
-path="res://.godot/imported/face_angry.png-e7a16536ed5f6977e75e08f688740a43.ctex"
+uid="uid://bql8fslj8pe5v"
+path="res://.godot/imported/led_medium.png-76990157954b7b42ee6dda868d58cd86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Donotcompress/face_angry.png"
-dest_files=["res://.godot/imported/face_angry.png-e7a16536ed5f6977e75e08f688740a43.ctex"]
+source_file="res://Assets/Textures/led_medium.png"
+dest_files=["res://.godot/imported/led_medium.png-76990157954b7b42ee6dda868d58cd86.ctex"]
 
 [params]
 

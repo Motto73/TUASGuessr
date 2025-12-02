@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnq1q6b7j5j7y"
-path.s3tc="res://.godot/imported/IMG_18.11.2025 19.06.47_compressed.webp-b748f6ecd61d687c2ce83aa0aa75c4b9.s3tc.ctex"
+path="res://.godot/imported/IMG_18.11.2025 19.06.47_compressed.webp-b748f6ecd61d687c2ce83aa0aa75c4b9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Game Images/IMG_18.11.2025 19.06.47_compressed.webp"
-dest_files=["res://.godot/imported/IMG_18.11.2025 19.06.47_compressed.webp-b748f6ecd61d687c2ce83aa0aa75c4b9.s3tc.ctex"]
+dest_files=["res://.godot/imported/IMG_18.11.2025 19.06.47_compressed.webp-b748f6ecd61d687c2ce83aa0aa75c4b9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

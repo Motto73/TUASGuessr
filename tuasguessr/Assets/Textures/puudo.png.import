@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dund2tb14d82q"
-path.s3tc="res://.godot/imported/led_welcome.png-9c0a0df38b45a5c2343a1f6296d1f836.s3tc.ctex"
+uid="uid://cefq2vhku147o"
+path.s3tc="res://.godot/imported/puudo.png-1484c9115ec02d707896a08762f0ed93.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Donotcompress/led_welcome.png"
-dest_files=["res://.godot/imported/led_welcome.png-9c0a0df38b45a5c2343a1f6296d1f836.s3tc.ctex"]
+source_file="res://Assets/Textures/puudo.png"
+dest_files=["res://.godot/imported/puudo.png-1484c9115ec02d707896a08762f0ed93.s3tc.ctex"]
 
 [params]
 

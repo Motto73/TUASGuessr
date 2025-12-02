@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bysfehch8sku2"
-path.s3tc="res://.godot/imported/strip_fire.png-b10316359ba368cae23688e7c78549ec.s3tc.ctex"
+uid="uid://clcyifjq41a3o"
+path.s3tc="res://.godot/imported/led_score_125.png-4f64f0f4b2b07d6e4535d579740c2ed5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Donotcompress/strip_fire.png"
-dest_files=["res://.godot/imported/strip_fire.png-b10316359ba368cae23688e7c78549ec.s3tc.ctex"]
+source_file="res://Assets/Textures/led_score_125.png"
+dest_files=["res://.godot/imported/led_score_125.png-4f64f0f4b2b07d6e4535d579740c2ed5.s3tc.ctex"]
 
 [params]
 
