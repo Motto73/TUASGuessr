@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dj73vj630gu0g"]
+[gd_scene load_steps=56 format=3 uid="uid://dj73vj630gu0g"]
 
 [ext_resource type="Script" uid="uid://bj5edanhycr36" path="res://Assets/Scripts/map_planner.gd" id="1_hshuq"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_e3agl"]
@@ -28,12 +28,20 @@
 [ext_resource type="Texture2D" uid="uid://1ijnwrp2qjvn" path="res://Assets/Game Images/IMG_18.11.2025 19.05.51_compressed.webp" id="25_3mlim"]
 [ext_resource type="Texture2D" uid="uid://cifa8wgeq6qcg" path="res://Assets/Game Images/IMG20251031123503_compressed.webp" id="26_0tllq"]
 [ext_resource type="Texture2D" uid="uid://b3j6oo5imqbm8" path="res://Assets/Game Images/IMG_18.11.2025 19.07.19_compressed.webp" id="26_s227l"]
+[ext_resource type="Texture2D" uid="uid://bkq07f3mnpw5v" path="res://Assets/Game Images/IMG_18.11.2025 19.07.28_compressed.webp" id="27_35v73"]
 [ext_resource type="Texture2D" uid="uid://bwarse0ks54u5" path="res://Assets/Game Images/IMG20251031140540_compressed.webp" id="27_bhf8p"]
 [ext_resource type="Texture2D" uid="uid://cx7ajkeoodk0q" path="res://Assets/Game Images/IMG_18.11.2025 19.04.13_compressed.webp" id="27_f7e7l"]
 [ext_resource type="Texture2D" uid="uid://dfbwjesej64a3" path="res://Assets/Game Images/IMG20251031140552_compressed.webp" id="28_lqia8"]
+[ext_resource type="Texture2D" uid="uid://ddhmyrwyv01h6" path="res://Assets/Game Images/IMG_18.11.2025 19.07.10_compressed.webp" id="28_x4i6m"]
 [ext_resource type="Texture2D" uid="uid://b2ygu5383sypi" path="res://Assets/Game Images/IMG20251111143844_compressed.webp" id="29_3mlim"]
+[ext_resource type="Texture2D" uid="uid://ci0dqsolid5v3" path="res://Assets/Game Images/IMG_18.11.2025 19.07.36_compressed.webp" id="29_665ep"]
+[ext_resource type="Texture2D" uid="uid://b3vmuwj5y3t52" path="res://Assets/Game Images/IMG_18.11.2025 19.07.02_compressed.webp" id="30_wu0jc"]
+[ext_resource type="Texture2D" uid="uid://dnq1q6b7j5j7y" path="res://Assets/Game Images/IMG_18.11.2025 19.06.47_compressed.webp" id="31_1wkv3"]
+[ext_resource type="Texture2D" uid="uid://cdsxswjty42k5" path="res://Assets/Game Images/IMG_18.11.2025 19.06.37_compressed.webp" id="32_6cbru"]
 [ext_resource type="Texture2D" uid="uid://c1lxxcmon5g43" path="res://Assets/Game Images/EDU1&2_27.11.2025 17.21.29_compressed.webp" id="33_o5qaq"]
+[ext_resource type="Texture2D" uid="uid://e42vcf3onwjk" path="res://Assets/Game Images/IMG_18.11.2025 19.06.23_compressed.webp" id="33_t0w7p"]
 [ext_resource type="Texture2D" uid="uid://dlosmabw81wcv" path="res://Assets/Game Images/EDU1&2_27.11.2025 17.21.35_compressed.webp" id="34_o1dg6"]
+[ext_resource type="Texture2D" uid="uid://bhmnxi4br115" path="res://Assets/Game Images/IMG_18.11.2025 19.06.11_compressed.webp" id="34_x2tbx"]
 [ext_resource type="Texture2D" uid="uid://ci15r0x0cjt3y" path="res://Assets/Game Images/EDU1&2_27.11.2025 17.21.41_compressed.webp" id="35_the57"]
 [ext_resource type="Texture2D" uid="uid://10li1qv4y0p2" path="res://Assets/Game Images/EDU1&2_27.11.2025 17.21.49_compressed.webp" id="36_ghcd1"]
 [ext_resource type="Texture2D" uid="uid://vgwf6gjvjs7t" path="res://Assets/Game Images/EDU1&2_27.11.2025 17.21.55_compressed.webp" id="37_bltxd"]
@@ -161,6 +169,38 @@ Picture = ExtResource("25_3mlim")
 [node name="Map Marker11" parent="Press eyes to hide->/ICT1" index="0" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7453473, 0.00044041872, -0.6775156)
 Picture = ExtResource("26_s227l")
+
+[node name="Map Marker12" parent="Press eyes to hide->/ICT1" index="1" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9331515, 0.00043994188, -0.089472234)
+Picture = ExtResource("27_35v73")
+
+[node name="Map Marker13" parent="Press eyes to hide->/ICT1" index="2" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4277529, 0.00043982267, -0.39401108)
+Picture = ExtResource("28_x4i6m")
+
+[node name="Map Marker14" parent="Press eyes to hide->/ICT1" index="3" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50433767, 0.00043982267, -2.0520034)
+Picture = ExtResource("29_665ep")
+
+[node name="Map Marker15" parent="Press eyes to hide->/ICT1" index="4" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27377105, 0.00043970346, -0.041098237)
+Picture = ExtResource("30_wu0jc")
+
+[node name="Map Marker16" parent="Press eyes to hide->/ICT1" index="5" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7345481, 0.00043982267, 0.24401444)
+Picture = ExtResource("31_1wkv3")
+
+[node name="Map Marker17" parent="Press eyes to hide->/ICT1" index="6" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0606103, 0.00043994188, 1.0470128)
+Picture = ExtResource("32_6cbru")
+
+[node name="Map Marker18" parent="Press eyes to hide->/ICT1" index="7" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.428494, 0.00043982267, 0.25966206)
+Picture = ExtResource("33_t0w7p")
+
+[node name="Map Marker19" parent="Press eyes to hide->/ICT1" index="8" instance=ExtResource("2_eh8yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8419075, 0.00043982267, -1.0928466)
+Picture = ExtResource("34_x2tbx")
 
 [node name="ICT0" parent="Press eyes to hide->" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)

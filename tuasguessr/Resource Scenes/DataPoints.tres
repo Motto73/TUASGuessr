@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapDataPoints" load_steps=46 format=3 uid="uid://brqchuj25do8n"]
+[gd_resource type="Resource" script_class="MapDataPoints" load_steps=54 format=3 uid="uid://brqchuj25do8n"]
 
 [ext_resource type="Script" uid="uid://cysfx46llag4h" path="res://Assets/Scripts/MapDataPoint.gd" id="1_gfkhl"]
 [ext_resource type="Script" uid="uid://7nulugirt1qg" path="res://Assets/Scripts/MapDataPoints.gd" id="2_t4pk4"]
@@ -159,144 +159,200 @@ floor = 1
 
 [sub_resource type="Resource" id="Resource_tynl3"]
 script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.07.28_compressed.webp"
+difficulty = "easy"
+position = Vector3(-1.9331515, 0, -0.089472234)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_mg8m5"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.07.10_compressed.webp"
+difficulty = "easy"
+position = Vector3(0.57224715, 0, -0.39401108)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_wdnkp"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.07.36_compressed.webp"
+difficulty = "easy"
+position = Vector3(1.4956623, 0, -2.0520034)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_qfdac"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.07.02_compressed.webp"
+difficulty = "easy"
+position = Vector3(2.273771, 0, -0.041098237)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_hsc0n"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.06.47_compressed.webp"
+difficulty = "easy"
+position = Vector3(3.734548, 0, 0.24401444)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_lij7j"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.06.37_compressed.webp"
+difficulty = "easy"
+position = Vector3(4.0606103, 0, 1.0470128)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_ycjrx"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.06.23_compressed.webp"
+difficulty = "easy"
+position = Vector3(6.428494, 0, 0.25966206)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_2yw68"]
+script = ExtResource("1_gfkhl")
+imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.06.11_compressed.webp"
+difficulty = "easy"
+position = Vector3(5.8419075, 0, -1.0928466)
+floor = 1
+
+[sub_resource type="Resource" id="Resource_qf1ul"]
+script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.04.13_compressed.webp"
 difficulty = "easy"
 position = Vector3(6.010937, 0, -1.1818767)
 
-[sub_resource type="Resource" id="Resource_mg8m5"]
+[sub_resource type="Resource" id="Resource_58rci"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251111144407_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.442777, 0, 2.2708185)
 floor = 3
 
-[sub_resource type="Resource" id="Resource_wdnkp"]
+[sub_resource type="Resource" id="Resource_tv5di"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251031123503_compressed.webp"
 difficulty = "medium"
 position = Vector3(9.941246, 0, 1.3107431)
 floor = 3
 
-[sub_resource type="Resource" id="Resource_qfdac"]
+[sub_resource type="Resource" id="Resource_8ooog"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251031140540_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.211417, 0, 0.5290513)
 floor = 3
 
-[sub_resource type="Resource" id="Resource_hsc0n"]
+[sub_resource type="Resource" id="Resource_u840j"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251031140552_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.414494, 0, 0.5290513)
 floor = 3
 
-[sub_resource type="Resource" id="Resource_lij7j"]
+[sub_resource type="Resource" id="Resource_c1c8h"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251111143844_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.080799, 0, 0.65205765)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_ycjrx"]
+[sub_resource type="Resource" id="Resource_ppqju"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.29_compressed.webp"
 difficulty = "medium"
 position = Vector3(11.096082, 0, -0.004261732)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_2yw68"]
+[sub_resource type="Resource" id="Resource_814tx"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.35_compressed.webp"
 difficulty = "medium"
 position = Vector3(11.367747, 0, -0.23743725)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_qf1ul"]
+[sub_resource type="Resource" id="Resource_flpgj"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.41_compressed.webp"
 difficulty = "medium"
 position = Vector3(11.161128, 0, -1.8011298)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_58rci"]
+[sub_resource type="Resource" id="Resource_1qhrw"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.49_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.621679, 0, -1.738693)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_tv5di"]
+[sub_resource type="Resource" id="Resource_8g46i"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.55_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.517568, 0, -1.7730093)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_8ooog"]
+[sub_resource type="Resource" id="Resource_awwi5"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.04_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.383368, 0, -0.65650153)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_u840j"]
+[sub_resource type="Resource" id="Resource_0b8sj"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.12_compressed.webp"
 difficulty = "medium"
 position = Vector3(8.288631, 0, 1.7057854)
 floor = 2
 
-[sub_resource type="Resource" id="Resource_c1c8h"]
+[sub_resource type="Resource" id="Resource_3hejy"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.23_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.266506, 0, 0.013884783)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_ppqju"]
+[sub_resource type="Resource" id="Resource_4bqlr"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.51_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.503425, 0, 0.01714778)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_814tx"]
+[sub_resource type="Resource" id="Resource_cwkl7"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.57_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.069144, 0, 0.0012669563)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_flpgj"]
+[sub_resource type="Resource" id="Resource_vt81d"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.02_compressed.webp"
 difficulty = "medium"
 position = Vector3(9.808117, 0, -0.17311668)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_1qhrw"]
+[sub_resource type="Resource" id="Resource_hk5v3"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.12_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.694889, 0, -1.5136626)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_8g46i"]
+[sub_resource type="Resource" id="Resource_s6um8"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.22_compressed.webp"
 difficulty = "medium"
 position = Vector3(10.344965, 0, 0.8725486)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_awwi5"]
+[sub_resource type="Resource" id="Resource_btork"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.20_compressed.webp"
 difficulty = "medium"
 position = Vector3(9.455867, 0, 1.4668565)
 floor = 1
 
-[sub_resource type="Resource" id="Resource_0b8sj"]
+[sub_resource type="Resource" id="Resource_fpiw7"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.28_compressed.webp"
 difficulty = "medium"
@@ -305,5 +361,5 @@ floor = 1
 
 [resource]
 script = ExtResource("2_t4pk4")
-DataPoints = [SubResource("Resource_c1qla"), SubResource("Resource_thhs6"), SubResource("Resource_ui5yi"), SubResource("Resource_a64in"), SubResource("Resource_0n1xs"), SubResource("Resource_7oqfl"), SubResource("Resource_6utl2"), SubResource("Resource_sberp"), SubResource("Resource_cqf0x"), SubResource("Resource_avece"), SubResource("Resource_ukc1j"), SubResource("Resource_jqxlw"), SubResource("Resource_ekevu"), SubResource("Resource_ahqpo"), SubResource("Resource_oqlkp"), SubResource("Resource_kxtrj"), SubResource("Resource_gj0yd"), SubResource("Resource_g71v8"), SubResource("Resource_id0nr"), SubResource("Resource_kftlu"), SubResource("Resource_4e3rm"), SubResource("Resource_vrw6i"), SubResource("Resource_tynl3"), SubResource("Resource_mg8m5"), SubResource("Resource_wdnkp"), SubResource("Resource_qfdac"), SubResource("Resource_hsc0n"), SubResource("Resource_lij7j"), SubResource("Resource_ycjrx"), SubResource("Resource_2yw68"), SubResource("Resource_qf1ul"), SubResource("Resource_58rci"), SubResource("Resource_tv5di"), SubResource("Resource_8ooog"), SubResource("Resource_u840j"), SubResource("Resource_c1c8h"), SubResource("Resource_ppqju"), SubResource("Resource_814tx"), SubResource("Resource_flpgj"), SubResource("Resource_1qhrw"), SubResource("Resource_8g46i"), SubResource("Resource_awwi5"), SubResource("Resource_0b8sj")]
+DataPoints = [SubResource("Resource_c1qla"), SubResource("Resource_thhs6"), SubResource("Resource_ui5yi"), SubResource("Resource_a64in"), SubResource("Resource_0n1xs"), SubResource("Resource_7oqfl"), SubResource("Resource_6utl2"), SubResource("Resource_sberp"), SubResource("Resource_cqf0x"), SubResource("Resource_avece"), SubResource("Resource_ukc1j"), SubResource("Resource_jqxlw"), SubResource("Resource_ekevu"), SubResource("Resource_ahqpo"), SubResource("Resource_oqlkp"), SubResource("Resource_kxtrj"), SubResource("Resource_gj0yd"), SubResource("Resource_g71v8"), SubResource("Resource_id0nr"), SubResource("Resource_kftlu"), SubResource("Resource_4e3rm"), SubResource("Resource_vrw6i"), SubResource("Resource_tynl3"), SubResource("Resource_mg8m5"), SubResource("Resource_wdnkp"), SubResource("Resource_qfdac"), SubResource("Resource_hsc0n"), SubResource("Resource_lij7j"), SubResource("Resource_ycjrx"), SubResource("Resource_2yw68"), SubResource("Resource_qf1ul"), SubResource("Resource_58rci"), SubResource("Resource_tv5di"), SubResource("Resource_8ooog"), SubResource("Resource_u840j"), SubResource("Resource_c1c8h"), SubResource("Resource_ppqju"), SubResource("Resource_814tx"), SubResource("Resource_flpgj"), SubResource("Resource_1qhrw"), SubResource("Resource_8g46i"), SubResource("Resource_awwi5"), SubResource("Resource_0b8sj"), SubResource("Resource_3hejy"), SubResource("Resource_4bqlr"), SubResource("Resource_cwkl7"), SubResource("Resource_vt81d"), SubResource("Resource_hk5v3"), SubResource("Resource_s6um8"), SubResource("Resource_btork"), SubResource("Resource_fpiw7")]
 metadata/_custom_type_script = "uid://7nulugirt1qg"
