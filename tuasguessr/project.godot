@@ -21,7 +21,6 @@ Firebase="*res://Resource Scenes/firebase.tscn"
 
 [display]
 
-window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 
 [dotnet]
