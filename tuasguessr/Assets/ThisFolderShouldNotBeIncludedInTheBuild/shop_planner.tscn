@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkvc2c7u6853" path="res://Assets/3D/Trinkets_puudo.png" id="4_ueeay"]
 [ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="7_arg2c"]
 [ext_resource type="Texture2D" uid="uid://p0e8hr0vb34t" path="res://Assets/3D/Trinkets_strip_fire.png" id="8_efilc"]
-[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="8_knsu4"]
+[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/NoCompres/led_welcome.png" id="8_knsu4"]
 [ext_resource type="Material" uid="uid://d3odglnngjjrw" path="res://Assets/Materials/material_pixel.tres" id="9_hhym2"]
 [ext_resource type="Texture2D" uid="uid://bysfehch8sku2" path="res://Assets/Textures/strip_fire.png" id="10_i3t05"]
 

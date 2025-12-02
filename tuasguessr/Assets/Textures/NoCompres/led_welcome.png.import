@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj55tgipcbep"
-path="res://.godot/imported/led_easy.png-13371d9c14b4d2a13d699d0daceaa885.ctex"
+uid="uid://dund2tb14d82q"
+path.s3tc="res://.godot/imported/led_welcome.png-a86638ed450349d35223c15e25ad010a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Textures/led_easy.png"
-dest_files=["res://.godot/imported/led_easy.png-13371d9c14b4d2a13d699d0daceaa885.ctex"]
+source_file="res://Assets/Textures/NoCompres/led_welcome.png"
+dest_files=["res://.godot/imported/led_welcome.png-a86638ed450349d35223c15e25ad010a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dund2tb14d82q"
-path.s3tc="res://.godot/imported/led_welcome.png-1f3cab9cbd32b82d522bc2f9ee1a879c.s3tc.ctex"
+uid="uid://dbguxai4t0wbc"
+path.s3tc="res://.godot/imported/face_joy.png-44c0afb0223eb71d6b7a5a60a434de5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/led_welcome.png"
-dest_files=["res://.godot/imported/led_welcome.png-1f3cab9cbd32b82d522bc2f9ee1a879c.s3tc.ctex"]
+source_file="res://Assets/Textures/NoCompres/face_joy.png"
+dest_files=["res://.godot/imported/face_joy.png-44c0afb0223eb71d6b7a5a60a434de5d.s3tc.ctex"]
 
 [params]
 

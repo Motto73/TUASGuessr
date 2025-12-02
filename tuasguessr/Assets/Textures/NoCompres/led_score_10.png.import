@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwmd0u1rj16k"
-path="res://.godot/imported/Blackpixel.png-9afe53e2b72d83d991134ecffa4a3f0b.ctex"
+uid="uid://deln11bfyb3gy"
+path="res://.godot/imported/led_score_10.png-c5b352600d78eaf92b0fe1d04ca51f4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Blackpixel.png"
-dest_files=["res://.godot/imported/Blackpixel.png-9afe53e2b72d83d991134ecffa4a3f0b.ctex"]
+source_file="res://Assets/Textures/NoCompres/led_score_10.png"
+dest_files=["res://.godot/imported/led_score_10.png-c5b352600d78eaf92b0fe1d04ca51f4d.ctex"]
 
 [params]
 

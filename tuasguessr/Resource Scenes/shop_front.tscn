@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://rjtqxv30rebw" path="res://Assets/Scripts/shop_front.gd" id="2_7owm6"]
 [ext_resource type="Material" uid="uid://d2vi24fltmysr" path="res://Assets/Materials/shop_front.tres" id="3_cquyn"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="3_s3nf8"]
-[ext_resource type="Texture2D" uid="uid://dbguxai4t0wbc" path="res://Assets/Textures/face_joy.png" id="4_w0sjr"]
+[ext_resource type="Texture2D" uid="uid://dbguxai4t0wbc" path="res://Assets/Textures/NoCompres/face_joy.png" id="4_w0sjr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8ng8"]
 transparency = 1

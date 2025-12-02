@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6oprnq4n2s10"
-path.s3tc="res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"
+uid="uid://clcyifjq41a3o"
+path.s3tc="res://.godot/imported/led_score_125.png-5c73bf5416551a4a6078ca154cb26229.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/face_normal.png"
-dest_files=["res://.godot/imported/face_normal.png-7f2747ae002acd081a2cc4a0097cb517.s3tc.ctex"]
+source_file="res://Assets/Textures/NoCompres/led_score_125.png"
+dest_files=["res://.godot/imported/led_score_125.png-5c73bf5416551a4a6078ca154cb26229.s3tc.ctex"]
 
 [params]
 

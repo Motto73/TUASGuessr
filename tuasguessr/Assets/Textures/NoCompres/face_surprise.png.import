@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deln11bfyb3gy"
-path="res://.godot/imported/led_score_10.png-9e6fd0351d673435b17c68c46537c9a3.ctex"
+uid="uid://ds2boecqftbe5"
+path="res://.godot/imported/face_surprise.png-5cb24474a84374fac939c15bdd21dc08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/led_score_10.png"
-dest_files=["res://.godot/imported/led_score_10.png-9e6fd0351d673435b17c68c46537c9a3.ctex"]
+source_file="res://Assets/Textures/NoCompres/face_surprise.png"
+dest_files=["res://.godot/imported/face_surprise.png-5cb24474a84374fac939c15bdd21dc08.ctex"]
 
 [params]
 
