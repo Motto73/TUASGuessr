@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://6ddl2uvhr0fm"]
 
 [ext_resource type="Script" uid="uid://dyioale8qgrut" path="res://Assets/Scripts/shit_ui.gd" id="1_6y375"]
-[ext_resource type="Texture2D" uid="uid://bx0d81q757f3g" path="res://Assets/Textures/Time_Points.png" id="2_7dbrc"]
+[ext_resource type="Texture2D" uid="uid://bx0d81q757f3g" path="res://Assets/Textures/Donotcompress/Time_Points.png" id="2_7dbrc"]
 [ext_resource type="Texture2D" uid="uid://1qolqxmwywvm" path="res://Assets/Textures/ice.png" id="3_jhvpf"]
-[ext_resource type="Texture2D" uid="uid://dl7kjbogpjvh8" path="res://Assets/Textures/Whitepixel.png" id="4_url3b"]
+[ext_resource type="Texture2D" uid="uid://dl7kjbogpjvh8" path="res://Assets/Textures/Donotcompress/Whitepixel.png" id="4_url3b"]
 
 [sub_resource type="Curve" id="Curve_5gv8e"]
 _data = [Vector2(0, 1), 0.0, -0.4102198, 0, 1, Vector2(0.7576419, 0.6892003), -0.73627394, -0.73627394, 0, 0, Vector2(1, 0), -2.843727, 0.0, 1, 0]

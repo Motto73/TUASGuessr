@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n47d56bf6rra"
-path.s3tc="res://.godot/imported/palette_32_light.png-f17888cf88bac73586f8a140d224d0ad.s3tc.ctex"
+uid="uid://dl35k6on7iym"
+path.s3tc="res://.godot/imported/Pointer.png-9deeee4cca99507d63a458eb3177fe31.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/palette_32_light.png"
-dest_files=["res://.godot/imported/palette_32_light.png-f17888cf88bac73586f8a140d224d0ad.s3tc.ctex"]
+source_file="res://Assets/Textures/Donotcompress/Pointer.png"
+dest_files=["res://.godot/imported/Pointer.png-9deeee4cca99507d63a458eb3177fe31.s3tc.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

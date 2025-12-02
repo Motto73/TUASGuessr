@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgf2egud6ln0t"
-path="res://.godot/imported/led_rolling.png-7fc8688110fee83037260008d8bbd279.ctex"
+uid="uid://bwmd0u1rj16k"
+path="res://.godot/imported/Blackpixel.png-109f0ada16787752a233dffac4e0c64a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/led_rolling.png"
-dest_files=["res://.godot/imported/led_rolling.png-7fc8688110fee83037260008d8bbd279.ctex"]
+source_file="res://Assets/Textures/Donotcompress/Blackpixel.png"
+dest_files=["res://.godot/imported/Blackpixel.png-109f0ada16787752a233dffac4e0c64a.ctex"]
 
 [params]
 

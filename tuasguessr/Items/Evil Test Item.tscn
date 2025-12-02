@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_6c0ct"]
 [ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="2_16j2l"]
-[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="3_de0m8"]
+[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/Donotcompress/led_welcome.png" id="3_de0m8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 size = Vector3(1.4033203, 1.4287109, 1.4716797)

@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ctqwp74ul3wl6"]
 
 [ext_resource type="Shader" uid="uid://6ctn3whbnlwc" path="res://Assets/Materials/cut_shaded.gdshader" id="1_v3jqq"]
-[ext_resource type="Texture2D" uid="uid://t73b70wgkokr" path="res://Assets/Textures/led_random.png" id="2_v3jqq"]
+[ext_resource type="Texture2D" uid="uid://t73b70wgkokr" path="res://Assets/Textures/Donotcompress/led_random.png" id="2_v3jqq"]
 
 [resource]
 render_priority = 0
