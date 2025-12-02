@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c32hf6op2yb5l"
-path.s3tc="res://.godot/imported/IMG_18.11.2025 19.04.58_compressed.webp-9e3979bdc11083f3c2fbcf18fbf08694.s3tc.ctex"
+uid="uid://cuxgsg2excw8g"
+path.s3tc="res://.godot/imported/EDU3_2.12.2025 19.35.06_compressed.webp-7bded86d2a106aa19cba8d5876a2a2e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Game Images/IMG_18.11.2025 19.04.58_compressed.webp"
-dest_files=["res://.godot/imported/IMG_18.11.2025 19.04.58_compressed.webp-9e3979bdc11083f3c2fbcf18fbf08694.s3tc.ctex"]
+source_file="res://Assets/Game Images/EDU3_2.12.2025 19.35.06_compressed.webp"
+dest_files=["res://.godot/imported/EDU3_2.12.2025 19.35.06_compressed.webp-7bded86d2a106aa19cba8d5876a2a2e2.s3tc.ctex"]
 
 [params]
 
