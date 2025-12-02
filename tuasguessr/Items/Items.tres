@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://d3odglnngjjrw" path="res://Assets/Materials/material_pixel.tres" id="5_m8kjc"]
 [ext_resource type="Shader" uid="uid://u8yai6ysi1h5" path="res://Assets/Materials/marquee.gdshader" id="6_cwh8w"]
 [ext_resource type="Texture2D" uid="uid://bkvc2c7u6853" path="res://Assets/3D/Trinkets_puudo.png" id="7_fr58v"]
-[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/NoCompres/led_welcome.png" id="7_m75y8"]
+[ext_resource type="Texture2D" uid="uid://dund2tb14d82q" path="res://Assets/Textures/led_welcome.png" id="7_m75y8"]
 [ext_resource type="Texture2D" uid="uid://bysfehch8sku2" path="res://Assets/Textures/strip_fire.png" id="7_w036x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
