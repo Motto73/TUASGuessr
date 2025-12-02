@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc5b3iv6gjlvw" path="res://Assets/Scripts/slot_machine.gd" id="1_nmlme"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_i6cki"]
-[ext_resource type="Texture2D" uid="uid://clka4ti3smooh" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/textures/Placeholder_start_picture.png" id="3_nf4e5"]
+[ext_resource type="Texture2D" uid="uid://clka4ti3smooh" path="res://Assets/Textures/Placeholder_start_picture.png" id="3_nf4e5"]
 
 [sub_resource type="Gradient" id="Gradient_nmlme"]
 offsets = PackedFloat32Array(0, 0.33865815, 0.6645367, 1)
