@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://17e5jj7rlk06"]
 
-[ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
+[ext_resource type="PackedScene" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Assets/Scripts/slots_3d.gd" id="1_j830s"]
 [ext_resource type="Resource" uid="uid://brqchuj25do8n" path="res://Resource Scenes/DataPoints.tres" id="2_eyuyc"]
 [ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]

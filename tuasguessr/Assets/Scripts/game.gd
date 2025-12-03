@@ -18,14 +18,11 @@ var mainScene : Node
 var popup : Node
 
 ##This is the primary build version. Whenever releasing a new build, change this.
-var gameVersion : String = "0.0.13"
+var gameVersion : String = "0.0.14"
 var osname : String
 var osmode : String
 var osmobile : bool
 
-#const FIRESTORE_BASE := "https://wheretheamkamilb-default-rtdb.europe-west1.firebasedatabase.app"
-#const FIRESTORE_QUERY := "REPLACE"
-#const API_KEY := "AIzaSyBF7HoWY1ipOnEMAU133TvzTw_1Xly11l8"
 
 func _ready():
 	Active = self

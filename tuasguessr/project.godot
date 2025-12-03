@@ -17,6 +17,7 @@ config/icon="uid://dnhlwfrfikcr0"
 
 [autoload]
 
+AutoloadDlc="res://Assets/Scripts/autoload_dlc.gd"
 Firebase="*res://Resource Scenes/firebase.tscn"
 
 [display]
