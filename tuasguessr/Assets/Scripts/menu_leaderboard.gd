@@ -53,6 +53,7 @@ func _on_leaderboard_ready(success: bool, data: Array, error: String):
 # SUBMIT SCORE
 # ------------------------
 func _on_submit_pressed():
+	Sounds.play_button_normal()
 	submit.disabled = true
 	namefield.editable = false
 
@@ -94,6 +95,7 @@ func disable_submit():
 	namefield.editable = false
 
 func _on_new_game_pressed():
+	Sounds.play_button_normal()
 	actualgame.new_game()
 	submit.disabled = false
 	namefield.editable = true

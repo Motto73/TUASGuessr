@@ -17,6 +17,7 @@ func _ready():
 	close()
 
 func _on_button_down():
+	Sounds.play_button_normal()
 	state = "accepted"
 	close()
 	if Game.Active.actualGame.eval_points():
