@@ -225,8 +225,6 @@ func _on_roll_button_button_down():
 		Sounds.play_roulette()
 	else:
 		Sounds.stop_roulette_sound()
-	if state == "gaming":
-		Sounds.stop_roulette_sound()
 
 
 func process_slots(delta):
@@ -240,6 +238,7 @@ func process_slots(delta):
 		if timer >= SpinTime:
 			state = "gaming"
 			timer = 0
+			Sounds.stop_roulette_sound()
 			Game.Active.actualGame.allow_bets()
 			led_display.set_diff(selectedPoint.difficulty, gold)
 
