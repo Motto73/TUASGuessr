@@ -74,6 +74,11 @@ func set_datapoint(data):
 	if not data:
 		print("FUCK")
 
+var gold : bool
+func set_gold():
+	gold = true
+	print("WE'VE STRUCK GOLD!")
+
 func allow_bets():
 	mapdisplay.open(currentData)
 
@@ -104,6 +109,12 @@ func eval_points():
 		"hard2":
 			mult = 2.0
 	pts *= mult
+	#Gold frame
+	if gold:
+		pts += 10.0
+		pts *= 2.0
+		gold = false
+		print("Gold points gained")
 	#Spawn a little popup thing
 	var pop = load("res://Resource Scenes/pointspopup.tscn").instantiate()
 	pop.position = statsui.position

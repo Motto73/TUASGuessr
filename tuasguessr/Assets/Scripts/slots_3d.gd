@@ -31,7 +31,7 @@ var movezoom : Vector3
 func _ready():
 	#Animation setup
 	movestart = pivot.position
-	moveend = Vector3(0, -2.5, 0)
+	moveend = Vector3(0.05, -2.45, -1.5)
 	moverot = pivot.rotation.y
 	moverotend = moverot + PI / 2
 	movecam = cam.position
@@ -171,20 +171,27 @@ func reset():
 	lever.enable(true)
 	state = "ready"
 
+var gold := false
 func select_point():
+	gold = false
+	$SlopMachine/Machine.set_surface_override_material(0, load("res://Assets/Materials/mat_slop_purple.tres"))
 	var rand = rng.randi_range(0, len(Data.DataPoints) - 1)
 	selectedIMG = load(Data.DataPoints[rand].imgresource)
 	selectedPoint = Data.DataPoints[rand]
 	Game.Active.actualGame.set_datapoint(selectedPoint)
+	gold = rng.randf() > 0.9 and Game.Active.actualGame.inventorytags.has("gold")
+	if gold:
+		Game.Active.actualGame.set_gold()
+		$SlopMachine/Machine.set_surface_override_material(0, load("res://Assets/Materials/mat_slop_gold.tres"))
 
 func prepare_slices():
 	return
 	
-	for slice in hub.get_children():
-		var newmat := ShaderMaterial.new()
-		var newshader := load("res://Assets/Materials/cut.gdshader")
-		newmat.shader = newshader
-		slice.set_surface_override_material(1, newmat)
+	#for slice in hub.get_children():
+		#var newmat := ShaderMaterial.new()
+		#var newshader := load("res://Assets/Materials/cut.gdshader")
+		#newmat.shader = newshader
+		#slice.set_surface_override_material(1, newmat)
 
 func show_all_random():
 	for i in range(hub.get_child_count()):
@@ -232,7 +239,7 @@ func process_slots(delta):
 			state = "gaming"
 			timer = 0
 			Game.Active.actualGame.allow_bets()
-			led_display.set_diff(selectedPoint.difficulty)
+			led_display.set_diff(selectedPoint.difficulty, gold)
 
 #Shop behavior
 @export_category("Shop")

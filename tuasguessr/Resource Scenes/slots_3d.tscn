@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://17e5jj7rlk06"]
+[gd_scene load_steps=34 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Assets/Scripts/slots_3d.gd" id="1_j830s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://ctqwp74ul3wl6" path="res://Assets/Materials/mat_slot_rim.tres" id="2_gbr3u"]
 [ext_resource type="Resource" uid="uid://31nqxtg1a3s2" path="res://Items/Items.tres" id="3_3av4g"]
 [ext_resource type="Script" uid="uid://l5x677j82w2m" path="res://Assets/Scripts/button_3d.gd" id="3_g0dd5"]
+[ext_resource type="Material" uid="uid://otaimwpsy2rb" path="res://Assets/Materials/mat_slop_purple.tres" id="5_0r5xn"]
 [ext_resource type="Material" uid="uid://bea2jbt6ixi8o" path="res://Assets/Materials/mat_led_display.tres" id="5_g1gli"]
 [ext_resource type="Material" uid="uid://bss7gcidj8bbi" path="res://Assets/Materials/mat_led_display_small.tres" id="6_axgpy"]
 [ext_resource type="Script" uid="uid://bfe7nfl0ttdra" path="res://Assets/Scripts/led_display.gd" id="7_cpjvi"]
@@ -126,17 +127,16 @@ shadow_mesh = SubResource("ArrayMesh_ctlnl")
 
 [node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
 script = ExtResource("1_j830s")
-MoveTime = null
 MoveCurve = SubResource("Curve_j830s")
-SpinTime = null
-SpinAmount = null
 SpinCurve = SubResource("Curve_eyuyc")
-RandomImagePoolSize = null
 Data = ExtResource("2_eyuyc")
 Slots = [NodePath("SlopMachine/Shop/ItemSlot0"), NodePath("SlopMachine/Shop/ItemSlot7"), NodePath("SlopMachine/Shop/ItemSlot1"), NodePath("SlopMachine/Shop/ItemSlot2"), NodePath("SlopMachine/Shop/ItemSlot3"), NodePath("SlopMachine/Shop/ItemSlot4"), NodePath("SlopMachine/Shop/ItemSlot5"), NodePath("SlopMachine/Shop/ItemSlot6")]
 ItemData = ExtResource("3_3av4g")
 
 [node name="SlopMachine" parent="." instance=ExtResource("1_64lqi")]
+
+[node name="Machine" parent="SlopMachine" index="0"]
+surface_material_override/0 = ExtResource("5_0r5xn")
 
 [node name="Lever" parent="SlopMachine" index="1"]
 script = ExtResource("3_g0dd5")

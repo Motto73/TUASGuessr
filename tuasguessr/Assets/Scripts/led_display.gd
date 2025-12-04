@@ -15,6 +15,7 @@ var img_20 : Texture2D
 
 var img_rand : Texture2D
 var img_roll : Texture2D
+var img_gold : Texture2D
 
 var mat_big : ShaderMaterial
 var mat_small : ShaderMaterial
@@ -39,6 +40,7 @@ func _ready():
 	
 	img_rand = load("res://Assets/Textures/led_random.png")
 	img_roll = load("res://Assets/Textures/led_rolling.png")
+	img_gold = load("res://Assets/Textures/led_gold.png")
 	
 	mat_big = get_surface_override_material(0)
 	mat_small = get_surface_override_material(1)
@@ -52,10 +54,15 @@ func _process(delta):
 	mat_big.set_shader_parameter("offset", offset1)
 	mat_small.set_shader_parameter("offset", offset2)
 
-func set_diff(diff):
+func set_diff(diff, gold = false):
 	rollin = false
 	offset1 = Vector2.ZERO
 	offset2 = Vector2.ZERO
+	
+	if gold:
+		mat_big.set_shader_parameter("Text", img_gold)
+		mat_small.set_shader_parameter("Text", img_rand)
+		return
 	
 	if diff == "easy":
 		mat_big.set_shader_parameter("Text", img_easy)
