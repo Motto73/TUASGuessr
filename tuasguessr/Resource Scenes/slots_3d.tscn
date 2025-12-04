@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://17e5jj7rlk06"]
+[gd_scene load_steps=32 format=4 uid="uid://17e5jj7rlk06"]
 
 [ext_resource type="PackedScene" uid="uid://dliel31lpyg7e" path="res://Assets/3D/SlopMachine.glb" id="1_64lqi"]
 [ext_resource type="Script" uid="uid://cawl5o55prg27" path="res://Assets/Scripts/slots_3d.gd" id="1_j830s"]
@@ -19,8 +19,6 @@
 [ext_resource type="Material" uid="uid://nbmrwd5ypxvh" path="res://Assets/Materials/SlotMaterials/mat_slot_5.tres" id="15_qnfux"]
 [ext_resource type="Material" uid="uid://u2uchpwmtyfe" path="res://Assets/Materials/SlotMaterials/mat_slot_6.tres" id="16_b7fwq"]
 [ext_resource type="Material" uid="uid://chofvbkx130b1" path="res://Assets/Materials/SlotMaterials/mat_slot_7.tres" id="17_vg4lw"]
-[ext_resource type="AudioStream" uid="uid://cn0gdy3ulfyg8" path="res://Audio/Roulette_sound_2.wav" id="19_n7p2x"]
-[ext_resource type="AudioStream" uid="uid://chrodupfsen7o" path="res://Audio/analog-appliance-button-10-185285.mp3" id="20_v2iav"]
 
 [sub_resource type="Curve" id="Curve_j830s"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -125,12 +123,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ctlnl")
 
-[node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
+[node name="Slots3D" type="Node3D"]
 script = ExtResource("1_j830s")
 MoveCurve = SubResource("Curve_j830s")
 SpinCurve = SubResource("Curve_eyuyc")
 Data = ExtResource("2_eyuyc")
-Slots = [NodePath("SlopMachine/Shop/ItemSlot0"), NodePath("SlopMachine/Shop/ItemSlot7"), NodePath("SlopMachine/Shop/ItemSlot1"), NodePath("SlopMachine/Shop/ItemSlot2"), NodePath("SlopMachine/Shop/ItemSlot3"), NodePath("SlopMachine/Shop/ItemSlot4"), NodePath("SlopMachine/Shop/ItemSlot5"), NodePath("SlopMachine/Shop/ItemSlot6")]
 ItemData = ExtResource("3_3av4g")
 
 [node name="SlopMachine" parent="." instance=ExtResource("1_64lqi")]
@@ -286,11 +283,5 @@ light_energy = 2.0
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78212667, 1.6283851, 0)
 light_color = Color(0.63019425, 0.57002485, 0.8699152, 1)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_n7p2x")
-
-[node name="Button" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_v2iav")
 
 [editable path="SlopMachine"]

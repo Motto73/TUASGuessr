@@ -210,7 +210,7 @@ func show_specific_image(slot, image):
 	(part.get_surface_override_material(1) as ShaderMaterial).set_shader_parameter("image", image)
 
 func _on_roll_button_button_down():
-	$Button.play()
+	Sounds.play_button_normal()
 	if state == "ready":
 		state = "rolling"
 		timer = 0
@@ -222,9 +222,11 @@ func _on_roll_button_button_down():
 	Game.Active.actualGame.hide_map()
 	if state == "rolling":
 		await get_tree().create_timer(0.1).timeout
-		$AudioStreamPlayer.play()
+		Sounds.play_roulette()
 	else:
-		$AudioStreamPlayer.stop()
+		Sounds.stop_roulette_sound()
+	if state == "gaming":
+		Sounds.stop_roulette_sound()
 
 
 func process_slots(delta):

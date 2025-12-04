@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cja70xydpd7yx"]
+
+[ext_resource type="Script" uid="uid://canlu8ppuiai8" path="res://Resource Scenes/SoundManager.gd" id="1_n3dc8"]
+[ext_resource type="AudioStream" uid="uid://cn0gdy3ulfyg8" path="res://Audio/Roulette_sound_2.wav" id="1_uqd4k"]
+[ext_resource type="AudioStream" uid="uid://c2dk67hkytouu" path="res://Audio/analog-appliance-button-9-185284.mp3" id="3_n3dc8"]
+[ext_resource type="AudioStream" uid="uid://chvq77jlrroln" path="res://Audio/lever_sound.wav" id="4_bxfck"]
+
+[node name="Sounds" type="Node"]
+script = ExtResource("1_n3dc8")
+
+[node name="Roulette" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_uqd4k")
+volume_db = -3.021
+
+[node name="Button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n3dc8")
+
+[node name="Lever" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bxfck")
