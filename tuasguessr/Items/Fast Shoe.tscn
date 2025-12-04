@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://c7veohg6ljcc5"]
 
-[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_um64h"]
-[ext_resource type="Texture2D" uid="uid://cmms5vheyfhn6" path="res://Assets/3D/Trinkets_palette_32.png" id="2_hf7gq"]
-[ext_resource type="Texture2D" uid="uid://p0e8hr0vb34t" path="res://Assets/3D/Trinkets_strip_fire.png" id="3_xhj7c"]
-[ext_resource type="Material" uid="uid://d3odglnngjjrw" path="res://Assets/Materials/material_pixel.tres" id="4_hf7gq"]
-[ext_resource type="Texture2D" uid="uid://bysfehch8sku2" path="res://Assets/Textures/strip_fire.png" id="5_8miyr"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_hf7gq"]
+[ext_resource type="Texture2D" uid="uid://cmms5vheyfhn6" path="res://Assets/3D/Trinkets_palette_32.png" id="2_xhj7c"]
+[ext_resource type="Texture2D" uid="uid://p0e8hr0vb34t" path="res://Assets/3D/Trinkets_strip_fire.png" id="3_r36g1"]
+[ext_resource type="Material" uid="uid://d3odglnngjjrw" path="res://Assets/Materials/material_pixel.tres" id="4_8miyr"]
+[ext_resource type="Texture2D" uid="uid://bysfehch8sku2" path="res://Assets/Textures/strip_fire.png" id="5_fke0h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 size = Vector3(1.4033203, 1.4287109, 1.4716797)
@@ -12,7 +12,7 @@ size = Vector3(1.4033203, 1.4287109, 1.4716797)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcgpe"]
 resource_name = "Pix"
 cull_mode = 2
-albedo_texture = ExtResource("2_hf7gq")
+albedo_texture = ExtResource("2_xhj7c")
 roughness = 0.5
 texture_filter = 2
 
@@ -20,11 +20,11 @@ texture_filter = 2
 resource_name = "Fire"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("3_xhj7c")
+albedo_texture = ExtResource("3_r36g1")
 roughness = 0.5
 emission_enabled = true
 emission_energy_multiplier = 1.6999999
-emission_texture = ExtResource("3_xhj7c")
+emission_texture = ExtResource("3_r36g1")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2uaya"]
@@ -87,15 +87,15 @@ shadow_mesh = SubResource("ArrayMesh_2uaya")
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("5_8miyr")
+albedo_texture = ExtResource("5_fke0h")
 metallic = 1.0
 emission_enabled = true
 emission_energy_multiplier = 11.77
-emission_texture = ExtResource("5_8miyr")
+emission_texture = ExtResource("5_fke0h")
 texture_filter = 0
 
 [node name="Fast Shoe" type="Node3D"]
-script = ExtResource("1_um64h")
+script = ExtResource("1_hf7gq")
 Tag = "shoe"
 Description = "Makes the interface faster, 
 giving you more time to play!"
@@ -111,5 +111,5 @@ shape = SubResource("BoxShape3D_glqc6")
 transform = Transform3D(1.2164205, -0.8861977, 0, 0.8861977, 1.2164205, 0, 0, 0, 1.505, 0.21960533, -0.1279831, 0)
 mesh = SubResource("ArrayMesh_0qylv")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("4_hf7gq")
+surface_material_override/0 = ExtResource("4_8miyr")
 surface_material_override/1 = SubResource("StandardMaterial3D_u8er3")

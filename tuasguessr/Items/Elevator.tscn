@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://fc2glq4clsu4"]
 
-[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_eqwpf"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_8xm6m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 size = Vector3(1.4033203, 1.4287109, 1.4716797)
@@ -124,7 +124,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mepl5")
 
 [node name="Elevator" type="Node3D"]
-script = ExtResource("1_eqwpf")
+script = ExtResource("1_8xm6m")
 Tag = "elevator"
 Description = "Gives you some pity points
 when guessing a wrong floor..."

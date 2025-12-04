@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://bw0hp6bxdwl7m"]
 
-[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_td3bu"]
+[ext_resource type="Script" uid="uid://b0rnj0mltyxia" path="res://Assets/Scripts/shop_item.gd" id="1_ukpeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glqc6"]
 size = Vector3(1.4033203, 1.4287109, 1.4716797)
@@ -171,7 +171,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ngpgv")
 
 [node name="Freeze Clock" type="Node3D"]
-script = ExtResource("1_td3bu")
+script = ExtResource("1_ukpeu")
 Tag = "freeze"
 Description = "Freezes the timer when
 you roll for a new image!"
