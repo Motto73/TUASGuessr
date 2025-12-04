@@ -10,7 +10,7 @@ func play_button_normal():
 func play_roulette():
 	$Roulette.play()
 	
-func set_roulette_speed(pitch: float):
+func set_roulette_sound_speed(pitch: float):
 	roulette_speed = pitch
 
 func stop_roulette_sound():
