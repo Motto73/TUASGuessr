@@ -210,9 +210,11 @@ func show_specific_image(slot, image):
 	(part.get_surface_override_material(1) as ShaderMaterial).set_shader_parameter("image", image)
 
 func _on_roll_button_button_down():
-	Sounds.play_button_normal()
 	if state == "ready":
+		Sounds.play_button_normal()
 		state = "rolling"
+		if state == "rolling":
+			Sounds.play_roulette()
 		timer = 0
 		#TODO experiment
 		select_point()
@@ -220,11 +222,6 @@ func _on_roll_button_button_down():
 	rollbutton.enable(false)
 	lever.enable(false)
 	Game.Active.actualGame.hide_map()
-	if state == "rolling":
-		await get_tree().create_timer(0.1).timeout
-		Sounds.play_roulette()
-	else:
-		Sounds.stop_roulette_sound()
 
 
 func process_slots(delta):

@@ -48,9 +48,9 @@ func set_highlight(on):
 	mat.emission_energy = HilightStrength if yep else 0.0
 
 func press():
-	Sounds.play_button_normal()
 	if not enabled:
 		return
+	Sounds.play_button_normal()
 	print("Button pressed!: ", name)
 	anim = 0
 	if AnimationType == "Switch":
