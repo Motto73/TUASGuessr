@@ -203,6 +203,7 @@ func show_specific_image(slot, image):
 	(part.get_surface_override_material(1) as ShaderMaterial).set_shader_parameter("image", image)
 
 func _on_roll_button_button_down():
+	$Button.play()
 	if state == "ready":
 		state = "rolling"
 		timer = 0
@@ -226,6 +227,7 @@ func process_slots(delta):
 		hub.rotation = lerp(Vector3.ZERO, Vector3(0,0,SpinAmount * 2 * PI), progress)
 		if progress > 0.5:
 			show_specific_image(0, selectedIMG)
+		#The rolling sound should be stopped here
 		if timer >= SpinTime:
 			state = "gaming"
 			timer = 0
