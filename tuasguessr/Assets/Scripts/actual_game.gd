@@ -88,9 +88,22 @@ func eval_points():
 	var dist = mapdisplay.currentGuess.distance_to(currentData.position)
 	var dist_m = dist * GodotToMeters
 	print("Distance: ", dist, " Real distance: ", dist_m)
-	var pts = round(100 - dist_m)
+	#POINTS LOGIC
+	var pts = round(50 - dist_m)
 	if pts < 0:
 		pts = 0
+	#Difficulty mult
+	var mult = 1.0
+	match currentData.difficulty:
+		"easy":
+			mult = 1.0
+		"medium":
+			mult = 1.25
+		"hard":
+			mult = 1.5
+		"hard2":
+			mult = 2.0
+	pts *= mult
 	#Spawn a little popup thing
 	var pop = load("res://Resource Scenes/pointspopup.tscn").instantiate()
 	pop.position = statsui.position

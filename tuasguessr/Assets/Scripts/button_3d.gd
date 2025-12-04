@@ -42,9 +42,10 @@ func set_highlight(on):
 	highlighted = on
 	
 	var mat = get_active_material(HilightMat)
-	mat.emission_enabled = on and enabled
-	mat.emission = HilightEmission
-	mat.emission_energy = HilightStrength
+	mat.emission_enabled = true
+	var yep = on and enabled
+	mat.emission = HilightEmission if yep else Color()
+	mat.emission_energy = HilightStrength if yep else 0.0
 
 func press():
 	if not enabled:
