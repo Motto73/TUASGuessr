@@ -49,7 +49,7 @@ func _process(delta):
 			pivot.global_translate(-right * mousedelta.x * MoveSpeed)
 			pivot.global_translate(up * mousedelta.y * MoveSpeed)
 			mousedelta = Vector2.ZERO
-	if dragrotate:
+	if dragmove:
 		dragtimer += delta
 	else:
 		if dragtimer > 0 and dragtimer < ClickVSDrag and CanMove:
@@ -64,9 +64,9 @@ func _input(event):
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			scrolldelta += ScrollSpeed * 0.1
 		elif event.button_index == MOUSE_BUTTON_LEFT:
-			dragrotate = event.pressed
+			dragmove = event.pressed
 		elif event.button_index == MOUSE_BUTTON_RIGHT or event.button_index == MOUSE_BUTTON_MIDDLE:
-			dragmove = event.pressed && not dragrotate
+			dragrotate = event.pressed && not dragmove
 	elif  event is InputEventMouseMotion:
 		mousedelta = (event as InputEventMouseMotion).relative * RotateSpeed * 0.01
 

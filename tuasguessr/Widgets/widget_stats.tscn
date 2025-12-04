@@ -71,7 +71,6 @@ scale_amount_min = 3.0
 scale_amount_max = 8.0
 
 [node name="Particles" type="CPUParticles2D" parent="CanvasLayer/Control/TextureRect/Timer"]
-visible = false
 position = Vector2(44, 19)
 emitting = false
 amount = 32
@@ -88,6 +87,7 @@ scale_amount_min = 5.0
 scale_amount_max = 15.0
 scale_amount_curve = SubResource("Curve_5gv8e")
 script = ExtResource("5_5gv8e")
+time = 0.0
 
 [node name="Points" type="Label" parent="CanvasLayer/Control/TextureRect"]
 layout_mode = 1
