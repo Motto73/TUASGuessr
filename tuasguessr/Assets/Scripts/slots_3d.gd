@@ -212,6 +212,12 @@ func _on_roll_button_button_down():
 	rollbutton.enable(false)
 	lever.enable(false)
 	Game.Active.actualGame.hide_map()
+	if state == "rolling":
+		await get_tree().create_timer(0.1).timeout
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
+
 
 func process_slots(delta):
 	if state == "rolling":
