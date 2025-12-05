@@ -1,11 +1,11 @@
-# TUASGuessr
-This is the primary repository for our project, TUASGuessr (working name)
+# Where The Amk Am I?
+This is the primary repository for our project: Where the AMK am I?
 
 A GeoGuessr-inspired web-based game made in Godot, located inside the Kupittaa Campus and mixed with light roguelike elements.
 
-We have made the repo public for transparency, but the project is not yet at a playable state.
+We have made the repo public for transparency, but the project is not yet finished.
 
-Demo repo currently exists for testing web export and Github Pages hosting.
+Made for LCNC-class of 2025 at Turku University of Applied Sciences.
 
 Demo repo: https://github.com/Motto73/PlayTUASGuessr
-Play at: https://motto73.github.io/PlayTUASGuessr/
+Play at: https://wheretheamkami.xyz/
