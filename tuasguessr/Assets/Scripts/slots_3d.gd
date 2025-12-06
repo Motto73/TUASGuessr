@@ -179,10 +179,11 @@ func select_point():
 	selectedIMG = load(Data.DataPoints[rand].imgresource)
 	selectedPoint = Data.DataPoints[rand]
 	Game.Active.actualGame.set_datapoint(selectedPoint)
-	gold = rng.randf() > 0.9 and Game.Active.actualGame.inventorytags.has("gold")
+	gold = rng.randf() > 0.1 and Game.Active.actualGame.inventorytags.has("gold")
 	if gold:
 		Game.Active.actualGame.set_gold()
 		$SlopMachine/Machine.set_surface_override_material(0, load("res://Assets/Materials/mat_slop_gold.tres"))
+	$"../../..".set_sparkle(gold)
 
 func prepare_slices():
 	return

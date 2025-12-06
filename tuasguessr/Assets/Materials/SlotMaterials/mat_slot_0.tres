@@ -1,7 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://xtexfbp8ko8m"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://xtexfbp8ko8m"]
 
 [ext_resource type="Shader" uid="uid://badj5q5qjgcf8" path="res://Assets/Materials/cut.gdshader" id="1_qh6ju"]
+[ext_resource type="Texture2D" uid="uid://cifa8wgeq6qcg" path="res://Assets/Game Images/IMG20251031123503_compressed.webp" id="2_53h3i"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_qh6ju")
+shader_parameter/image = ExtResource("2_53h3i")
