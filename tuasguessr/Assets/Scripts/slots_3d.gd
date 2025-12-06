@@ -179,7 +179,7 @@ func select_point():
 	selectedIMG = load(Data.DataPoints[rand].imgresource)
 	selectedPoint = Data.DataPoints[rand]
 	Game.Active.actualGame.set_datapoint(selectedPoint)
-	gold = rng.randf() > 0.1 and Game.Active.actualGame.inventorytags.has("gold")
+	gold = rng.randf() > 0.8 and Game.Active.actualGame.inventorytags.has("gold")
 	if gold:
 		Game.Active.actualGame.set_gold()
 		$SlopMachine/Machine.set_surface_override_material(0, load("res://Assets/Materials/mat_slop_gold.tres"))
@@ -309,6 +309,7 @@ func randfrom(list):
 
 #Shop items
 func load_items():
+	print("-------------Shop items loading--------------")
 	empty = false
 	var items := []
 	#Create a list of items that are allowed in the store

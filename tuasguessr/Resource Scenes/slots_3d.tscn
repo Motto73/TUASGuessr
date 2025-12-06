@@ -123,11 +123,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ctlnl")
 
-[node name="Slots3D" type="Node3D"]
+[node name="Slots3D" type="Node3D" node_paths=PackedStringArray("Slots")]
 script = ExtResource("1_j830s")
 MoveCurve = SubResource("Curve_j830s")
 SpinCurve = SubResource("Curve_eyuyc")
 Data = ExtResource("2_eyuyc")
+Slots = [NodePath("SlopMachine/Shop/ItemSlot0"), NodePath("SlopMachine/Shop/ItemSlot7"), NodePath("SlopMachine/Shop/ItemSlot1"), NodePath("SlopMachine/Shop/ItemSlot2"), NodePath("SlopMachine/Shop/ItemSlot3"), NodePath("SlopMachine/Shop/ItemSlot4"), NodePath("SlopMachine/Shop/ItemSlot5"), NodePath("SlopMachine/Shop/ItemSlot6")]
 ItemData = ExtResource("3_3av4g")
 
 [node name="SlopMachine" parent="." instance=ExtResource("1_64lqi")]
@@ -263,11 +264,10 @@ bones/6/rotation = Quaternion(0.5603497, 0.38720018, -0.12317113, 0.7217431)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067519546, -0.009197235, -0.18137646)
 surface_material_override/0 = ExtResource("11_tgcpo")
 
-[node name="Button_Left2" type="MeshInstance3D" parent="SlopMachine"]
+[node name="Highlightfixer" type="MeshInstance3D" parent="SlopMachine"]
 transform = Transform3D(0.98341477, 0.18137075, 0, -0.18137075, 0.98341477, 0, 0, 0, 1, -0.55079263, 0.5379863, 0.7558001)
 mesh = SubResource("ArrayMesh_735d7")
 skeleton = NodePath("")
-script = ExtResource("3_g0dd5")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11477733, 0, 0)

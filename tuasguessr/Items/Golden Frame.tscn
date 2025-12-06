@@ -88,5 +88,6 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 shape = SubResource("BoxShape3D_glqc6")
 
 [node name="GoldenFrame" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.389, 0, 0, 0, 1.389, 0, 0, 0, 1.389, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vck6f")
 skeleton = NodePath("")
