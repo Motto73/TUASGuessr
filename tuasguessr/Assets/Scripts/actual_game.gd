@@ -95,8 +95,11 @@ func eval_points():
 	print("Distance: ", dist, " Real distance: ", dist_m)
 	#POINTS LOGIC
 	var pts = round(50 - dist_m)
-	if pts < 0:
-		pts = 0
+	if not inventorytags.has("voucher"):
+		if pts < 0:
+			pts = 0
+	else:
+		pts *= 2.0
 	#Difficulty mult
 	var mult = 1.0
 	match currentData.difficulty:

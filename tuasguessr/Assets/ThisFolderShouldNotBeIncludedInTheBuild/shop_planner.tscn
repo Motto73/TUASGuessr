@@ -1048,7 +1048,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 Tag = "gold"
 Description = "A chance to roll
 a golden image!"
-Price = 0.0
+Price = 250.0
 
 [node name="GoldenFrame" type="MeshInstance3D" parent="Golden Frame"]
 transform = Transform3D(1.389, 0, 0, 0, 1.389, 0, 0, 0, 1.389, 0, 0, 0)
@@ -1060,7 +1060,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 Tag = "voucher"
 Description = "Permanently double your points!
 But bad guesses go negative >:)"
-Price = 0.0
+Price = 50.0
 
 [node name="Plane" type="MeshInstance3D" parent="Misleading Voucher"]
 transform = Transform3D(1.383, 0, 0, 0, 1.383, 0, 0, 0, 1.383, 0, 0, 0)
