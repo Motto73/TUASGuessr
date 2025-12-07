@@ -22,4 +22,3 @@ func _process(delta):
 	timer += delta
 	position = ogpos + sin(timer * bobspeed * 2.0) * Vector3(0,1,0) * 0.25
 	rotate(Vector3.UP, delta * floatspeed)
-	Sounds.set_roulette_sound_speed(2.0)
