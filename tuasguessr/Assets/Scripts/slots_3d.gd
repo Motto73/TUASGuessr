@@ -72,8 +72,8 @@ func _physics_process(_delta):
 		var obj = ray.collider.get_parent()
 		if obj is Button3D:
 			select_this_shit_right_now_or_actually_unselect_it_if_you_want_to_im_not_telling_you_what_to_do(obj, true)
-		if obj is ShopItem:
-			set_description(obj)
+		if obj is ShopItem and not Game.Active.osmobile:
+			display_selection = obj
 	else:
 		select_this_shit_right_now_or_actually_unselect_it_if_you_want_to_im_not_telling_you_what_to_do(null, false)
 		set_description(null)
@@ -109,10 +109,14 @@ func _input(event):
 				if cast.collider.get_parent() == shopswitch or cast.collider.get_parent() == buttonring:
 					lit(!show_shop)
 			if cast and cast.collider.get_parent() is ShopItem:
-				var si = cast.collider.get_parent()
-				if Game.Active.actualGame.buy_item(si):
-					si.queue_free()
-					play_anim(randfrom(yippees))
+				if not Game.Active.osmobile or display_selection == cast.collider.get_parent():
+					var si = cast.collider.get_parent()
+					if Game.Active.actualGame.buy_item(si):
+						display_selection = null
+						si.queue_free()
+						play_anim(randfrom(yippees))
+				if Game.Active.osmobile:
+					display_selection = cast.collider.get_parent()
 
 func raycast() -> Dictionary:
 	var mouse = subview.get_mouse_position()
@@ -270,7 +274,10 @@ var exp_angries = ["Slide_R", "Slide_L"]
 var exp_happies = ["Yippee_0", "Yippee_1", "Hello_0"]
 var exp_normals = ["Idle_0", "Idle_1", "Idle_2", "Idle_Bored_0", "Idle_Bored_1", "Idle_Bored_2", "Idle_Rare_0"]
 
+var display_selection = null
+
 func process_shop(delta):
+	set_description(display_selection)
 	if !animator.is_playing():
 		queue_anim(randomidle())
 	if Game.Active.actualGame != null && empty:
