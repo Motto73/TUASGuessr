@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbawk2nfxtsmh"
+path="res://.godot/imported/Freeze 8-Main tune [2025-12-08 195401].wav-f5e41d16789a78f2f6f8fbed046e8986.sample"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/Where_The_AMK_Am_I Project/Samples/Processed/Freeze/Freeze 8-Main tune [2025-12-08 195401].wav"
+dest_files=["res://.godot/imported/Freeze 8-Main tune [2025-12-08 195401].wav-f5e41d16789a78f2f6f8fbed046e8986.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -15,6 +15,14 @@ func play_roulette():
 		await get_tree().create_timer(0.25).timeout
 	$Roulette.play()
 	
+func play_intro():
+	$Main.stop()
+	$Intro.play()
+
+func play_main():
+	$Intro.stop()
+	$Main.play()
+	
 func set_roulette_sound_speed(pitch: float):
 	$Roulette.pitch_scale = pitch
 

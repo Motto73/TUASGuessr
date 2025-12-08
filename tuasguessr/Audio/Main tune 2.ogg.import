@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://belcqyvrwju85"
+path="res://.godot/imported/Main tune 2.ogg-e2a120ccc8f73a91c311dab11c338821.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Main tune 2.ogg"
+dest_files=["res://.godot/imported/Main tune 2.ogg-e2a120ccc8f73a91c311dab11c338821.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

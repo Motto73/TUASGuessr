@@ -37,6 +37,9 @@ func _ready():
 	
 	mainScene = $Menu_Intro
 	gameState = "intro"
+	
+	#Play main bgm
+	Sounds.play_intro()
 
 func startGame():
 	#loadMainScene("res://Menus/menu_difficulty.tscn")
@@ -56,6 +59,9 @@ func loadMainScene(res):
 		mainScene.queue_free()
 	mainScene = load(res).instantiate()
 	add_child(mainScene)
+	
+	#play main theme
+	Sounds.play_main()
 	
 func new_game():
 	startGame()

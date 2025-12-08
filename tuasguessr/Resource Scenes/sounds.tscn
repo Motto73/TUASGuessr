@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cja70xydpd7yx"]
+[gd_scene load_steps=7 format=3 uid="uid://cja70xydpd7yx"]
 
 [ext_resource type="Script" uid="uid://canlu8ppuiai8" path="res://Resource Scenes/SoundManager.gd" id="1_n3dc8"]
 [ext_resource type="AudioStream" uid="uid://cn0gdy3ulfyg8" path="res://Audio/Roulette_sound_2.wav" id="1_uqd4k"]
 [ext_resource type="AudioStream" uid="uid://c2dk67hkytouu" path="res://Audio/analog-appliance-button-9-185284.mp3" id="3_n3dc8"]
 [ext_resource type="AudioStream" uid="uid://chvq77jlrroln" path="res://Audio/lever_sound.wav" id="4_bxfck"]
+[ext_resource type="AudioStream" uid="uid://b7ox4foeteaj3" path="res://Audio/Main bgm.ogg" id="5_uibtm"]
+[ext_resource type="AudioStream" uid="uid://t0f34k1g45ym" path="res://Audio/Where_The_AMK_Am_I_intro_WIP.ogg" id="6_uibtm"]
 
 [node name="Sounds" type="Node"]
 script = ExtResource("1_n3dc8")
@@ -17,3 +19,13 @@ stream = ExtResource("3_n3dc8")
 
 [node name="Lever" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bxfck")
+
+[node name="Main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uibtm")
+volume_db = -4.316
+parameters/looping = true
+
+[node name="Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_uibtm")
+playback_type = 1
+parameters/looping = true

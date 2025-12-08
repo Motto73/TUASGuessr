@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ch6c2rlmo2ih0"
+path="res://.godot/imported/Main tune 2.ogg-0ccab74905daa9b81acf8accdf71a20b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/Main tune 2.ogg"
+dest_files=["res://.godot/imported/Main tune 2.ogg-0ccab74905daa9b81acf8accdf71a20b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

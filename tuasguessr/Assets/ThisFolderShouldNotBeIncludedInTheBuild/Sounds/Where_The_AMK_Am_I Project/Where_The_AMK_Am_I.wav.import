@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmnnkw3j804xs"
+path="res://.godot/imported/Where_The_AMK_Am_I.wav-e98890112dd06fb5e8951916292bd1b6.sample"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/Where_The_AMK_Am_I Project/Where_The_AMK_Am_I.wav"
+dest_files=["res://.godot/imported/Where_The_AMK_Am_I.wav-e98890112dd06fb5e8951916292bd1b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
