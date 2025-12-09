@@ -293,18 +293,22 @@ Picture = ExtResource("45_754bu")
 [node name="Map Marker12" parent="Press eyes to hide->/ICT0" index="2" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.052886, 0.0006952286, -0.17605779)
 Picture = ExtResource("46_b4bsh")
+Difficulty = "medium"
 
 [node name="Map Marker13" parent="Press eyes to hide->/ICT0" index="3" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0190773, 0.0006952286, 0.06084028)
 Picture = ExtResource("47_ws70w")
+Difficulty = "medium"
 
 [node name="Map Marker15" parent="Press eyes to hide->/ICT0" index="4" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0378838, 0.0006952286, 0.2063075)
 Picture = ExtResource("48_hn4fg")
+Difficulty = "hard"
 
 [node name="Map Marker14" parent="Press eyes to hide->/ICT0" index="5" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1993513, 0.0006952286, 0.29691035)
 Picture = ExtResource("49_b8p1n")
+Difficulty = "medium"
 
 [node name="EDU3" parent="Press eyes to hide->" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.858, 4, 0)
@@ -317,12 +321,12 @@ Difficulty = "medium"
 [node name="Map Marker25" parent="Press eyes to hide->/EDU3" index="1" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4577284, 0, 1.0408057)
 Picture = ExtResource("51_vs8ru")
-Difficulty = "medium"
+Difficulty = "hard2"
 
 [node name="Map Marker26" parent="Press eyes to hide->/EDU3" index="2" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3310232, 0, 1.6080395)
 Picture = ExtResource("52_gshdc")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker27" parent="Press eyes to hide->/EDU3" index="3" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3393011, 0, 1.8426946)
@@ -332,12 +336,12 @@ Difficulty = "medium"
 [node name="Map Marker28" parent="Press eyes to hide->/EDU3" index="4" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3527822, 0, 1.7224902)
 Picture = ExtResource("54_m0rwk")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker29" parent="Press eyes to hide->/EDU3" index="5" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6580677, 0, 1.66924)
 Picture = ExtResource("55_n4dud")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker30" parent="Press eyes to hide->/EDU3" index="6" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87773037, 0, 0.31678343)
@@ -347,17 +351,14 @@ Difficulty = "medium"
 [node name="Map Marker31" parent="Press eyes to hide->/EDU3" index="7" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.298028, 0, -0.056282196)
 Picture = ExtResource("57_5hvri")
-Difficulty = "medium"
 
 [node name="Map Marker32" parent="Press eyes to hide->/EDU3" index="8" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3226881, 0, -0.13198608)
 Picture = ExtResource("58_5dvww")
-Difficulty = "medium"
 
 [node name="Map Marker33" parent="Press eyes to hide->/EDU3" index="9" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8216877, 0, -0.07978198)
 Picture = ExtResource("59_pbkpu")
-Difficulty = "medium"
 
 [node name="Map Marker34" parent="Press eyes to hide->/EDU3" index="10" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79362965, 0, 0.70313627)
@@ -392,7 +393,7 @@ Difficulty = "medium"
 [node name="Map Marker42" parent="Press eyes to hide->/EDU3" index="16" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71500874, 0, -1.5912931)
 Picture = ExtResource("66_ll4x4")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker43" parent="Press eyes to hide->/EDU3" index="17" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86780167, 0, -1.1755816)
@@ -402,17 +403,16 @@ Difficulty = "medium"
 [node name="Map Marker44" parent="Press eyes to hide->/EDU3" index="18" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9118471, 0, -0.07424125)
 Picture = ExtResource("68_vssco")
-Difficulty = "medium"
 
 [node name="Map Marker39" parent="Press eyes to hide->/EDU3" index="19" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3447361, 0, -1.279391)
 Picture = ExtResource("69_ygqq5")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker40" parent="Press eyes to hide->/EDU3" index="20" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94830513, 0, -1.2740471)
 Picture = ExtResource("70_5hb20")
-Difficulty = "medium"
+Difficulty = "hard"
 
 [node name="Map Marker22" parent="Press eyes to hide->/EDU3" index="21" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08324623, 0, 1.3107431)
