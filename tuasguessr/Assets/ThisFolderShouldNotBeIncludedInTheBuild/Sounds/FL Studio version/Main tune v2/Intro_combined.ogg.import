@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcy5focojqlmv"
+path="res://.godot/imported/Intro_combined.ogg-31c1ff9a9b9dde07e864ac6b75c7df56.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/FL Studio version/Main tune v2/Intro_combined.ogg"
+dest_files=["res://.godot/imported/Intro_combined.ogg-31c1ff9a9b9dde07e864ac6b75c7df56.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dij3dvok8frmw"
+path="res://.godot/imported/Main_tune_combined.ogg-05d5d2e993360b5ed0b2babbe963e99e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/FL Studio version/Main tune v2/Main_tune_combined.ogg"
+dest_files=["res://.godot/imported/Main_tune_combined.ogg-05d5d2e993360b5ed0b2babbe963e99e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
