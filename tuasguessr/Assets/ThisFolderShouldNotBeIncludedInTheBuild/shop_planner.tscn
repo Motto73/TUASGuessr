@@ -931,7 +931,7 @@ double_sided = false
 texture_filter = 1
 text = "Name: Misleading Voucher
 Tag: voucher
-Price: 0.0
+Price: 50.0
 "
 
 [node name="Guide" type="Label3D" parent="."]
@@ -954,7 +954,7 @@ Add meshes, particles, whatever."
 Tag = "lunch"
 Description = "A tasty meal. Adds one 
 extra minute to your timer"
-Price = 150.0
+Price = 400.0
 
 [node name="Shape" parent="Kotiruokalounas 1/Collision" index="0"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0)
@@ -969,7 +969,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 Tag = "shoe"
 Description = "Makes the interface faster, 
 giving you more time to play!"
-Price = 50.0
+Price = 150.0
 
 [node name="Shoe" type="MeshInstance3D" parent="Fast Shoe"]
 transform = Transform3D(1.2164205, -0.8861977, 0, 0.8861977, 1.2164205, 0, 0, 0, 1.505, 0.21960533, -0.1279831, 0)
@@ -983,7 +983,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 Tag = "freeze"
 Description = "Freezes the timer when
 you roll for a new image!"
-Price = 200.0
+Price = 250.0
 
 [node name="Ice" type="MeshInstance3D" parent="Freeze Clock"]
 transform = Transform3D(2.633, 0, 0, 0, 2.092, 0, 0, 0, 1.758, 0.048478127, 0.08128026, 0)
@@ -1000,7 +1000,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 Tag = "elevator"
 Description = "Gives you some pity points
 when guessing a wrong floor..."
-Price = 150.0
+Price = 200.0
 
 [node name="Cube" type="MeshInstance3D" parent="Elevator"]
 transform = Transform3D(2.375, 0, 0, 0, 2.375, 0, 0, 0, 2.375, 0, 0, 0)
@@ -1012,7 +1012,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 Tag = "puudo"
 Description = "A handy app that gives you
 a permanent 50% discount!"
-Price = 200.0
+Price = 500.0
 
 [node name="Puudo" type="MeshInstance3D" parent="Puudo App"]
 transform = Transform3D(1.905, 0, 0, 0, 1.8136946, 0.58269775, 0, -0.58269775, 1.8136946, 0, 0, 0)
@@ -1036,7 +1036,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 Tag = "level"
 Description = "Shows if you are on
 the correct floor!"
-Price = 250.0
+Price = 300.0
 
 [node name="Level" type="MeshInstance3D" parent="Bubble level"]
 transform = Transform3D(1.285, 0, 0, 0, 1.285, 0, 0, 0, 1.285, 0, 0, 0)

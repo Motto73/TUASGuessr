@@ -100,7 +100,7 @@ func reveal():
 	drawline.visible = true
 	drawline.position = markerstart.position + (markerend.position - markerstart.position) * 0.5
 	drawline.look_at(markerend.position)
-	drawline.scale = Vector3(0.1, 0.1, (markerend.position - markerstart.position).length())
+	drawline.scale = Vector3(0.05, 0.05, (markerend.position - markerstart.position).length())
 	linedist.position = drawline.position
 	linedist.text = "distance"
 	

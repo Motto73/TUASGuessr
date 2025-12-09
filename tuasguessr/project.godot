@@ -13,7 +13,8 @@ config_version=5
 config/name="TUASGuessr"
 run/main_scene="uid://cv8lkpnfrk0n5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="uid://dnhlwfrfikcr0"
+boot_splash/image="uid://dov1pnjjhreml"
+config/icon="uid://b23vohsjd40m3"
 
 [autoload]
 

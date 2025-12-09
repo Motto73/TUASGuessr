@@ -13,6 +13,7 @@ class_name  ActualGame
 @export var UseShortGame := true
 ##Measured godot to meters distance
 @export var GodotToMeters = 2.40 / 0.14
+@export var PointsFalloff : Curve
 
 @onready var slopmachine : SlopMachine = $Canvas/Slopmachine
 var slotmachine : Slots3D
@@ -94,12 +95,20 @@ func eval_points():
 	var dist_m = dist * GodotToMeters
 	print("Distance: ", dist, " Real distance: ", dist_m)
 	#POINTS LOGIC
-	var pts = round(50 - dist_m)
+	var maxdist = 75
+	var pts = round(maxdist - dist_m)
+	var x = 1.0 - pts / maxdist;
+	var c = PointsFalloff.sample(x)
 	if not inventorytags.has("voucher"):
 		if pts < 0:
 			pts = 0
+		pts = maxdist * c
 	else:
-		pts *= 2.0
+		if pts < 0:
+			pts *= 2.0
+		else:
+			pts = maxdist * c
+			pts *= 2.0
 	#Difficulty mult
 	var mult = 1.0
 	match currentData.difficulty:
@@ -122,6 +131,9 @@ func eval_points():
 	var pop = load("res://Resource Scenes/pointspopup.tscn").instantiate()
 	pop.position = statsui.position
 	topcanvas.add_child(pop)
+	#Round
+	pts = round(pts)
+	
 	var text = "+" + str(pts) + " Points!"
 	var floor = true
 	#Check floor

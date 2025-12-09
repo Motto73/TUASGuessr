@@ -82,7 +82,7 @@ script = ExtResource("1_c74n8")
 Tag = "puudo"
 Description = "A handy app that gives you
 a permanent 50% discount!"
-Price = 200.0
+Price = 500.0
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

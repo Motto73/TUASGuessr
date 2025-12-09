@@ -51,7 +51,7 @@ script = ExtResource("1_ksvbl")
 Tag = "voucher"
 Description = "Permanently double your points!
 But bad guesses go negative >:)"
-Price = 0.0
+Price = 50.0
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
