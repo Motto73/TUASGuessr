@@ -35,7 +35,6 @@ parameters/looping = true
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hopbn")
-playback_type = 1
 parameters/looping = true
 
 [node name="Item" type="AudioStreamPlayer" parent="."]
