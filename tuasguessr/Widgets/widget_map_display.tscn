@@ -20,7 +20,11 @@
 shader = ExtResource("2_kl0d0")
 shader_parameter/vignette_str = -0.58
 shader_parameter/vignette_dist = 0.79
-shader_parameter/lines_size = 28.855
+shader_parameter/lines_size = 32.91
+shader_parameter/lines_distortion = 0.595
+shader_parameter/lines_distortion_scale = 1.725
+shader_parameter/lines_color1 = Color(0.3678726, 0.6950386, 0.3463395, 1)
+shader_parameter/lines_color2 = Color(0.28040287, 0.5690112, 0, 1)
 
 [sub_resource type="World3D" id="World3D_e87u4"]
 
