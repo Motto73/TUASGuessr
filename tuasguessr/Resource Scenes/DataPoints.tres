@@ -291,25 +291,25 @@ position = Vector3(6.1039376, 0, -1.2268149)
 [sub_resource type="Resource" id="Resource_awwi5"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.04.36_compressed.webp"
-difficulty = "easy"
+difficulty = "medium"
 position = Vector3(6.052886, 0, -0.17605779)
 
 [sub_resource type="Resource" id="Resource_0b8sj"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.04.30_compressed.webp"
-difficulty = "easy"
+difficulty = "medium"
 position = Vector3(6.0190773, 0, 0.06084028)
 
 [sub_resource type="Resource" id="Resource_3hejy"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.04.24_compressed.webp"
-difficulty = "easy"
+difficulty = "hard"
 position = Vector3(6.0378838, 0, 0.2063075)
 
 [sub_resource type="Resource" id="Resource_4bqlr"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG_18.11.2025 19.04.42_compressed.webp"
-difficulty = "easy"
+difficulty = "medium"
 position = Vector3(6.1993513, 0, 0.29691035)
 
 [sub_resource type="Resource" id="Resource_cwkl7"]
@@ -322,14 +322,14 @@ floor = 3
 [sub_resource type="Resource" id="Resource_vt81d"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.36.05_compressed.webp"
-difficulty = "medium"
+difficulty = "hard2"
 position = Vector3(8.400271, 0, 1.0408057)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_hk5v3"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.58_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(8.526977, 0, 1.6080395)
 floor = 3
 
@@ -343,14 +343,14 @@ floor = 3
 [sub_resource type="Resource" id="Resource_btork"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.45_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(8.505218, 0, 1.7224902)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_fpiw7"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.39_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(9.199932, 0, 1.66924)
 floor = 3
 
@@ -364,21 +364,21 @@ floor = 3
 [sub_resource type="Resource" id="Resource_fwepk"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.31_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(9.559972, 0, -0.056282196)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_3yp4j"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.27_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.180688, 0, -0.13198608)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_yc7yy"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.35.23_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.6796875, 0, -0.07978198)
 floor = 3
 
@@ -427,7 +427,7 @@ floor = 3
 [sub_resource type="Resource" id="Resource_gntyk"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.34.44_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(9.142991, 0, -1.5912931)
 floor = 3
 
@@ -441,21 +441,21 @@ floor = 3
 [sub_resource type="Resource" id="Resource_g1ivo"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.34.30_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(8.946153, 0, -0.07424125)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_pv5tk"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.34.58_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(11.202736, 0, -1.279391)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_qleko"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU3_2.12.2025 19.34.54_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(10.806305, 0, -1.2740471)
 floor = 3
 
