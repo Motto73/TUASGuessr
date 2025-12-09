@@ -186,7 +186,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 2, 7, 5, 10, 6, 0, 0, 0, 15, 12, -1, 3, 7, 7, 13, 8, 14, 9, 0),
 "variants": [ExtResource("3_k4ag1"), "lunch", "A tasty meal. Adds one 
-extra minute to your timer", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.92, 0, 0, 0, 1.50675, -1.1900022, 0, 1.1900022, 1.50675, 0, -0.13117597, 0), SubResource("ArrayMesh_gcof3"), NodePath("")],
+extra minute to your timer", 400.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.92, 0, 0, 0, 1.50675, -1.1900022, 0, 1.1900022, 1.50675, 0, -0.13117597, 0), SubResource("ArrayMesh_gcof3"), NodePath("")],
 "version": 3
 }
 
@@ -196,7 +196,7 @@ name = "Kotiruokalounas 1"
 desc = "A tasty meal. Adds one 
 extra minute to your timer"
 tag = "lunch"
-price = 150.0
+price = 400.0
 rarity = 1.0
 scene = SubResource("PackedScene_m8kjc")
 
@@ -295,7 +295,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 17, 12, -1, 5, 7, 6, 13, 7, 14, 8, 15, 9, 16, 10, 0),
 "variants": [ExtResource("3_k4ag1"), "shoe", "Makes the interface faster, 
-giving you more time to play!", 50.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.2164205, -0.8861977, 0, 0.8861977, 1.2164205, 0, 0, 0, 1.505, 0.21960533, -0.1279831, 0), SubResource("ArrayMesh_0qylv"), NodePath(""), ExtResource("5_m8kjc"), SubResource("StandardMaterial3D_u8er3")],
+giving you more time to play!", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.2164205, -0.8861977, 0, 0.8861977, 1.2164205, 0, 0, 0, 1.505, 0.21960533, -0.1279831, 0), SubResource("ArrayMesh_0qylv"), NodePath(""), ExtResource("5_m8kjc"), SubResource("StandardMaterial3D_u8er3")],
 "version": 3
 }
 
@@ -305,7 +305,7 @@ name = "Fast Shoe"
 desc = "Makes the interface faster, 
 giving you more time to play!"
 tag = "shoe"
-price = 50.0
+price = 150.0
 rarity = 1.0
 scene = SubResource("PackedScene_nussc")
 
@@ -484,7 +484,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0, 0, 0, 15, 16, -1, 3, 7, 9, 13, 10, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "freeze", "Freezes the timer when
-you roll for a new image!", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(2.633, 0, 0, 0, 2.092, 0, 0, 0, 1.758, 0.048478127, 0.08128026, 0), SubResource("ArrayMesh_2y8gl"), NodePath(""), Transform3D(0.375, 0, 0, 0, -8.195885e-08, -0.375, 0, 1.875, -1.639177e-08, 2.0099006, -0.09025404, 0), SubResource("ArrayMesh_mjqhr")],
+you roll for a new image!", 250.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(2.633, 0, 0, 0, 2.092, 0, 0, 0, 1.758, 0.048478127, 0.08128026, 0), SubResource("ArrayMesh_2y8gl"), NodePath(""), Transform3D(0.375, 0, 0, 0, -8.195885e-08, -0.375, 0, 1.875, -1.639177e-08, 2.0099006, -0.09025404, 0), SubResource("ArrayMesh_mjqhr")],
 "version": 3
 }
 
@@ -494,7 +494,7 @@ name = "Freeze Clock"
 desc = "Freezes the timer when
 you roll for a new image!"
 tag = "freeze"
-price = 200.0
+price = 250.0
 rarity = 1.0
 scene = SubResource("PackedScene_pk418")
 
@@ -626,7 +626,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "elevator", "Gives you some pity points
-when guessing a wrong floor...", 150.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(2.375, 0, 0, 0, 2.375, 0, 0, 0, 2.375, 0, 0, 0), SubResource("ArrayMesh_6duib"), NodePath("")],
+when guessing a wrong floor...", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(2.375, 0, 0, 0, 2.375, 0, 0, 0, 2.375, 0, 0, 0), SubResource("ArrayMesh_6duib"), NodePath("")],
 "version": 3
 }
 
@@ -636,7 +636,7 @@ name = "Elevator"
 desc = "Gives you some pity points
 when guessing a wrong floor..."
 tag = "elevator"
-price = 150.0
+price = 200.0
 rarity = 1.0
 scene = SubResource("PackedScene_cjest")
 
@@ -713,7 +713,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "puudo", "A handy app that gives you
-a permanent 50% discount!", 200.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.905, 0, 0, 0, 1.8136946, 0.58269775, 0, -0.58269775, 1.8136946, 0, 0, 0), SubResource("ArrayMesh_0r322"), NodePath("")],
+a permanent 50% discount!", 500.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.905, 0, 0, 0, 1.8136946, 0.58269775, 0, -0.58269775, 1.8136946, 0, 0, 0), SubResource("ArrayMesh_0r322"), NodePath("")],
 "version": 3
 }
 
@@ -723,7 +723,7 @@ name = "Puudo App"
 desc = "A handy app that gives you
 a permanent 50% discount!"
 tag = "puudo"
-price = 200.0
+price = 500.0
 rarity = 1.0
 scene = SubResource("PackedScene_w036x")
 
@@ -969,7 +969,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "level", "Shows if you are on
-the correct floor!", 250.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.285, 0, 0, 0, 1.285, 0, 0, 0, 1.285, 0, 0, 0), SubResource("ArrayMesh_o8ndn"), NodePath("")],
+the correct floor!", 300.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.285, 0, 0, 0, 1.285, 0, 0, 0, 1.285, 0, 0, 0), SubResource("ArrayMesh_o8ndn"), NodePath("")],
 "version": 3
 }
 
@@ -979,7 +979,7 @@ name = "Bubble level"
 desc = "Shows if you are on
 the correct floor!"
 tag = "level"
-price = 250.0
+price = 300.0
 rarity = 1.0
 scene = SubResource("PackedScene_4bvwa")
 
@@ -1060,7 +1060,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "gold", "A chance to roll
-a golden image!", 0.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.389, 0, 0, 0, 1.389, 0, 0, 0, 1.389, 0, 0, 0), SubResource("ArrayMesh_vck6f"), NodePath("")],
+a golden image!", 250.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.389, 0, 0, 0, 1.389, 0, 0, 0, 1.389, 0, 0, 0), SubResource("ArrayMesh_vck6f"), NodePath("")],
 "version": 3
 }
 
@@ -1070,6 +1070,7 @@ name = "Golden Frame"
 desc = "A chance to roll
 a golden image!"
 tag = "gold"
+price = 250.0
 rarity = 1.0
 scene = SubResource("PackedScene_shf2h")
 
@@ -1123,7 +1124,7 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 8, 6, -1, 1, 7, 4, 0, 1, 0, 11, 9, -1, 1, 10, 5, 0, 0, 0, 15, 12, -1, 3, 7, 6, 13, 7, 14, 8, 0),
 "variants": [ExtResource("3_k4ag1"), "voucher", "Permanently double your points!
-But bad guesses go negative >:)", 0.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.383, 0, 0, 0, 1.383, 0, 0, 0, 1.383, 0, 0, 0), SubResource("ArrayMesh_x1hm6"), NodePath("")],
+But bad guesses go negative >:)", 50.0, Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0), SubResource("BoxShape3D_glqc6"), Transform3D(1.383, 0, 0, 0, 1.383, 0, 0, 0, 1.383, 0, 0, 0), SubResource("ArrayMesh_x1hm6"), NodePath("")],
 "version": 3
 }
 
@@ -1133,6 +1134,7 @@ name = "Misleading Voucher"
 desc = "Permanently double your points!
 But bad guesses go negative >:)"
 tag = "voucher"
+price = 50.0
 rarity = 1.0
 scene = SubResource("PackedScene_7t332")
 

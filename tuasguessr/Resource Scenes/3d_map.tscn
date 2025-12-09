@@ -22,7 +22,7 @@ CanMove = true
 ClickVSDrag = 0.2
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.97281647, -0.23157814, 0, 0.23157814, 0.97281647, 5.058445, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9998478, -0.017452408, 0, 0.017452408, 0.9998478, 5.058445, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, 4.8504567, 0)
@@ -37,8 +37,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55254304, 0, -2.1817756)
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.94542193, 0.17465128, 0.27508962, -0.3258487, 0.5067356, 0.7981489, 0, -0.84422505, 0.53598887, 0, 0.87839746, 0)
-light_energy = 2.438
+transform = Transform3D(0.94542193, 0.17465127, 0.27508965, -0.3258487, 0.5067356, 0.7981489, 0, -0.84422505, 0.53598887, 0, 3.1367173, 2.386317)
+light_energy = 4.645
 shadow_enabled = true
 
 [node name="MapAssets" parent="." instance=ExtResource("3_qhuya")]

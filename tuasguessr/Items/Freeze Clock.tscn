@@ -175,7 +175,7 @@ script = ExtResource("1_ukpeu")
 Tag = "freeze"
 Description = "Freezes the timer when
 you roll for a new image!"
-Price = 200.0
+Price = 250.0
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
