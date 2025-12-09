@@ -24,7 +24,9 @@ func play_main():
 	$Main.stop()
 	$Intro.stop()
 	$Main_intro.play()
-	$Main_intro.finished.connect(_on_main_intro_finished)
+	var check = $Main_intro.finished
+	if not check.is_connected(_on_main_intro_finished):
+		$Main_intro.finished.connect(_on_main_intro_finished)
 
 func _on_main_intro_finished():
 	$Main.play()
