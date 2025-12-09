@@ -23,11 +23,7 @@ func play_intro():
 func play_main():
 	$Main.stop()
 	$Intro.stop()
-	$Main_intro.play()
-	var check = $Main_intro.finished
-	if check.is_connected(_on_main_intro_finished):
-		return
-	$Main_intro.finished.connect(_on_main_intro_finished)
+	$Main.play()
 
 func _on_main_intro_finished():
 	$Main.play()

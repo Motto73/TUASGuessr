@@ -18,7 +18,7 @@ config/icon="uid://b23vohsjd40m3"
 
 [autoload]
 
-AutoloadDlc="res://Assets/Scripts/autoload_dlc.gd"
+AutoloadDlc="*res://Assets/Scripts/autoload_dlc.gd"
 Firebase="*res://Resource Scenes/firebase.tscn"
 Sounds="*res://Resource Scenes/sounds.tscn"
 

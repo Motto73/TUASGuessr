@@ -4,7 +4,8 @@ func _init() -> void:
 	if OS.has_feature("web"):
 		var packs := [
 			"res://dlc.pck",
-			"res://game_images.pck"
+			"res://game_images.pck",
+			"res://edu_images.pck"
 		]
 		
 

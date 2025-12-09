@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cn0gdy3ulfyg8" path="res://Audio/Roulette_sound_2.wav" id="1_uqd4k"]
 [ext_resource type="AudioStream" uid="uid://c2dk67hkytouu" path="res://Audio/analog-appliance-button-9-185284.mp3" id="3_n3dc8"]
 [ext_resource type="AudioStream" uid="uid://chvq77jlrroln" path="res://Audio/lever_sound.wav" id="4_bxfck"]
-[ext_resource type="AudioStream" uid="uid://ba1da54fdinbt" path="res://Audio/Playroom_main_v2.ogg" id="6_1yl87"]
+[ext_resource type="AudioStream" uid="uid://cadwlmevjuc31" path="res://Audio/Playroom_main_v3.ogg" id="6_cp1ye"]
 [ext_resource type="AudioStream" uid="uid://b48hon5ad7p8r" path="res://Audio/Playroom_intro.ogg" id="6_hopbn"]
 [ext_resource type="AudioStream" uid="uid://no7md6ekn5ve" path="res://Audio/original_intro.ogg" id="7_hopbn"]
 [ext_resource type="AudioStream" uid="uid://bnfw05xisf2hr" path="res://Audio/Item_sound.wav" id="8_hopbn"]
@@ -29,7 +29,7 @@ stream = ExtResource("4_bxfck")
 stream = ExtResource("6_hopbn")
 
 [node name="Main" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_1yl87")
+stream = ExtResource("6_cp1ye")
 volume_db = -4.316
 parameters/looping = true
 

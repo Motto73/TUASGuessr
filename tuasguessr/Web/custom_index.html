@@ -121,7 +121,7 @@ const GODOT_CONFIG = {
 		"index.pck": 127969384,
 		"index.wasm": 36145869,
 		"dlc.pck": 24000000,
-		"game_images.pck": 82000000
+		"game_images.pck": 82000000,
 		"edu_images.pck": 29000000
 	},
 	"focusCanvas": true,
@@ -220,7 +220,8 @@ const engine = new Engine(GODOT_CONFIG);
 		// *** Tässä pre-loadataan lisä-PCK:t ennen pelin käynnistystä ***
 		Promise.all([
 			engine.preloadFile("dlc.pck"),
-			engine.preloadFile("game_images.pck")
+			engine.preloadFile("game_images.pck"),
+			engine.preloadFile("edu_images.pck")
 		]).then(function () {
 			return engine.startGame({
 				'onProgress': function (current, total) {
