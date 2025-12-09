@@ -138,7 +138,7 @@ script = ExtResource("1_q7ven")
 Tag = "level"
 Description = "Shows if you are on
 the correct floor!"
-Price = 250.0
+Price = 300.0
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

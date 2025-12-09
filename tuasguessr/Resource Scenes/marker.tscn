@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqweao7ragffi"]
+[gd_scene load_steps=4 format=3 uid="uid://dqweao7ragffi"]
 
 [ext_resource type="Texture2D" uid="uid://dl35k6on7iym" path="res://Assets/Textures/Pointer.png" id="1_f37rb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fiar7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw1xj"]
+albedo_color = Color(1, 0, 0, 1)
 
 [node name="Marker" type="Node3D"]
 
 [node name="Sprite" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57555723, 0)
+visible = false
 pixel_size = 0.004
-billboard = 2
+billboard = 1
 texture = ExtResource("1_f37rb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, 0, 0.08563095, 0)
+mesh = SubResource("SphereMesh_fiar7")
+surface_material_override/0 = SubResource("StandardMaterial3D_rw1xj")

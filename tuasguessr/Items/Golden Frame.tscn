@@ -79,7 +79,7 @@ script = ExtResource("1_ucosa")
 Tag = "gold"
 Description = "A chance to roll
 a golden image!"
-Price = 0.0
+Price = 250.0
 
 [node name="Collision" type="Area3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
