@@ -426,6 +426,7 @@ Picture = ExtResource("27_bhf8p")
 [node name="Map Marker24" parent="Press eyes to hide->/EDU3" index="23" instance=ExtResource("2_eh8yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4435062, 0, 0.5290513)
 Picture = ExtResource("28_lqia8")
+Difficulty = "medium"
 
 [node name="EDU2" parent="Press eyes to hide->" index="6"]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 7.878, 2, 2.091)

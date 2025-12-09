@@ -1,18 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cja70xydpd7yx"]
+[gd_scene load_steps=12 format=3 uid="uid://cja70xydpd7yx"]
 
 [ext_resource type="Script" uid="uid://canlu8ppuiai8" path="res://Assets/Scripts/SoundManager.gd" id="1_n3dc8"]
 [ext_resource type="AudioStream" uid="uid://cn0gdy3ulfyg8" path="res://Audio/Roulette_sound_2.wav" id="1_uqd4k"]
 [ext_resource type="AudioStream" uid="uid://c2dk67hkytouu" path="res://Audio/analog-appliance-button-9-185284.mp3" id="3_n3dc8"]
 [ext_resource type="AudioStream" uid="uid://chvq77jlrroln" path="res://Audio/lever_sound.wav" id="4_bxfck"]
-[ext_resource type="AudioStream" uid="uid://b7ox4foeteaj3" path="res://Audio/Main bgm.ogg" id="5_uibtm"]
-[ext_resource type="AudioStream" uid="uid://t0f34k1g45ym" path="res://Audio/Where_The_AMK_Am_I_intro_WIP.ogg" id="6_uibtm"]
+[ext_resource type="AudioStream" uid="uid://ba1da54fdinbt" path="res://Audio/Playroom_main_v2.ogg" id="6_1yl87"]
+[ext_resource type="AudioStream" uid="uid://b48hon5ad7p8r" path="res://Audio/Playroom_intro.ogg" id="6_hopbn"]
+[ext_resource type="AudioStream" uid="uid://no7md6ekn5ve" path="res://Audio/original_intro.ogg" id="7_hopbn"]
+[ext_resource type="AudioStream" uid="uid://bnfw05xisf2hr" path="res://Audio/Item_sound.wav" id="8_hopbn"]
+[ext_resource type="AudioStream" uid="uid://bs3xioi2i414i" path="res://Audio/error-08-206492.mp3" id="9_dsdvb"]
+[ext_resource type="AudioStream" uid="uid://qubkpde8036u" path="res://Audio/light-switch-382712.mp3" id="10_qvjgv"]
+[ext_resource type="AudioStream" uid="uid://cvrcm23u3lf7c" path="res://Audio/Blop.wav" id="11_cp1ye"]
 
 [node name="Sounds" type="Node"]
 script = ExtResource("1_n3dc8")
 
 [node name="Roulette" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_uqd4k")
-volume_db = -3.021
+volume_db = -1.295
 
 [node name="Button" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_n3dc8")
@@ -20,12 +25,29 @@ stream = ExtResource("3_n3dc8")
 [node name="Lever" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bxfck")
 
+[node name="Main_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hopbn")
+
 [node name="Main" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_uibtm")
+stream = ExtResource("6_1yl87")
 volume_db = -4.316
 parameters/looping = true
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_uibtm")
+stream = ExtResource("7_hopbn")
 playback_type = 1
 parameters/looping = true
+
+[node name="Item" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hopbn")
+volume_db = -9.494
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dsdvb")
+volume_db = -3.884
+
+[node name="Map_switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qvjgv")
+
+[node name="Blop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_cp1ye")

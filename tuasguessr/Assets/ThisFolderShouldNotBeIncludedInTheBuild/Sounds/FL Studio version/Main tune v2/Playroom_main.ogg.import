@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddc4fqxy3f52t"
+path="res://.godot/imported/Playroom_main.ogg-4a92e0af46d29311ef0bf10423e04e6c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/FL Studio version/Main tune v2/Playroom_main.ogg"
+dest_files=["res://.godot/imported/Playroom_main.ogg-4a92e0af46d29311ef0bf10423e04e6c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

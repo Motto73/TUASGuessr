@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df53lt8pnq57u"
+path="res://.godot/imported/cartoon_wink_magic_sparkle-6896.mp3-d0ba1608b94838e155687d0faf0767e3.mp3str"
+
+[deps]
+
+source_file="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Sounds/FL Studio version/Item_sound/cartoon_wink_magic_sparkle-6896.mp3"
+dest_files=["res://.godot/imported/cartoon_wink_magic_sparkle-6896.mp3-d0ba1608b94838e155687d0faf0767e3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

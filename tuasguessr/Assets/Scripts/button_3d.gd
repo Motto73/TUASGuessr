@@ -49,6 +49,7 @@ func set_highlight(on):
 
 func press():
 	if not enabled:
+		Sounds.play_error_sound()
 		return
 	Sounds.play_button_normal()
 	print("Button pressed!: ", name)

@@ -192,10 +192,12 @@ func  buy_item(item):
 	var price = adjust_price(item.Price)
 	if points >= price:
 		print("Item bought!", item.Tag)
+		Sounds.play_item_sound()
 		set_points(points - price)
 		add_item(item.Tag)
 		return true
 	print("Item not bought.")
+	Sounds.play_error_sound()
 	return false
 
 func adjust_price(num):
