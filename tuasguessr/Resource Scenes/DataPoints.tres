@@ -315,7 +315,7 @@ position = Vector3(6.1993513, 0, 0.29691035)
 [sub_resource type="Resource" id="Resource_cwkl7"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251111144407_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(8.442777, 0, 2.2708185)
 floor = 3
 
@@ -469,28 +469,28 @@ floor = 3
 [sub_resource type="Resource" id="Resource_eud58"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251031140540_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(8.211417, 0, 0.5290513)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_xf7gs"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251031140552_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(8.414494, 0, 0.5290513)
 floor = 3
 
 [sub_resource type="Resource" id="Resource_2xpfq"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/IMG20251111143844_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(8.080799, 0, 0.65205765)
 floor = 2
 
 [sub_resource type="Resource" id="Resource_inw33"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.29_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(11.096082, 0, -0.004261732)
 floor = 2
 
@@ -511,7 +511,7 @@ floor = 2
 [sub_resource type="Resource" id="Resource_41kge"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.49_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.621679, 0, -1.738693)
 floor = 2
 
@@ -532,21 +532,21 @@ floor = 2
 [sub_resource type="Resource" id="Resource_srpvv"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.12_compressed.webp"
-difficulty = "medium"
+difficulty = "hard"
 position = Vector3(8.288631, 0, 1.7057854)
 floor = 2
 
 [sub_resource type="Resource" id="Resource_bgi2a"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.23_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.266506, 0, 0.013884783)
 floor = 1
 
 [sub_resource type="Resource" id="Resource_uemdl"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.20.51_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.503425, 0, 0.01714778)
 floor = 1
 
@@ -574,14 +574,14 @@ floor = 1
 [sub_resource type="Resource" id="Resource_5td32"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.21.22_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(10.344965, 0, 0.8725486)
 floor = 1
 
 [sub_resource type="Resource" id="Resource_np8sd"]
 script = ExtResource("1_gfkhl")
 imgresource = "res://Assets/Game Images/EDU1&2_27.11.2025 17.22.20_compressed.webp"
-difficulty = "medium"
+difficulty = "easy"
 position = Vector3(9.455867, 0, 1.4668565)
 floor = 1
 
