@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvilngt54vwp5"]
+[gd_scene load_steps=8 format=3 uid="uid://cvilngt54vwp5"]
 
 [ext_resource type="Script" uid="uid://ewhx8jmjg8g2" path="res://Assets/Scripts/menu_intro.gd" id="1_eu4wb"]
-[ext_resource type="Texture2D" uid="uid://cpau6mqkp2gyn" path="res://Assets/Textures/menulogo.png" id="2_mk0bt"]
-[ext_resource type="Texture2D" uid="uid://d1v2i3lj67tty" path="res://Assets/Textures/button_play.png" id="3_a6ky5"]
+[ext_resource type="Texture2D" uid="uid://c6m4q7qvmc6m0" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/BGtest.png" id="2_5nue4"]
 [ext_resource type="Script" uid="uid://cdkhuepoqfisa" path="res://Assets/Scripts/play.gd" id="3_ly8ic"]
+[ext_resource type="Texture2D" uid="uid://bw5xcrc2otr1u" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Neon PLAY off.png" id="4_803j2"]
+[ext_resource type="Script" uid="uid://dqecsdp7salvr" path="res://Menus/texture_rect.gd" id="5_v5qcf"]
+[ext_resource type="Texture2D" uid="uid://bume1us1l1fri" path="res://Assets/ThisFolderShouldNotBeIncludedInTheBuild/Neon PLAY on.png" id="6_su6kj"]
+[ext_resource type="Script" uid="uid://bwsu2ymiudik4" path="res://Menus/texture_rect_2.gd" id="7_7ivfy"]
 
 [node name="Menu_Intro" type="Node2D"]
 script = ExtResource("1_eu4wb")
@@ -25,26 +28,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -512.0
-offset_right = 512.0
-offset_bottom = 512.0
+offset_left = -600.0
+offset_top = -364.0
+offset_right = 600.0
+offset_bottom = 660.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_mk0bt")
+texture = ExtResource("2_5nue4")
+stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Play" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = -152.0
-offset_right = 112.0
-offset_bottom = -40.0
+anchor_top = 0.953
+anchor_right = 0.524
+anchor_bottom = 0.953
+offset_left = -157.80981
+offset_top = -168.544
+offset_right = 132.04004
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 flat = true
@@ -55,16 +59,37 @@ script = ExtResource("3_ly8ic")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Play"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4642857
-anchor_top = 0.5
-anchor_right = 0.4642857
-anchor_bottom = 0.5
-offset_left = -176.0
+anchor_left = 0.5566184
+anchor_top = 1.3853111
+anchor_right = 1.1290323
+anchor_bottom = 1.6653087
+offset_left = -175.91536
 offset_top = -184.0
-offset_right = 192.0
-offset_bottom = 184.0
-texture = ExtResource("3_a6ky5")
-expand_mode = 1
+offset_right = 192.34448
+offset_bottom = 14.608002
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("4_803j2")
+stretch_mode = 6
+script = ExtResource("5_v5qcf")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.02562488
+anchor_top = -0.04492893
+anchor_right = 0.736994
+anchor_bottom = 0.46099836
+offset_right = 580.0
+offset_bottom = 301.456
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("6_su6kj")
+stretch_mode = 4
+script = ExtResource("7_7ivfy")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="CanvasLayer/Control/Play" to="." method="_on_play_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Play" to="CanvasLayer/Control/Play/TextureRect" method="_on_play_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Play" to="CanvasLayer/Control/Play/TextureRect2" method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/Play" to="CanvasLayer/Control/Play/TextureRect" method="_on_play_mouse_exited"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/Play" to="CanvasLayer/Control/Play/TextureRect2" method="_on_play_mouse_exited"]
