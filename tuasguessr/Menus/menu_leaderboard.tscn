@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjmmam14ycxr7"]
+[gd_scene load_steps=8 format=3 uid="uid://bjmmam14ycxr7"]
 
 [ext_resource type="Script" uid="uid://d3ixndp57pnfm" path="res://Assets/Scripts/menu_leaderboard.gd" id="1_sh85h"]
 [ext_resource type="Texture2D" uid="uid://cc3udah2bkhkn" path="res://Assets/Textures/Leaderboard.png" id="2_n418k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://by3v5o6m3bijb" path="res://Assets/Textures/button_play_2.png" id="4_dhq4i"]
 [ext_resource type="Texture2D" uid="uid://csjpq0d1lcgat" path="res://Assets/Textures/button_submit.png" id="5_ipq2f"]
 [ext_resource type="StyleBox" uid="uid://cvm3v3jby47tt" path="res://Menus/textfieldstyle.tres" id="6_ipq2f"]
+[ext_resource type="Script" uid="uid://d3tqni3esdcwd" path="res://Menus/namefield.gd" id="7_6lfvi"]
 
 [node name="Menu_Leaderboard" type="Node2D"]
 z_index = 5
@@ -91,6 +92,7 @@ theme_override_styles/normal = ExtResource("6_ipq2f")
 theme_override_styles/focus = ExtResource("6_ipq2f")
 placeholder_text = "Name
 "
+script = ExtResource("7_6lfvi")
 
 [node name="Pointsfield" type="Label" parent="CanvasLayer/Control/Bg"]
 modulate = Color(0, 0, 0, 1)
