@@ -59,6 +59,9 @@ func _process(delta):
 			end_game()
 
 func start_game():
+	#play main theme
+	Sounds.play_main()
+	
 	roundtimer = ShortDuration if UseShortGame else GameDuration
 	points = 0
 	slotmachine.reset()

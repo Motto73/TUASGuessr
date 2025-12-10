@@ -116,6 +116,7 @@ func hide_lb():
 		
 func show_lb():
 	visible = true
+	Sounds.stop_roulette_sound()
 	Sounds.play_blop()
 	widget.visible = true
 	for child in get_children():

@@ -60,8 +60,6 @@ func loadMainScene(res):
 	mainScene = load(res).instantiate()
 	add_child(mainScene)
 	
-	#play main theme
-	Sounds.play_main()
 	
 func new_game():
 	startGame()
