@@ -100,12 +100,13 @@ func _on_new_game_pressed():
 	submit.disabled = false
 	namefield.editable = true
 
-func _on_namefield_text_changed():
-	if len(namefield.text) > 0 and len(namefield.text) <= 10:
+func _on_namefield_text_changed(new_text):
+	if new_text.length() > 0 and new_text.length() <= 10:
 		submit.disabled = false
-		username = namefield.text
+		username = new_text
 	else:
 		submit.disabled = true
+
 		
 		
 func hide_lb():
