@@ -25,7 +25,7 @@ ClickVSDrag = 0.2
 transform = Transform3D(1, 0, 0, 0, 0.9998478, -0.017452408, 0, 0.017452408, 0.9998478, 5.058445, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, 4.8504567, 0)
+transform = Transform3D(1, 0, 0, 0, -4.284084e-08, 0.9999999, 0, -0.9999999, -4.284084e-08, 0, 3.1905022, 0.028974611)
 environment = SubResource("Environment_6le5j")
 
 [node name="MarkerStart" parent="." instance=ExtResource("3_noguo")]
