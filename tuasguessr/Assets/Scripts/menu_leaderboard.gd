@@ -96,6 +96,7 @@ func disable_submit():
 
 func _on_new_game_pressed():
 	Sounds.play_switch()
+	Sounds.reset_sounds()
 	actualgame.new_game()
 	submit.disabled = false
 	namefield.editable = true

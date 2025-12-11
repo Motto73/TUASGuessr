@@ -48,6 +48,9 @@ func play_blop():
 
 func set_roulette_sound_speed(pitch: float):
 	$Roulette.pitch_scale = pitch
+	
+func reset_sounds():
+	set_roulette_sound_speed(1.0)
 
 func stop_roulette_sound():
 	await get_tree().create_timer(0.3).timeout
